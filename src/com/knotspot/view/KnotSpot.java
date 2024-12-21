@@ -112,7 +112,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueManagePagePnl = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        goToHomePageBtn = new javax.swing.JButton();
         jPanel22 = new javax.swing.JPanel();
         jTextField2 = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
@@ -902,7 +902,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        adminDashboardPagesPnl.add(homePagePnl, "WelcomeAdminPage");
+        adminDashboardPagesPnl.add(homePagePnl, "HomePage");
 
         venueManagePagePnl.setMaximumSize(new java.awt.Dimension(560, 340));
         venueManagePagePnl.setMinimumSize(new java.awt.Dimension(560, 340));
@@ -912,7 +912,12 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jButton2.setText("Add Venue");
 
-        jButton3.setText("Back");
+        goToHomePageBtn.setText("Back");
+        goToHomePageBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                goToHomePageBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
         jPanel23.setLayout(jPanel23Layout);
@@ -921,8 +926,8 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(jButton2)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 342, Short.MAX_VALUE)
-                .addComponent(jButton3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addComponent(goToHomePageBtn)
                 .addContainerGap())
         );
         jPanel23Layout.setVerticalGroup(
@@ -931,7 +936,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(goToHomePageBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -1031,7 +1036,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         adminDashboardPagesPnl.add(venueManagePagePnl, "ManageVenuePage");
 
-        adminDashboardPagePnl.add(adminDashboardPagesPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 560, 340));
+        adminDashboardPagePnl.add(adminDashboardPagesPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 550, 340));
 
         jPanel1.add(adminDashboardPagePnl, "AdminScreen");
 
@@ -1161,6 +1166,11 @@ public class KnotSpot extends javax.swing.JFrame {
         manageVenueNavLbl.setBackground(Color.decode("#000000"));
         manageVenueNavLbl.setForeground(Color.decode("#FFFFFF"));
     }//GEN-LAST:event_manageVenueNavPnlMouseExited
+
+    private void goToHomePageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToHomePageBtnActionPerformed
+        // TODO add your handling code here:
+        loadNavRelatedPage("HomePage");
+    }//GEN-LAST:event_goToHomePageBtnActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -1204,6 +1214,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel companyIntroPnl;
     private javax.swing.JLabel companyTitleLbl;
     private javax.swing.JTable frontDisplayTable;
+    private javax.swing.JButton goToHomePageBtn;
     private javax.swing.JPanel homePagePnl;
     private javax.swing.JPanel imageContainerPnl;
     private javax.swing.JLabel introLineOneLbl;
@@ -1211,7 +1222,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel introLineTwoLbl;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
