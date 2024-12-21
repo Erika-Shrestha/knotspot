@@ -9,6 +9,7 @@ import javax.swing.ImageIcon;
 import javax.swing.table.JTableHeader;
 import java.awt.Font;
 import java.awt.Color;
+import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
@@ -90,7 +91,7 @@ public class KnotSpot extends javax.swing.JFrame {
         jPanel13 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        frontDisplayTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("23048598ErikaShrestha");
@@ -647,13 +648,15 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGap(0, 35, Short.MAX_VALUE))
         );
 
-        JTableHeader tableHeader = jTable1.getTableHeader();
+        DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();
+        headerRender.setBackground(Color.decode("#696B9E"));
+        JTableHeader tableHeader = frontDisplayTable.getTableHeader();
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 8));
         tableHeader.setOpaque(false);
-        tableHeader.setBackground(Color.BLACK);
+        tableHeader.setDefaultRenderer(headerRender);
         tableHeader.setForeground(new Color(0,147,175));
-        jTable1.setFont(new java.awt.Font("Sans Serif Collection", 0, 8)); // NOI18N
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        frontDisplayTable.setFont(new java.awt.Font("Sans Serif Collection", 0, 8)); // NOI18N
+        frontDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -661,16 +664,16 @@ public class KnotSpot extends javax.swing.JFrame {
                 "s.no", "id", "name", "location", "capacity", "type", "opening time", "amenities", "rent fee"
             }
         ));
-        jTable1.setFocusable(false);
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(153, 153, 153));
-        jTable1.setShowHorizontalLines(true);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setMinWidth(30);
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(30);
-            jTable1.getColumnModel().getColumn(0).setMaxWidth(30);
+        frontDisplayTable.setFocusable(false);
+        frontDisplayTable.setRowHeight(25);
+        frontDisplayTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        frontDisplayTable.setShowHorizontalLines(true);
+        frontDisplayTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(frontDisplayTable);
+        if (frontDisplayTable.getColumnModel().getColumnCount() > 0) {
+            frontDisplayTable.getColumnModel().getColumn(0).setMinWidth(30);
+            frontDisplayTable.getColumnModel().getColumn(0).setPreferredWidth(30);
+            frontDisplayTable.getColumnModel().getColumn(0).setMaxWidth(30);
         }
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -876,6 +879,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel adminDashboardPagePnl;
     private javax.swing.JPanel companyIntroPnl;
     private javax.swing.JLabel companyTitleLbl;
+    private javax.swing.JTable frontDisplayTable;
     private javax.swing.JPanel imageContainerPnl;
     private javax.swing.JLabel introLineOneLbl;
     private javax.swing.JLabel introLineThreeLbl;
@@ -918,7 +922,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel loadingPagePnl;
