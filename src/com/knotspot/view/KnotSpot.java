@@ -20,6 +20,7 @@ import javax.swing.SwingConstants;
 public class KnotSpot extends javax.swing.JFrame {
     
     private CardLayout cardLayout;
+    private CardLayout cardLayoutForadminDashboard;
     private final String absolutePathForImage = "C:/Users/eerii\\OneDrive - islingtoncollege.edu.np\\CWs\\KnotSpot\\src\\com\\knotspot\\resource\\";
 
     /**
@@ -1054,8 +1055,8 @@ public class KnotSpot extends javax.swing.JFrame {
     }
     
     private void loadNavRelatedPage(String screenName){
-        cardLayout = (CardLayout) adminDashboardPagesPnl.getLayout();
-        cardLayout.show(adminDashboardPagesPnl, screenName);
+        cardLayoutForadminDashboard = (CardLayout) adminDashboardPagesPnl.getLayout();
+        cardLayoutForadminDashboard.show(adminDashboardPagesPnl, screenName);
     }
     
     private void startProgress() {
