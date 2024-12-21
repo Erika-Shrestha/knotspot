@@ -1271,7 +1271,7 @@
                             </Property>
                           </Properties>
                           <AuxValues>
-                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();&#xa;headerRender.setBackground(Color.decode(&quot;#696B9E&quot;));&#xa;JTableHeader tableHeader = frontDisplayTable.getTableHeader();&#xa;tableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 8));&#xa;tableHeader.setOpaque(false);&#xa;tableHeader.setDefaultRenderer(headerRender);&#xa;tableHeader.setForeground(new Color(0,147,175));"/>
+                            <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();&#xa;headerRender.setBackground(Color.decode(&quot;#002147&quot;));&#xa;headerRender.setForeground(Color.decode(&quot;Ffffff&quot;));&#xa;headerRender.setHorizontalAlignment(SwingConstants.CENTER);&#xa;JTableHeader tableHeader = frontDisplayTable.getTableHeader();&#xa;tableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 8));&#xa;tableHeader.setOpaque(false);&#xa;tableHeader.setDefaultRenderer(headerRender);"/>
                           </AuxValues>
                         </Component>
                       </SubComponents>

@@ -10,6 +10,7 @@ import javax.swing.table.JTableHeader;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.SwingConstants;
 
 /**
  *
@@ -649,12 +650,13 @@ public class KnotSpot extends javax.swing.JFrame {
         );
 
         DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();
-        headerRender.setBackground(Color.decode("#696B9E"));
+        headerRender.setBackground(Color.decode("#002147"));
+        headerRender.setForeground(Color.decode("Ffffff"));
+        headerRender.setHorizontalAlignment(SwingConstants.CENTER);
         JTableHeader tableHeader = frontDisplayTable.getTableHeader();
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 8));
         tableHeader.setOpaque(false);
         tableHeader.setDefaultRenderer(headerRender);
-        tableHeader.setForeground(new Color(0,147,175));
         frontDisplayTable.setFont(new java.awt.Font("Sans Serif Collection", 0, 8)); // NOI18N
         frontDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
