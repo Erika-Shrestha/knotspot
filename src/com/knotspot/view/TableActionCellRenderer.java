@@ -4,6 +4,7 @@
  */
 package com.knotspot.view;
 
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.JPanel;
 import javax.swing.JTable;
@@ -25,7 +26,13 @@ public class TableActionCellRenderer extends DefaultTableCellRenderer {
     public Component getTableCellRendererComponent(JTable table, Object value,
     boolean isSelected, boolean hasFocus, int row, int column){
         Component com= super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        
+        //to set background for the inserted cell panels
+        if(isSelected==false && row % 2==0){
+            panel.setBackground(Color.WHITE);
+        }
+        else{
+            panel.setBackground(com.getBackground());
+        }
         return panel;
     };
     

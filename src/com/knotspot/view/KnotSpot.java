@@ -776,20 +776,23 @@ public class KnotSpot extends javax.swing.JFrame {
 
             },
             new String [] {
-                "s.no", "id", "name", "location", "capacity", "type", "opening time", "amenities", "rent fee"
+                "id", "name", "address", "city", "type", "capacity", "rent fee"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         frontDisplayTable.setFocusable(false);
         frontDisplayTable.setRowHeight(25);
         frontDisplayTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
         frontDisplayTable.setShowHorizontalLines(true);
         frontDisplayTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(frontDisplayTable);
-        if (frontDisplayTable.getColumnModel().getColumnCount() > 0) {
-            frontDisplayTable.getColumnModel().getColumn(0).setMinWidth(30);
-            frontDisplayTable.getColumnModel().getColumn(0).setPreferredWidth(30);
-            frontDisplayTable.getColumnModel().getColumn(0).setMaxWidth(30);
-        }
 
         javax.swing.GroupLayout homePagePnlLayout = new javax.swing.GroupLayout(homePagePnl);
         homePagePnl.setLayout(homePagePnlLayout);
