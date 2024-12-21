@@ -285,7 +285,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();
         headerRender.setBackground(Color.decode("#002147"));
-        headerRender.setForeground(Color.decode("Ffffff"));
+        headerRender.setForeground(Color.decode("ffffff"));
         headerRender.setHorizontalAlignment(SwingConstants.CENTER);
         JTableHeader tableHeader = frontDisplayTable.getTableHeader();
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 8));
