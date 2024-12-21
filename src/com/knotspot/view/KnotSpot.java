@@ -30,7 +30,7 @@ public class KnotSpot extends javax.swing.JFrame {
     public KnotSpot() {
         initComponents();
         startProgress();
-        jTable1.getColumnModel().getColumn(4).setCellRenderer(new TableActionCellRenderer(jPanel20));
+        jTable1.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRenderer(jPanel20));
     }
 
     /**
@@ -884,7 +884,7 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(jPanel23Layout.createSequentialGroup()
                 .addGap(51, 51, 51)
                 .addComponent(goToAddVenuePageBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 332, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 342, Short.MAX_VALUE)
                 .addComponent(goToHomePageBtn)
                 .addContainerGap())
         );
@@ -936,9 +936,20 @@ public class KnotSpot extends javax.swing.JFrame {
             new String [] {
                 "ID", "Name", "Address", "City", "Type", "Capacity", "Rent Fee", "Action"
             }
-        ));
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jTable1.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(7).setPreferredWidth(80);
+        }
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setText("jButton4");
@@ -1220,7 +1231,7 @@ public class KnotSpot extends javax.swing.JFrame {
         settingPagePnlLayout.setHorizontalGroup(
             settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingPagePnlLayout.createSequentialGroup()
-                .addContainerGap(115, Short.MAX_VALUE)
+                .addContainerGap(125, Short.MAX_VALUE)
                 .addComponent(jSplitPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(130, 130, 130))
             .addGroup(settingPagePnlLayout.createSequentialGroup()
