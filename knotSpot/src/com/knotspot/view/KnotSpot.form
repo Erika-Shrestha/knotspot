@@ -1051,7 +1051,7 @@
               </Properties>
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="110" y="40" width="560" height="340"/>
+                  <AbsoluteConstraints x="120" y="40" width="550" height="340"/>
                 </Constraint>
               </Constraints>
 
@@ -1071,7 +1071,7 @@
                   </Properties>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignCardLayout" value="org.netbeans.modules.form.compat2.layouts.DesignCardLayout$CardConstraintsDescription">
-                      <CardConstraints cardName="WelcomeAdminPage"/>
+                      <CardConstraints cardName="HomePage"/>
                     </Constraint>
                   </Constraints>
 
@@ -1609,8 +1609,8 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                                   <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace pref="342" max="32767" attributes="0"/>
-                                  <Component id="jButton3" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace pref="332" max="32767" attributes="0"/>
+                                  <Component id="goToHomePageBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
@@ -1621,7 +1621,7 @@
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jButton2" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
-                                      <Component id="jButton3" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
+                                      <Component id="goToHomePageBtn" alignment="3" min="-2" pref="19" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                               </Group>
@@ -1634,10 +1634,13 @@
                             <Property name="text" type="java.lang.String" value="Add Venue"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JButton" name="jButton3">
+                        <Component class="javax.swing.JButton" name="goToHomePageBtn">
                           <Properties>
                             <Property name="text" type="java.lang.String" value="Back"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="goToHomePageBtnActionPerformed"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
