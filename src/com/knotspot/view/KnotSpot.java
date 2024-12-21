@@ -650,7 +650,7 @@ public class KnotSpot extends javax.swing.JFrame {
         JTableHeader tableHeader = jTable1.getTableHeader();
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 8));
         tableHeader.setOpaque(false);
-        tableHeader.setBackground(new Color(0,51,170));
+        tableHeader.setBackground(Color.BLACK);
         tableHeader.setForeground(new Color(0,147,175));
         jTable1.setFont(new java.awt.Font("Sans Serif Collection", 0, 8)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
