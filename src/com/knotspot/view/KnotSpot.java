@@ -472,6 +472,9 @@ public class KnotSpot extends javax.swing.JFrame {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 manageVenueNavPnlMouseEntered(evt);
             }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                manageVenueNavPnlMouseExited(evt);
+            }
         });
 
         manageVenueNavLbl.setFont(new java.awt.Font("Sans Serif Collection", 1, 10)); // NOI18N
@@ -1146,10 +1149,18 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void manageVenueNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVenueNavPnlMouseEntered
         // TODO add your handling code here:
-        setBackground(Color.decode("#FFFFFF"));
+        manageVenueNavPnl.setBackground(Color.decode("#FFFFFF"));
         manageVenueNavLbl.setBackground(Color.decode("#FFFFFF"));
         manageVenueNavLbl.setForeground(Color.decode("#000000"));
     }//GEN-LAST:event_manageVenueNavPnlMouseEntered
+
+    private void manageVenueNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVenueNavPnlMouseExited
+        // TODO add your handling code here:
+        manageVenueNavPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        manageVenueNavPnl.setBackground(Color.decode("#000000"));
+        manageVenueNavLbl.setBackground(Color.decode("#000000"));
+        manageVenueNavLbl.setForeground(Color.decode("#FFFFFF"));
+    }//GEN-LAST:event_manageVenueNavPnlMouseExited
     /**
      * @param args the command line arguments
      */
