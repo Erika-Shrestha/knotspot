@@ -975,7 +975,6 @@ public class KnotSpot extends javax.swing.JFrame {
         jScrollPane2.setViewportView(jTable1);
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/image1111.png"))); // NOI18N
         jButton4.setText("jButton4");
         jButton4.setBorder(null);
 
