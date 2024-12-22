@@ -6,7 +6,10 @@ package com.knotspot.model;
 
 /**
  *
- * @author eerii
+ * @author 
+ * LMU ID:23048598
+ * COLLEGE ID: 230024
+ * ErikaShrestha
  */
 public class VenueManagement {
     
@@ -17,15 +20,12 @@ public class VenueManagement {
     private int capacity;
     private String city;
     private String venueType;
-    private String operatingHour;
-    private String venueDescription;
     private String facility;
     private int rentFee;
-    private String paymentOption;
     
     public VenueManagement(){}
 
-    public VenueManagement(int venueId, String venueName, String address, int contactNumber, int capacity, String city, String venueType, String operatingHour, String venueDescription, String facility, int rentFee, String paymentOption) {
+    public VenueManagement(int venueId, String venueName, String address, int contactNumber, int capacity, String city, String venueType, String facility, int rentFee) {
         this.venueId = venueId;
         this.venueName = venueName;
         this.address = address;
@@ -33,11 +33,8 @@ public class VenueManagement {
         this.capacity = capacity;
         this.city = city;
         this.venueType = venueType;
-        this.operatingHour = operatingHour;
-        this.venueDescription = venueDescription;
         this.facility = facility;
         this.rentFee = rentFee;
-        this.paymentOption = paymentOption;
     }
 
     public int getVenueId() {
@@ -96,22 +93,6 @@ public class VenueManagement {
         this.venueType = venueType;
     }
 
-    public String getOperatingHour() {
-        return operatingHour;
-    }
-
-    public void setOperatingHour(String operatingHour) {
-        this.operatingHour = operatingHour;
-    }
-
-    public String getVenueDescription() {
-        return venueDescription;
-    }
-
-    public void setVenueDescription(String venueDescription) {
-        this.venueDescription = venueDescription;
-    }
-
     public String getFacility() {
         return facility;
     }
@@ -127,14 +108,5 @@ public class VenueManagement {
     public void setRentFee(int rentFee) {
         this.rentFee = rentFee;
     }
-
-    public String getPaymentOption() {
-        return paymentOption;
-    }
-
-    public void setPaymentOption(String paymentOption) {
-        this.paymentOption = paymentOption;
-    }
-    
     
 }

@@ -13,7 +13,10 @@ import javax.swing.JTable;
 
 /**
  *
- * @author eerii
+ * @author 
+ * LMU ID: 23048598
+ * COLLEGE ID: 230024
+ * ErikaShrestha
  */
 public class TableActionCellEditor extends DefaultCellEditor{
     
@@ -27,6 +30,7 @@ public class TableActionCellEditor extends DefaultCellEditor{
     
     @Override
     public Component getTableCellEditorComponent(JTable table, Object o, boolean bln, int i, int il){
+        panel.setBackground(table.getSelectionBackground());
         return panel;
     }
     

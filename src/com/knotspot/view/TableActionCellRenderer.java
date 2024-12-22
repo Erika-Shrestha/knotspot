@@ -12,7 +12,10 @@ import javax.swing.table.DefaultTableCellRenderer;
 
 /**
  *
- * @author eerii
+ * @author 
+ * LMU ID: 23048598
+ * COLLEGE ID: 230024
+ * ErikaShrestha
  */
 public class TableActionCellRenderer extends DefaultTableCellRenderer {
     

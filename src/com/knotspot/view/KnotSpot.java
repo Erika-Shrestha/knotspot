@@ -16,7 +16,10 @@ import javax.swing.SwingConstants;
 
 /**
  *
- * @author eerii
+ * @author 
+ * LMU ID: 23048598
+ * COLLEGE ID: 230024
+ * ErikaShrestha
  */
 public class KnotSpot extends javax.swing.JFrame {
     
@@ -30,8 +33,8 @@ public class KnotSpot extends javax.swing.JFrame {
     public KnotSpot() {
         initComponents();
         startProgress();
-        jTable1.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRenderer(jPanel20));
-        jTable1.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(jPanel20));
+        jTable1.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(jPanel20));
+        jTable1.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(jPanel20));
     }
 
     /**
@@ -77,12 +80,12 @@ public class KnotSpot extends javax.swing.JFrame {
         manageVenueNavLbl = new javax.swing.JLabel();
         jPanel17 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jPanel18 = new javax.swing.JPanel();
-        jLabel15 = new javax.swing.JLabel();
         jPanel19 = new javax.swing.JPanel();
         jLabel16 = new javax.swing.JLabel();
         settingNavPnl = new javax.swing.JPanel();
         settingNavLbl = new javax.swing.JLabel();
+        settingNavPnl1 = new javax.swing.JPanel();
+        settingNavLbl1 = new javax.swing.JLabel();
         adminDashboardPagesPnl = new javax.swing.JPanel();
         homePagePnl = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -413,10 +416,10 @@ public class KnotSpot extends javax.swing.JFrame {
         manageVenueNavPnl.setLayout(manageVenueNavPnlLayout);
         manageVenueNavPnlLayout.setHorizontalGroup(
             manageVenueNavPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(manageVenueNavPnlLayout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, manageVenueNavPnlLayout.createSequentialGroup()
+                .addContainerGap(18, Short.MAX_VALUE)
                 .addComponent(manageVenueNavLbl)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap())
         );
         manageVenueNavPnlLayout.setVerticalGroup(
             manageVenueNavPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -431,7 +434,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jLabel14.setFont(new java.awt.Font("Sans Serif Collection", 1, 10)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("  Booking Report");
+        jLabel14.setText("  about us");
         jLabel14.setAutoscrolls(true);
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
@@ -439,9 +442,9 @@ public class KnotSpot extends javax.swing.JFrame {
         jPanel17Layout.setHorizontalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel17Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(22, 22, 22)
                 .addComponent(jLabel14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         jPanel17Layout.setVerticalGroup(
             jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -451,47 +454,22 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        jPanel18.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel18.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
-
-        jLabel15.setFont(new java.awt.Font("Sans Serif Collection", 1, 10)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("  Venue menu");
-        jLabel15.setAutoscrolls(true);
-
-        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
-        jPanel18.setLayout(jPanel18Layout);
-        jPanel18Layout.setHorizontalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel18Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel15)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel18Layout.setVerticalGroup(
-            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel18Layout.createSequentialGroup()
-                .addContainerGap(21, Short.MAX_VALUE)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         jPanel19.setBackground(new java.awt.Color(0, 0, 0));
         jPanel19.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
 
         jLabel16.setFont(new java.awt.Font("Sans Serif Collection", 1, 10)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel16.setText("  Project Gallery");
+        jLabel16.setText("Venue Gallery");
         jLabel16.setAutoscrolls(true);
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
         jPanel19Layout.setHorizontalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel19Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel16)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(14, 14, 14))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -525,7 +503,7 @@ public class KnotSpot extends javax.swing.JFrame {
         settingNavPnlLayout.setHorizontalGroup(
             settingNavPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settingNavPnlLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(23, 23, 23)
                 .addComponent(settingNavLbl)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -534,6 +512,42 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingNavPnlLayout.createSequentialGroup()
                 .addContainerGap(17, Short.MAX_VALUE)
                 .addComponent(settingNavLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+
+        settingNavPnl1.setBackground(new java.awt.Color(0, 0, 0));
+        settingNavPnl1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
+        settingNavPnl1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                settingNavPnl1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                settingNavPnl1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                settingNavPnl1MouseExited(evt);
+            }
+        });
+
+        settingNavLbl1.setFont(new java.awt.Font("Sans Serif Collection", 1, 10)); // NOI18N
+        settingNavLbl1.setForeground(new java.awt.Color(255, 255, 255));
+        settingNavLbl1.setText("Log Out");
+        settingNavLbl1.setAutoscrolls(true);
+
+        javax.swing.GroupLayout settingNavPnl1Layout = new javax.swing.GroupLayout(settingNavPnl1);
+        settingNavPnl1.setLayout(settingNavPnl1Layout);
+        settingNavPnl1Layout.setHorizontalGroup(
+            settingNavPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(settingNavPnl1Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(settingNavLbl1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        settingNavPnl1Layout.setVerticalGroup(
+            settingNavPnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, settingNavPnl1Layout.createSequentialGroup()
+                .addContainerGap(17, Short.MAX_VALUE)
+                .addComponent(settingNavLbl1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -547,11 +561,11 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(settingNavPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jPanel18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel17, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                            .addComponent(manageVenueNavPnl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 2, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(manageVenueNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 2, Short.MAX_VALUE))
+                    .addComponent(settingNavPnl1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -562,11 +576,11 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(settingNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(settingNavPnl1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -917,20 +931,20 @@ public class KnotSpot extends javax.swing.JFrame {
         venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "ID", "Name", "Address", "City", "Type", "Capacity", "Rent Fee", "Action"
+                "ID", "Name", "Address", "City", "Contact No", "Type", "Capacity", "Rent Fee", "Action"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, true
+                false, false, false, false, true, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -1410,6 +1424,18 @@ public class KnotSpot extends javax.swing.JFrame {
         settingNavLbl.setForeground(Color.decode("#FFFFFF"));
         settingNavPnl.setForeground(Color.decode("#FFFFFF"));
     }//GEN-LAST:event_settingNavPnlMouseExited
+
+    private void settingNavPnl1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnl1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settingNavPnl1MouseClicked
+
+    private void settingNavPnl1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnl1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settingNavPnl1MouseEntered
+
+    private void settingNavPnl1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnl1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_settingNavPnl1MouseExited
     /**
      * @param args the command line arguments
      */
@@ -1477,7 +1503,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
@@ -1503,7 +1528,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel17;
-    private javax.swing.JPanel jPanel18;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel20;
@@ -1539,7 +1563,9 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel manageVenueNavPnl;
     private javax.swing.JLabel multipleImageLbl;
     private javax.swing.JLabel settingNavLbl;
+    private javax.swing.JLabel settingNavLbl1;
     private javax.swing.JPanel settingNavPnl;
+    private javax.swing.JPanel settingNavPnl1;
     private javax.swing.JPanel settingPagePnl;
     private javax.swing.JPanel venueManagePagePnl;
     // End of variables declaration//GEN-END:variables
