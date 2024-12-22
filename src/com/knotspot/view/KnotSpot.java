@@ -31,6 +31,7 @@ public class KnotSpot extends javax.swing.JFrame {
         initComponents();
         startProgress();
         jTable1.getColumnModel().getColumn(7).setCellRenderer(new TableActionCellRenderer(jPanel20));
+        jTable1.getColumnModel().getColumn(7).setCellEditor(new TableActionCellEditor(jPanel20));
     }
 
     /**
@@ -928,9 +929,16 @@ public class KnotSpot extends javax.swing.JFrame {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, true
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         jTable1.setShowHorizontalLines(true);
@@ -1399,6 +1407,7 @@ public class KnotSpot extends javax.swing.JFrame {
         settingNavPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         settingNavPnl.setBackground(Color.decode("#000000"));
         settingNavLbl.setBackground(Color.decode("#000000"));
+        settingNavLbl.setForeground(Color.decode("#FFFFFF"));
         settingNavPnl.setForeground(Color.decode("#FFFFFF"));
     }//GEN-LAST:event_settingNavPnlMouseExited
     /**
