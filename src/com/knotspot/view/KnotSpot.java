@@ -926,7 +926,7 @@ public class KnotSpot extends javax.swing.JFrame {
         headerRenderForVenueTable.setForeground(Color.decode("#FFFFFF"));
         headerRenderForVenueTable.setHorizontalAlignment(SwingConstants.CENTER);
         JTableHeader venuetableHeader = jTable1.getTableHeader();
-        venuetableHeader.setFont(new Font("Sans Serif", Font.BOLD, 8));
+        venuetableHeader.setFont(new Font("Sans Serif", Font.BOLD, 7));
         venuetableHeader.setOpaque(false);
         venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
@@ -944,7 +944,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, true, false, false, false, true
+                false, false, false, false, false, false, false, false, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -958,7 +958,8 @@ public class KnotSpot extends javax.swing.JFrame {
         jTable1.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(7).setPreferredWidth(80);
+            jTable1.getColumnModel().getColumn(4).setPreferredWidth(70);
+            jTable1.getColumnModel().getColumn(8).setPreferredWidth(80);
         }
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
