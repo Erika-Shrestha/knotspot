@@ -1598,7 +1598,7 @@
                                     <Column editable="false" title="Name" type="java.lang.String"/>
                                     <Column editable="false" title="Address" type="java.lang.String"/>
                                     <Column editable="false" title="City" type="java.lang.String"/>
-                                    <Column editable="false" title="Contact No" type="java.lang.Integer"/>
+                                    <Column editable="false" title="Contact" type="java.lang.Integer"/>
                                     <Column editable="false" title="Type" type="java.lang.String"/>
                                     <Column editable="false" title="Capacity" type="java.lang.Integer"/>
                                     <Column editable="false" title="Rent Fee" type="java.lang.Integer"/>
@@ -1627,7 +1627,7 @@
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="70" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
@@ -1660,7 +1660,7 @@
                                 </Property>
                               </Properties>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();&#xa;headerRenderForVenueTable.setBackground(Color.decode(&quot;#002147&quot;));&#xa;headerRenderForVenueTable.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;headerRenderForVenueTable.setHorizontalAlignment(SwingConstants.CENTER);&#xa;JTableHeader venuetableHeader = jTable1.getTableHeader();&#xa;venuetableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 7));&#xa;venuetableHeader.setOpaque(false);&#xa;venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);"/>
+                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();&#xa;headerRenderForVenueTable.setBackground(Color.decode(&quot;#002147&quot;));&#xa;headerRenderForVenueTable.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;headerRenderForVenueTable.setHorizontalAlignment(SwingConstants.CENTER);&#xa;JTableHeader venuetableHeader = jTable1.getTableHeader();&#xa;venuetableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 8));&#xa;venuetableHeader.setOpaque(false);&#xa;venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>
