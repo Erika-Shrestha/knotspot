@@ -11,29 +11,27 @@ package com.knotspot.model;
  * COLLEGE ID: 230024
  * ErikaShrestha
  */
-public class VenueManagement {
+public class VenueModel {
     
     private int venueId;
     private String venueName;
     private String address;
-    private int contactNumber;
-    private int capacity;
     private String city;
+    private int contactNumber;
     private String venueType;
-    private String facility;
+    private int capacity;
     private int rentFee;
     
-    public VenueManagement(){}
+    public VenueModel(){}
 
-    public VenueManagement(int venueId, String venueName, String address, int contactNumber, int capacity, String city, String venueType, String facility, int rentFee) {
+    public VenueModel(int venueId, String venueName, String address, String city, int contactNumber, String venueType, int capacity, int rentFee) {
         this.venueId = venueId;
         this.venueName = venueName;
         this.address = address;
-        this.contactNumber = contactNumber;
-        this.capacity = capacity;
         this.city = city;
+        this.contactNumber = contactNumber;
         this.venueType = venueType;
-        this.facility = facility;
+        this.capacity = capacity;
         this.rentFee = rentFee;
     }
 
@@ -61,28 +59,20 @@ public class VenueManagement {
         this.address = address;
     }
 
-    public int getContactNumber() {
-        return contactNumber;
-    }
-
-    public void setContactNumber(int contactNumber) {
-        this.contactNumber = contactNumber;
-    }
-
-    public int getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public int getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(int contactNumber) {
+        this.contactNumber = contactNumber;
     }
 
     public String getVenueType() {
@@ -93,12 +83,12 @@ public class VenueManagement {
         this.venueType = venueType;
     }
 
-    public String getFacility() {
-        return facility;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setFacility(String facility) {
-        this.facility = facility;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public int getRentFee() {
@@ -108,5 +98,7 @@ public class VenueManagement {
     public void setRentFee(int rentFee) {
         this.rentFee = rentFee;
     }
+
+    
     
 }

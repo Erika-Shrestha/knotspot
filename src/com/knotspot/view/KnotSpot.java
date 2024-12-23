@@ -4,6 +4,7 @@
  */
 package com.knotspot.view;
 
+import com.knotspot.controller.ValidationUtil;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.table.JTableHeader;
@@ -12,20 +13,23 @@ import java.awt.Color;
 import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.SwingConstants;
 
-
+import com.knotspot.model.VenueModel;
+import java.util.LinkedList;
+import java.util.List;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author 
- * LMU ID: 23048598
- * COLLEGE ID: 230024
- * ErikaShrestha
+ * @author LMU ID: 23048598 COLLEGE ID: 230024 ErikaShrestha
  */
 public class KnotSpot extends javax.swing.JFrame {
-    
+
     private CardLayout cardLayout;
     private CardLayout cardLayoutForadminDashboard;
     private final String absolutePathForImage = "C:/Users/eerii\\OneDrive - islingtoncollege.edu.np\\CWs\\KnotSpot\\src\\com\\knotspot\\resource\\";
+
+    private List<VenueModel> venueDetails;
+    private DefaultTableModel defaultTableModel;
 
     /**
      * Creates new form knotSpotInterface
@@ -33,8 +37,11 @@ public class KnotSpot extends javax.swing.JFrame {
     public KnotSpot() {
         initComponents();
         startProgress();
-        jTable1.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(jPanel20));
-        jTable1.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(jPanel20));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(jPanel20));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(jPanel20));
+        venueDetails = new LinkedList<>();
+
+        addvenueDetailsToTable(new VenueModel(12, "nnn", "aa", "city", 982373, "type", 30, 23000));
     }
 
     /**
@@ -67,11 +74,12 @@ public class KnotSpot extends javax.swing.JFrame {
         jPanel5 = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        inputUsernameTxtFld = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        loginBtn = new javax.swing.JButton();
+        inputPasswordPwdFld = new javax.swing.JPasswordField();
+        usernameLoginErrorTxtFld = new javax.swing.JLabel();
+        passwordLoginErrorTxtFld = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         adminDashboardPagePnl = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -114,20 +122,22 @@ public class KnotSpot extends javax.swing.JFrame {
         jComboBox1 = new javax.swing.JComboBox<>();
         jComboBox2 = new javax.swing.JComboBox<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        venueModifyTbl = new javax.swing.JTable();
         jButton4 = new javax.swing.JButton();
         addVenuePagePnl = new javax.swing.JPanel();
         jPanel25 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
+        inputVenueNameTxtFld = new javax.swing.JTextField();
         jSlider1 = new javax.swing.JSlider();
         jSlider2 = new javax.swing.JSlider();
         jComboBox3 = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
         jComboBox4 = new javax.swing.JComboBox<>();
-        jTextField4 = new javax.swing.JTextField();
+        inputVenueAddressTxtFld = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
-        jButton6 = new javax.swing.JButton();
+        addVenueBtn = new javax.swing.JButton();
+        inputVenueIdTxtFld = new javax.swing.JTextField();
+        inputVenueContactTxtFld = new javax.swing.JTextField();
         jButton5 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         settingPagePnl = new javax.swing.JPanel();
@@ -161,18 +171,17 @@ public class KnotSpot extends javax.swing.JFrame {
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
@@ -290,52 +299,52 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jLabel10.setText("Username");
 
-        jTextField1.setBorder(null);
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        inputUsernameTxtFld.setBorder(null);
+        inputUsernameTxtFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                inputUsernameTxtFldActionPerformed(evt);
             }
         });
 
         jLabel11.setText("password");
 
-        jLabel12.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jLabel12.setText("Forgot password?");
-
-        jButton1.setText("LOG IN");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        loginBtn.setText("LOG IN");
+        loginBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                loginBtnActionPerformed(evt);
             }
         });
 
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        jPasswordField1.addActionListener(new java.awt.event.ActionListener() {
+        inputPasswordPwdFld.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        inputPasswordPwdFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jPasswordField1ActionPerformed(evt);
+                inputPasswordPwdFldActionPerformed(evt);
             }
         });
+
+        usernameLoginErrorTxtFld.setBackground(new java.awt.Color(0, 0, 0, 80));
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(loginBtn)
+                .addGap(118, 118, 118))
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(119, 119, 119)
                 .addComponent(jLabel9)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(116, 116, 116))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 64, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                    .addComponent(jLabel10)
-                    .addComponent(jPasswordField1))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(usernameLoginErrorTxtFld, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inputUsernameTxtFld, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwordLoginErrorTxtFld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(55, 55, 55))
         );
         jPanel5Layout.setVerticalGroup(
@@ -343,19 +352,21 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
-                .addGap(20, 20, 20)
+                .addGap(14, 14, 14)
                 .addComponent(jLabel10)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(inputUsernameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(usernameLoginErrorTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(11, 11, 11)
-                .addComponent(jLabel12)
+                .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(passwordLoginErrorTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addComponent(loginBtn)
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         loginPagePnl.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 320, 280));
@@ -791,15 +802,22 @@ public class KnotSpot extends javax.swing.JFrame {
 
             },
             new String [] {
-                "id", "name", "address", "city", "type", "capacity", "rent fee"
+                "id", "name", "address", "city", "contact", "type", "capacity", "rent fee"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
             }
         });
         frontDisplayTable.setFocusable(false);
@@ -925,11 +943,11 @@ public class KnotSpot extends javax.swing.JFrame {
         headerRenderForVenueTable.setBackground(Color.decode("#002147"));
         headerRenderForVenueTable.setForeground(Color.decode("#FFFFFF"));
         headerRenderForVenueTable.setHorizontalAlignment(SwingConstants.CENTER);
-        JTableHeader venuetableHeader = jTable1.getTableHeader();
+        JTableHeader venuetableHeader = venueModifyTbl.getTableHeader();
         venuetableHeader.setFont(new Font("Sans Serif", Font.BOLD, 8));
         venuetableHeader.setOpaque(false);
         venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        venueModifyTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null},
@@ -955,10 +973,11 @@ public class KnotSpot extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setShowHorizontalLines(true);
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(8).setPreferredWidth(80);
+        venueModifyTbl.setShowHorizontalLines(true);
+        jScrollPane2.setViewportView(venueModifyTbl);
+        if (venueModifyTbl.getColumnModel().getColumnCount() > 0) {
+            venueModifyTbl.getColumnModel().getColumn(0).setPreferredWidth(40);
+            venueModifyTbl.getColumnModel().getColumn(8).setPreferredWidth(80);
         }
 
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
@@ -1021,17 +1040,22 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jPanel25.setBackground(new java.awt.Color(204, 204, 204));
 
-        jTextField3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Venue Name"));
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        inputVenueNameTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Venue Name"));
+        inputVenueNameTxtFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                inputVenueNameTxtFldActionPerformed(evt);
             }
         });
 
+        jSlider1.setMaximum(200);
         jSlider1.setPaintLabels(true);
+        jSlider1.setMajorTickSpacing(50);
+        jSlider1.setMinorTickSpacing(5);
         jSlider1.setPaintTicks(true);
 
         jSlider2.setPaintLabels(true);
+        jSlider2.setMajorTickSpacing(50);
+        jSlider2.setMinorTickSpacing(5);
         jSlider2.setPaintTicks(true);
 
         jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -1042,10 +1066,10 @@ public class KnotSpot extends javax.swing.JFrame {
         jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jComboBox4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Type"));
 
-        jTextField4.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Address"));
-        jTextField4.addActionListener(new java.awt.event.ActionListener() {
+        inputVenueAddressTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Address"));
+        inputVenueAddressTxtFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField4ActionPerformed(evt);
+                inputVenueAddressTxtFldActionPerformed(evt);
             }
         });
 
@@ -1053,41 +1077,66 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jLabel20.setText("Per Plate Price:");
 
-        jButton6.setText("ADD");
+        addVenueBtn.setText("ADD");
+        addVenueBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addVenueBtnActionPerformed(evt);
+            }
+        });
+
+        inputVenueIdTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Venue ID"));
+        inputVenueIdTxtFld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputVenueIdTxtFldActionPerformed(evt);
+            }
+        });
+
+        inputVenueContactTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Contact No"));
+        inputVenueContactTxtFld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputVenueContactTxtFldActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel25Layout = new javax.swing.GroupLayout(jPanel25);
         jPanel25.setLayout(jPanel25Layout);
         jPanel25Layout.setHorizontalGroup(
             jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel25Layout.createSequentialGroup()
-                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(8, 8, 8)
+                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(227, 227, 227)
-                        .addComponent(jLabel18))
-                    .addGroup(jPanel25Layout.createSequentialGroup()
-                        .addGap(19, 19, 19)
+                        .addGap(11, 11, 11)
                         .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel25Layout.createSequentialGroup()
-                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel25Layout.createSequentialGroup()
-                                        .addComponent(jLabel20)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel25Layout.createSequentialGroup()
-                                        .addComponent(jLabel19)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel25Layout.createSequentialGroup()
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(35, 35, 35)
-                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(38, 38, 38)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
-                                .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton6)
-                                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                .addComponent(jLabel20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addComponent(jLabel19)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addComponent(addVenueBtn)
+                        .addGap(58, 58, 58))
+                    .addGroup(jPanel25Layout.createSequentialGroup()
+                        .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel25Layout.createSequentialGroup()
+                                .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(14, 14, 14))))
+            .addGroup(jPanel25Layout.createSequentialGroup()
+                .addGap(227, 227, 227)
+                .addComponent(jLabel18)
                 .addGap(28, 28, 28))
         );
         jPanel25Layout.setVerticalGroup(
@@ -1097,11 +1146,14 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(jLabel18)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 31, Short.MAX_VALUE)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(57, 57, 57)
+                    .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel25Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel19)
                     .addComponent(jSlider2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1110,7 +1162,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(jLabel20)
                     .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton6)
+                .addComponent(addVenueBtn)
                 .addGap(17, 17, 17))
         );
 
@@ -1138,7 +1190,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGroup(addVenuePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(jButton5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                 .addComponent(jPanel25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1280,24 +1332,14 @@ public class KnotSpot extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void loadScreen(String screenName){
-        cardLayout = (CardLayout) jPanel1.getLayout();
-        cardLayout.show(jPanel1, screenName);
-    }
-    
-    private void loadNavRelatedPage(String screenName){
-        cardLayoutForadminDashboard = (CardLayout) adminDashboardPagesPnl.getLayout();
-        cardLayoutForadminDashboard.show(adminDashboardPagesPnl, screenName);
-    }
-    
+
     private void startProgress() {
         javax.swing.SwingWorker<Void, Integer> worker = new javax.swing.SwingWorker<>() {
             @Override
             protected Void doInBackground() throws Exception {
                 for (int i = 0; i <= 100; i++) {
-                    Thread.sleep(50); 
-                    publish(i); 
+                    Thread.sleep(50);
+                    publish(i);
                 }
                 return null;
             }
@@ -1346,33 +1388,81 @@ public class KnotSpot extends javax.swing.JFrame {
         };
         worker.execute();
     }
-    
-    
-    
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        loadScreen("AdminScreen");
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void loadScreen(String screenName) {
+        cardLayout = (CardLayout) jPanel1.getLayout();
+        cardLayout.show(jPanel1, screenName);
+    }
 
-    private void jPasswordField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordField1ActionPerformed
+    private void loadNavRelatedPage(String screenName) {
+        cardLayoutForadminDashboard = (CardLayout) adminDashboardPagesPnl.getLayout();
+        cardLayoutForadminDashboard.show(adminDashboardPagesPnl, screenName);
+    }
+
+    private void addvenueDetailsToTable(VenueModel venue) {
+        venueDetails.add(venue);
+        //to get the row and column we have a default function
+        defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
+        defaultTableModel.addRow(new Object[]{venue.getVenueId(), venue.getVenueName(), venue.getAddress(), venue.getCity(), venue.getContactNumber(), venue.getVenueType(), venue.getCapacity(), venue.getRentFee()});
+
+    }
+
+
+    private void inputUsernameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jPasswordField1ActionPerformed
+    }//GEN-LAST:event_inputUsernameTxtFldActionPerformed
+
+    private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
+        // TODO add your handling code here:
+        String username = inputUsernameTxtFld.getText();
+        String password = new String(inputPasswordPwdFld.getPassword());
+        if (username.isEmpty() && password.isEmpty()) {
+            usernameLoginErrorTxtFld.setText("Enter your username");
+            passwordLoginErrorTxtFld.setText("Enter your password");
+        } else if (username.isEmpty()) {
+            usernameLoginErrorTxtFld.setText("Enter your username");
+            passwordLoginErrorTxtFld.setText("");
+        } else if (password.isEmpty()) {
+            passwordLoginErrorTxtFld.setText("Enter your password");
+            usernameLoginErrorTxtFld.setText("");
+        } else {
+            boolean isValidUsername = username.equals("admin");
+            boolean isValidPassword = password.equals("admin");
+
+            if (!isValidUsername && !isValidPassword) {
+                usernameLoginErrorTxtFld.setText("Your username is incorrect");
+                passwordLoginErrorTxtFld.setText("Your password is incorrect");
+
+            } else if (!isValidUsername) {
+                usernameLoginErrorTxtFld.setText("Your username is incorrect");
+                passwordLoginErrorTxtFld.setText("");
+            } else if (!isValidPassword) {
+                passwordLoginErrorTxtFld.setText("password is incorrect");
+                usernameLoginErrorTxtFld.setText("");
+            } else {
+                usernameLoginErrorTxtFld.setText("");
+                passwordLoginErrorTxtFld.setText("");
+                loadScreen("AdminScreen");
+            }
+        }
+
+    }//GEN-LAST:event_loginBtnActionPerformed
+
+    private void inputPasswordPwdFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputPasswordPwdFldActionPerformed
 
     private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField2ActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void inputVenueNameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueNameTxtFldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_inputVenueNameTxtFldActionPerformed
 
-    private void jTextField4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField4ActionPerformed
+    private void inputVenueAddressTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueAddressTxtFldActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField4ActionPerformed
+    }//GEN-LAST:event_inputVenueAddressTxtFldActionPerformed
 
     private void manageVenueNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVenueNavPnlMouseClicked
         // TODO add your handling code here:
@@ -1436,6 +1526,34 @@ public class KnotSpot extends javax.swing.JFrame {
     private void settingNavPnl1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnl1MouseExited
         // TODO add your handling code here:
     }//GEN-LAST:event_settingNavPnl1MouseExited
+
+    private void inputVenueIdTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueIdTxtFldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputVenueIdTxtFldActionPerformed
+
+    private void addVenueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVenueBtnActionPerformed
+        // TODO add your handling code here:
+        if (!ValidationUtil.isNullorEmpty(inputVenueIdTxtFld.getText()) || !ValidationUtil.isNullorEmpty(inputVenueNameTxtFld.getText()) || !ValidationUtil.isNullorEmpty(inputVenueAddressTxtFld.getText()) || !ValidationUtil.isNullorEmpty(inputVenueContactTxtFld.getText())) {
+            if (!ValidationUtil.isNumber(inputVenueIdTxtFld.getText())) {
+                int venueId = Integer.parseInt(inputVenueIdTxtFld.getText());
+                if (!ValidationUtil.isIdValid(inputVenueIdTxtFld.getText())) {
+
+                }
+            }
+            if (!ValidationUtil.isNumber(inputVenueContactTxtFld.getText())) {
+                int venueContact = Integer.parseInt(inputVenueContactTxtFld.getText());
+                if (!ValidationUtil.isIdValid(inputVenueContactTxtFld.getText())) {
+
+                }
+            }
+
+        }
+
+    }//GEN-LAST:event_addVenueBtnActionPerformed
+
+    private void inputVenueContactTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueContactTxtFldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_inputVenueContactTxtFldActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -1473,6 +1591,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addVenueBtn;
     private javax.swing.JPanel addVenuePagePnl;
     private javax.swing.JPanel adminDashboardPagePnl;
     private javax.swing.JPanel adminDashboardPagesPnl;
@@ -1483,15 +1602,19 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton goToHomePageBtn;
     private javax.swing.JPanel homePagePnl;
     private javax.swing.JPanel imageContainerPnl;
+    private javax.swing.JPasswordField inputPasswordPwdFld;
+    private javax.swing.JTextField inputUsernameTxtFld;
+    private javax.swing.JTextField inputVenueAddressTxtFld;
+    private javax.swing.JTextField inputVenueContactTxtFld;
+    private javax.swing.JTextField inputVenueIdTxtFld;
+    private javax.swing.JTextField inputVenueNameTxtFld;
     private javax.swing.JLabel introLineOneLbl;
     private javax.swing.JLabel introLineThreeLbl;
     private javax.swing.JLabel introLineTwoLbl;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
@@ -1500,7 +1623,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel16;
@@ -1540,7 +1662,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
@@ -1548,25 +1669,25 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JSlider jSlider1;
     private javax.swing.JSlider jSlider2;
     private javax.swing.JSplitPane jSplitPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     private javax.swing.JPanel loadingPagePnl;
     private javax.swing.JProgressBar loadingPagePrgBar;
     private javax.swing.JLabel loadingSymbolLbl;
     private javax.swing.JLabel loadingValueLbl;
+    private javax.swing.JButton loginBtn;
     private javax.swing.JPanel loginPagePnl;
     private javax.swing.JLabel logoIconLbl;
     private javax.swing.JLabel manageVenueNavLbl;
     private javax.swing.JPanel manageVenueNavPnl;
     private javax.swing.JLabel multipleImageLbl;
+    private javax.swing.JLabel passwordLoginErrorTxtFld;
     private javax.swing.JLabel settingNavLbl;
     private javax.swing.JLabel settingNavLbl1;
     private javax.swing.JPanel settingNavPnl;
     private javax.swing.JPanel settingNavPnl1;
     private javax.swing.JPanel settingPagePnl;
+    private javax.swing.JLabel usernameLoginErrorTxtFld;
     private javax.swing.JPanel venueManagePagePnl;
+    private javax.swing.JTable venueModifyTbl;
     // End of variables declaration//GEN-END:variables
 }
