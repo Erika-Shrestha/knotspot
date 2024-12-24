@@ -17,14 +17,14 @@ public class VenueModel {
     private String venueName;
     private String address;
     private String city;
-    private int contactNumber;
+    private String contactNumber;
     private String venueType;
     private int capacity;
     private int rentFee;
     
     public VenueModel(){}
 
-    public VenueModel(int venueId, String venueName, String address, String city, int contactNumber, String venueType, int capacity, int rentFee) {
+    public VenueModel(int venueId, String venueName, String address, String city, String contactNumber, String venueType, int capacity, int rentFee) {
         this.venueId = venueId;
         this.venueName = venueName;
         this.address = address;
@@ -67,11 +67,11 @@ public class VenueModel {
         this.city = city;
     }
 
-    public int getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public void setContactNumber(int contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 

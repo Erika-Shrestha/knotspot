@@ -1539,7 +1539,7 @@ public class KnotSpot extends javax.swing.JFrame {
         String venueName= null;
         String venueAddress= null; 
         String venueCity = String.valueOf(venueCityComboBx.getSelectedItem());
-        int venueContactNumber = 0;
+        String venueContactNumber = null;
         String venueType = String.valueOf(venueTypeComboBx.getSelectedItem());
         int venueCapacity = venueCapacitySlider.getValue();
         int perPlatePrice = perPlatePriceSlider.getValue();
@@ -1573,7 +1573,7 @@ public class KnotSpot extends javax.swing.JFrame {
         
         try{
             ValidationUtil.isContactValid(inputVenueContactTxtFld.getText(), "Venue contact number");
-            venueContactNumber = Integer.parseInt(inputVenueContactTxtFld.getText());
+            venueContactNumber = inputVenueContactTxtFld.getText();
         }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
             inputVenueContactTxtFld.setText(e.getMessage());
             isValid = false; //exception

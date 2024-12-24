@@ -55,7 +55,6 @@ public class ValidationUtil {
 
     public static void isContactValid(String venueContact, String attribute) {
         isNullorEmpty(venueContact, attribute);
-        isNumber(venueContact, attribute);
         if(!CONTACT_PATTERN.matcher(String.valueOf(venueContact)).matches()){
             throw new NumberFormatException(attribute +" is incorrect!");
         }
