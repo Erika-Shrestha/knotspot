@@ -372,11 +372,6 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="loginBtn" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
                           <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -393,6 +388,11 @@
                               <Component id="passwordLoginErrorTxtFld" alignment="1" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="loginBtn" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -1600,7 +1600,7 @@
                             <Component class="javax.swing.JTable" name="venueModifyTbl">
                               <Properties>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                                  <Table columnCount="9" rowCount="4">
+                                  <Table columnCount="9" rowCount="0">
                                     <Column editable="false" title="ID" type="java.lang.Integer"/>
                                     <Column editable="false" title="Name" type="java.lang.String"/>
                                     <Column editable="false" title="Address" type="java.lang.String"/>
@@ -1677,7 +1677,9 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="jButton4"/>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/com/knotspot/resource/search_icon.png"/>
+                            </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                               <Border info="null"/>
                             </Property>
@@ -1752,12 +1754,12 @@
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                                  <Component id="jSlider1" min="-2" pref="269" max="-2" attributes="0"/>
+                                                  <Component id="perPlatePriceSlider" min="-2" pref="269" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace max="-2" attributes="0"/>
-                                                  <Component id="jSlider2" min="-2" pref="269" max="-2" attributes="0"/>
+                                                  <Component id="venueCapacitySlider" min="-2" pref="269" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
@@ -1774,11 +1776,11 @@
                                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                                   <Component id="inputVenueNameTxtFld" min="-2" pref="98" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox4" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  <Component id="venueTypeComboBx" min="-2" pref="87" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="inputVenueAddressTxtFld" min="-2" pref="98" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="jComboBox3" min="-2" pref="91" max="-2" attributes="0"/>
+                                                  <Component id="venueCityComboBx" min="-2" pref="91" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
@@ -1800,9 +1802,9 @@
                                   <EmptySpace pref="31" max="32767" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="inputVenueNameTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox4" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Component id="venueTypeComboBx" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                       <Component id="inputVenueAddressTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jComboBox3" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                      <Component id="venueCityComboBx" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
                                       <Component id="inputVenueIdTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -1810,12 +1812,12 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel19" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jSlider2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="venueCapacitySlider" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="jLabel20" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jSlider1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="perPlatePriceSlider" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="addVenueBtn" min="-2" max="-2" attributes="0"/>
@@ -1841,20 +1843,20 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputVenueNameTxtFldActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JSlider" name="jSlider1">
+                        <Component class="javax.swing.JSlider" name="perPlatePriceSlider">
                           <Properties>
                             <Property name="maximum" type="int" value="200"/>
-                            <Property name="paintLabels" type="boolean" value="true" postCode="jSlider1.setMajorTickSpacing(50);&#xa;jSlider1.setMinorTickSpacing(5);"/>
+                            <Property name="paintLabels" type="boolean" value="true" postCode="perPlatePriceSlider.setMajorTickSpacing(50);&#xa;perPlatePriceSlider.setMinorTickSpacing(5);"/>
                             <Property name="paintTicks" type="boolean" value="true"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JSlider" name="jSlider2">
+                        <Component class="javax.swing.JSlider" name="venueCapacitySlider">
                           <Properties>
-                            <Property name="paintLabels" type="boolean" value="true" postCode="jSlider2.setMajorTickSpacing(50);&#xa;jSlider2.setMinorTickSpacing(5);"/>
+                            <Property name="paintLabels" type="boolean" value="true" postCode="venueCapacitySlider.setMajorTickSpacing(50);&#xa;venueCapacitySlider.setMinorTickSpacing(5);"/>
                             <Property name="paintTicks" type="boolean" value="true"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="jComboBox3">
+                        <Component class="javax.swing.JComboBox" name="venueCityComboBx">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="4">
@@ -1883,7 +1885,7 @@
                             <Property name="text" type="java.lang.String" value="Input Venue Details"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="jComboBox4">
+                        <Component class="javax.swing.JComboBox" name="venueTypeComboBx">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="4">

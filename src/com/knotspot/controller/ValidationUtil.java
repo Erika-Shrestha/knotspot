@@ -6,6 +6,7 @@ package com.knotspot.controller;
 
 import java.util.regex.Pattern;
 
+
 /**
  *
  * @author LMU ID: 23048598 COLLEGE ID: 230024 ErikaShrestha
@@ -21,36 +22,61 @@ public class ValidationUtil {
     private static final Pattern ALPHANUMERIC_PATTERN = Pattern.compile("^[a-zA-Z0-9]+$");  
     private static final Pattern ALPHABETIC_PATTERN = Pattern.compile("^[a-zA-Z]+$");
     
-    public static boolean isNullorEmpty(String value) {
-        return value == null || value.trim().isEmpty();
+    public static void isNullorEmpty(String value, String attribute) {
+        if( value == null || value.trim().isEmpty())
+            throw new NullPointerException(attribute + " is empty!");
+            
     }
 
-    public static boolean isIdValid(String venueId) {
-        return !isNullorEmpty(venueId) && ID_PATTERN.matcher(String.valueOf(venueId)).matches();
+    public static void isIdValid(String venueId, String attribute) {
+        isNullorEmpty(venueId, attribute);
+        isNumber(venueId, attribute);
+        if (!ID_PATTERN.matcher(String.valueOf(venueId)).matches()){
+            throw new IndexOutOfBoundsException(attribute +" is incorrect!");
+        }
     }
 
-    public static boolean isNameValid(String venueName) {
-        return !isNullorEmpty(venueName) && NAME_PATTERN.matcher(String.valueOf(venueName)).matches();
+    public static void isNameValid(String venueName, String attribute) {
+        isNullorEmpty(venueName, attribute);
+        isAlphabetic(venueName, attribute);
+        if (!NAME_PATTERN.matcher(String.valueOf(venueName)).matches()){
+            throw new IndexOutOfBoundsException(attribute +" is incorrect!");
+        }
+        
     }
 
-    public static boolean isAddressValid(String venueAddress) {
-        return !isNullorEmpty(venueAddress) && ADDRESS_PATTERN.matcher(String.valueOf(venueAddress)).matches();
+    public static void isAddressValid(String venueAddress, String attribute) {
+        isNullorEmpty(venueAddress, attribute);
+        isAlphabetic(venueAddress, attribute);
+        if (!ADDRESS_PATTERN.matcher(String.valueOf(venueAddress)).matches()){
+            throw new IndexOutOfBoundsException(attribute +" is incorrect!");
+        }
     }
 
-    public static boolean isContactValid(String venueContact) {
-        return !isNullorEmpty(venueContact) && CONTACT_PATTERN.matcher(String.valueOf(venueContact)).matches();
+    public static void isContactValid(String venueContact, String attribute) {
+        isNullorEmpty(venueContact, attribute);
+        isNumber(venueContact, attribute);
+        if(!CONTACT_PATTERN.matcher(String.valueOf(venueContact)).matches()){
+            throw new NumberFormatException(attribute +" is incorrect!");
+        }
     }
 
-    public static boolean isNumber(String value) {
-        return !isNullorEmpty(value) && NUMBER_PATTERN.matcher(String.valueOf(value)).matches();
+    public static void isNumber(String value, String attribute) {
+        if(!NUMBER_PATTERN.matcher(String.valueOf(value)).matches()){
+        throw new NumberFormatException("input value in number");}
+        
     }
 
-    public static boolean isAlphaNumeric(String value) {
-        return !isNullorEmpty(value) && ALPHANUMERIC_PATTERN.matcher(String.valueOf(value)).matches();
+    public static void isAlphaNumeric(String value, String attribute) {
+        if(!ALPHANUMERIC_PATTERN.matcher(String.valueOf(value)).matches()){
+            throw new NumberFormatException("input value in number");
+        }
     }
     
-    public static boolean isAlphabetic(String value) {
-        return !isNullorEmpty(value) && ALPHABETIC_PATTERN.matcher(String.valueOf(value)).matches();
+    public static void isAlphabetic(String value, String attribute) {
+        if(!ALPHABETIC_PATTERN.matcher(String.valueOf(value)).matches()){
+             throw new NumberFormatException("input value in number");
+        }
     }
     
 
