@@ -38,8 +38,8 @@ public class KnotSpot extends javax.swing.JFrame {
     public KnotSpot() {
         initComponents();
         startProgress();
-        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(jPanel20));
-        venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(jPanel20));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(actionColumnPnl));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(actionColumnPnl));
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         addVenueSuccessOptPane.setVisible(false);
@@ -55,10 +55,10 @@ public class KnotSpot extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel20 = new javax.swing.JPanel();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        actionColumnPnl = new javax.swing.JPanel();
+        editVenueDetailsBtn = new javax.swing.JButton();
+        removeVenueDetailsBtn = new javax.swing.JButton();
+        viewVenueDetailsBtn = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         companyIntroPnl = new javax.swing.JPanel();
@@ -160,40 +160,50 @@ public class KnotSpot extends javax.swing.JFrame {
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
 
-        jPanel20.setBackground(new java.awt.Color(255, 255, 255));
+        actionColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jButton2.setText("E");
-        jButton2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        editVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        editVenueDetailsBtn.setText("E");
+        editVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        editVenueDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editVenueDetailsBtnActionPerformed(evt);
+            }
+        });
 
-        jButton3.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jButton3.setText("R");
-        jButton3.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        removeVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        removeVenueDetailsBtn.setText("R");
+        removeVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        removeVenueDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeVenueDetailsBtnActionPerformed(evt);
+            }
+        });
 
-        jButton7.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        jButton7.setText("V");
-        jButton7.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        viewVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        viewVenueDetailsBtn.setText("V");
+        viewVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
-        jPanel20.setLayout(jPanel20Layout);
-        jPanel20Layout.setHorizontalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel20Layout.createSequentialGroup()
+        javax.swing.GroupLayout actionColumnPnlLayout = new javax.swing.GroupLayout(actionColumnPnl);
+        actionColumnPnl.setLayout(actionColumnPnlLayout);
+        actionColumnPnlLayout.setHorizontalGroup(
+            actionColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(actionColumnPnlLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(editVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(removeVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(viewVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        jPanel20Layout.setVerticalGroup(
-            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+        actionColumnPnlLayout.setVerticalGroup(
+            actionColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, actionColumnPnlLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton7)))
+                .addGroup(actionColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editVenueDetailsBtn)
+                    .addComponent(removeVenueDetailsBtn)
+                    .addComponent(viewVenueDetailsBtn)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -999,6 +1009,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        venueModifyTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         venueModifyTbl.setShowHorizontalLines(true);
         jScrollPane2.setViewportView(venueModifyTbl);
         if (venueModifyTbl.getColumnModel().getColumnCount() > 0) {
@@ -1009,56 +1020,6 @@ public class KnotSpot extends javax.swing.JFrame {
         jButton4.setBackground(new java.awt.Color(204, 204, 204));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/search_icon.png"))); // NOI18N
         jButton4.setBorder(null);
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout venueManagePagePnlLayout = new javax.swing.GroupLayout(venueManagePagePnl);
-        venueManagePagePnl.setLayout(venueManagePagePnlLayout);
-        venueManagePagePnlLayout.setHorizontalGroup(
-            venueManagePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        venueManagePagePnlLayout.setVerticalGroup(
-            venueManagePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venueManagePagePnlLayout.createSequentialGroup()
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        adminDashboardPagesPnl.add(venueManagePagePnl, "ManageVenuePage");
 
         addVenuePagePnl.setMaximumSize(new java.awt.Dimension(560, 340));
         addVenuePagePnl.setMinimumSize(new java.awt.Dimension(560, 340));
@@ -1178,7 +1139,65 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(inputAddVenueDetailsPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
         );
 
-        adminDashboardPagesPnl.add(addVenuePagePnl, "AddVenuePage");
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane2)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18))
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel22Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(addVenuePagePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel22Layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(addVenuePagePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout venueManagePagePnlLayout = new javax.swing.GroupLayout(venueManagePagePnl);
+        venueManagePagePnl.setLayout(venueManagePagePnlLayout);
+        venueManagePagePnlLayout.setHorizontalGroup(
+            venueManagePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        venueManagePagePnlLayout.setVerticalGroup(
+            venueManagePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(venueManagePagePnlLayout.createSequentialGroup()
+                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel23, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        adminDashboardPagesPnl.add(venueManagePagePnl, "ManageVenuePage");
 
         settingPagePnl.setMaximumSize(new java.awt.Dimension(560, 340));
         settingPagePnl.setMinimumSize(new java.awt.Dimension(560, 340));
@@ -1400,7 +1419,7 @@ public class KnotSpot extends javax.swing.JFrame {
         if (username.isEmpty() && password.isEmpty()) {
             ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your username");
             ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your password");
-            
+            loadScreen("AdminScreen");
         } 
 
 
@@ -1575,6 +1594,20 @@ public class KnotSpot extends javax.swing.JFrame {
     private void usernameLoginErrorTxtFldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameLoginErrorTxtFldMouseEntered
         // TODO add your handling code here:
     }//GEN-LAST:event_usernameLoginErrorTxtFldMouseEntered
+
+    private void editVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editVenueDetailsBtnActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_editVenueDetailsBtnActionPerformed
+
+    private void removeVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtnActionPerformed
+        // TODO add your handling code here:
+        int column = 0;
+        if(venueModifyTbl.getSelectedRowCount()==1){
+            
+        
+        }
+    }//GEN-LAST:event_removeVenueDetailsBtnActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -1612,6 +1645,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel actionColumnPnl;
     private javax.swing.JButton addVenueBtn;
     private javax.swing.JPanel addVenuePagePnl;
     private javax.swing.JOptionPane addVenueSuccessOptPane;
@@ -1621,6 +1655,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel companyIntroPnl;
     private javax.swing.JLabel companyTitleLbl;
     private javax.swing.JLabel contactErrorMsgLbl;
+    private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JTable frontDisplayTable;
     private javax.swing.JButton goToAddVenuePageBtn;
     private javax.swing.JButton goToHomePageBtn;
@@ -1637,11 +1672,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel introLineOneLbl;
     private javax.swing.JLabel introLineThreeLbl;
     private javax.swing.JLabel introLineTwoLbl;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
@@ -1676,7 +1708,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel17;
     private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel20;
     private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel23;
     private javax.swing.JPanel jPanel3;
@@ -1704,6 +1735,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel nameErrorMsgLbl;
     private javax.swing.JLabel passwordLoginErrorTxtFld;
     private javax.swing.JSlider perPlatePriceSlider;
+    private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JLabel settingNavLbl;
     private javax.swing.JLabel settingNavLbl1;
     private javax.swing.JPanel settingNavPnl;
@@ -1716,5 +1748,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel venueManagePagePnl;
     private javax.swing.JTable venueModifyTbl;
     private javax.swing.JComboBox<String> venueTypeComboBx;
+    private javax.swing.JButton viewVenueDetailsBtn;
     // End of variables declaration//GEN-END:variables
 }
