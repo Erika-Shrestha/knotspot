@@ -1400,37 +1400,8 @@ public class KnotSpot extends javax.swing.JFrame {
         if (username.isEmpty() && password.isEmpty()) {
             ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your username");
             ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your password");
-            return;
-        } else if (username.isEmpty()) {
-            ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your username");
-            passwordLoginErrorTxtFld.setText("");
-            return;
-        } else if (password.isEmpty()) {
-            ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your password");
-            usernameLoginErrorTxtFld.setText("");
-            return;
-        } else {
-            boolean isValidUsername = username.equals("admin");
-            boolean isValidPassword = password.equals("admin");
-
-            if (!isValidUsername && !isValidPassword) {
-                
-                ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your username is incorrect");
-                ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your password is incorrect");
-                
-
-            } else if (!isValidUsername) {
-                ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your username is incorrect");
-                passwordLoginErrorTxtFld.setText("");
-            } else if (!isValidPassword) {
-                ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your password is incorrect");
-                usernameLoginErrorTxtFld.setText("");
-            } else {
-                usernameLoginErrorTxtFld.setText("");
-                passwordLoginErrorTxtFld.setText("");
-                loadScreen("AdminScreen");
-            }
-        }
+            
+        } 
 
 
     }//GEN-LAST:event_loginBtnActionPerformed
