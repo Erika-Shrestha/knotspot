@@ -1550,7 +1550,7 @@ public class KnotSpot extends javax.swing.JFrame {
         try{
             ValidationUtil.isIdValid(inputVenueIdTxtFld.getText(), "Venue Id");
             venueId = Integer.parseInt(inputVenueIdTxtFld.getText());
-        }catch(NullPointerException | NumberFormatException e){
+        }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
             inputVenueIdTxtFld.setText(e.getMessage());
             isValid = false; //exception
         }
