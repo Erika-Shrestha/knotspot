@@ -16,7 +16,7 @@ public class ValidationUtil {
     //follow naming convention for regex pattern
     private static final Pattern ID_PATTERN = Pattern.compile("^[1-9][0-9]{4}$");
     private static final Pattern NAME_PATTERN = Pattern.compile("^[A-Za-z][A-Za-z\\s'-]{0,49}$");
-    private static final Pattern ADDRESS_PATTERN = Pattern.compile("^[A-Za-z0-9\\s,.-]{1,100}$");
+    private static final Pattern ADDRESS_PATTERN = Pattern.compile("^[a-zA-Z ]+$");
     private static final Pattern CONTACT_PATTERN = Pattern.compile("^98\\d{8}$");
     private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d+$");
     private static final Pattern ALPHANUMERIC_PATTERN = Pattern.compile("^[a-zA-Z0-9]+$");  
