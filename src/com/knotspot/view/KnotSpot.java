@@ -41,7 +41,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(jPanel20));
         venueDetails = new LinkedList<>();
 
-        addvenueDetailsToTable(new VenueModel(12, "nnn", "aa", "city", 982373, "type", 30, 23000));
+        addvenueDetailsToTable(new VenueModel(12, "nnn", "aa", "city", "982373", "type", 30, 23000));
     }
 
     /**
@@ -1550,7 +1550,7 @@ public class KnotSpot extends javax.swing.JFrame {
         try{
             ValidationUtil.isIdValid(inputVenueIdTxtFld.getText(), "Venue Id");
             venueId = Integer.parseInt(inputVenueIdTxtFld.getText());
-        }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
+        }catch(NullPointerException | NumberFormatException e){
             inputVenueIdTxtFld.setText(e.getMessage());
             isValid = false; //exception
         }
@@ -1558,7 +1558,7 @@ public class KnotSpot extends javax.swing.JFrame {
         try{
             ValidationUtil.isNameValid(inputVenueNameTxtFld.getText(), "Venue name");
             venueName = inputVenueNameTxtFld.getText();
-        }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
+        }catch(NullPointerException | NumberFormatException e){
             inputVenueNameTxtFld.setText(e.getMessage());
             isValid = false; //exception
         }
@@ -1566,7 +1566,7 @@ public class KnotSpot extends javax.swing.JFrame {
         try{
             ValidationUtil.isAddressValid(inputVenueAddressTxtFld.getText(), "Venue address");
             venueAddress = inputVenueAddressTxtFld.getText();
-        }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
+        }catch(NullPointerException | NumberFormatException e){
             inputVenueAddressTxtFld.setText(e.getMessage());
             isValid = false; //exception
         }
@@ -1574,7 +1574,7 @@ public class KnotSpot extends javax.swing.JFrame {
         try{
             ValidationUtil.isContactValid(inputVenueContactTxtFld.getText(), "Venue contact number");
             venueContactNumber = inputVenueContactTxtFld.getText();
-        }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
+        }catch(NullPointerException | NumberFormatException e){
             inputVenueContactTxtFld.setText(e.getMessage());
             isValid = false; //exception
         }

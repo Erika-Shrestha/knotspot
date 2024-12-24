@@ -40,7 +40,7 @@ public class ValidationUtil {
         isNullorEmpty(venueName, attribute);
         isAlphabetic(venueName, attribute);
         if (!NAME_PATTERN.matcher(String.valueOf(venueName)).matches()){
-            throw new IndexOutOfBoundsException(attribute +" is incorrect!");
+            throw new NumberFormatException(attribute +" is incorrect!");
         }
         
     }
@@ -49,7 +49,7 @@ public class ValidationUtil {
         isNullorEmpty(venueAddress, attribute);
         isAlphabetic(venueAddress, attribute);
         if (!ADDRESS_PATTERN.matcher(String.valueOf(venueAddress)).matches()){
-            throw new IndexOutOfBoundsException(attribute +" is incorrect!");
+            throw new NumberFormatException(attribute +" is incorrect!");
         }
     }
 
