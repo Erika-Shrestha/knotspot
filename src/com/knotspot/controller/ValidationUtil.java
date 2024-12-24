@@ -4,7 +4,13 @@
  */
 package com.knotspot.controller;
 
+import com.knotspot.model.VenueModel;
+import java.awt.Color;
+import java.awt.Font;
+import java.util.List;
 import java.util.regex.Pattern;
+import javax.swing.JLabel;
+import javax.swing.JTextField;
 
 
 /**
@@ -32,7 +38,7 @@ public class ValidationUtil {
         isNullorEmpty(venueId, attribute);
         isNumber(venueId, attribute);
         if (!ID_PATTERN.matcher(String.valueOf(venueId)).matches()){
-            throw new IndexOutOfBoundsException(attribute +" is incorrect!");
+            throw new IndexOutOfBoundsException(attribute +" must be of 5 digit");
         }
     }
 
@@ -40,7 +46,7 @@ public class ValidationUtil {
         isNullorEmpty(venueName, attribute);
         isAlphabetic(venueName, attribute);
         if (!NAME_PATTERN.matcher(String.valueOf(venueName)).matches()){
-            throw new IllegalArgumentException(attribute +" is incorrect!");
+            throw new IllegalArgumentException(attribute +" must be a proper name");
         }
         
     }
@@ -49,7 +55,7 @@ public class ValidationUtil {
         isNullorEmpty(venueAddress, attribute);
         isAlphabetic(venueAddress, attribute);
         if (!ADDRESS_PATTERN.matcher(venueAddress).matches()){
-            throw new IllegalArgumentException(attribute +" is incorrect!");
+            throw new IllegalArgumentException(attribute +" must be a proper address");
         }
     }
 
@@ -62,7 +68,7 @@ public class ValidationUtil {
 
     public static void isNumber(String value, String attribute) {
         if(!NUMBER_PATTERN.matcher(String.valueOf(value)).matches()){
-        throw new NumberFormatException("input value in number");}
+        throw new NumberFormatException(attribute+ "in digit");}
         
     }
 
@@ -74,8 +80,34 @@ public class ValidationUtil {
     
     public static void isAlphabetic(String value, String attribute) {
         if(!ALPHABETIC_PATTERN.matcher(value).matches()){
-             throw new NumberFormatException("input value in number");
+             throw new NumberFormatException(attribute+ "use only alpha characters");
         }
+    }
+    
+    public static boolean isDuplicate(List<VenueModel> value, int venueId, String venueContact){
+        for (VenueModel venues : value){
+            if(venues.getVenueId()==venueId || venues.getContactNumber().equals(venueContact)){
+                return true;
+            }
+        
+        }
+        return false;
+    
+    }
+    
+    public static void venueValidateColor(JTextField field, JLabel label, Color borderColor, Color textColor, String message, String title){
+        field.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2), title, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,javax.swing.border.TitledBorder.DEFAULT_POSITION,new java.awt.Font("Segoe UI", Font.PLAIN, 12),textColor));
+        label.setText(message);
+        label.setForeground(borderColor);
+        
+    
+    }
+    
+    public static void authenticationColor(JLabel label, Color backgroundColor, Color textColor , boolean value, String message){
+    label.setBackground(backgroundColor);
+    label.setForeground(textColor);
+    label.setText(message);
+    label.setOpaque(value);
     }
     
 

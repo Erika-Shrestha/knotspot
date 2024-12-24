@@ -43,8 +43,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         addVenueSuccessOptPane.setVisible(false);
-        
-        
+
     }
 
     /**
@@ -83,6 +82,7 @@ public class KnotSpot extends javax.swing.JFrame {
         inputPasswordPwdFld = new javax.swing.JPasswordField();
         usernameLoginErrorTxtFld = new javax.swing.JLabel();
         passwordLoginErrorTxtFld = new javax.swing.JLabel();
+        showPwdCheckBx = new javax.swing.JCheckBox();
         jLabel13 = new javax.swing.JLabel();
         adminDashboardPagePnl = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
@@ -142,6 +142,10 @@ public class KnotSpot extends javax.swing.JFrame {
         addVenueBtn = new javax.swing.JButton();
         inputVenueIdTxtFld = new javax.swing.JTextField();
         inputVenueContactTxtFld = new javax.swing.JTextField();
+        contactErrorMsgLbl = new javax.swing.JLabel();
+        idErrorMsgLbl = new javax.swing.JLabel();
+        nameErrorMsgLbl = new javax.swing.JLabel();
+        addressErrorMsgLbl = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         settingPagePnl = new javax.swing.JPanel();
@@ -319,7 +323,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        inputPasswordPwdFld.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        inputPasswordPwdFld.setBorder(null);
         inputPasswordPwdFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputPasswordPwdFldActionPerformed(evt);
@@ -327,6 +331,19 @@ public class KnotSpot extends javax.swing.JFrame {
         });
 
         usernameLoginErrorTxtFld.setBackground(new java.awt.Color(0, 0, 0, 80));
+        usernameLoginErrorTxtFld.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                usernameLoginErrorTxtFldMouseEntered(evt);
+            }
+        });
+
+        showPwdCheckBx.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        showPwdCheckBx.setText("show password");
+        showPwdCheckBx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                showPwdCheckBxActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -338,14 +355,20 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addGap(0, 64, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(usernameLoginErrorTxtFld, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputUsernameTxtFld, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(passwordLoginErrorTxtFld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(55, 55, 55))
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(usernameLoginErrorTxtFld, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputUsernameTxtFld, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 201, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(55, 55, 55))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(passwordLoginErrorTxtFld, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(showPwdCheckBx, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(32, 32, 32))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(loginBtn)
@@ -367,10 +390,12 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(passwordLoginErrorTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(passwordLoginErrorTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(showPwdCheckBx))
                 .addGap(18, 18, 18)
                 .addComponent(loginBtn)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         loginPagePnl.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 320, 280));
@@ -1041,7 +1066,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         inputAddVenueDetailsPnl.setBackground(new java.awt.Color(204, 204, 204));
         inputAddVenueDetailsPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        inputAddVenueDetailsPnl.add(addVenueSuccessOptPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, -1, -1));
+        inputAddVenueDetailsPnl.add(addVenueSuccessOptPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
 
         inputVenueNameTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Venue Name"));
         inputVenueNameTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1097,7 +1122,7 @@ public class KnotSpot extends javax.swing.JFrame {
         });
         inputAddVenueDetailsPnl.add(addVenueBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 244, -1, -1));
 
-        inputVenueIdTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Venue ID"));
+        inputVenueIdTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Venue ID"));
         inputVenueIdTxtFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputVenueIdTxtFldActionPerformed(evt);
@@ -1112,6 +1137,18 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
         inputAddVenueDetailsPnl.add(inputVenueContactTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 114, 98, -1));
+
+        contactErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        inputAddVenueDetailsPnl.add(contactErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 90, 20));
+
+        idErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        inputAddVenueDetailsPnl.add(idErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 90, 20));
+
+        nameErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        inputAddVenueDetailsPnl.add(nameErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 90, 20));
+
+        addressErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        inputAddVenueDetailsPnl.add(addressErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 90, 20));
 
         jButton5.setText("Back");
 
@@ -1345,7 +1382,11 @@ public class KnotSpot extends javax.swing.JFrame {
         cardLayoutForadminDashboard = (CardLayout) adminDashboardPagesPnl.getLayout();
         cardLayoutForadminDashboard.show(adminDashboardPagesPnl, screenName);
     }
-
+    
+    private void showPopDialog(JOptionPane optionPane, String message, String title, int messageType){
+        JOptionPane.showMessageDialog(optionPane, message, title, messageType);
+    }
+    
 
     private void inputUsernameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldActionPerformed
         // TODO add your handling code here:
@@ -1353,20 +1394,19 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
         // TODO add your handling code here:
+        
         String username = inputUsernameTxtFld.getText();
         String password = new String(inputPasswordPwdFld.getPassword());
         if (username.isEmpty() && password.isEmpty()) {
-            usernameLoginErrorTxtFld.setText("Username field is empty.");
-            usernameLoginErrorTxtFld.setForeground(new Color(255, 10, 10));
-            passwordLoginErrorTxtFld.setText("Enter your password");
+            ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your username");
+            ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your password");
             return;
         } else if (username.isEmpty()) {
-            usernameLoginErrorTxtFld.setText("Enter your username");
-            usernameLoginErrorTxtFld.setForeground(new Color(255, 10, 10));
+            ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your username");
             passwordLoginErrorTxtFld.setText("");
             return;
         } else if (password.isEmpty()) {
-            passwordLoginErrorTxtFld.setText("Enter your password");
+            ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Please enter your password");
             usernameLoginErrorTxtFld.setText("");
             return;
         } else {
@@ -1374,14 +1414,16 @@ public class KnotSpot extends javax.swing.JFrame {
             boolean isValidPassword = password.equals("admin");
 
             if (!isValidUsername && !isValidPassword) {
-                usernameLoginErrorTxtFld.setText("Your username is incorrect");
-                passwordLoginErrorTxtFld.setText("Your password is incorrect");
+                
+                ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your username is incorrect");
+                ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your password is incorrect");
+                
 
             } else if (!isValidUsername) {
-                usernameLoginErrorTxtFld.setText("Your username is incorrect");
+                ValidationUtil.authenticationColor(usernameLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your username is incorrect");
                 passwordLoginErrorTxtFld.setText("");
             } else if (!isValidPassword) {
-                passwordLoginErrorTxtFld.setText("password is incorrect");
+                ValidationUtil.authenticationColor(passwordLoginErrorTxtFld, Color.BLACK, Color.RED, true, "Your password is incorrect");
                 usernameLoginErrorTxtFld.setText("");
             } else {
                 usernameLoginErrorTxtFld.setText("");
@@ -1389,7 +1431,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 loadScreen("AdminScreen");
             }
         }
-        
+
 
     }//GEN-LAST:event_loginBtnActionPerformed
 
@@ -1478,90 +1520,90 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void addVenueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVenueBtnActionPerformed
         // TODO add your handling code here:
-        int venueId= 0;
-        String venueName= null;
-        String venueAddress= null; 
+        int venueId = 0;
+        String venueName = null;
+        String venueAddress = null;
         String venueCity = String.valueOf(venueCityComboBx.getSelectedItem());
         String venueContactNumber = null;
         String venueType = String.valueOf(venueTypeComboBx.getSelectedItem());
         int venueCapacity = venueCapacitySlider.getValue();
         int perPlatePrice = perPlatePriceSlider.getValue();
         int venueRentFee = venueCapacity * perPlatePrice;
-        
+
         boolean isValid = true;
-        
-        try{
+
+        try {
             ValidationUtil.isIdValid(inputVenueIdTxtFld.getText(), "Venue Id");
             venueId = Integer.parseInt(inputVenueIdTxtFld.getText());
-        }catch(NullPointerException | NumberFormatException | IndexOutOfBoundsException e){
-            inputVenueIdTxtFld.setText(e.getMessage());
+            ValidationUtil.venueValidateColor(inputVenueIdTxtFld, idErrorMsgLbl, Color.WHITE,Color.BLACK, "", "Venue Id");
+        } catch (NullPointerException | NumberFormatException | IndexOutOfBoundsException e) {
+            ValidationUtil.venueValidateColor(inputVenueIdTxtFld, idErrorMsgLbl, Color.RED, Color.RED,e.getMessage(), "Venue Id");
             isValid = false; //exception
         }
-        
-        try{
+
+        try {
             ValidationUtil.isNameValid(inputVenueNameTxtFld.getText(), "Venue name");
             venueName = inputVenueNameTxtFld.getText();
-        }catch(NullPointerException | NumberFormatException e){
-            inputVenueNameTxtFld.setText(e.getMessage());
+            ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.WHITE,Color.BLACK, "", "Venue Name");
+        } catch (NullPointerException | NumberFormatException e) {
+            ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.RED, Color.RED,e.getMessage(), "Venue Name");
             isValid = false; //exception
         }
-        
-        try{
+
+        try {
             ValidationUtil.isAddressValid(inputVenueAddressTxtFld.getText(), "Venue address");
             venueAddress = inputVenueAddressTxtFld.getText();
-        }catch(NullPointerException | NumberFormatException e){
-            inputVenueAddressTxtFld.setText(e.getMessage());
+            ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.WHITE, Color.BLACK,"", "Venue address");
+        } catch (NullPointerException | NumberFormatException e) {
+            ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.RED, Color.RED,e.getMessage(), "Venue address");
             isValid = false; //exception
         }
-        
-        try{
+
+        try {
             ValidationUtil.isContactValid(inputVenueContactTxtFld.getText(), "Venue contact number");
             venueContactNumber = inputVenueContactTxtFld.getText();
-        }catch(NullPointerException | NumberFormatException e){
-            inputVenueContactTxtFld.setText(e.getMessage());
+            ValidationUtil.venueValidateColor(inputVenueContactTxtFld, contactErrorMsgLbl, Color.WHITE, Color.BLACK,"", "Venue contact");
+        } catch (NullPointerException | NumberFormatException e) {
+            ValidationUtil.venueValidateColor(inputVenueContactTxtFld, contactErrorMsgLbl, Color.RED, Color.RED,e.getMessage(), "Venue contact");
             isValid = false; //exception
         }
-        
-        if(isValid){
-            //to check if the object is repeated
-            if(venueDetails == null){
-                //data add to list
+
+        if (isValid) {
+            //to check if the details are repeated to add 
+            if (!ValidationUtil.isDuplicate(venueDetails, venueId, venueContactNumber)) {
                 VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                 venueDetails.add(venue);
                 //load data to table
                 defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
-                //display a option pane to notify venue added succesfully
-                JOptionPane.showMessageDialog(addVenueSuccessOptPane,"The venue has been successfully added");
-                addVenueSuccessOptPane.setVisible(true);
+                JOptionPane.showMessageDialog(addVenueSuccessOptPane, "Done");
+
+            } else {
+                JOptionPane.showMessageDialog(addVenueSuccessOptPane, "Nope");
+
             }
-            else{
-                for (VenueModel venues : venueDetails){
-                    if(venues.getVenueId() == venueId || venues.getContactNumber().equals(venueContactNumber)){
-                        JOptionPane.showMessageDialog(addVenueSuccessOptPane,"The venue cannot have be duplicated");
-                        addVenueSuccessOptPane.setVisible(true);
-                    }
-                    else{
-                        VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
-                        venueDetails.add(venue);
-                        //load data to table
-                        defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
-                        //display a option pane to notify venue added succesfully
-                        JOptionPane.showMessageDialog(addVenueSuccessOptPane,"The venue has been successfully added");
-                        addVenueSuccessOptPane.setVisible(true);
-                    
-                    }
-                
-                }
-            
-            
-            }
+
         }
+
 
     }//GEN-LAST:event_addVenueBtnActionPerformed
 
     private void inputVenueContactTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueContactTxtFldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputVenueContactTxtFldActionPerformed
+
+    private void showPwdCheckBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPwdCheckBxActionPerformed
+        // TODO add your handling code here:
+        if(showPwdCheckBx.isSelected()){
+            inputPasswordPwdFld.setEchoChar((char)0);
+        }
+        else{
+            inputPasswordPwdFld.setEchoChar('*');
+        }
+    }//GEN-LAST:event_showPwdCheckBxActionPerformed
+
+    private void usernameLoginErrorTxtFldMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_usernameLoginErrorTxtFldMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_usernameLoginErrorTxtFldMouseEntered
     /**
      * @param args the command line arguments
      */
@@ -1602,14 +1644,17 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton addVenueBtn;
     private javax.swing.JPanel addVenuePagePnl;
     private javax.swing.JOptionPane addVenueSuccessOptPane;
+    private javax.swing.JLabel addressErrorMsgLbl;
     private javax.swing.JPanel adminDashboardPagePnl;
     private javax.swing.JPanel adminDashboardPagesPnl;
     private javax.swing.JPanel companyIntroPnl;
     private javax.swing.JLabel companyTitleLbl;
+    private javax.swing.JLabel contactErrorMsgLbl;
     private javax.swing.JTable frontDisplayTable;
     private javax.swing.JButton goToAddVenuePageBtn;
     private javax.swing.JButton goToHomePageBtn;
     private javax.swing.JPanel homePagePnl;
+    private javax.swing.JLabel idErrorMsgLbl;
     private javax.swing.JPanel imageContainerPnl;
     private javax.swing.JPanel inputAddVenueDetailsPnl;
     private javax.swing.JPasswordField inputPasswordPwdFld;
@@ -1685,6 +1730,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel manageVenueNavLbl;
     private javax.swing.JPanel manageVenueNavPnl;
     private javax.swing.JLabel multipleImageLbl;
+    private javax.swing.JLabel nameErrorMsgLbl;
     private javax.swing.JLabel passwordLoginErrorTxtFld;
     private javax.swing.JSlider perPlatePriceSlider;
     private javax.swing.JLabel settingNavLbl;
@@ -1692,6 +1738,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel settingNavPnl;
     private javax.swing.JPanel settingNavPnl1;
     private javax.swing.JPanel settingPagePnl;
+    private javax.swing.JCheckBox showPwdCheckBx;
     private javax.swing.JLabel usernameLoginErrorTxtFld;
     private javax.swing.JSlider venueCapacitySlider;
     private javax.swing.JComboBox<String> venueCityComboBx;
