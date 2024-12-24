@@ -41,6 +41,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(jPanel20));
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(jPanel20));
         venueDetails = new LinkedList<>();
+        defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         addVenueSuccessOptPane.setVisible(false);
         
         
@@ -1528,7 +1529,6 @@ public class KnotSpot extends javax.swing.JFrame {
                 VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                 venueDetails.add(venue);
                 //load data to table
-                defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
                 defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
                 //display a option pane to notify venue added succesfully
                 JOptionPane.showMessageDialog(addVenueSuccessOptPane,"The venue has been successfully added");
@@ -1544,7 +1544,6 @@ public class KnotSpot extends javax.swing.JFrame {
                         VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                         venueDetails.add(venue);
                         //load data to table
-                        defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
                         defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
                         //display a option pane to notify venue added succesfully
                         JOptionPane.showMessageDialog(addVenueSuccessOptPane,"The venue has been successfully added");
