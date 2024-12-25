@@ -61,54 +61,6 @@ public class KnotSpot extends javax.swing.JFrame {
         editVenueDetailsBtn = new javax.swing.JButton();
         removeVenueDetailsBtn = new javax.swing.JButton();
         viewVenueDetailsBtn = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        loadingPagePnlold = new javax.swing.JPanel();
-        companyIntroPnl = new javax.swing.JPanel();
-        companyTitleLbl = new javax.swing.JLabel();
-        introLineOneLbl = new javax.swing.JLabel();
-        introLineTwoLbl = new javax.swing.JLabel();
-        introLineThreeLbl = new javax.swing.JLabel();
-        imageContainerPnl = new javax.swing.JPanel();
-        multipleImageLbl = new javax.swing.JLabel();
-        logoIconLbl = new javax.swing.JLabel();
-        loginPagePnlold = new javax.swing.JPanel();
-        jPanel5 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        adminDashboardPagePnlold = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        adminDashboardPagesPnlold = new javax.swing.JPanel();
-        homePagePnlold = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel12 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel9 = new javax.swing.JPanel();
-        jPanel15 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jPanel10 = new javax.swing.JPanel();
-        jPanel14 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        jPanel11 = new javax.swing.JPanel();
-        jPanel13 = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        venueManagePagePnlold = new javax.swing.JPanel();
-        jPanel22 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jButton4 = new javax.swing.JButton();
-        jPanel23 = new javax.swing.JPanel();
-        goToAddVenuePageBtn = new javax.swing.JButton();
-        goToHomePageBtn = new javax.swing.JButton();
-        addVenuePagePnlold = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        settingPagePnlold = new javax.swing.JPanel();
-        meronewwebsiteko = new javax.swing.JPanel();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         loadingSymbolLbl = new javax.swing.JLabel();
@@ -221,575 +173,10 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(viewVenueDetailsBtn)))
         );
 
-        jPanel1.setMaximumSize(new java.awt.Dimension(670, 377));
-        jPanel1.setMinimumSize(new java.awt.Dimension(670, 377));
-        jPanel1.setPreferredSize(new java.awt.Dimension(670, 377));
-        jPanel1.setLayout(new java.awt.CardLayout());
-
-        loadingPagePnlold.setBackground(new java.awt.Color(255, 255, 255));
-        loadingPagePnlold.setMaximumSize(new java.awt.Dimension(1920, 1200));
-        loadingPagePnlold.setMinimumSize(new java.awt.Dimension(1920, 1200));
-        loadingPagePnlold.setPreferredSize(new java.awt.Dimension(1920, 1200));
-        loadingPagePnlold.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        companyIntroPnl.setBackground(new java.awt.Color(255, 255, 255));
-
-        companyTitleLbl.setFont(new java.awt.Font("Ink Free", 1, 18)); // NOI18N
-        companyTitleLbl.setText("Knot in spot");
-
-        introLineOneLbl.setText("\"The first place where your forever begins.\"");
-
-        introLineTwoLbl.setText("Our company is not just a business but our mission ");
-
-        introLineThreeLbl.setText("to make your dreams and hope turn into reality");
-
-        javax.swing.GroupLayout companyIntroPnlLayout = new javax.swing.GroupLayout(companyIntroPnl);
-        companyIntroPnl.setLayout(companyIntroPnlLayout);
-        companyIntroPnlLayout.setHorizontalGroup(
-            companyIntroPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(companyIntroPnlLayout.createSequentialGroup()
-                .addGroup(companyIntroPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(companyIntroPnlLayout.createSequentialGroup()
-                        .addGap(88, 88, 88)
-                        .addComponent(companyTitleLbl))
-                    .addGroup(companyIntroPnlLayout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(companyIntroPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(introLineTwoLbl)
-                            .addComponent(introLineThreeLbl))))
-                .addContainerGap(10, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, companyIntroPnlLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(introLineOneLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18))
-        );
-        companyIntroPnlLayout.setVerticalGroup(
-            companyIntroPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(companyIntroPnlLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(companyTitleLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(introLineOneLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(introLineTwoLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(introLineThreeLbl)
-                .addContainerGap(95, Short.MAX_VALUE))
-        );
-
-        loadingPagePnlold.add(companyIntroPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 300, 200));
-
-        imageContainerPnl.setBackground(new java.awt.Color(255, 204, 204));
-        imageContainerPnl.setMaximumSize(new java.awt.Dimension(200, 200));
-        imageContainerPnl.setMinimumSize(new java.awt.Dimension(200, 200));
-        imageContainerPnl.setPreferredSize(new java.awt.Dimension(200, 200));
-
-        multipleImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/rrr.jpg"))); // NOI18N
-        multipleImageLbl.setText("jLabel3");
-        multipleImageLbl.setMaximumSize(new java.awt.Dimension(200, 200));
-        multipleImageLbl.setMinimumSize(new java.awt.Dimension(200, 200));
-        multipleImageLbl.setPreferredSize(new java.awt.Dimension(200, 200));
-
-        javax.swing.GroupLayout imageContainerPnlLayout = new javax.swing.GroupLayout(imageContainerPnl);
-        imageContainerPnl.setLayout(imageContainerPnlLayout);
-        imageContainerPnlLayout.setHorizontalGroup(
-            imageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(multipleImageLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        imageContainerPnlLayout.setVerticalGroup(
-            imageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(multipleImageLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        loadingPagePnlold.add(imageContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 430, 290));
-
-        logoIconLbl.setText("logo");
-        loadingPagePnlold.add(logoIconLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, -1, -1));
-
-        jPanel1.add(loadingPagePnlold, "LoadingScreen");
-
-        loginPagePnlold.setBackground(new java.awt.Color(204, 204, 204));
-        loginPagePnlold.setMaximumSize(new java.awt.Dimension(677, 380));
-        loginPagePnlold.setMinimumSize(new java.awt.Dimension(677, 380));
-        loginPagePnlold.setPreferredSize(new java.awt.Dimension(677, 380));
-        loginPagePnlold.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel5.setBackground(new java.awt.Color(0, 0, 0, 80));
-
-        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel9.setText("LOGIN");
-
-        jLabel10.setText("Username");
-
-        jLabel11.setText("password");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(119, 119, 119)
-                .addComponent(jLabel9)
-                .addContainerGap(128, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
-                .addGap(0, 64, Short.MAX_VALUE)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.Alignment.LEADING))
-                .addGap(203, 203, 203))
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel9)
-                .addGap(14, 14, 14)
-                .addComponent(jLabel10)
-                .addGap(66, 66, 66)
-                .addComponent(jLabel11)
-                .addContainerGap(118, Short.MAX_VALUE))
-        );
-
-        loginPagePnlold.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 320, 280));
-
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/img1.jpg"))); // NOI18N
-        jLabel13.setText("jLabel13");
-        jLabel13.setMaximumSize(new java.awt.Dimension(677, 380));
-        jLabel13.setMinimumSize(new java.awt.Dimension(677, 380));
-        jLabel13.setPreferredSize(new java.awt.Dimension(677, 380));
-        loginPagePnlold.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        jPanel1.add(loginPagePnlold, "LoginScreen");
-
-        adminDashboardPagePnlold.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
-        adminDashboardPagePnlold.setMinimumSize(new java.awt.Dimension(670, 377));
-        adminDashboardPagePnlold.setPreferredSize(new java.awt.Dimension(670, 377));
-        adminDashboardPagePnlold.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel3.setMaximumSize(new java.awt.Dimension(670, 40));
-        jPanel3.setMinimumSize(new java.awt.Dimension(670, 40));
-        jPanel3.setPreferredSize(new java.awt.Dimension(670, 40));
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 670, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        adminDashboardPagePnlold.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
-
-        adminDashboardPagesPnlold.setBackground(new java.awt.Color(204, 204, 204));
-        adminDashboardPagesPnlold.setMaximumSize(new java.awt.Dimension(560, 340));
-        adminDashboardPagesPnlold.setMinimumSize(new java.awt.Dimension(560, 340));
-        adminDashboardPagesPnlold.setLayout(new java.awt.CardLayout());
-
-        homePagePnlold.setMaximumSize(new java.awt.Dimension(560, 340));
-        homePagePnlold.setMinimumSize(new java.awt.Dimension(560, 340));
-        homePagePnlold.setPreferredSize(new java.awt.Dimension(560, 340));
-
-        jPanel7.setBackground(new java.awt.Color(204, 204, 255));
-
-        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
-        jPanel7.setLayout(jPanel7Layout);
-        jPanel7Layout.setHorizontalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 213, Short.MAX_VALUE)
-        );
-        jPanel7Layout.setVerticalGroup(
-            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 87, Short.MAX_VALUE)
-        );
-
-        jPanel8.setBackground(new java.awt.Color(255, 204, 204));
-
-        jPanel12.setBackground(new java.awt.Color(255, 153, 153));
-
-        jLabel4.setFont(new java.awt.Font("Sans Serif Collection", 1, 8)); // NOI18N
-        jLabel4.setText("Total Venues");
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel4)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
-        );
-
-        jPanel9.setBackground(new java.awt.Color(255, 204, 255));
-        jPanel9.setMaximumSize(new java.awt.Dimension(123, 55));
-        jPanel9.setMinimumSize(new java.awt.Dimension(123, 55));
-        jPanel9.setPreferredSize(new java.awt.Dimension(123, 55));
-
-        jPanel15.setBackground(new java.awt.Color(255, 153, 255));
-        jPanel15.setMaximumSize(new java.awt.Dimension(124, 20));
-        jPanel15.setMinimumSize(new java.awt.Dimension(124, 20));
-        jPanel15.setPreferredSize(new java.awt.Dimension(124, 20));
-
-        jLabel7.setFont(new java.awt.Font("Sans Serif Collection", 1, 8)); // NOI18N
-        jLabel7.setText("Revenues");
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel7)
-                .addContainerGap(80, Short.MAX_VALUE))
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
-        );
-
-        jPanel10.setBackground(new java.awt.Color(204, 255, 204));
-
-        jPanel14.setBackground(new java.awt.Color(153, 255, 153));
-        jPanel14.setMaximumSize(new java.awt.Dimension(124, 20));
-        jPanel14.setMinimumSize(new java.awt.Dimension(124, 20));
-        jPanel14.setPreferredSize(new java.awt.Dimension(124, 20));
-
-        jLabel6.setFont(new java.awt.Font("Sans Serif Collection", 1, 8)); // NOI18N
-        jLabel6.setText("customer satisfaction ");
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel6)
-                .addContainerGap(31, Short.MAX_VALUE))
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addGap(0, 6, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
-        );
-
-        jPanel11.setBackground(new java.awt.Color(255, 255, 204));
-        jPanel11.setMaximumSize(new java.awt.Dimension(123, 55));
-        jPanel11.setMinimumSize(new java.awt.Dimension(123, 55));
-        jPanel11.setPreferredSize(new java.awt.Dimension(123, 55));
-
-        jPanel13.setBackground(new java.awt.Color(255, 255, 0));
-        jPanel13.setPreferredSize(new java.awt.Dimension(124, 20));
-
-        jLabel5.setFont(new java.awt.Font("Sans Serif Collection", 1, 8)); // NOI18N
-        jLabel5.setText("Total bookings");
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addContainerGap(61, Short.MAX_VALUE))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 35, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout homePagePnloldLayout = new javax.swing.GroupLayout(homePagePnlold);
-        homePagePnlold.setLayout(homePagePnloldLayout);
-        homePagePnloldLayout.setHorizontalGroup(
-            homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, homePagePnloldLayout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addGroup(homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane1)
-                    .addGroup(homePagePnloldLayout.createSequentialGroup()
-                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
-                        .addGroup(homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(homePagePnloldLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
-                .addGap(23, 23, 23))
-        );
-        homePagePnloldLayout.setVerticalGroup(
-            homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(homePagePnloldLayout.createSequentialGroup()
-                .addGap(31, 31, 31)
-                .addGroup(homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(homePagePnloldLayout.createSequentialGroup()
-                        .addGroup(homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(homePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(36, 36, 36)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        adminDashboardPagesPnlold.add(homePagePnlold, "HomePage");
-
-        venueManagePagePnlold.setMaximumSize(new java.awt.Dimension(560, 340));
-        venueManagePagePnlold.setMinimumSize(new java.awt.Dimension(560, 340));
-        venueManagePagePnlold.setPreferredSize(new java.awt.Dimension(560, 340));
-
-        jPanel22.setBackground(new java.awt.Color(204, 204, 204));
-
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
-            }
-        });
-
-        jComboBox1.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox1.setFont(new java.awt.Font("Sans Serif Collection", 0, 8)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "location", "price", "capacity", " " }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sort By", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sans Serif Collection", 0, 10))); // NOI18N
-
-        jComboBox2.setBackground(new java.awt.Color(204, 204, 204));
-        jComboBox2.setFont(new java.awt.Font("Sans Serif Collection", 0, 8)); // NOI18N
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ascending", "descending" }));
-        jComboBox2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Sort order", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Sans Serif Collection", 0, 10))); // NOI18N
-
-        jButton4.setBackground(new java.awt.Color(204, 204, 204));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/search_icon.png"))); // NOI18N
-        jButton4.setBorder(null);
-
-        jPanel23.setBackground(new java.awt.Color(0, 0, 0));
-
-        goToAddVenuePageBtn.setText("Add Venue");
-        goToAddVenuePageBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                goToAddVenuePageBtnActionPerformed(evt);
-            }
-        });
-
-        goToHomePageBtn.setText("Back");
-        goToHomePageBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                goToHomePageBtnActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel23Layout = new javax.swing.GroupLayout(jPanel23);
-        jPanel23.setLayout(jPanel23Layout);
-        jPanel23Layout.setHorizontalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(goToAddVenuePageBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(goToHomePageBtn)
-                .addGap(16, 16, 16))
-        );
-        jPanel23Layout.setVerticalGroup(
-            jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel23Layout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(jPanel23Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(goToHomePageBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(goToAddVenuePageBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
-        jPanel22.setLayout(jPanel22Layout);
-        jPanel22Layout.setHorizontalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jButton4)
-                .addGap(188, 188, 188)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        jPanel22Layout.setVerticalGroup(
-            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel22Layout.createSequentialGroup()
-                .addGap(9, 9, 9)
-                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4)
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-
-        javax.swing.GroupLayout venueManagePagePnloldLayout = new javax.swing.GroupLayout(venueManagePagePnlold);
-        venueManagePagePnlold.setLayout(venueManagePagePnloldLayout);
-        venueManagePagePnloldLayout.setHorizontalGroup(
-            venueManagePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        venueManagePagePnloldLayout.setVerticalGroup(
-            venueManagePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venueManagePagePnloldLayout.createSequentialGroup()
-                .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        adminDashboardPagesPnlold.add(venueManagePagePnlold, "ManageVenuePage");
-
-        addVenuePagePnlold.setMaximumSize(new java.awt.Dimension(560, 340));
-        addVenuePagePnlold.setMinimumSize(new java.awt.Dimension(560, 340));
-        addVenuePagePnlold.setPreferredSize(new java.awt.Dimension(560, 340));
-
-        jLabel8.setText("logo");
-        jLabel8.setToolTipText("");
-
-        javax.swing.GroupLayout addVenuePagePnloldLayout = new javax.swing.GroupLayout(addVenuePagePnlold);
-        addVenuePagePnlold.setLayout(addVenuePagePnloldLayout);
-        addVenuePagePnloldLayout.setHorizontalGroup(
-            addVenuePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVenuePagePnloldLayout.createSequentialGroup()
-                .addContainerGap(480, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addGap(55, 55, 55))
-        );
-        addVenuePagePnloldLayout.setVerticalGroup(
-            addVenuePagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVenuePagePnloldLayout.createSequentialGroup()
-                .addGap(13, 13, 13)
-                .addComponent(jLabel8)
-                .addContainerGap(311, Short.MAX_VALUE))
-        );
-
-        adminDashboardPagesPnlold.add(addVenuePagePnlold, "AddVenuePage");
-
-        settingPagePnlold.setMaximumSize(new java.awt.Dimension(560, 340));
-        settingPagePnlold.setMinimumSize(new java.awt.Dimension(560, 340));
-        settingPagePnlold.setPreferredSize(new java.awt.Dimension(560, 340));
-
-        javax.swing.GroupLayout settingPagePnloldLayout = new javax.swing.GroupLayout(settingPagePnlold);
-        settingPagePnlold.setLayout(settingPagePnloldLayout);
-        settingPagePnloldLayout.setHorizontalGroup(
-            settingPagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 560, Short.MAX_VALUE)
-        );
-        settingPagePnloldLayout.setVerticalGroup(
-            settingPagePnloldLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
-        );
-
-        adminDashboardPagesPnlold.add(settingPagePnlold, "SettingPage");
-
-        adminDashboardPagePnlold.add(adminDashboardPagesPnlold, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 550, 340));
-
-        jPanel1.add(adminDashboardPagePnlold, "AdminScreen");
-
-        javax.swing.GroupLayout meronewwebsitekoLayout = new javax.swing.GroupLayout(meronewwebsiteko);
-        meronewwebsiteko.setLayout(meronewwebsitekoLayout);
-        meronewwebsitekoLayout.setHorizontalGroup(
-            meronewwebsitekoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-        meronewwebsitekoLayout.setVerticalGroup(
-            meronewwebsitekoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
-        );
-
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("23048598ErikaShrestha");
-        setMaximumSize(new java.awt.Dimension(1280, 800));
         setMinimumSize(new java.awt.Dimension(1280, 800));
         setName("frame"); // NOI18N
-        setPreferredSize(new java.awt.Dimension(1280, 800));
         setResizable(false);
 
         containerPnl.setBackground(new java.awt.Color(255, 255, 255));
@@ -1501,9 +888,7 @@ public class KnotSpot extends javax.swing.JFrame {
                                 .addComponent(settingNavPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addComponent(logOutNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(manageVenueNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(navigationContainerPnlLayout.createSequentialGroup()
-                        .addComponent(aboutUsNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                    .addComponent(aboutUsNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         navigationContainerPnlLayout.setVerticalGroup(
@@ -1522,9 +907,7 @@ public class KnotSpot extends javax.swing.JFrame {
                         .addGap(71, 71, 71)
                         .addComponent(logOutNavPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(83, 83, 83))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, navigationContainerPnlLayout.createSequentialGroup()
-                        .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, 0))))
+                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout adminDashboardPagePnlLayout = new javax.swing.GroupLayout(adminDashboardPagePnl);
@@ -1575,31 +958,31 @@ public class KnotSpot extends javax.swing.JFrame {
                 if (progress == 20) {
                     loadingSymbolLbl.setText("welcome to our system...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture3.png");
-                    multipleImageLbl.setIcon(icon);
+                    
 
                 }
                 if (progress == 40) {
                     loadingSymbolLbl.setText("10 venues are ready to be booked...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture6.png");
-                    multipleImageLbl.setIcon(icon);
+                    
 
                 }
                 if (progress == 60) {
                     loadingSymbolLbl.setText("let us join in your new innings...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture1.png");
-                    multipleImageLbl.setIcon(icon);
+                    
 
                 }
                 if (progress == 80) {
                     loadingSymbolLbl.setText("happy weddings...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture2.png");
-                    multipleImageLbl.setIcon(icon);
+                    
 
                 }
                 if (progress == 100) {
                     loadingSymbolLbl.setText("Manage stuffs...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture4.png");
-                    multipleImageLbl.setIcon(icon);
+                    
 
                 }
             }
@@ -1677,10 +1060,6 @@ public class KnotSpot extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_inputPasswordPwdFldActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
-
     private void inputVenueNameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueNameTxtFldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_inputVenueNameTxtFldActionPerformed
@@ -1708,16 +1087,6 @@ public class KnotSpot extends javax.swing.JFrame {
         manageVenueNavLbl.setBackground(Color.decode("#000000"));
         manageVenueNavLbl.setForeground(Color.decode("#FFFFFF"));
     }//GEN-LAST:event_manageVenueNavPnlMouseExited
-
-    private void goToHomePageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToHomePageBtnActionPerformed
-        // TODO add your handling code here:
-        loadNavRelatedPage("HomePage");
-    }//GEN-LAST:event_goToHomePageBtnActionPerformed
-
-    private void goToAddVenuePageBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_goToAddVenuePageBtnActionPerformed
-        // TODO add your handling code here:
-        loadNavRelatedPage("AddVenuePage");
-    }//GEN-LAST:event_goToAddVenuePageBtnActionPerformed
 
     private void settingNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnlMouseClicked
         // TODO add your handling code here:
@@ -1924,16 +1293,11 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel actionColumnPnl;
     private javax.swing.JButton addVenueBtn;
     private javax.swing.JPanel addVenuePagePnl;
-    private javax.swing.JPanel addVenuePagePnlold;
     private javax.swing.JLabel addressErrorMsgLbl;
     private javax.swing.JPanel adminDashboardPagePnl;
-    private javax.swing.JPanel adminDashboardPagePnlold;
     private javax.swing.JPanel adminDashboardPagesPnl;
-    private javax.swing.JPanel adminDashboardPagesPnlold;
     private javax.swing.JLabel adminWelcomeMsgLbl;
     private javax.swing.JSplitPane backgroundModeSptPane;
-    private javax.swing.JPanel companyIntroPnl;
-    private javax.swing.JLabel companyTitleLbl;
     private javax.swing.JLabel contactErrorMsgLbl;
     private javax.swing.JPanel containerPnl;
     private javax.swing.JLabel darkImageLbl;
@@ -1941,12 +1305,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel darkModeWelcomeLbl;
     private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JTable frontDisplayTable;
-    private javax.swing.JButton goToAddVenuePageBtn;
-    private javax.swing.JButton goToHomePageBtn;
     private javax.swing.JPanel homePagePnl;
-    private javax.swing.JPanel homePagePnlold;
     private javax.swing.JLabel idErrorMsgLbl;
-    private javax.swing.JPanel imageContainerPnl;
     private javax.swing.JLabel informationToInputVenueLbl;
     private javax.swing.JPasswordField inputPasswordPwdFld;
     private javax.swing.JSlider inputPerPlatePriceSlider;
@@ -1959,44 +1319,11 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JTextField inputVenueNameTxtFld;
     private javax.swing.JComboBox<String> inputVenueTypeComboBx;
     private javax.swing.JScrollPane insertDataTableScrlPane;
-    private javax.swing.JLabel introLineOneLbl;
-    private javax.swing.JLabel introLineThreeLbl;
-    private javax.swing.JLabel introLineTwoLbl;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
-    private javax.swing.JPanel jPanel22;
-    private javax.swing.JPanel jPanel23;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lightImageLbl;
     private javax.swing.JPanel lightModePnl;
     private javax.swing.JLabel lightModeWelcomeLbl;
     private javax.swing.JLabel loadingPageBackgroundLbl;
     private javax.swing.JPanel loadingPagePnl;
-    private javax.swing.JPanel loadingPagePnlold;
     private javax.swing.JProgressBar loadingPagePrgBar;
     private javax.swing.JLabel loadingSymbolLbl;
     private javax.swing.JLabel loadingValueLbl;
@@ -2006,12 +1333,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel loginFormPnl;
     private javax.swing.JLabel loginPageBackgroundLbl;
     private javax.swing.JPanel loginPagePnl;
-    private javax.swing.JPanel loginPagePnlold;
-    private javax.swing.JLabel logoIconLbl;
     private javax.swing.JLabel manageVenueNavLbl;
     private javax.swing.JPanel manageVenueNavPnl;
-    private javax.swing.JPanel meronewwebsiteko;
-    private javax.swing.JLabel multipleImageLbl;
     private javax.swing.JLabel nameErrorMsgLbl;
     private javax.swing.JPanel navigationContainerPnl;
     private javax.swing.JLabel notifyAdminMsgLbl;
@@ -2026,14 +1349,12 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel settingNavLbl;
     private javax.swing.JPanel settingNavPnl;
     private javax.swing.JPanel settingPagePnl;
-    private javax.swing.JPanel settingPagePnlold;
     private javax.swing.JCheckBox showPwdCheckBx;
     private javax.swing.JLabel totalCapacityLbl;
     private javax.swing.JLabel usernameLbl;
     private javax.swing.JLabel usernameLoginErrorTxtFld;
     private javax.swing.JLabel venueGalleryNavLbl;
     private javax.swing.JPanel venueGalleryNavPnl;
-    private javax.swing.JPanel venueManagePagePnlold;
     private javax.swing.JTable venueModifyTbl;
     private javax.swing.JButton viewVenueDetailsBtn;
     // End of variables declaration//GEN-END:variables
