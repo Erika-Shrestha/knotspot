@@ -1686,6 +1686,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private void removeVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtnActionPerformed
         // TODO add your handling code here:
         int response = JOptionPane.showConfirmDialog(this,"Do you want to really remove the venue?", "Remove venue confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        List<VenueModel> venueToRemove = new LinkedList<>();
         if(response==JOptionPane.YES_OPTION){
             int venueIdColumn= 0;
             int selectedRow = venueModifyTbl.getSelectedRow();
@@ -1694,14 +1695,13 @@ public class KnotSpot extends javax.swing.JFrame {
                 int selectedRowVenueId = Integer.parseInt(defaultTableModel.getValueAt(selectedRow, venueIdColumn).toString());
                 defaultTableModel.removeRow(selectedRow);
             
-            
+                
                 for(VenueModel venues : venueDetails){
                     if(venues.getVenueId()==selectedRowVenueId){
-                        venueDetails.remove(venues);
-                       return;
+                        venueToRemove.add(venues);
                     }
                 }
-            
+            venueDetails.removeAll(venueToRemove);
             }
         
         }
