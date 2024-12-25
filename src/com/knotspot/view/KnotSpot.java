@@ -41,7 +41,8 @@ public class KnotSpot extends javax.swing.JFrame {
      */
     public KnotSpot() {
         initComponents();
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setLocation(0,0);
+        this.setSize(1280, 700);
         startProgress();
         venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(actionColumnPnl));
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(actionColumnPnl));
@@ -163,7 +164,9 @@ public class KnotSpot extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
+        containerPnl = new javax.swing.JPanel();
         loadingPagePnl1 = new javax.swing.JPanel();
+        loginPageBackgroundLbl = new javax.swing.JLabel();
 
         actionColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -284,11 +287,11 @@ public class KnotSpot extends javax.swing.JFrame {
         imageContainerPnl.setLayout(imageContainerPnlLayout);
         imageContainerPnlLayout.setHorizontalGroup(
             imageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(multipleImageLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
+            .addComponent(multipleImageLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         imageContainerPnlLayout.setVerticalGroup(
             imageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(multipleImageLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 290, Short.MAX_VALUE)
+            .addComponent(multipleImageLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         loadingPagePnl.add(imageContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 430, 290));
@@ -1405,37 +1408,51 @@ public class KnotSpot extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("23048598ErikaShrestha");
-        setMaximumSize(new java.awt.Dimension(1000, 500));
-        setMinimumSize(new java.awt.Dimension(1000, 500));
-        setPreferredSize(new java.awt.Dimension(1000, 500));
+        setMaximumSize(new java.awt.Dimension(1100, 690));
+        setMinimumSize(new java.awt.Dimension(1100, 690));
+        setName("frame"); // NOI18N
+        setPreferredSize(new java.awt.Dimension(1100, 690));
         setResizable(false);
 
-        loadingPagePnl1.setBackground(new java.awt.Color(204, 204, 255));
-        loadingPagePnl1.setMaximumSize(new java.awt.Dimension(200, 200));
-        loadingPagePnl1.setMinimumSize(null);
-        loadingPagePnl1.setName("[200,200]"); // NOI18N
-        loadingPagePnl1.setPreferredSize(new java.awt.Dimension(200, 200));
+        containerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        containerPnl.setMaximumSize(new java.awt.Dimension(1088, 655));
+        containerPnl.setMinimumSize(new java.awt.Dimension(1088, 655));
 
-        javax.swing.GroupLayout loadingPagePnl1Layout = new javax.swing.GroupLayout(loadingPagePnl1);
-        loadingPagePnl1.setLayout(loadingPagePnl1Layout);
-        loadingPagePnl1Layout.setHorizontalGroup(
-            loadingPagePnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1920, Short.MAX_VALUE)
+        loadingPagePnl1.setBackground(new java.awt.Color(255, 255, 255));
+        loadingPagePnl1.setMaximumSize(new java.awt.Dimension(1088, 655));
+        loadingPagePnl1.setMinimumSize(new java.awt.Dimension(1088, 655));
+        loadingPagePnl1.setPreferredSize(new java.awt.Dimension(1088, 655));
+        loadingPagePnl1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        loadingPagePnl1.add(loginPageBackgroundLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1088, 655));
+
+        javax.swing.GroupLayout containerPnlLayout = new javax.swing.GroupLayout(containerPnl);
+        containerPnl.setLayout(containerPnlLayout);
+        containerPnlLayout.setHorizontalGroup(
+            containerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(containerPnlLayout.createSequentialGroup()
+                .addComponent(loadingPagePnl1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        loadingPagePnl1Layout.setVerticalGroup(
-            loadingPagePnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1200, Short.MAX_VALUE)
+        containerPnlLayout.setVerticalGroup(
+            containerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(loadingPagePnl1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loadingPagePnl1, javax.swing.GroupLayout.PREFERRED_SIZE, 1920, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(containerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(loadingPagePnl1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(containerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -1816,6 +1833,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel companyIntroPnl;
     private javax.swing.JLabel companyTitleLbl;
     private javax.swing.JLabel contactErrorMsgLbl;
+    private javax.swing.JPanel containerPnl;
     private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JTable frontDisplayTable;
     private javax.swing.JButton goToAddVenuePageBtn;
@@ -1893,6 +1911,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel loadingSymbolLbl;
     private javax.swing.JLabel loadingValueLbl;
     private javax.swing.JButton loginBtn;
+    private javax.swing.JLabel loginPageBackgroundLbl;
     private javax.swing.JPanel loginPagePnl;
     private javax.swing.JLabel logoIconLbl;
     private javax.swing.JLabel manageVenueNavLbl;
