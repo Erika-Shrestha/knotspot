@@ -83,43 +83,6 @@
         </Component>
       </SubComponents>
     </Container>
-  </NonVisualComponents>
-  <Properties>
-    <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="23048598ErikaShrestha"/>
-    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[670, 377]"/>
-    </Property>
-  </Properties>
-  <SyntheticProperties>
-    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
-    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
-  </SyntheticProperties>
-  <AuxValues>
-    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
-    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
-    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
-    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
-    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
-    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-  </AuxValues>
-
-  <Layout>
-    <DimensionLayout dim="0">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
-      </Group>
-    </DimensionLayout>
-    <DimensionLayout dim="1">
-      <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="0" max="32767" attributes="0"/>
-      </Group>
-    </DimensionLayout>
-  </Layout>
-  <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanel1">
       <Properties>
         <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -141,13 +104,13 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[670, 377]"/>
+              <Dimension value="[1920, 1200]"/>
             </Property>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[670, 377]"/>
+              <Dimension value="[1920, 1200]"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[670, 377]"/>
+              <Dimension value="[1920, 1200]"/>
             </Property>
           </Properties>
           <Constraints>
@@ -326,7 +289,7 @@
             <Component class="javax.swing.JProgressBar" name="loadingPagePrgBar">
               <Constraints>
                 <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                  <AbsoluteConstraints x="0" y="370" width="680" height="10"/>
+                  <AbsoluteConstraints x="0" y="530" width="680" height="40"/>
                 </Constraint>
               </Constraints>
             </Component>
@@ -532,7 +495,7 @@
         <Container class="javax.swing.JPanel" name="adminDashboardPagePnl">
           <Properties>
             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[670, 377]"/>
+              <Dimension value="[2147483647, 2147483647]"/>
             </Property>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
               <Dimension value="[670, 377]"/>
@@ -1778,7 +1741,7 @@
                                   <EmptySpace min="19" pref="19" max="-2" attributes="0"/>
                                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
-                                  <Component id="perPlatePriceSlider" min="-2" pref="269" max="-2" attributes="0"/>
+                                  <Component id="inputPerPlatePriceSlider" min="-2" pref="269" max="-2" attributes="0"/>
                                   <EmptySpace max="32767" attributes="0"/>
                                   <Component id="addVenueBtn" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
@@ -1809,7 +1772,7 @@
                                                       <Component id="inputVenueNameTxtFld" min="-2" pref="98" max="-2" attributes="0"/>
                                                   </Group>
                                                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                                  <Component id="venueTypeComboBx" min="-2" pref="87" max="-2" attributes="0"/>
+                                                  <Component id="inputVenueTypeComboBx" min="-2" pref="87" max="-2" attributes="0"/>
                                                   <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
@@ -1823,14 +1786,14 @@
                                                   <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                                                   <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                                   <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
-                                                  <Component id="venueCapacitySlider" min="-2" pref="269" max="-2" attributes="0"/>
+                                                  <Component id="inputVenueCapacitySlider" min="-2" pref="269" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <EmptySpace min="11" pref="11" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="7" pref="7" max="-2" attributes="0"/>
-                                                  <Component id="venueCityComboBx" min="-2" pref="91" max="-2" attributes="0"/>
+                                                  <Component id="inputVenueCityComboBx" min="-2" pref="91" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
                                                   <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
@@ -1857,7 +1820,7 @@
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Component id="inputVenueIdTxtFld" min="-2" max="-2" attributes="0"/>
                                                       <Component id="inputVenueNameTxtFld" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="venueTypeComboBx" min="-2" pref="39" max="-2" attributes="0"/>
+                                                      <Component id="inputVenueTypeComboBx" min="-2" pref="39" max="-2" attributes="0"/>
                                                       <Component id="inputVenueAddressTxtFld" min="-2" max="-2" attributes="0"/>
                                                       <Group type="102" attributes="0">
                                                           <EmptySpace min="37" pref="37" max="-2" attributes="0"/>
@@ -1874,11 +1837,11 @@
                                                           <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                                                           <Component id="jLabel19" min="-2" max="-2" attributes="0"/>
                                                       </Group>
-                                                      <Component id="venueCapacitySlider" min="-2" max="-2" attributes="0"/>
+                                                      <Component id="inputVenueCapacitySlider" min="-2" max="-2" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Component id="venueCityComboBx" min="-2" pref="39" max="-2" attributes="0"/>
+                                                  <Component id="inputVenueCityComboBx" min="-2" pref="39" max="-2" attributes="0"/>
                                                   <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
                                                   <Group type="103" groupAlignment="0" attributes="0">
                                                       <Group type="102" attributes="0">
@@ -1895,7 +1858,7 @@
                                                   <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
                                                   <Component id="jLabel20" min="-2" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="perPlatePriceSlider" min="-2" max="-2" attributes="0"/>
+                                              <Component id="inputPerPlatePriceSlider" min="-2" max="-2" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                                       </Group>
@@ -1926,27 +1889,27 @@
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="inputVenueNameTxtFldActionPerformed"/>
                           </Events>
                         </Component>
-                        <Component class="javax.swing.JSlider" name="perPlatePriceSlider">
+                        <Component class="javax.swing.JSlider" name="inputPerPlatePriceSlider">
                           <Properties>
                             <Property name="maximum" type="int" value="200"/>
-                            <Property name="paintLabels" type="boolean" value="true" postCode="perPlatePriceSlider.setMajorTickSpacing(50);&#xa;perPlatePriceSlider.setMinorTickSpacing(5);"/>
+                            <Property name="paintLabels" type="boolean" value="true" postCode="inputPerPlatePriceSlider.setMajorTickSpacing(50);&#xa;inputPerPlatePriceSlider.setMinorTickSpacing(5);"/>
                             <Property name="paintTicks" type="boolean" value="true"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JSlider" name="venueCapacitySlider">
+                        <Component class="javax.swing.JSlider" name="inputVenueCapacitySlider">
                           <Properties>
-                            <Property name="paintLabels" type="boolean" value="true" postCode="venueCapacitySlider.setMajorTickSpacing(50);&#xa;venueCapacitySlider.setMinorTickSpacing(5);"/>
+                            <Property name="paintLabels" type="boolean" value="true" postCode="inputVenueCapacitySlider.setMajorTickSpacing(50);&#xa;inputVenueCapacitySlider.setMinorTickSpacing(5);"/>
                             <Property name="paintTicks" type="boolean" value="true"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="venueCityComboBx">
+                        <Component class="javax.swing.JComboBox" name="inputVenueCityComboBx">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                               <StringArray count="4">
-                                <StringItem index="0" value="Item 1"/>
-                                <StringItem index="1" value="Item 2"/>
-                                <StringItem index="2" value="Item 3"/>
-                                <StringItem index="3" value="Item 4"/>
+                                <StringItem index="0" value="kathmandu"/>
+                                <StringItem index="1" value="bhaktapur"/>
+                                <StringItem index="2" value="Dharan"/>
+                                <StringItem index="3" value="Koteshwor"/>
                               </StringArray>
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -1968,14 +1931,12 @@
                             <Property name="text" type="java.lang.String" value="Input Venue Details"/>
                           </Properties>
                         </Component>
-                        <Component class="javax.swing.JComboBox" name="venueTypeComboBx">
+                        <Component class="javax.swing.JComboBox" name="inputVenueTypeComboBx">
                           <Properties>
                             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                              <StringArray count="4">
-                                <StringItem index="0" value="Item 1"/>
-                                <StringItem index="1" value="Item 2"/>
-                                <StringItem index="2" value="Item 3"/>
-                                <StringItem index="3" value="Item 4"/>
+                              <StringArray count="2">
+                                <StringItem index="0" value="Meeting Conference"/>
+                                <StringItem index="1" value="Hall"/>
                               </StringArray>
                             </Property>
                             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
@@ -2330,6 +2291,81 @@
           </SubComponents>
         </Container>
       </SubComponents>
+    </Container>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="title" type="java.lang.String" value="23048598ErikaShrestha"/>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1000, 500]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1000, 500]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1000, 500]"/>
+    </Property>
+    <Property name="resizable" type="boolean" value="false"/>
+  </Properties>
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+    <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,4,-80,0,0,7,-128"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="loadingPagePnl1" min="-2" pref="1920" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Component id="loadingPagePnl1" min="-2" pref="1200" max="-2" attributes="0"/>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="loadingPagePnl1">
+      <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="ff" green="cc" red="cc" type="rgb"/>
+        </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[200, 200]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="null"/>
+        </Property>
+        <Property name="name" type="java.lang.String" value="[200,200]" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[200, 200]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="1920" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="0" pref="1200" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
     </Container>
   </SubComponents>
 </Form>

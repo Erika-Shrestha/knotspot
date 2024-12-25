@@ -14,9 +14,13 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.SwingConstants;
 
 import com.knotspot.model.VenueModel;
+import java.awt.Dimension;
 import java.util.LinkedList;
 import java.util.List;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+import javax.swing.JSlider;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -37,6 +41,7 @@ public class KnotSpot extends javax.swing.JFrame {
      */
     public KnotSpot() {
         initComponents();
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
         startProgress();
         venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(actionColumnPnl));
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(actionColumnPnl));
@@ -130,11 +135,11 @@ public class KnotSpot extends javax.swing.JFrame {
         addVenuePagePnl = new javax.swing.JPanel();
         inputAddVenueDetailsPnl = new javax.swing.JPanel();
         inputVenueNameTxtFld = new javax.swing.JTextField();
-        perPlatePriceSlider = new javax.swing.JSlider();
-        venueCapacitySlider = new javax.swing.JSlider();
-        venueCityComboBx = new javax.swing.JComboBox<>();
+        inputPerPlatePriceSlider = new javax.swing.JSlider();
+        inputVenueCapacitySlider = new javax.swing.JSlider();
+        inputVenueCityComboBx = new javax.swing.JComboBox<>();
         jLabel18 = new javax.swing.JLabel();
-        venueTypeComboBx = new javax.swing.JComboBox<>();
+        inputVenueTypeComboBx = new javax.swing.JComboBox<>();
         inputVenueAddressTxtFld = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -158,6 +163,7 @@ public class KnotSpot extends javax.swing.JFrame {
         jLabel25 = new javax.swing.JLabel();
         jRadioButton1 = new javax.swing.JRadioButton();
         jLabel3 = new javax.swing.JLabel();
+        loadingPagePnl1 = new javax.swing.JPanel();
 
         actionColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -205,19 +211,15 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(viewVenueDetailsBtn)))
         );
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("23048598ErikaShrestha");
-        setMinimumSize(new java.awt.Dimension(670, 377));
-
         jPanel1.setMaximumSize(new java.awt.Dimension(670, 377));
         jPanel1.setMinimumSize(new java.awt.Dimension(670, 377));
         jPanel1.setPreferredSize(new java.awt.Dimension(670, 377));
         jPanel1.setLayout(new java.awt.CardLayout());
 
         loadingPagePnl.setBackground(new java.awt.Color(255, 255, 255));
-        loadingPagePnl.setMaximumSize(new java.awt.Dimension(670, 377));
-        loadingPagePnl.setMinimumSize(new java.awt.Dimension(670, 377));
-        loadingPagePnl.setPreferredSize(new java.awt.Dimension(670, 377));
+        loadingPagePnl.setMaximumSize(new java.awt.Dimension(1920, 1200));
+        loadingPagePnl.setMinimumSize(new java.awt.Dimension(1920, 1200));
+        loadingPagePnl.setPreferredSize(new java.awt.Dimension(1920, 1200));
         loadingPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         companyIntroPnl.setBackground(new java.awt.Color(255, 255, 255));
@@ -299,7 +301,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         loadingValueLbl.setText("0%");
         loadingPagePnl.add(loadingValueLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 340, -1, -1));
-        loadingPagePnl.add(loadingPagePrgBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 680, 10));
+        loadingPagePnl.add(loadingPagePrgBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 530, 680, 40));
 
         jPanel1.add(loadingPagePnl, "LoadingScreen");
 
@@ -418,7 +420,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jPanel1.add(loginPagePnl, "LoginScreen");
 
-        adminDashboardPagePnl.setMaximumSize(new java.awt.Dimension(670, 377));
+        adminDashboardPagePnl.setMaximumSize(new java.awt.Dimension(2147483647, 2147483647));
         adminDashboardPagePnl.setMinimumSize(new java.awt.Dimension(670, 377));
         adminDashboardPagePnl.setPreferredSize(new java.awt.Dimension(670, 377));
         adminDashboardPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1082,24 +1084,24 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        perPlatePriceSlider.setMaximum(200);
-        perPlatePriceSlider.setPaintLabels(true);
-        perPlatePriceSlider.setMajorTickSpacing(50);
-        perPlatePriceSlider.setMinorTickSpacing(5);
-        perPlatePriceSlider.setPaintTicks(true);
+        inputPerPlatePriceSlider.setMaximum(200);
+        inputPerPlatePriceSlider.setPaintLabels(true);
+        inputPerPlatePriceSlider.setMajorTickSpacing(50);
+        inputPerPlatePriceSlider.setMinorTickSpacing(5);
+        inputPerPlatePriceSlider.setPaintTicks(true);
 
-        venueCapacitySlider.setPaintLabels(true);
-        venueCapacitySlider.setMajorTickSpacing(50);
-        venueCapacitySlider.setMinorTickSpacing(5);
-        venueCapacitySlider.setPaintTicks(true);
+        inputVenueCapacitySlider.setPaintLabels(true);
+        inputVenueCapacitySlider.setMajorTickSpacing(50);
+        inputVenueCapacitySlider.setMinorTickSpacing(5);
+        inputVenueCapacitySlider.setPaintTicks(true);
 
-        venueCityComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        venueCityComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "City"));
+        inputVenueCityComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kathmandu", "bhaktapur", "Dharan", "Koteshwor" }));
+        inputVenueCityComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "City"));
 
         jLabel18.setText("Input Venue Details");
 
-        venueTypeComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        venueTypeComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Type"));
+        inputVenueTypeComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Meeting Conference", "Hall" }));
+        inputVenueTypeComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Type"));
 
         inputVenueAddressTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Address"));
         inputVenueAddressTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1149,7 +1151,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGap(19, 19, 19)
                 .addComponent(jLabel20)
                 .addGap(12, 12, 12)
-                .addComponent(perPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(addVenueBtn)
                 .addGap(33, 33, 33))
@@ -1174,7 +1176,7 @@ public class KnotSpot extends javax.swing.JFrame {
                                         .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(18, 18, 18)
-                                .addComponent(venueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
@@ -1185,12 +1187,12 @@ public class KnotSpot extends javax.swing.JFrame {
                                 .addGap(11, 11, 11)
                                 .addComponent(jLabel19)
                                 .addGap(6, 6, 6)
-                                .addComponent(venueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(11, 11, 11)
                         .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
                                 .addGap(7, 7, 7)
-                                .addComponent(venueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
                                 .addGap(2, 2, 2)
                                 .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -1210,7 +1212,7 @@ public class KnotSpot extends javax.swing.JFrame {
                                 .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(venueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
                                         .addGap(37, 37, 37)
@@ -1223,9 +1225,9 @@ public class KnotSpot extends javax.swing.JFrame {
                                     .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
                                         .addGap(1, 1, 1)
                                         .addComponent(jLabel19))
-                                    .addComponent(venueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
-                                .addComponent(venueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(12, 12, 12)
                                 .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
@@ -1237,7 +1239,7 @@ public class KnotSpot extends javax.swing.JFrame {
                             .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
                                 .addGap(1, 1, 1)
                                 .addComponent(jLabel20))
-                            .addComponent(perPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inputAddVenueDetailsPnlLayout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1401,15 +1403,39 @@ public class KnotSpot extends javax.swing.JFrame {
 
         jPanel1.add(adminDashboardPagePnl, "AdminScreen");
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("23048598ErikaShrestha");
+        setMaximumSize(new java.awt.Dimension(1000, 500));
+        setMinimumSize(new java.awt.Dimension(1000, 500));
+        setPreferredSize(new java.awt.Dimension(1000, 500));
+        setResizable(false);
+
+        loadingPagePnl1.setBackground(new java.awt.Color(204, 204, 255));
+        loadingPagePnl1.setMaximumSize(new java.awt.Dimension(200, 200));
+        loadingPagePnl1.setMinimumSize(null);
+        loadingPagePnl1.setName("[200,200]"); // NOI18N
+        loadingPagePnl1.setPreferredSize(new java.awt.Dimension(200, 200));
+
+        javax.swing.GroupLayout loadingPagePnl1Layout = new javax.swing.GroupLayout(loadingPagePnl1);
+        loadingPagePnl1.setLayout(loadingPagePnl1Layout);
+        loadingPagePnl1Layout.setHorizontalGroup(
+            loadingPagePnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1920, Short.MAX_VALUE)
+        );
+        loadingPagePnl1Layout.setVerticalGroup(
+            loadingPagePnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1200, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(loadingPagePnl1, javax.swing.GroupLayout.PREFERRED_SIZE, 1920, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(loadingPagePnl1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -1484,6 +1510,29 @@ public class KnotSpot extends javax.swing.JFrame {
     private void showPopDialog(String message, String title, int messageType){
         JOptionPane.showMessageDialog(this,message, title, messageType);
     }
+    
+    private void editComboBoxItem(JComboBox comboBox, int selectedRow, int column){
+        
+        int index = comboBox.getItemCount();
+        for (int i = 0; i< index; i++){
+            String item= comboBox.getItemAt(i).toString();
+            if(venueModifyTbl.getValueAt(selectedRow, column).toString().equals(item)){
+            comboBox.setSelectedItem(item);
+        }
+        }
+    }
+
+    private void resetInputDetails(){
+        inputVenueIdTxtFld.setText("");
+        inputVenueNameTxtFld.setText("");
+        inputVenueAddressTxtFld.setText("");
+        inputVenueContactTxtFld.setText("");
+        inputVenueTypeComboBx.setSelectedItem(inputVenueTypeComboBx.getItemAt(0));
+        inputVenueCityComboBx.setSelectedItem(inputVenueCityComboBx.getItemAt(0));
+        inputVenueCapacitySlider.setValue(50);
+        inputPerPlatePriceSlider.setValue(50);
+    }
+    
     
 
     private void inputUsernameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldActionPerformed
@@ -1595,11 +1644,11 @@ public class KnotSpot extends javax.swing.JFrame {
         int venueId = 0;
         String venueName = null;
         String venueAddress = null;
-        String venueCity = String.valueOf(venueCityComboBx.getSelectedItem());
+        String venueCity = String.valueOf(inputVenueCityComboBx.getSelectedItem());
         String venueContactNumber = null;
-        String venueType = String.valueOf(venueTypeComboBx.getSelectedItem());
-        int venueCapacity = venueCapacitySlider.getValue();
-        int perPlatePrice = perPlatePriceSlider.getValue();
+        String venueType = String.valueOf(inputVenueTypeComboBx.getSelectedItem());
+        int venueCapacity = inputVenueCapacitySlider.getValue();
+        int perPlatePrice = inputPerPlatePriceSlider.getValue();
         int venueRentFee = venueCapacity * perPlatePrice;
 
         boolean isValid = true;
@@ -1648,11 +1697,11 @@ public class KnotSpot extends javax.swing.JFrame {
                 //load data to table
                 defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
                 showPopDialog("The venue is added successfully", "New Venue Entry", JOptionPane.INFORMATION_MESSAGE);
-                
+                resetInputDetails();
 
             } else {
                 showPopDialog("The same venue cannot be duplicated", "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
-
+                resetInputDetails();
             }
 
         }
@@ -1680,13 +1729,23 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void editVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editVenueDetailsBtnActionPerformed
         // TODO add your handling code here:
-        
+        int selectedRow = venueModifyTbl.getSelectedRow();
+        if(selectedRow>=0 && venueModifyTbl.getSelectedRowCount()==1){
+            inputVenueIdTxtFld.setText(venueModifyTbl.getValueAt(selectedRow, 0).toString());
+            inputVenueIdTxtFld.setEditable(false);
+            inputVenueNameTxtFld.setText(venueModifyTbl.getValueAt(selectedRow, 1).toString());
+            inputVenueAddressTxtFld.setText(venueModifyTbl.getValueAt(selectedRow, 2).toString());
+            editComboBoxItem(inputVenueCityComboBx, selectedRow, 3);
+            inputVenueContactTxtFld.setText(venueModifyTbl.getValueAt(selectedRow, 4).toString());
+            editComboBoxItem(inputVenueTypeComboBx, selectedRow, 5);
+            inputVenueCapacitySlider.setValue(Integer.parseInt(venueModifyTbl.getValueAt(selectedRow,6).toString()));
+            
+        }
     }//GEN-LAST:event_editVenueDetailsBtnActionPerformed
 
     private void removeVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtnActionPerformed
         // TODO add your handling code here:
         int response = JOptionPane.showConfirmDialog(this,"Do you want to really remove the venue?", "Remove venue confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-        List<VenueModel> venueToRemove = new LinkedList<>();
         if(response==JOptionPane.YES_OPTION){
             int venueIdColumn= 0;
             int selectedRow = venueModifyTbl.getSelectedRow();
@@ -1694,14 +1753,14 @@ public class KnotSpot extends javax.swing.JFrame {
             if(selectedRow>=0){
                 int selectedRowVenueId = Integer.parseInt(defaultTableModel.getValueAt(selectedRow, venueIdColumn).toString());
                 defaultTableModel.removeRow(selectedRow);
-            
                 
                 for(VenueModel venues : venueDetails){
                     if(venues.getVenueId()==selectedRowVenueId){
-                        venueToRemove.add(venues);
+                        venueDetails.remove(venues);
+                        return;
                     }
                 }
-            venueDetails.removeAll(venueToRemove);
+            
             }
         
         }
@@ -1766,11 +1825,15 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel imageContainerPnl;
     private javax.swing.JPanel inputAddVenueDetailsPnl;
     private javax.swing.JPasswordField inputPasswordPwdFld;
+    private javax.swing.JSlider inputPerPlatePriceSlider;
     private javax.swing.JTextField inputUsernameTxtFld;
     private javax.swing.JTextField inputVenueAddressTxtFld;
+    private javax.swing.JSlider inputVenueCapacitySlider;
+    private javax.swing.JComboBox<String> inputVenueCityComboBx;
     private javax.swing.JTextField inputVenueContactTxtFld;
     private javax.swing.JTextField inputVenueIdTxtFld;
     private javax.swing.JTextField inputVenueNameTxtFld;
+    private javax.swing.JComboBox<String> inputVenueTypeComboBx;
     private javax.swing.JLabel introLineOneLbl;
     private javax.swing.JLabel introLineThreeLbl;
     private javax.swing.JLabel introLineTwoLbl;
@@ -1825,6 +1888,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JSplitPane jSplitPane1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel loadingPagePnl;
+    private javax.swing.JPanel loadingPagePnl1;
     private javax.swing.JProgressBar loadingPagePrgBar;
     private javax.swing.JLabel loadingSymbolLbl;
     private javax.swing.JLabel loadingValueLbl;
@@ -1836,7 +1900,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel multipleImageLbl;
     private javax.swing.JLabel nameErrorMsgLbl;
     private javax.swing.JLabel passwordLoginErrorTxtFld;
-    private javax.swing.JSlider perPlatePriceSlider;
     private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JLabel settingNavLbl;
     private javax.swing.JLabel settingNavLbl1;
@@ -1845,11 +1908,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel settingPagePnl;
     private javax.swing.JCheckBox showPwdCheckBx;
     private javax.swing.JLabel usernameLoginErrorTxtFld;
-    private javax.swing.JSlider venueCapacitySlider;
-    private javax.swing.JComboBox<String> venueCityComboBx;
     private javax.swing.JPanel venueManagePagePnl;
     private javax.swing.JTable venueModifyTbl;
-    private javax.swing.JComboBox<String> venueTypeComboBx;
     private javax.swing.JButton viewVenueDetailsBtn;
     // End of variables declaration//GEN-END:variables
 }
