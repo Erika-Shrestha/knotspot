@@ -42,7 +42,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(actionColumnPnl));
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
-        addVenueSuccessOptPane.setVisible(false);
+        
 
     }
 
@@ -129,7 +129,6 @@ public class KnotSpot extends javax.swing.JFrame {
         goToHomePageBtn = new javax.swing.JButton();
         addVenuePagePnl = new javax.swing.JPanel();
         inputAddVenueDetailsPnl = new javax.swing.JPanel();
-        addVenueSuccessOptPane = new javax.swing.JOptionPane();
         inputVenueNameTxtFld = new javax.swing.JTextField();
         perPlatePriceSlider = new javax.swing.JSlider();
         venueCapacitySlider = new javax.swing.JSlider();
@@ -1025,36 +1024,33 @@ public class KnotSpot extends javax.swing.JFrame {
         jPanel22.setLayout(jPanel22Layout);
         jPanel22Layout.setHorizontalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 560, Short.MAX_VALUE)
             .addGroup(jPanel22Layout.createSequentialGroup()
                 .addGap(27, 27, 27)
                 .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
+                .addComponent(jButton4)
+                .addGap(188, 188, 188)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
+                .addGap(12, 12, 12)
+                .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 560, javax.swing.GroupLayout.PREFERRED_SIZE)
             .addComponent(jPanel23, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         jPanel22Layout.setVerticalGroup(
             jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel22Layout.createSequentialGroup()
+                .addGap(9, 9, 9)
                 .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4)
                     .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel22Layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addGap(30, 30, 30)
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(6, 6, 6)
                 .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -1078,8 +1074,6 @@ public class KnotSpot extends javax.swing.JFrame {
         addVenuePagePnl.setPreferredSize(new java.awt.Dimension(560, 340));
 
         inputAddVenueDetailsPnl.setBackground(new java.awt.Color(204, 204, 204));
-        inputAddVenueDetailsPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        inputAddVenueDetailsPnl.add(addVenueSuccessOptPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, -1, -1));
 
         inputVenueNameTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Venue Name"));
         inputVenueNameTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1087,31 +1081,25 @@ public class KnotSpot extends javax.swing.JFrame {
                 inputVenueNameTxtFldActionPerformed(evt);
             }
         });
-        inputAddVenueDetailsPnl.add(inputVenueNameTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(118, 63, 98, -1));
 
         perPlatePriceSlider.setMaximum(200);
         perPlatePriceSlider.setPaintLabels(true);
         perPlatePriceSlider.setMajorTickSpacing(50);
         perPlatePriceSlider.setMinorTickSpacing(5);
         perPlatePriceSlider.setPaintTicks(true);
-        inputAddVenueDetailsPnl.add(perPlatePriceSlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(107, 204, 269, -1));
 
         venueCapacitySlider.setPaintLabels(true);
         venueCapacitySlider.setMajorTickSpacing(50);
         venueCapacitySlider.setMinorTickSpacing(5);
         venueCapacitySlider.setPaintTicks(true);
-        inputAddVenueDetailsPnl.add(venueCapacitySlider, new org.netbeans.lib.awtextra.AbsoluteConstraints(105, 159, 269, -1));
 
         venueCityComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         venueCityComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "City"));
-        inputAddVenueDetailsPnl.add(venueCityComboBx, new org.netbeans.lib.awtextra.AbsoluteConstraints(455, 63, 91, 39));
 
         jLabel18.setText("Input Venue Details");
-        inputAddVenueDetailsPnl.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(227, 16, -1, -1));
 
         venueTypeComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         venueTypeComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Type"));
-        inputAddVenueDetailsPnl.add(venueTypeComboBx, new org.netbeans.lib.awtextra.AbsoluteConstraints(234, 63, 87, 39));
 
         inputVenueAddressTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Address"));
         inputVenueAddressTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1119,13 +1107,10 @@ public class KnotSpot extends javax.swing.JFrame {
                 inputVenueAddressTxtFldActionPerformed(evt);
             }
         });
-        inputAddVenueDetailsPnl.add(inputVenueAddressTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(339, 63, 98, -1));
 
         jLabel19.setText("Total Capacity :");
-        inputAddVenueDetailsPnl.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 160, -1, -1));
 
         jLabel20.setText("Per Plate Price:");
-        inputAddVenueDetailsPnl.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(19, 205, -1, -1));
 
         addVenueBtn.setText("ADD");
         addVenueBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1133,7 +1118,6 @@ public class KnotSpot extends javax.swing.JFrame {
                 addVenueBtnActionPerformed(evt);
             }
         });
-        inputAddVenueDetailsPnl.add(addVenueBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 244, -1, -1));
 
         inputVenueIdTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)), "Venue ID"));
         inputVenueIdTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1141,7 +1125,6 @@ public class KnotSpot extends javax.swing.JFrame {
                 inputVenueIdTxtFldActionPerformed(evt);
             }
         });
-        inputAddVenueDetailsPnl.add(inputVenueIdTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(8, 63, 98, -1));
 
         inputVenueContactTxtFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Contact No"));
         inputVenueContactTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1149,19 +1132,118 @@ public class KnotSpot extends javax.swing.JFrame {
                 inputVenueContactTxtFldActionPerformed(evt);
             }
         });
-        inputAddVenueDetailsPnl.add(inputVenueContactTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(448, 114, 98, -1));
 
         contactErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        inputAddVenueDetailsPnl.add(contactErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 150, 90, 20));
 
         idErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        inputAddVenueDetailsPnl.add(idErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 90, 20));
 
         nameErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        inputAddVenueDetailsPnl.add(nameErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, 90, 20));
 
         addressErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        inputAddVenueDetailsPnl.add(addressErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 100, 90, 20));
+
+        javax.swing.GroupLayout inputAddVenueDetailsPnlLayout = new javax.swing.GroupLayout(inputAddVenueDetailsPnl);
+        inputAddVenueDetailsPnl.setLayout(inputAddVenueDetailsPnlLayout);
+        inputAddVenueDetailsPnlLayout.setHorizontalGroup(
+            inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(jLabel20)
+                .addGap(12, 12, 12)
+                .addComponent(perPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addVenueBtn)
+                .addGap(33, 33, 33))
+            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                        .addGap(227, 227, 227)
+                        .addComponent(jLabel18))
+                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                        .addGap(8, 8, 8)
+                        .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(idErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(12, 12, 12)
+                                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                        .addGap(2, 2, 2)
+                                        .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(venueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(addressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addGap(11, 11, 11)
+                                .addComponent(jLabel19)
+                                .addGap(6, 6, 6)
+                                .addComponent(venueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 269, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(11, 11, 11)
+                        .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addGap(7, 7, 7)
+                                .addComponent(venueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addGap(2, 2, 2)
+                                .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        inputAddVenueDetailsPnlLayout.setVerticalGroup(
+            inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(jLabel18)
+                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                        .addGap(31, 31, 31)
+                        .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(venueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                        .addGap(37, 37, 37)
+                                        .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(idErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(addressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGap(39, 39, 39)
+                                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                        .addGap(1, 1, 1)
+                                        .addComponent(jLabel19))
+                                    .addComponent(venueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addComponent(venueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                        .addGap(36, 36, 36)
+                                        .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGap(17, 17, 17)
+                        .addGroup(inputAddVenueDetailsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                                .addGap(1, 1, 1)
+                                .addComponent(jLabel20))
+                            .addComponent(perPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(35, 35, 35))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, inputAddVenueDetailsPnlLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(addVenueBtn)
+                        .addGap(25, 25, 25))))
+        );
 
         jButton5.setText("Back");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
@@ -1193,7 +1275,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jButton5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(inputAddVenueDetailsPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
+                .addComponent(inputAddVenueDetailsPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         adminDashboardPagesPnl.add(addVenuePagePnl, "AddVenuePage");
@@ -1399,8 +1481,8 @@ public class KnotSpot extends javax.swing.JFrame {
         cardLayoutForadminDashboard.show(adminDashboardPagesPnl, screenName);
     }
     
-    private void showPopDialog(JOptionPane optionPane, String message, String title, int messageType){
-        JOptionPane.showMessageDialog(optionPane, message, title, messageType);
+    private void showPopDialog(String message, String title, int messageType){
+        JOptionPane.showMessageDialog(this,message, title, messageType);
     }
     
 
@@ -1565,10 +1647,11 @@ public class KnotSpot extends javax.swing.JFrame {
                 venueDetails.add(venue);
                 //load data to table
                 defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
-                JOptionPane.showMessageDialog(addVenueSuccessOptPane, "Done");
+                showPopDialog("The venue is added successfully", "New Venue Entry", JOptionPane.INFORMATION_MESSAGE);
+                
 
             } else {
-                JOptionPane.showMessageDialog(addVenueSuccessOptPane, "Nope");
+                showPopDialog("The same venue cannot be duplicated", "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
 
             }
 
@@ -1602,9 +1685,24 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void removeVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtnActionPerformed
         // TODO add your handling code here:
-        int column = 0;
-        if(venueModifyTbl.getSelectedRowCount()==1){
+        int response = JOptionPane.showConfirmDialog(this,"Do you want to really remove the venue?", "Remove venue confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if(response==JOptionPane.YES_OPTION){
+            int venueIdColumn= 0;
+            int selectedRow = venueModifyTbl.getSelectedRow();
             
+            if(selectedRow>=0){
+                int selectedRowVenueId = Integer.parseInt(defaultTableModel.getValueAt(selectedRow, venueIdColumn).toString());
+                defaultTableModel.removeRow(selectedRow);
+            
+            
+                for(VenueModel venues : venueDetails){
+                    if(venues.getVenueId()==selectedRowVenueId){
+                        venueDetails.remove(venues);
+                       return;
+                    }
+                }
+            
+            }
         
         }
     }//GEN-LAST:event_removeVenueDetailsBtnActionPerformed
@@ -1653,7 +1751,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel actionColumnPnl;
     private javax.swing.JButton addVenueBtn;
     private javax.swing.JPanel addVenuePagePnl;
-    private javax.swing.JOptionPane addVenueSuccessOptPane;
     private javax.swing.JLabel addressErrorMsgLbl;
     private javax.swing.JPanel adminDashboardPagePnl;
     private javax.swing.JPanel adminDashboardPagesPnl;
