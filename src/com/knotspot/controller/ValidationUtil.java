@@ -38,7 +38,7 @@ public class ValidationUtil {
         isNullorEmpty(venueId, attribute);
         isNumber(venueId, attribute);
         if (!ID_PATTERN.matcher(String.valueOf(venueId)).matches()){
-            throw new IndexOutOfBoundsException(attribute +" must be of 5 digit");
+            throw new IndexOutOfBoundsException(attribute +" must be of 5 digit and not begin with 0");
         }
     }
 
@@ -46,7 +46,7 @@ public class ValidationUtil {
         isNullorEmpty(venueName, attribute);
         isAlphabetic(venueName, attribute);
         if (!NAME_PATTERN.matcher(String.valueOf(venueName)).matches()){
-            throw new IllegalArgumentException(attribute +" must be a proper name");
+            throw new IllegalArgumentException(attribute +" must be in alphabets");
         }
         
     }
@@ -62,7 +62,7 @@ public class ValidationUtil {
     public static void isContactValid(String venueContact, String attribute) {
         isNullorEmpty(venueContact, attribute);
         if(!CONTACT_PATTERN.matcher(String.valueOf(venueContact)).matches()){
-            throw new NumberFormatException(attribute +" is incorrect!");
+            throw new NumberFormatException(attribute +" must be of 10 digits");
         }
     }
 
@@ -80,7 +80,7 @@ public class ValidationUtil {
     
     public static void isAlphabetic(String value, String attribute) {
         if(!ALPHABETIC_PATTERN.matcher(value).matches()){
-             throw new NumberFormatException(attribute+ "use only alpha characters");
+             throw new NumberFormatException("use only alpha characters");
         }
     }
     
