@@ -184,6 +184,13 @@ public class KnotSpot extends javax.swing.JFrame {
         aboutUsLbl = new javax.swing.JLabel();
         aboutUsSecondLineLbl = new javax.swing.JLabel();
         aboutUsLbl1 = new javax.swing.JLabel();
+        venueGalleryPagePnl = new javax.swing.JPanel();
+        firstVenuePictureLbl = new javax.swing.JLabel();
+        venuePictureCollectionPnl = new javax.swing.JPanel();
+        pictureTwo = new javax.swing.JLabel();
+        pictureThree = new javax.swing.JLabel();
+        pictureOne = new javax.swing.JLabel();
+        pictureTwo1 = new javax.swing.JLabel();
         topContainerNavPnl = new javax.swing.JPanel();
         manageVenueNavPnl = new javax.swing.JPanel();
         manageVenueNavLbl = new javax.swing.JLabel();
@@ -418,9 +425,8 @@ public class KnotSpot extends javax.swing.JFrame {
                             .addComponent(passwordLbl)
                             .addComponent(inputUsernameErrorLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(showPwdCheckBx, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginInfoContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(inputPasswordErrorPwdLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 247, Short.MAX_VALUE))))
+                            .addComponent(inputPasswordErrorPwdLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(inputPasswordPwdFld, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 248, Short.MAX_VALUE)))
                     .addGroup(loginInfoContainerPnlLayout.createSequentialGroup()
                         .addGap(147, 147, 147)
                         .addComponent(loginBtn)))
@@ -501,28 +507,22 @@ public class KnotSpot extends javax.swing.JFrame {
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 10));
         tableHeader.setOpaque(false);
         tableHeader.setDefaultRenderer(headerRender);
-        frontDisplayTable.setFont(new java.awt.Font("Sans Serif", Font.BOLD, 15));
+        frontDisplayTable.setFont(new java.awt.Font("Sans Serif", Font.BOLD, 10));
         frontDisplayTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                { new Integer(12318), " Nochas", " hattisar", " kathmandu",  new Integer(982373386), "Hall",  new Integer(30),  new Integer(23000)},
+                { new Integer(53621), "Kumus", "Basantapur", "Dharan",  new Integer(982726226), "Meeting Conference",  new Integer(25),  new Integer(7600)}
             },
             new String [] {
                 "id", "name", "address", "city", "contact", "type", "capacity", "rent fee"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Integer.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
         });
         frontDisplayTable.setFocusable(false);
@@ -544,10 +544,11 @@ public class KnotSpot extends javax.swing.JFrame {
 
         totalVenueDisplayLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         totalVenueDisplayLbl.setForeground(new java.awt.Color(0, 102, 204));
+        totalVenueDisplayLbl.setText("10");
 
         jLabel14.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(255, 204, 0));
-        jLabel14.setText("^ 29% last week");
+        jLabel14.setText("increase in 2 from last year");
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -987,7 +988,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(updateVenueDetailsBtn)
                     .addComponent(cancelVenueChangeBtn))
                 .addGap(8, 8, 8))
@@ -1167,19 +1168,26 @@ public class KnotSpot extends javax.swing.JFrame {
 
         adminDashboardPagesPnl.add(addVenuePagePnl, "ManageVenuePage");
 
+        settingPagePnl.setBackground(new java.awt.Color(250, 245, 239));
+
         darkModePnl.setBackground(new java.awt.Color(51, 51, 51));
         darkModePnl.setMaximumSize(new java.awt.Dimension(150, 150));
         darkModePnl.setMinimumSize(new java.awt.Dimension(150, 150));
         darkModePnl.setPreferredSize(new java.awt.Dimension(150, 150));
 
         darkImageLbl.setForeground(new java.awt.Color(255, 255, 255));
-        darkImageLbl.setText("image");
+        darkImageLbl.setText("Hello");
 
         darkModeWelcomeLbl.setForeground(new java.awt.Color(255, 255, 255));
         darkModeWelcomeLbl.setText("Welcome Admin!");
 
         selectDarkModeRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         selectDarkModeRadioBtn.setText("Dark Mode");
+        selectDarkModeRadioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectDarkModeRadioBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout darkModePnlLayout = new javax.swing.GroupLayout(darkModePnl);
         darkModePnl.setLayout(darkModePnlLayout);
@@ -1216,11 +1224,16 @@ public class KnotSpot extends javax.swing.JFrame {
         lightModePnl.setMinimumSize(new java.awt.Dimension(150, 150));
         lightModePnl.setPreferredSize(new java.awt.Dimension(150, 150));
 
-        lightImageLbl.setText("image");
+        lightImageLbl.setText("Hello");
 
         lightModeWelcomeLbl.setText("Welcome Admin!");
 
         selectLightModeRadioBtn.setText("Light Mode");
+        selectLightModeRadioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                selectLightModeRadioBtnActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout lightModePnlLayout = new javax.swing.GroupLayout(lightModePnl);
         lightModePnl.setLayout(lightModePnlLayout);
@@ -1252,7 +1265,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         backgroundModeSptPane.setLeftComponent(lightModePnl);
 
-        optionMessageLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        optionMessageLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         optionMessageLbl.setText("Please Select the background mode");
 
         javax.swing.GroupLayout settingPagePnlLayout = new javax.swing.GroupLayout(settingPagePnl);
@@ -1260,29 +1273,31 @@ public class KnotSpot extends javax.swing.JFrame {
         settingPagePnlLayout.setHorizontalGroup(
             settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settingPagePnlLayout.createSequentialGroup()
-                .addGap(426, 426, 426)
+                .addGap(369, 369, 369)
                 .addComponent(optionMessageLbl)
-                .addContainerGap(432, Short.MAX_VALUE))
+                .addContainerGap(438, Short.MAX_VALUE))
             .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(settingPagePnlLayout.createSequentialGroup()
                     .addGap(377, 377, 377)
                     .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(378, Short.MAX_VALUE)))
+                    .addContainerGap(430, Short.MAX_VALUE)))
         );
         settingPagePnlLayout.setVerticalGroup(
             settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settingPagePnlLayout.createSequentialGroup()
-                .addGap(183, 183, 183)
+                .addGap(164, 164, 164)
                 .addComponent(optionMessageLbl)
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(656, Short.MAX_VALUE))
             .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(settingPagePnlLayout.createSequentialGroup()
                     .addGap(229, 229, 229)
                     .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(322, Short.MAX_VALUE)))
+                    .addContainerGap(367, Short.MAX_VALUE)))
         );
 
         adminDashboardPagesPnl.add(settingPagePnl, "SettingPage");
+
+        aboutUsPagePnl.setBackground(new java.awt.Color(250, 245, 239));
 
         aboutUsTitleLbl.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         aboutUsTitleLbl.setText("About Us");
@@ -1308,7 +1323,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(aboutUsTitleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(aboutUsImgCompanyLbl)
                     .addComponent(aboutUsSecondLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 258, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(426, Short.MAX_VALUE))
+                .addContainerGap(478, Short.MAX_VALUE))
         );
         aboutUsPagePnlLayout.setVerticalGroup(
             aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1322,10 +1337,87 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(aboutUsLbl1)
                 .addGap(57, 57, 57)
                 .addComponent(aboutUsSecondLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 203, Short.MAX_VALUE))
+                .addGap(0, 248, Short.MAX_VALUE))
         );
 
         adminDashboardPagesPnl.add(aboutUsPagePnl, "AboutUsPage");
+
+        venueGalleryPagePnl.setBackground(new java.awt.Color(250, 245, 239));
+
+        firstVenuePictureLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        firstVenuePictureLbl.setText("Our venue pictures");
+
+        venuePictureCollectionPnl.setBackground(new java.awt.Color(250, 245, 239));
+
+        pictureTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imagforpic2.jpg"))); // NOI18N
+
+        pictureThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imageforpic.jpg"))); // NOI18N
+
+        pictureOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/rrr.jpg"))); // NOI18N
+
+        pictureTwo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imageforpic3.jpg"))); // NOI18N
+
+        javax.swing.GroupLayout venuePictureCollectionPnlLayout = new javax.swing.GroupLayout(venuePictureCollectionPnl);
+        venuePictureCollectionPnl.setLayout(venuePictureCollectionPnlLayout);
+        venuePictureCollectionPnlLayout.setHorizontalGroup(
+            venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
+                .addGroup(venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(pictureOne, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, venuePictureCollectionPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(pictureTwo1)
+                        .addGap(34, 34, 34)))
+                .addGroup(venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(pictureThree)
+                    .addComponent(pictureTwo, javax.swing.GroupLayout.PREFERRED_SIZE, 398, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(91, Short.MAX_VALUE))
+        );
+        venuePictureCollectionPnlLayout.setVerticalGroup(
+            venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, venuePictureCollectionPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
+                        .addComponent(pictureOne, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(pictureTwo1)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
+                        .addGap(11, 11, 11)
+                        .addComponent(pictureThree)
+                        .addGap(12, 12, 12)
+                        .addComponent(pictureTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        javax.swing.GroupLayout venueGalleryPagePnlLayout = new javax.swing.GroupLayout(venueGalleryPagePnl);
+        venueGalleryPagePnl.setLayout(venueGalleryPagePnlLayout);
+        venueGalleryPagePnlLayout.setHorizontalGroup(
+            venueGalleryPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
+                .addGroup(venueGalleryPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
+                        .addGap(453, 453, 453)
+                        .addComponent(firstVenuePictureLbl))
+                    .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(venuePictureCollectionPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        venueGalleryPagePnlLayout.setVerticalGroup(
+            venueGalleryPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(firstVenuePictureLbl)
+                .addGap(33, 33, 33)
+                .addComponent(venuePictureCollectionPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        adminDashboardPagesPnl.add(venueGalleryPagePnl, "VenueGalleryPage");
 
         topContainerNavPnl.setBackground(new java.awt.Color(14, 30, 63));
         topContainerNavPnl.setMaximumSize(new java.awt.Dimension(208, 232));
@@ -1835,6 +1927,9 @@ public class KnotSpot extends javax.swing.JFrame {
             } else {
                 inputUsernameErrorLbl.setText("");
                 inputPasswordErrorPwdLbl.setText("");
+                inputUsernameTxtFld.setText("");
+                inputPasswordPwdFld.setText("");
+                showPwdCheckBx.setSelected(false);
                 loadScreen("AdminScreen");
             }
         }
@@ -2257,6 +2352,31 @@ public class KnotSpot extends javax.swing.JFrame {
     private void removeVenueDetailsBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtn2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_removeVenueDetailsBtn2ActionPerformed
+
+    private void selectLightModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLightModeRadioBtnActionPerformed
+        // TODO add your handling code here:
+        if(selectDarkModeRadioBtn.isSelected()==true){
+                settingPagePnl.setBackground(new Color(250,245,239));
+                homePagePnl.setBackground(new Color(250,245,239));
+                addVenuePagePnl.setBackground(new Color(250,245,239));
+                aboutUsPagePnl.setBackground(new Color(250,245,239));
+                venueGalleryPagePnl.setBackground(new Color(250,245,239));
+                venuePictureCollectionPnl.setBackground(new Color(250,245,239));
+                
+        }
+    }//GEN-LAST:event_selectLightModeRadioBtnActionPerformed
+
+    private void selectDarkModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectDarkModeRadioBtnActionPerformed
+        // TODO add your handling code here:
+            if(selectDarkModeRadioBtn.isSelected()==true){
+                settingPagePnl.setBackground(Color.decode("937A62"));
+                homePagePnl.setBackground(Color.decode("937A62"));
+                addVenuePagePnl.setBackground(Color.decode("937A62"));
+                aboutUsPagePnl.setBackground(Color.decode("937A62"));
+                venueGalleryPagePnl.setBackground(Color.decode("937A62"));
+                venuePictureCollectionPnl.setBackground(Color.decode("937A62"));
+        }
+    }//GEN-LAST:event_selectDarkModeRadioBtnActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -2320,6 +2440,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel editColumnPnl;
     private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JButton editVenueDetailsBtn2;
+    private javax.swing.JLabel firstVenuePictureLbl;
     private javax.swing.JTable frontDisplayTable;
     private javax.swing.JPanel headerPnl;
     private javax.swing.JPanel homePagePnl;
@@ -2417,6 +2538,10 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel optionMessageLbl;
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JLabel perPlatePriceLbl;
+    private javax.swing.JLabel pictureOne;
+    private javax.swing.JLabel pictureThree;
+    private javax.swing.JLabel pictureTwo;
+    private javax.swing.JLabel pictureTwo1;
     private javax.swing.JPanel popUpInputChangePnl;
     private javax.swing.JScrollPane recentDataScrollBr;
     private javax.swing.JButton removeVenueDetailsBtn;
@@ -2438,8 +2563,10 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JTextField venueContactOnPopUpMsgFld;
     private javax.swing.JLabel venueGalleryNavLbl;
     private javax.swing.JPanel venueGalleryNavPnl;
+    private javax.swing.JPanel venueGalleryPagePnl;
     private javax.swing.JTextField venueIdOnPopUpMsgFld;
     private javax.swing.JTable venueModifyTbl;
     private javax.swing.JTextField venueNameOnPopUpMsgFld;
+    private javax.swing.JPanel venuePictureCollectionPnl;
     // End of variables declaration//GEN-END:variables
 }
