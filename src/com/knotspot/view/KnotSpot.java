@@ -40,8 +40,8 @@ public class KnotSpot extends javax.swing.JFrame {
         initComponents();
         this.setLocation(0,0);
         startProgress();
-        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(actionColumnPnl));
-        venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(actionColumnPnl));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(rendererColumnPnl));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(editColumnPnl));
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         
@@ -57,10 +57,14 @@ public class KnotSpot extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        actionColumnPnl = new javax.swing.JPanel();
+        editColumnPnl = new javax.swing.JPanel();
         editVenueDetailsBtn = new javax.swing.JButton();
         removeVenueDetailsBtn = new javax.swing.JButton();
         viewVenueDetailsBtn = new javax.swing.JButton();
+        rendererColumnPnl = new javax.swing.JPanel();
+        editVenueDetailsBtn2 = new javax.swing.JButton();
+        removeVenueDetailsBtn2 = new javax.swing.JButton();
+        viewVenueDetailsBtn2 = new javax.swing.JButton();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         loadingSymbolLbl = new javax.swing.JLabel();
@@ -127,7 +131,7 @@ public class KnotSpot extends javax.swing.JFrame {
         selectLightModeRadioBtn = new javax.swing.JRadioButton();
         optionMessageLbl = new javax.swing.JLabel();
 
-        actionColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
+        editColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
 
         editVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         editVenueDetailsBtn.setText("E");
@@ -151,11 +155,11 @@ public class KnotSpot extends javax.swing.JFrame {
         viewVenueDetailsBtn.setText("V");
         viewVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        javax.swing.GroupLayout actionColumnPnlLayout = new javax.swing.GroupLayout(actionColumnPnl);
-        actionColumnPnl.setLayout(actionColumnPnlLayout);
-        actionColumnPnlLayout.setHorizontalGroup(
-            actionColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(actionColumnPnlLayout.createSequentialGroup()
+        javax.swing.GroupLayout editColumnPnlLayout = new javax.swing.GroupLayout(editColumnPnl);
+        editColumnPnl.setLayout(editColumnPnlLayout);
+        editColumnPnlLayout.setHorizontalGroup(
+            editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(editColumnPnlLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(editVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -163,14 +167,60 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(viewVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
-        actionColumnPnlLayout.setVerticalGroup(
-            actionColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, actionColumnPnlLayout.createSequentialGroup()
+        editColumnPnlLayout.setVerticalGroup(
+            editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editColumnPnlLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(actionColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(editVenueDetailsBtn)
                     .addComponent(removeVenueDetailsBtn)
                     .addComponent(viewVenueDetailsBtn)))
+        );
+
+        rendererColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        editVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        editVenueDetailsBtn2.setText("E");
+        editVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        editVenueDetailsBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                editVenueDetailsBtn2ActionPerformed(evt);
+            }
+        });
+
+        removeVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        removeVenueDetailsBtn2.setText("R");
+        removeVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        removeVenueDetailsBtn2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeVenueDetailsBtn2ActionPerformed(evt);
+            }
+        });
+
+        viewVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        viewVenueDetailsBtn2.setText("V");
+        viewVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        javax.swing.GroupLayout rendererColumnPnlLayout = new javax.swing.GroupLayout(rendererColumnPnl);
+        rendererColumnPnl.setLayout(rendererColumnPnlLayout);
+        rendererColumnPnlLayout.setHorizontalGroup(
+            rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(rendererColumnPnlLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(editVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(removeVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(viewVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+        rendererColumnPnlLayout.setVerticalGroup(
+            rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rendererColumnPnlLayout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(editVenueDetailsBtn2)
+                    .addComponent(removeVenueDetailsBtn2)
+                    .addComponent(viewVenueDetailsBtn2)))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1251,6 +1301,14 @@ public class KnotSpot extends javax.swing.JFrame {
         
         }
     }//GEN-LAST:event_removeVenueDetailsBtnActionPerformed
+
+    private void editVenueDetailsBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editVenueDetailsBtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_editVenueDetailsBtn2ActionPerformed
+
+    private void removeVenueDetailsBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtn2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeVenueDetailsBtn2ActionPerformed
     /**
      * @param args the command line arguments
      */
@@ -1290,7 +1348,6 @@ public class KnotSpot extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aboutUsNavLbl;
     private javax.swing.JPanel aboutUsNavPnl;
-    private javax.swing.JPanel actionColumnPnl;
     private javax.swing.JButton addVenueBtn;
     private javax.swing.JPanel addVenuePagePnl;
     private javax.swing.JLabel addressErrorMsgLbl;
@@ -1303,7 +1360,9 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel darkImageLbl;
     private javax.swing.JPanel darkModePnl;
     private javax.swing.JLabel darkModeWelcomeLbl;
+    private javax.swing.JPanel editColumnPnl;
     private javax.swing.JButton editVenueDetailsBtn;
+    private javax.swing.JButton editVenueDetailsBtn2;
     private javax.swing.JTable frontDisplayTable;
     private javax.swing.JPanel homePagePnl;
     private javax.swing.JLabel idErrorMsgLbl;
@@ -1344,6 +1403,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel perPlatePriceLbl;
     private javax.swing.JScrollPane recentDataScrollBr;
     private javax.swing.JButton removeVenueDetailsBtn;
+    private javax.swing.JButton removeVenueDetailsBtn2;
+    private javax.swing.JPanel rendererColumnPnl;
     private javax.swing.JRadioButton selectDarkModeRadioBtn;
     private javax.swing.JRadioButton selectLightModeRadioBtn;
     private javax.swing.JLabel settingNavLbl;
@@ -1357,5 +1418,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel venueGalleryNavPnl;
     private javax.swing.JTable venueModifyTbl;
     private javax.swing.JButton viewVenueDetailsBtn;
+    private javax.swing.JButton viewVenueDetailsBtn2;
     // End of variables declaration//GEN-END:variables
 }

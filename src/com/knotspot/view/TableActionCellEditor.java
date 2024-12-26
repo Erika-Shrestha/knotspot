@@ -4,6 +4,7 @@
  */
 package com.knotspot.view;
 
+import java.awt.Color;
 import java.awt.Component;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JCheckBox;
@@ -29,8 +30,13 @@ public class TableActionCellEditor extends DefaultCellEditor{
     
     
     @Override
-    public Component getTableCellEditorComponent(JTable table, Object o, boolean bln, int i, int il){
-        panel.setBackground(table.getSelectionBackground());
+    public Component getTableCellEditorComponent(JTable table, Object o, boolean isSelected, int i, int il){
+        if(isSelected==false){
+            panel.setBackground(Color.WHITE);
+        }
+        else{
+            panel.setBackground(table.getSelectionBackground());
+        }
         return panel;
     }
     
