@@ -28,12 +28,24 @@ public class ValidationUtil {
     private static final Pattern ALPHANUMERIC_PATTERN = Pattern.compile("^[a-zA-Z0-9]+$");  
     private static final Pattern ALPHABETIC_PATTERN = Pattern.compile("^[a-zA-Z]+$");
     
+    /**
+     * checks if the passing parameter is null and throws a null pointer exception
+     * @param value
+     * @param attribute 
+     */
     public static void isNullorEmpty(String value, String attribute) {
         if( value == null || value.trim().isEmpty())
             throw new NullPointerException(attribute + " is empty!");
             
     }
-
+    
+    /**
+     * checks if the passing id parameter is valid from the pattern and throws a index out of bounds exception
+     * calls null and empty method
+     * calls number validation
+     * @param venueId
+     * @param attribute 
+     */
     public static void isIdValid(String venueId, String attribute) {
         isNullorEmpty(venueId, attribute);
         isNumber(venueId, attribute);
