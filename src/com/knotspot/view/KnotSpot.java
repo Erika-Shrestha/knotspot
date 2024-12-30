@@ -4,7 +4,7 @@
  */
 package com.knotspot.view;
 
-import com.knotspot.controller.ValidationUtil;
+import com.knotspot.util.ValidationUtil;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.table.JTableHeader;

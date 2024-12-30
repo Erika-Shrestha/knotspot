@@ -5,7 +5,7 @@
 package com.knotspot.model;
 
 /**
- *
+ *              (exception ma @ throws)
  * @author 
  * LMU ID:23048598
  * COLLEGE ID: 230024

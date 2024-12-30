@@ -11,7 +11,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableCellRenderer;
 
 /**
- *
+ *                      (class le k garcha)
  * @author 
  * LMU ID: 23048598
  * COLLEGE ID: 230024
