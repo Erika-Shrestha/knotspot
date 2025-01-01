@@ -19,23 +19,23 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="editVenueDetailsBtn" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="removeVenueDetailsBtn" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="editVenueDetailsBtn" max="32767" attributes="0"/>
-                      <Component id="removeVenueDetailsBtn" pref="0" max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="removeVenueDetailsBtn" min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="editVenueDetailsBtn" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -47,9 +47,8 @@
               <Font name="Segoe UI" size="8" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/knotspot/resource/iconedit.jpg"/>
+              <Image iconType="3" name="/com/knotspot/resource/itemedit.jpg"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="E"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder/>
@@ -97,23 +96,23 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="editVenueDetailsBtn2" min="-2" pref="31" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="removeVenueDetailsBtn2" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="editVenueDetailsBtn2" alignment="0" max="32767" attributes="0"/>
-                      <Component id="removeVenueDetailsBtn2" alignment="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="editVenueDetailsBtn2" min="-2" max="-2" attributes="0"/>
+                      <Component id="removeVenueDetailsBtn2" min="-2" pref="27" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -125,9 +124,8 @@
               <Font name="Segoe UI" size="8" style="0"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="3" name="/com/knotspot/resource/iconedit.jpg"/>
+              <Image iconType="3" name="/com/knotspot/resource/itemedit.jpg"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="E"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
                 <EmptyBorder/>
@@ -794,9 +792,9 @@
                                   </TableColumnModel>
                                 </Property>
                                 <Property name="focusable" type="boolean" value="false"/>
-                                <Property name="rowHeight" type="int" value="25"/>
+                                <Property name="rowHeight" type="int" value="30"/>
                                 <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                                  <Color blue="99" green="99" red="99" type="rgb"/>
+                                  <Color blue="9a" green="84" red="5a" type="rgb"/>
                                 </Property>
                                 <Property name="showHorizontalLines" type="boolean" value="true"/>
                                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
@@ -805,7 +803,7 @@
                                 <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
                               </Properties>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();&#xa;headerRender.setBackground(Color.decode(&quot;#FFFFFF&quot;));&#xa;headerRender.setForeground(Color.decode(&quot;#000000&quot;));&#xa;JTableHeader tableHeader = frontDisplayTable.getTableHeader();&#xa;tableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;tableHeader.setOpaque(false);&#xa;tableHeader.setDefaultRenderer(headerRender);"/>
+                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();&#xa;headerRender.setBackground(Color.decode(&quot;#0E1E3F&quot;));&#xa;headerRender.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;JTableHeader tableHeader = frontDisplayTable.getTableHeader();&#xa;tableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;tableHeader.setOpaque(false);&#xa;tableHeader.setDefaultRenderer(headerRender);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>
@@ -911,7 +909,6 @@
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="cc" green="66" red="0" type="rgb"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="10"/>
                                   </Properties>
                                   <Events>
                                     <EventHandler event="inputMethodTextChanged" listener="java.awt.event.InputMethodListener" parameters="java.awt.event.InputMethodEvent" handler="totalVenueDisplayLblInputMethodTextChanged"/>
@@ -1956,6 +1953,12 @@
                           </Constraints>
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="insertDataTableScrlPane">
+                          <Properties>
+                            <Property name="autoscrolls" type="boolean" value="true"/>
+                          </Properties>
+                          <AuxValues>
+                            <AuxValue name="JavaCodeGenerator_InitCodePost" type="java.lang.String" value="insertDataTableScrlPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);"/>
+                          </AuxValues>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="24" y="393" width="1012" height="266"/>
@@ -1966,6 +1969,9 @@
                           <SubComponents>
                             <Component class="javax.swing.JTable" name="venueModifyTbl">
                               <Properties>
+                                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                                  <Font name="SansSerif" size="10" style="1"/>
+                                </Property>
                                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                                   <Table columnCount="9" rowCount="0">
                                     <Column editable="false" title="ID" type="java.lang.Integer"/>
@@ -2021,19 +2027,24 @@
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
-                                    <Column maxWidth="-1" minWidth="-1" prefWidth="67" resizable="true">
+                                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                                       <Title/>
                                       <Editor/>
                                       <Renderer/>
                                     </Column>
                                   </TableColumnModel>
                                 </Property>
-                                <Property name="rowHeight" type="int" value="25"/>
+                                <Property name="rowHeight" type="int" value="40"/>
+                                <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="9a" green="84" red="5a" type="rgb"/>
+                                </Property>
+                                <Property name="selectionForeground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                                </Property>
                                 <Property name="selectionModel" type="javax.swing.ListSelectionModel" editor="org.netbeans.modules.form.editors2.JTableSelectionModelEditor">
                                   <JTableSelectionModel selectionMode="0"/>
                                 </Property>
                                 <Property name="showHorizontalLines" type="boolean" value="true"/>
-                                <Property name="showVerticalLines" type="boolean" value="true"/>
                                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                                 </Property>
@@ -2042,7 +2053,7 @@
                                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="venueModifyTblMouseClicked"/>
                               </Events>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();&#xa;headerRenderForVenueTable.setBackground(Color.decode(&quot;#FFFFFF&quot;));&#xa;headerRenderForVenueTable.setForeground(Color.decode(&quot;#000000&quot;));&#xa;headerRenderForVenueTable.setHorizontalAlignment(SwingConstants.CENTER);&#xa;JTableHeader venuetableHeader = venueModifyTbl.getTableHeader();&#xa;venuetableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;venuetableHeader.setOpaque(false);&#xa;venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);"/>
+                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();&#xa;headerRenderForVenueTable.setBackground(Color.decode(&quot;#0E1E3F&quot;));&#xa;headerRenderForVenueTable.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;JTableHeader venuetableHeader = venueModifyTbl.getTableHeader();&#xa;venuetableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;venuetableHeader.setOpaque(false);&#xa;venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>

@@ -18,6 +18,7 @@ import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -221,8 +222,7 @@ public class KnotSpot extends javax.swing.JFrame {
         editColumnPnl.setMinimumSize(new java.awt.Dimension(61, 27));
 
         editVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        editVenueDetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/iconedit.jpg"))); // NOI18N
-        editVenueDetailsBtn.setText("E");
+        editVenueDetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/itemedit.jpg"))); // NOI18N
         editVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         editVenueDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,20 +244,20 @@ public class KnotSpot extends javax.swing.JFrame {
         editColumnPnlLayout.setHorizontalGroup(
             editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editColumnPnlLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(editVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(removeVenueDetailsBtn)
-                .addGap(0, 0, 0))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         editColumnPnlLayout.setVerticalGroup(
             editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editColumnPnlLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(editVenueDetailsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(removeVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(removeVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(editVenueDetailsBtn))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         rendererColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
@@ -265,8 +265,7 @@ public class KnotSpot extends javax.swing.JFrame {
         rendererColumnPnl.setMinimumSize(new java.awt.Dimension(61, 27));
 
         editVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
-        editVenueDetailsBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/iconedit.jpg"))); // NOI18N
-        editVenueDetailsBtn2.setText("E");
+        editVenueDetailsBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/itemedit.jpg"))); // NOI18N
         editVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         editVenueDetailsBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -288,20 +287,20 @@ public class KnotSpot extends javax.swing.JFrame {
         rendererColumnPnlLayout.setHorizontalGroup(
             rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rendererColumnPnlLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(editVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(removeVenueDetailsBtn2)
-                .addGap(0, 0, 0))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         rendererColumnPnlLayout.setVerticalGroup(
             rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rendererColumnPnlLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(editVenueDetailsBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(removeVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(editVenueDetailsBtn2)
+                    .addComponent(removeVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -503,8 +502,8 @@ public class KnotSpot extends javax.swing.JFrame {
         recentDataScrollBr.setBackground(new java.awt.Color(255, 255, 255));
 
         DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();
-        headerRender.setBackground(Color.decode("#FFFFFF"));
-        headerRender.setForeground(Color.decode("#000000"));
+        headerRender.setBackground(Color.decode("#0E1E3F"));
+        headerRender.setForeground(Color.decode("#FFFFFF"));
         JTableHeader tableHeader = frontDisplayTable.getTableHeader();
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 12));
         tableHeader.setOpaque(false);
@@ -534,8 +533,8 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
         frontDisplayTable.setFocusable(false);
-        frontDisplayTable.setRowHeight(25);
-        frontDisplayTable.setSelectionBackground(new java.awt.Color(153, 153, 153));
+        frontDisplayTable.setRowHeight(30);
+        frontDisplayTable.setSelectionBackground(new java.awt.Color(90, 132, 154));
         frontDisplayTable.setShowHorizontalLines(true);
         frontDisplayTable.getTableHeader().setReorderingAllowed(false);
         frontDisplayTable.setVerifyInputWhenFocusTarget(false);
@@ -552,7 +551,6 @@ public class KnotSpot extends javax.swing.JFrame {
 
         totalVenueDisplayLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         totalVenueDisplayLbl.setForeground(new java.awt.Color(0, 102, 204));
-        totalVenueDisplayLbl.setText("10");
         totalVenueDisplayLbl.addInputMethodListener(new java.awt.event.InputMethodListener() {
             public void caretPositionChanged(java.awt.event.InputMethodEvent evt) {
             }
@@ -1106,14 +1104,17 @@ public class KnotSpot extends javax.swing.JFrame {
         addressErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         addVenuePagePnl.add(addressErrorMsgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 240, 20));
 
+        insertDataTableScrlPane.setAutoscrolls(true);
+        insertDataTableScrlPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+
         DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();
-        headerRenderForVenueTable.setBackground(Color.decode("#FFFFFF"));
-        headerRenderForVenueTable.setForeground(Color.decode("#000000"));
-        headerRenderForVenueTable.setHorizontalAlignment(SwingConstants.CENTER);
+        headerRenderForVenueTable.setBackground(Color.decode("#0E1E3F"));
+        headerRenderForVenueTable.setForeground(Color.decode("#FFFFFF"));
         JTableHeader venuetableHeader = venueModifyTbl.getTableHeader();
         venuetableHeader.setFont(new Font("Sans Serif", Font.BOLD, 12));
         venuetableHeader.setOpaque(false);
         venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);
+        venueModifyTbl.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
         venueModifyTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -1137,10 +1138,11 @@ public class KnotSpot extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        venueModifyTbl.setRowHeight(25);
+        venueModifyTbl.setRowHeight(40);
+        venueModifyTbl.setSelectionBackground(new java.awt.Color(90, 132, 154));
+        venueModifyTbl.setSelectionForeground(new java.awt.Color(255, 255, 255));
         venueModifyTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         venueModifyTbl.setShowHorizontalLines(true);
-        venueModifyTbl.setShowVerticalLines(true);
         venueModifyTbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 venueModifyTblMouseClicked(evt);
@@ -1150,7 +1152,6 @@ public class KnotSpot extends javax.swing.JFrame {
         if (venueModifyTbl.getColumnModel().getColumnCount() > 0) {
             venueModifyTbl.getColumnModel().getColumn(0).setPreferredWidth(40);
             venueModifyTbl.getColumnModel().getColumn(5).setPreferredWidth(130);
-            venueModifyTbl.getColumnModel().getColumn(8).setPreferredWidth(67);
         }
 
         addVenuePagePnl.add(insertDataTableScrlPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(24, 393, 1012, 266));
@@ -1835,13 +1836,23 @@ public class KnotSpot extends javax.swing.JFrame {
     private void addDemoVenue(VenueModel venue) {
         venueDetails.add(venue);
         defaultTableModel.addRow(new Object[]{venue.getVenueId(), venue.getVenueName(), venue.getAddress(), venue.getCity(), venue.getContactNumber(), venue.getVenueType(), venue.getCapacity(), venue.getRentFee()});
-        
+        DefaultTableCellRenderer columnDataRenderer = new DefaultTableCellRenderer();
+        columnDataRenderer.setHorizontalAlignment(SwingConstants.LEFT);
+        venueModifyTbl.getColumnModel().getColumn(0).setCellRenderer(columnDataRenderer);
+        venueModifyTbl.getColumnModel().getColumn(4).setCellRenderer(columnDataRenderer);
+        venueModifyTbl.getColumnModel().getColumn(6).setCellRenderer(columnDataRenderer);
+        venueModifyTbl.getColumnModel().getColumn(7).setCellRenderer(columnDataRenderer);
+        totalVenueDisplayLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
     }
     
     private void displayTableOnHome(){
-        DefaultTableModel displayModel = (DefaultTableModel) frontDisplayTable.getModel();
-        
-    
+        frontDisplayTable.setModel(venueModifyTbl.getModel());
+        DefaultTableCellRenderer columnDataRenderer = new DefaultTableCellRenderer();
+        columnDataRenderer.setHorizontalAlignment(SwingConstants.LEFT);
+        frontDisplayTable.getColumnModel().getColumn(0).setCellRenderer(columnDataRenderer);
+        frontDisplayTable.getColumnModel().getColumn(4).setCellRenderer(columnDataRenderer);
+        frontDisplayTable.getColumnModel().getColumn(6).setCellRenderer(columnDataRenderer);
+        frontDisplayTable.getColumnModel().getColumn(7).setCellRenderer(columnDataRenderer);
     }
     
     private void startProgress() {
@@ -2215,7 +2226,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 }
                 
             }
-            totalVenueDisplayLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
+            
         }
     }//GEN-LAST:event_removeVenueDetailsBtnActionPerformed
 
