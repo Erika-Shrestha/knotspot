@@ -108,7 +108,7 @@ public class ValidationUtil {
     }
     
     public static void venueValidateColor(JTextField field, JLabel label, Color borderColor, Color textColor, String message, String title){
-        field.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2), title, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,javax.swing.border.TitledBorder.DEFAULT_POSITION,new java.awt.Font("Segoe UI", Font.PLAIN, 12),textColor));
+        field.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(borderColor, 2), title, javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION,javax.swing.border.TitledBorder.DEFAULT_POSITION,new java.awt.Font("Segoe UI", Font.BOLD, 12),textColor));
         label.setText(message);
         label.setForeground(borderColor);
         

@@ -19,6 +19,7 @@ import java.util.List;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -50,6 +51,7 @@ public class KnotSpot extends javax.swing.JFrame {
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         defaultInitializedTableData();
         displayTableOnHome();
+       
     }
 
     /**
@@ -221,18 +223,21 @@ public class KnotSpot extends javax.swing.JFrame {
         editColumnPnl.setMaximumSize(new java.awt.Dimension(61, 27));
         editColumnPnl.setMinimumSize(new java.awt.Dimension(61, 27));
 
+        editVenueDetailsBtn.setContentAreaFilled(false);
+        editVenueDetailsBtn.setBorderPainted(false);
         editVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         editVenueDetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/itemedit.jpg"))); // NOI18N
-        editVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        editVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         editVenueDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editVenueDetailsBtnActionPerformed(evt);
             }
         });
 
+        removeVenueDetailsBtn.setContentAreaFilled(false);
         removeVenueDetailsBtn.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         removeVenueDetailsBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/icondelete_1.jpg"))); // NOI18N
-        removeVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        removeVenueDetailsBtn.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         removeVenueDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeVenueDetailsBtnActionPerformed(evt);
@@ -254,9 +259,9 @@ public class KnotSpot extends javax.swing.JFrame {
             editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editColumnPnlLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(removeVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editVenueDetailsBtn))
+                .addGroup(editColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(editVenueDetailsBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -264,18 +269,20 @@ public class KnotSpot extends javax.swing.JFrame {
         rendererColumnPnl.setMaximumSize(new java.awt.Dimension(61, 27));
         rendererColumnPnl.setMinimumSize(new java.awt.Dimension(61, 27));
 
+        editVenueDetailsBtn2.setContentAreaFilled(false);
         editVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         editVenueDetailsBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/itemedit.jpg"))); // NOI18N
-        editVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        editVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         editVenueDetailsBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editVenueDetailsBtn2ActionPerformed(evt);
             }
         });
 
+        removeVenueDetailsBtn2.setContentAreaFilled(false);
         removeVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         removeVenueDetailsBtn2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/icondelete_1.jpg"))); // NOI18N
-        removeVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        removeVenueDetailsBtn2.setBorder(javax.swing.BorderFactory.createEmptyBorder(3, 3, 3, 3));
         removeVenueDetailsBtn2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 removeVenueDetailsBtn2ActionPerformed(evt);
@@ -297,9 +304,9 @@ public class KnotSpot extends javax.swing.JFrame {
             rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rendererColumnPnlLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(editVenueDetailsBtn2)
-                    .addComponent(removeVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(editVenueDetailsBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(removeVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -351,6 +358,8 @@ public class KnotSpot extends javax.swing.JFrame {
         loadingValueLbl.setFont(new java.awt.Font("Sans Serif Collection", 0, 18)); // NOI18N
         loadingValueLbl.setText("0%");
         loadingPagePnl.add(loadingValueLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(1220, 710, -1, -1));
+
+        loadingPagePrgBar.setForeground(Color.RED);
         loadingPagePnl.add(loadingPagePrgBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 760, 1280, 10));
 
         loadingPageBackgroundLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imageforloading.jpg"))); // NOI18N
@@ -373,7 +382,17 @@ public class KnotSpot extends javax.swing.JFrame {
 
         usernameLbl.setText("USERNAME:");
 
-        inputUsernameTxtFld.setBorder(null);
+        inputUsernameTxtFld.setForeground(new java.awt.Color(204, 204, 204));
+        inputUsernameTxtFld.setText("Enter username");
+        inputUsernameTxtFld.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        inputUsernameTxtFld.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                inputUsernameTxtFldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                inputUsernameTxtFldFocusLost(evt);
+            }
+        });
         inputUsernameTxtFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputUsernameTxtFldActionPerformed(evt);
@@ -382,7 +401,19 @@ public class KnotSpot extends javax.swing.JFrame {
 
         passwordLbl.setText("PASSWORD:");
 
-        inputPasswordPwdFld.setBorder(null);
+        inputPasswordPwdFld.setForeground(new java.awt.Color(204, 204, 204));
+        inputPasswordPwdFld.setText("Enter password");
+        inputPasswordPwdFld.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        inputPasswordPwdFld.setEchoChar('\u0000');
+        inputPasswordPwdFld.setEchoChar((char)0);
+        inputPasswordPwdFld.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                inputPasswordPwdFldFocusGained(evt);
+            }
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                inputPasswordPwdFldFocusLost(evt);
+            }
+        });
         inputPasswordPwdFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 inputPasswordPwdFldActionPerformed(evt);
@@ -2274,7 +2305,7 @@ public class KnotSpot extends javax.swing.JFrame {
             try {
                 ValidationUtil.isIdValid(venueIdOnPopUpMsgFld.getText(), "ID");
                 editedVenueId = Integer.parseInt(venueIdOnPopUpMsgFld.getText());
-                ValidationUtil.venueValidateColor(venueIdOnPopUpMsgFld, jLabel25, Color.WHITE, Color.BLACK, "", "Venue Id");
+                ValidationUtil.venueValidateColor(venueIdOnPopUpMsgFld, jLabel25, Color.WHITE, Color.BLACK, "", "Venue ID");
             } catch (NullPointerException | NumberFormatException | IndexOutOfBoundsException e) {
                 ValidationUtil.venueValidateColor(venueIdOnPopUpMsgFld, jLabel25, Color.RED, Color.RED, e.getMessage(), "Venue Id");
                 isValid = false; //exception
@@ -2466,6 +2497,42 @@ public class KnotSpot extends javax.swing.JFrame {
         // TODO add your handling code here:
         loadNavRelatedPage("HomePage");
     }//GEN-LAST:event_adminDashboardSmallIconLblMouseClicked
+
+    private void inputUsernameTxtFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldFocusGained
+        // TODO add your handling code here:
+        if(inputUsernameTxtFld.getText().equals("Enter username")){
+           inputUsernameTxtFld.setText("");
+           inputUsernameTxtFld.setForeground(Color.decode("#000000"));
+        }
+    }//GEN-LAST:event_inputUsernameTxtFldFocusGained
+
+    private void inputUsernameTxtFldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldFocusLost
+        // TODO add your handling code here:
+        if(inputUsernameTxtFld.getText().equals("")){
+           inputUsernameTxtFld.setText("Enter username");
+           inputUsernameTxtFld.setForeground(Color.decode("#CCCCCC"));
+        }
+    }//GEN-LAST:event_inputUsernameTxtFldFocusLost
+
+    private void inputPasswordPwdFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldFocusGained
+        // TODO add your handling code here:
+        if(String.valueOf(inputPasswordPwdFld.getPassword()).equals("Enter password")){
+           inputPasswordPwdFld.setText("");
+           inputPasswordPwdFld.setForeground(Color.decode("#000000"));
+           inputPasswordPwdFld.setEchoChar('\u2022');
+        }
+    }//GEN-LAST:event_inputPasswordPwdFldFocusGained
+
+    private void inputPasswordPwdFldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldFocusLost
+        // TODO add your handling code here:
+        if(String.valueOf(inputPasswordPwdFld.getPassword()).equals("")){
+           inputPasswordPwdFld.setText("Enter password");
+           inputPasswordPwdFld.setForeground(Color.decode("#CCCCCC"));
+           inputPasswordPwdFld.setEchoChar('\u0000');
+        }
+    }//GEN-LAST:event_inputPasswordPwdFldFocusLost
+    
+    
     /**
      * @param args the command line arguments
      */
