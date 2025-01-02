@@ -44,9 +44,7 @@ public class KnotSpot extends javax.swing.JFrame {
      * of cell renderer and cell editor to column 8 (action) of the table type
      * casts the table to get the table model
      */
-    public KnotSpot() {  
-        this.revalidate();         
-        this.repaint();  
+    public KnotSpot() {    
         initComponents();
         this.setLocation(0, 0);
         startProgress();
@@ -106,6 +104,8 @@ public class KnotSpot extends javax.swing.JFrame {
         venueAddressOnPopUpMsgFld = new javax.swing.JTextField();
         venueIdOnPopUpMsgFld = new javax.swing.JTextField();
         venueNameOnPopUpMsgFld = new javax.swing.JTextField();
+        jDialog1 = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
@@ -404,34 +404,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel24)
-                .addGap(javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE))
-        );
-
-        javax.swing.GroupLayout popUpInputChangePnlLayout = new javax.swing.GroupLayout(popUpInputChangePnl);
-        popUpInputChangePnl.setLayout(popUpInputChangePnlLayout);
-        popUpInputChangePnlLayout.setHorizontalGroup(
-            popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
-                .addGap(442, 442, 442)
-                .addComponent(jLabel29)
-                .addContainerGap(108, Short.MAX_VALUE))
-            .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        popUpInputChangePnlLayout.setVerticalGroup(
-            popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, popUpInputChangePnlLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel29)
                 .addContainerGap())
-            .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
         );
 
         updateVenueDetailsBtn.setText("UPDATE");
@@ -560,6 +533,74 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(cancelVenueChangeBtn)
                     .addComponent(updateVenueDetailsBtn))
                 .addGap(17, 17, 17))
+        );
+
+        javax.swing.GroupLayout popUpInputChangePnlLayout = new javax.swing.GroupLayout(popUpInputChangePnl);
+        popUpInputChangePnl.setLayout(popUpInputChangePnlLayout);
+        popUpInputChangePnlLayout.setHorizontalGroup(
+            popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
+                .addGap(442, 442, 442)
+                .addComponent(jLabel29)
+                .addContainerGap(108, Short.MAX_VALUE))
+            .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 598, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        popUpInputChangePnlLayout.setVerticalGroup(
+            popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, popUpInputChangePnlLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel29)
+                .addContainerGap())
+            .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(popUpInputChangePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(popUpInputChangePnlLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        jDialog1.setBounds(new java.awt.Rectangle(400, 200, 0, 0));
+        jDialog1.setMaximumSize(new java.awt.Dimension(500, 300));
+        jDialog1.setMinimumSize(new java.awt.Dimension(500, 300));
+        jDialog1.setUndecorated(true);
+        jDialog1.setPreferredSize(new java.awt.Dimension(500, 300));
+        jDialog1.setResizable(false);
+
+        jPanel4.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
+        jDialog1.getContentPane().setLayout(jDialog1Layout);
+        jDialog1Layout.setHorizontalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jDialog1Layout.setVerticalGroup(
+            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -2391,7 +2432,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         }
         getRootPane().getGlassPane().setVisible(true);
-        
+        jDialog1.setVisible(true);
         
         
 
@@ -2789,6 +2830,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> inputVenueTypeComboBx;
     private javax.swing.JComboBox<String> inputVenueTypeComboBx1;
     private javax.swing.JScrollPane insertDataTableScrlPane;
+    private javax.swing.JDialog jDialog1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -2830,6 +2872,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JLabel lightImageLbl;
