@@ -4,8 +4,9 @@
  */
 package com.knotspot.view;
 
+import com.knotspot.controller.algorithms.BinarySearch;
 import com.knotspot.util.ValidationUtil;
-import com.knotspot.controller.algorithms.InsertionSort;
+import com.knotspot.controller.algorithms.Sort;
 import java.awt.CardLayout;
 import javax.swing.ImageIcon;
 import javax.swing.table.JTableHeader;
@@ -102,13 +103,13 @@ public class KnotSpot extends javax.swing.JFrame {
         SortButtonGroup = new javax.swing.ButtonGroup();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
-        jLabel41 = new javax.swing.JLabel();
-        jLabel40 = new javax.swing.JLabel();
-        jLabel39 = new javax.swing.JLabel();
-        jLabel37 = new javax.swing.JLabel();
-        jLabel36 = new javax.swing.JLabel();
-        jLabel35 = new javax.swing.JLabel();
-        jLabel38 = new javax.swing.JLabel();
+        sloganLbl = new javax.swing.JLabel();
+        companyTitleLbl = new javax.swing.JLabel();
+        firstPopUpImage = new javax.swing.JLabel();
+        secondPopUpImage = new javax.swing.JLabel();
+        thirdPopUpImage = new javax.swing.JLabel();
+        fourthPopUpImage = new javax.swing.JLabel();
+        fifthPopUpImage = new javax.swing.JLabel();
         loadingSymbolLbl = new javax.swing.JLabel();
         loadingValueLbl = new javax.swing.JLabel();
         loadingPagePrgBar = new javax.swing.JProgressBar();
@@ -537,28 +538,28 @@ public class KnotSpot extends javax.swing.JFrame {
         loadingPagePnl.setPreferredSize(new java.awt.Dimension(1088, 700));
         loadingPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel41.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jLabel41.setText("Begin your new innings here.");
-        loadingPagePnl.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
+        sloganLbl.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        sloganLbl.setText("Begin your new innings here.");
+        loadingPagePnl.add(sloganLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, -1, -1));
 
-        jLabel40.setFont(new java.awt.Font("SansSerif", 1, 60)); // NOI18N
-        jLabel40.setText("Knot Spot");
-        loadingPagePnl.add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 310, -1));
+        companyTitleLbl.setFont(new java.awt.Font("SansSerif", 1, 60)); // NOI18N
+        companyTitleLbl.setText("Knot Spot");
+        loadingPagePnl.add(companyTitleLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 260, 310, -1));
 
-        jLabel39.setPreferredSize(new java.awt.Dimension(240, 240));
-        loadingPagePnl.add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 240, 240));
+        firstPopUpImage.setPreferredSize(new java.awt.Dimension(240, 240));
+        loadingPagePnl.add(firstPopUpImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 240, 240));
 
-        jLabel37.setPreferredSize(new java.awt.Dimension(240, 240));
-        loadingPagePnl.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 240, 240));
+        secondPopUpImage.setPreferredSize(new java.awt.Dimension(240, 240));
+        loadingPagePnl.add(secondPopUpImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 240, 240));
 
-        jLabel36.setPreferredSize(new java.awt.Dimension(240, 240));
-        loadingPagePnl.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, 320, 240));
+        thirdPopUpImage.setPreferredSize(new java.awt.Dimension(240, 240));
+        loadingPagePnl.add(thirdPopUpImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 490, 320, 240));
 
-        jLabel35.setPreferredSize(new java.awt.Dimension(240, 240));
-        loadingPagePnl.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, 240, 240));
+        fourthPopUpImage.setPreferredSize(new java.awt.Dimension(240, 240));
+        loadingPagePnl.add(fourthPopUpImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 470, 240, 240));
 
-        jLabel38.setPreferredSize(new java.awt.Dimension(240, 240));
-        loadingPagePnl.add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 240, 240));
+        fifthPopUpImage.setPreferredSize(new java.awt.Dimension(240, 240));
+        loadingPagePnl.add(fifthPopUpImage, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 130, 240, 240));
 
         loadingSymbolLbl.setFont(new java.awt.Font("Sans Serif Collection", 0, 14)); // NOI18N
         loadingSymbolLbl.setText("starting request....");
@@ -1060,23 +1061,34 @@ public class KnotSpot extends javax.swing.JFrame {
                 ascendSortOrderRadioBtnActionPerformed(evt);
             }
         });
-        filterContainerPnl.add(ascendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+        filterContainerPnl.add(ascendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         SortButtonGroup.add(descendSortOrderRadioBtn);
         descendSortOrderRadioBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         descendSortOrderRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         descendSortOrderRadioBtn.setText("Descending");
+        descendSortOrderRadioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                descendSortOrderRadioBtnActionPerformed(evt);
+            }
+        });
         filterContainerPnl.add(descendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Id", "City", "Type", "Capacity", "Price" }));
+        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort By", "Id", "City", "Type", "Capacity", "Price" }));
+        sortByComboBx.setToolTipText("");
         sortByComboBx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 sortByComboBxActionPerformed(evt);
             }
         });
-        filterContainerPnl.add(sortByComboBx, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 12, 130, 40));
+        filterContainerPnl.add(sortByComboBx, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 130, 40));
 
         searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/search_icon.png"))); // NOI18N
+        searchBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchBtnActionPerformed(evt);
+            }
+        });
         filterContainerPnl.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 30));
 
         inputSearchTxtFld.setBackground(new java.awt.Color(11, 28, 48));
@@ -2099,32 +2111,32 @@ public class KnotSpot extends javax.swing.JFrame {
                 if (progress == 10) {
                     loadingSymbolLbl.setText("welcome to our system...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture6.png");
-                    jLabel35.setIcon(icon);
+                    firstPopUpImage.setIcon(icon);
                 }
                 if (progress == 30) {
                     loadingSymbolLbl.setText("10 venues are ready to be booked...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture3.png");
-                    jLabel39.setIcon(icon);
-                    jLabel40.setForeground(Color.decode("#2B3D5B"));
+                    secondPopUpImage.setIcon(icon);
+                    companyTitleLbl.setForeground(Color.decode("#2B3D5B"));
 
                 }
                 if (progress == 50) {
                     loadingSymbolLbl.setText("let us join in your new innings...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "imageforback2.png");
-                    jLabel36.setIcon(icon);
-                    jLabel40.setForeground(Color.decode("#000000"));
+                    thirdPopUpImage.setIcon(icon);
+                    companyTitleLbl.setForeground(Color.decode("#000000"));
                 }
                 if (progress == 70) {
                     loadingSymbolLbl.setText("happy weddings...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "imageforback3.png");
-                    jLabel37.setIcon(icon);
-                    jLabel40.setForeground(Color.decode("#2B3D5B"));
+                    fourthPopUpImage.setIcon(icon);
+                    companyTitleLbl.setForeground(Color.decode("#2B3D5B"));
                 }
                 if (progress == 90) {
                     loadingSymbolLbl.setText("Manage stuffs...");
                     ImageIcon icon = new ImageIcon(absolutePathForImage + "picture4.png");
-                    jLabel38.setIcon(icon);
-                    jLabel40.setForeground(Color.decode("#000000"));
+                    fifthPopUpImage.setIcon(icon);
+                    companyTitleLbl.setForeground(Color.decode("#000000"));
                 }
             }
 
@@ -2738,13 +2750,104 @@ public class KnotSpot extends javax.swing.JFrame {
         if (sortByComboBx.getSelectedItem().toString().equals("Id")) {
             
             if (ascendSortOrderRadioBtn.isSelected()) {
-                InsertionSort.VenueSortbyId(venueDetails, true);
+                Sort.VenueSortbyId(venueDetails, true);
                 updateTableSortData(venueDetails);
 
             }
           
         }
+        if (sortByComboBx.getSelectedItem().toString().equals("City")) {
+            
+            if (ascendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyCity(venueDetails, true);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("Type")) {
+            
+            if (ascendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyType(venueDetails, true);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("Capacity")) {
+            
+            if (ascendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyCapacity(venueDetails, true);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("Price")) {
+            
+            if (ascendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyRentFee(venueDetails, true);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        
     }//GEN-LAST:event_ascendSortOrderRadioBtnActionPerformed
+
+    private void descendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descendSortOrderRadioBtnActionPerformed
+        // TODO add your handling code here:
+        if (sortByComboBx.getSelectedItem().toString().equals("Id")) {
+            
+            if (descendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyId(venueDetails, false);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("City")) {
+            
+            if (descendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyCity(venueDetails, false);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("Type")) {
+            
+            if (descendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyType(venueDetails, false);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("Capacity")) {
+            
+            if (descendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyCapacity(venueDetails, false);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+        if (sortByComboBx.getSelectedItem().toString().equals("Price")) {
+            
+            if (descendSortOrderRadioBtn.isSelected()) {
+                Sort.VenueSortbyRentFee(venueDetails, false);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+    }//GEN-LAST:event_descendSortOrderRadioBtnActionPerformed
+
+    private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
+        // TODO add your handling code here:
+        BinarySearch.binarySearch(venueDetails, inputSearchTxtFld.getText());
+    }//GEN-LAST:event_searchBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2807,6 +2910,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton cancelVenueChangeBtn;
     private javax.swing.JLabel capacityValueDisplayLbl;
     private javax.swing.JLabel companyNameLbl;
+    private javax.swing.JLabel companyTitleLbl;
     private javax.swing.JLabel contactErrorMsgLbl;
     private javax.swing.JPanel containerPnl;
     private javax.swing.JLabel continueLbl;
@@ -2823,10 +2927,13 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel editInputPnl;
     private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JButton editVenueDetailsBtn2;
+    private javax.swing.JLabel fifthPopUpImage;
     private javax.swing.JLabel filterBackgroundImgLbl;
     private javax.swing.JPanel filterContainerPnl;
+    private javax.swing.JLabel firstPopUpImage;
     private javax.swing.JLabel firstVenuePictureLbl;
     private javax.swing.JLabel forgotPwdLbl;
+    private javax.swing.JLabel fourthPopUpImage;
     private javax.swing.JTable frontDisplayTable;
     private javax.swing.JPanel headerPnl;
     private javax.swing.JPanel homePagePnl;
@@ -2868,13 +2975,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel35;
-    private javax.swing.JLabel jLabel36;
-    private javax.swing.JLabel jLabel37;
-    private javax.swing.JLabel jLabel38;
-    private javax.swing.JLabel jLabel39;
-    private javax.swing.JLabel jLabel40;
-    private javax.swing.JLabel jLabel41;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
@@ -2925,6 +3025,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton removeVenueDetailsBtn2;
     private javax.swing.JPanel rendererColumnPnl;
     private javax.swing.JButton searchBtn;
+    private javax.swing.JLabel secondPopUpImage;
     private javax.swing.JRadioButton selectDarkModeRadioBtn;
     private javax.swing.JRadioButton selectLightModeRadioBtn;
     private javax.swing.JLabel settingIconLbl;
@@ -2934,7 +3035,9 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel showCapacityValueLbl;
     private javax.swing.JLabel showPerPlatePriceValueLbl;
     private javax.swing.JCheckBox showPwdCheckBx;
+    private javax.swing.JLabel sloganLbl;
     private javax.swing.JComboBox<String> sortByComboBx;
+    private javax.swing.JLabel thirdPopUpImage;
     private javax.swing.JLabel titleforDisplayTable;
     private javax.swing.JPanel titleforManageVenuePnl;
     private javax.swing.JPanel topContainerNavPnl;

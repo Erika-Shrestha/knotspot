@@ -10,9 +10,11 @@ import java.util.List;
 
 /**
  *
- * @author eerii
+ * @author Erika Shrestha
+ * LMU ID: 23048598
+ * COLLEGE ID: 230024
  */
-public class InsertionSort {
+public class Sort {
 
     private static List<VenueModel> venueArrays = new ArrayList<>();
 
