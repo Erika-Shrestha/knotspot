@@ -2847,6 +2847,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
         BinarySearch.binarySearch(venueDetails, inputSearchTxtFld.getText());
+        updateTableSortData(venueDetails);
+        
     }//GEN-LAST:event_searchBtnActionPerformed
 
     /**

@@ -5,6 +5,7 @@
 package com.knotspot.controller.algorithms;
 
 import com.knotspot.model.VenueModel;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,16 +16,21 @@ import java.util.List;
  */
 public class BinarySearch {
     
+    private static List<VenueModel> venueSearchArrays = new ArrayList<>();
+    
     public static VenueModel binarySearch(List<VenueModel> venueDetails, String searchValue){
+        venueSearchArrays.clear();
+        venueSearchArrays.addAll(venueDetails);
+        
         int lowIndex= 0;
-        int highIndex = venueDetails.size()-1;
+        int highIndex = venueSearchArrays.size()-1;
         
         while(lowIndex<=highIndex){
             int midIndex = (lowIndex+highIndex)/2;
-            String midValue = venueDetails.get(midIndex).getVenueName();
+            String midValue = venueSearchArrays.get(midIndex).getVenueType();
             
             if(midValue.toLowerCase().equals(searchValue.toLowerCase())){
-                return venueDetails.get(midIndex);
+                return venueSearchArrays.get(midIndex);
             }
             
             if(midValue.compareToIgnoreCase(searchValue)<0){
@@ -34,6 +40,9 @@ public class BinarySearch {
                 lowIndex = midIndex +1;
             }
         }
+        venueDetails.clear();
+        venueDetails.addAll(venueSearchArrays);
+        
         return null;
         
     }
