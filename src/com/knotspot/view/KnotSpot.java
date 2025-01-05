@@ -2129,6 +2129,16 @@ public class KnotSpot extends javax.swing.JFrame {
         inputVenueCapacitySlider.setValue(50);
         inputPerPlatePriceSlider.setValue(50);
     }
+    
+    private void updateTableSortData(List<VenueModel> venueDetails){
+        
+        for (VenueModel venues: venueDetails){
+            defaultTableModel.addRow(new Object[]{venues.getVenueId(), venues.getVenueName(), venues.getAddress(), venues.getCity(), venues.getContactNumber(), venues.getVenueType(), venues.getCapacity(), venues.getRentFee()});
+        
+        }
+        
+    
+    }
 
 
     private void inputUsernameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldActionPerformed
@@ -2675,16 +2685,9 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void sortByIdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByIdBtnActionPerformed
         // TODO add your handling code here:
-        int tableSize = venueModifyTbl.getRowCount();
-        
-        
-        
+        defaultTableModel.setRowCount(0);
         InsertionSort.VenueSortbyId(venueDetails, true);
-        
-        for(int i =0; i<tableSize;i++){
-            
-        }
-        
+        updateTableSortData(venueDetails);     
     }//GEN-LAST:event_sortByIdBtnActionPerformed
 
     /**
