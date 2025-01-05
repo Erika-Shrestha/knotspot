@@ -15,31 +15,18 @@ import java.util.List;
  */
 public class InsertionSort {
 
-    private static List<VenueModel> venueArrays = new ArrayList<>(); 
-    
+    private static List<VenueModel> venueArrays = new ArrayList<>();
 
-    public static void ascendSort(int num[]) {
-        for (int i = 1; i < num.length; i++) {
-            int current = num[i];
-            int previous = i - 1;
-            while (previous >= 0 && num[previous] > current) {
-                num[previous + 1] = num[previous];
-                previous--;
-            }
-            num[previous + 1] = current;
-        }
 
-    }
-
-    public static void VenueSortbyId(List<VenueModel> venueDetails,boolean isAscend) {
+    public static void VenueSortbyId(List<VenueModel> venueDetails, boolean isAscend) {
         venueArrays.clear();
         venueArrays.addAll(venueDetails);
-        
+
         for (int i = 1; i < venueArrays.size(); i++) {
             VenueModel currentVenue = venueArrays.get(i);
             int current = currentVenue.getVenueId();
             int previous = i - 1;
-            
+
             if (isAscend) {
                 while (previous >= 0 && venueArrays.get(previous).getVenueId() > current) {
                     venueArrays.set(previous + 1, venueArrays.get(previous));
@@ -54,34 +41,46 @@ public class InsertionSort {
 
             venueArrays.set(previous + 1, currentVenue);
         }
-        
+
         venueDetails.clear();
-         venueDetails.addAll(venueArrays);
+        venueDetails.addAll(venueArrays);
     }
 
     public static void VenueSortbyCapacity(List<VenueModel> venueDetails, boolean isAscend) {
+        
+        venueArrays.clear();
+        venueArrays.addAll(venueDetails);
 
-        for(int i=0; i<venueArrays.size()-1; i++){
-            VenueModel minVenue = venueArrays.get(i);
+        for (int currentIndex = 0; currentIndex < venueArrays.size() - 1; currentIndex++) {
+            VenueModel minVenue = venueArrays.get(currentIndex);
             int minVenueCapacity = minVenue.getCapacity();
-            
-            for(int j=i+1; j<venueArrays.size(); j++){
-                if(venueArrays.get(j).getCapacity()<minVenueCapacity){
-                    minVenueCapacity = j;
+            int minIndex = currentIndex;
+
+            for (int nextIndex = minIndex + 1; nextIndex < venueArrays.size(); nextIndex++) {
+
+                if (isAscend) {
+                    if (venueArrays.get(nextIndex).getCapacity() < minVenueCapacity) {
+                        minIndex = nextIndex;
+                    }
+                }
+                else{
+                    if (venueArrays.get(nextIndex).getCapacity() > minVenueCapacity) {
+                        minIndex = nextIndex;
+                    }
                 }
             }
-            
-            VenueModel swapVarContainer = minVenue;
-            minVenue = venueArrays.get(j);
-            venueArrays.set(j)= swapVarContainer;
-            
-        
+            VenueModel additionalIndex = venueArrays.get(currentIndex);
+            venueArrays.set(currentIndex, venueArrays.get(minIndex));
+            venueArrays.set(minIndex, additionalIndex);
+
         }
+        venueDetails.clear();
+        venueDetails.addAll(venueArrays);
 
     }
 
     public static void VenueSortbyRentFee(List<VenueModel> venueDetails, boolean isAscend) {
-        
+
         for (int i = 1; i < venueArrays.size(); i++) {
             VenueModel currentVenue = venueArrays.get(i);
             int current = currentVenue.getRentFee();
@@ -104,11 +103,130 @@ public class InsertionSort {
         venueArrays.addAll(venueDetails);
 
     }
+    
+    public static void VenueSortbyCity(List<VenueModel> venueDetails, boolean isAscend) {
+        venueArrays.clear();
+        venueArrays.addAll(venueDetails);
 
-    public static void main(String[] args) {
-        int[] num = {1, 3, 5, 7, 6};
-        ascendSort(num);
-        System.out.println(Arrays.toString(num));
+        for (int i = 1; i < venueArrays.size(); i++) {
+            VenueModel currentVenue = venueArrays.get(i);
+            String current = currentVenue.getCity();
+            int previous = i - 1;
 
+            if (isAscend) {
+                while (previous >= 0 && venueArrays.get(previous).getCity().compareTo(current)>0) {
+                    venueArrays.set(previous + 1, venueArrays.get(previous));
+                    previous--;
+                }
+            } else {
+                while (previous >= 0 && venueArrays.get(previous).getCity().compareTo(current)<0) {
+                    venueArrays.set(previous + 1, venueArrays.get(previous));
+                    previous--;
+                }
+            }
+
+            venueArrays.set(previous + 1, currentVenue);
+        }
+
+        venueDetails.clear();
+        venueDetails.addAll(venueArrays);
+    }
+    
+    public static void VenueSortbyType(List<VenueModel> venueDetails, boolean isAscend) {
+        venueArrays.clear();
+        venueArrays.addAll(venueDetails);
+
+        for (int i = 1; i < venueArrays.size(); i++) {
+            VenueModel currentVenue = venueArrays.get(i);
+            String current = currentVenue.getVenueType();
+            int previous = i - 1;
+
+            if (isAscend) {
+                while (previous >= 0 && venueArrays.get(previous).getVenueType().compareTo(current)>0) {
+                    venueArrays.set(previous + 1, venueArrays.get(previous));
+                    previous--;
+                }
+            } else {
+                while (previous >= 0 && venueArrays.get(previous).getVenueType().compareTo(current)<0) {
+                    venueArrays.set(previous + 1, venueArrays.get(previous));
+                    previous--;
+                }
+            }
+
+            venueArrays.set(previous + 1, currentVenue);
+        }
+
+        venueDetails.clear();
+        venueDetails.addAll(venueArrays);
+    }
+    
+    
+    
+    //merge sort
+    public static void mergeSort(List<VenueModel> venueDetails){
+        venueArrays.clear();
+        venueArrays.addAll(venueDetails);
+        int size = venueArrays.size();
+        
+        if(size<2){
+            return;
+        }
+        
+        int midIndex= size/2;
+        List<VenueModel> firstHalfVenue = new ArrayList<>(midIndex);
+        List<VenueModel> secondHalfVenue = new ArrayList<>(size-midIndex);
+        
+        for(int i=0; i<midIndex; i++){
+            firstHalfVenue.add(i,venueArrays.get(i));
+        }
+        
+        //we want to start the second arraylist as index 0 and not the value of midindex
+        for(int i=midIndex; i<size; i++){
+            secondHalfVenue.add(i-midIndex, venueArrays.get(i));
+        }
+        
+        
+        //recursively call the same method to again break the elements into individual 
+        mergeSort(firstHalfVenue);
+        mergeSort(secondHalfVenue);
+        
+        //merge them now
+        merge(venueArrays,firstHalfVenue,secondHalfVenue);
+        
+        venueDetails.clear();
+        venueDetails.addAll(venueArrays);
+    }
+    
+    private static void merge(List<VenueModel> venueArrays,List<VenueModel> firstHalfVenue,List<VenueModel> secondHalfVenue){
+        venueArrays.clear();
+        
+        int firstHalfLength = firstHalfVenue.size();
+        int secondHalfLength = secondHalfVenue.size();
+        
+        int i =0, j=0, k=0;
+        while(i<firstHalfLength && j<secondHalfLength){
+            if(firstHalfVenue.get(i).getRentFee()<= secondHalfVenue.get(j).getRentFee()){
+                venueArrays.add(k,firstHalfVenue.get(i));
+                i++;
+            }
+            else{
+                venueArrays.add(k,secondHalfVenue.get(j));
+                j++;
+            }
+            k++;
+        }
+        while(i<firstHalfLength){
+            venueArrays.add(k,firstHalfVenue.get(i));
+            i++;
+            k++;
+        }
+        
+        while(j<secondHalfLength){
+            venueArrays.add(k,secondHalfVenue.get(j));
+            j++;
+            k++;
+        }
+        
+    
     }
 }

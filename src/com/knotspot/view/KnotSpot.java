@@ -2686,7 +2686,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private void sortByIdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByIdBtnActionPerformed
         // TODO add your handling code here:
         defaultTableModel.setRowCount(0);
-        InsertionSort.VenueSortbyId(venueDetails, true);
+        InsertionSort.mergeSort(venueDetails);
         updateTableSortData(venueDetails);     
     }//GEN-LAST:event_sortByIdBtnActionPerformed
 
