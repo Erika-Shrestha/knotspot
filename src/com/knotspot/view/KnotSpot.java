@@ -99,6 +99,7 @@ public class KnotSpot extends javax.swing.JFrame {
         inputVenueAddressErrorMsgLbl = new javax.swing.JLabel();
         showCapacityValueLbl = new javax.swing.JLabel();
         showPerPlatePriceValueLbl = new javax.swing.JLabel();
+        SortButtonGroup = new javax.swing.ButtonGroup();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         jLabel41 = new javax.swing.JLabel();
@@ -164,6 +165,13 @@ public class KnotSpot extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         titleforDisplayTable = new javax.swing.JLabel();
         addVenuePagePnl = new javax.swing.JPanel();
+        filterContainerPnl = new javax.swing.JPanel();
+        ascendSortOrderRadioBtn = new javax.swing.JRadioButton();
+        descendSortOrderRadioBtn = new javax.swing.JRadioButton();
+        sortByComboBx = new javax.swing.JComboBox<>();
+        searchBtn = new javax.swing.JButton();
+        inputSearchTxtFld = new javax.swing.JTextField();
+        filterBackgroundImgLbl = new javax.swing.JLabel();
         insertDataTableScrlPane = new javax.swing.JScrollPane();
         venueModifyTbl = new javax.swing.JTable();
         titleforManageVenuePnl = new javax.swing.JPanel();
@@ -186,7 +194,6 @@ public class KnotSpot extends javax.swing.JFrame {
         capacityValueDisplayLbl = new javax.swing.JLabel();
         perPlatePriceDisplayLbl = new javax.swing.JLabel();
         nameErrorMsgLbl = new javax.swing.JLabel();
-        sortByIdBtn = new javax.swing.JButton();
         settingPagePnl = new javax.swing.JPanel();
         backgroundModeSptPane = new javax.swing.JSplitPane();
         darkModePnl = new javax.swing.JPanel();
@@ -1042,6 +1049,49 @@ public class KnotSpot extends javax.swing.JFrame {
 
         addVenuePagePnl.setBackground(new java.awt.Color(250, 245, 239));
 
+        filterContainerPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        SortButtonGroup.add(ascendSortOrderRadioBtn);
+        ascendSortOrderRadioBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        ascendSortOrderRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
+        ascendSortOrderRadioBtn.setText("Ascending");
+        ascendSortOrderRadioBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ascendSortOrderRadioBtnActionPerformed(evt);
+            }
+        });
+        filterContainerPnl.add(ascendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 20, -1, -1));
+
+        SortButtonGroup.add(descendSortOrderRadioBtn);
+        descendSortOrderRadioBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        descendSortOrderRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
+        descendSortOrderRadioBtn.setText("Descending");
+        filterContainerPnl.add(descendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
+
+        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Id", "City", "Type", "Capacity", "Price" }));
+        sortByComboBx.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                sortByComboBxActionPerformed(evt);
+            }
+        });
+        filterContainerPnl.add(sortByComboBx, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 12, 130, 40));
+
+        searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/search_icon.png"))); // NOI18N
+        filterContainerPnl.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 30));
+
+        inputSearchTxtFld.setBackground(new java.awt.Color(11, 28, 48));
+        inputSearchTxtFld.setForeground(new java.awt.Color(255, 255, 255));
+        inputSearchTxtFld.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+        inputSearchTxtFld.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                inputSearchTxtFldActionPerformed(evt);
+            }
+        });
+        filterContainerPnl.add(inputSearchTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 12, 210, 30));
+
+        filterBackgroundImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/download (9).jpg"))); // NOI18N
+        filterContainerPnl.add(filterBackgroundImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 60));
+
         insertDataTableScrlPane.setAutoscrolls(true);
         insertDataTableScrlPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 
@@ -1104,7 +1154,7 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(titleforManageVenuePnlLayout.createSequentialGroup()
                 .addGap(414, 414, 414)
                 .addComponent(informationToInputVenueLbl)
-                .addContainerGap(458, Short.MAX_VALUE))
+                .addContainerGap(472, Short.MAX_VALUE))
         );
         titleforManageVenuePnlLayout.setVerticalGroup(
             titleforManageVenuePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1223,7 +1273,7 @@ public class KnotSpot extends javax.swing.JFrame {
                                         .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(71, 71, 71)
                                         .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1238,7 +1288,7 @@ public class KnotSpot extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsInputContainerPnlLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(addVenueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(58, 58, 58)))
+                                .addGap(55, 55, 55)))
                         .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(30, 30, 30))
             .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
@@ -1255,7 +1305,7 @@ public class KnotSpot extends javax.swing.JFrame {
         detailsInputContainerPnlLayout.setVerticalGroup(
             detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(20, 20, 20)
                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
                         .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -1296,13 +1346,6 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sortByIdBtn.setText("sort");
-        sortByIdBtn.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sortByIdBtnActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout addVenuePagePnlLayout = new javax.swing.GroupLayout(addVenuePagePnl);
         addVenuePagePnl.setLayout(addVenuePagePnlLayout);
         addVenuePagePnlLayout.setHorizontalGroup(
@@ -1311,29 +1354,28 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGroup(addVenuePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(addVenuePagePnlLayout.createSequentialGroup()
                         .addGap(24, 24, 24)
-                        .addGroup(addVenuePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(insertDataTableScrlPane)
+                        .addGroup(addVenuePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(insertDataTableScrlPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1000, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(titleforManageVenuePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(addVenuePagePnlLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(detailsInputContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(addVenuePagePnlLayout.createSequentialGroup()
-                        .addGap(705, 705, 705)
-                        .addComponent(sortByIdBtn)))
-                .addGap(1451, 1451, 1451))
+                        .addGap(58, 58, 58)
+                        .addGroup(addVenuePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(filterContainerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(detailsInputContainerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(417, Short.MAX_VALUE))
         );
         addVenuePagePnlLayout.setVerticalGroup(
             addVenuePagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(addVenuePagePnlLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
+                .addGap(14, 14, 14)
                 .addComponent(titleforManageVenuePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(5, 5, 5)
                 .addComponent(detailsInputContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(136, 136, 136)
-                .addComponent(sortByIdBtn)
-                .addGap(18, 18, 18)
-                .addComponent(insertDataTableScrlPane, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(filterContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(insertDataTableScrlPane, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(212, Short.MAX_VALUE))
         );
 
         adminDashboardPagesPnl.add(addVenuePagePnl, "ManageVenuePage");
@@ -1445,24 +1487,24 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(settingPagePnlLayout.createSequentialGroup()
                 .addGap(369, 369, 369)
                 .addComponent(optionMessageLbl)
-                .addContainerGap(1795, Short.MAX_VALUE))
+                .addContainerGap(775, Short.MAX_VALUE))
             .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(settingPagePnlLayout.createSequentialGroup()
                     .addGap(377, 377, 377)
                     .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(1787, Short.MAX_VALUE)))
+                    .addContainerGap(767, Short.MAX_VALUE)))
         );
         settingPagePnlLayout.setVerticalGroup(
             settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settingPagePnlLayout.createSequentialGroup()
                 .addGap(164, 164, 164)
                 .addComponent(optionMessageLbl)
-                .addContainerGap(682, Short.MAX_VALUE))
+                .addContainerGap(681, Short.MAX_VALUE))
             .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(settingPagePnlLayout.createSequentialGroup()
                     .addGap(229, 229, 229)
                     .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(393, Short.MAX_VALUE)))
+                    .addContainerGap(392, Short.MAX_VALUE)))
         );
 
         adminDashboardPagesPnl.add(settingPagePnl, "SettingPage");
@@ -1505,7 +1547,7 @@ public class KnotSpot extends javax.swing.JFrame {
                         .addComponent(editForBlogBtn)
                         .addGap(9, 9, 9))
                     .addComponent(editAreaScrlPnl))
-                .addContainerGap(1928, Short.MAX_VALUE))
+                .addContainerGap(908, Short.MAX_VALUE))
         );
         aboutUsPagePnlLayout.setVerticalGroup(
             aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1519,7 +1561,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGroup(aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(aboutUsSecondLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(editForBlogBtn))
-                .addGap(0, 223, Short.MAX_VALUE))
+                .addGap(0, 222, Short.MAX_VALUE))
         );
 
         adminDashboardPagesPnl.add(aboutUsPagePnl, "AboutUsPage");
@@ -1968,7 +2010,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(headerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(navigationContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
+                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(navigationContainerPnlLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(adminSignPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2012,8 +2054,8 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void defaultInitializedTableData() {
         addDemoVenue(new VenueModel(20423, "SmartPalace", "Basantapur", "kathmandu", "9823733980", "Meeting Conference", 200, 23000));
-        addDemoVenue(new VenueModel(20490, "TajPalace", "Lalitpur", "kathmandu", "9823733970", "Hall", 120, 15000));
         addDemoVenue(new VenueModel(20890, "VivahPalace", "Bouddha", "Dharan", "9823722970", "Hall", 100, 30000));
+        addDemoVenue(new VenueModel(20490, "TajPalace", "Lalitpur", "kathmandu", "9823733970", "Hall", 120, 15000));
     }
 
     private void addDemoVenue(VenueModel venue) {
@@ -2129,15 +2171,15 @@ public class KnotSpot extends javax.swing.JFrame {
         inputVenueCapacitySlider.setValue(50);
         inputPerPlatePriceSlider.setValue(50);
     }
-    
-    private void updateTableSortData(List<VenueModel> venueDetails){
-        
-        for (VenueModel venues: venueDetails){
+
+    private void updateTableSortData(List<VenueModel> venueDetails) {
+
+        defaultTableModel.setRowCount(0);
+        for (VenueModel venues : venueDetails) {
             defaultTableModel.addRow(new Object[]{venues.getVenueId(), venues.getVenueName(), venues.getAddress(), venues.getCity(), venues.getContactNumber(), venues.getVenueType(), venues.getCapacity(), venues.getRentFee()});
-        
+
         }
-        
-    
+
     }
 
 
@@ -2159,17 +2201,17 @@ public class KnotSpot extends javax.swing.JFrame {
         String username = inputUsernameTxtFld.getText();
         String password = new String(inputPasswordPwdFld.getPassword());
         if (username.isEmpty() && password.isEmpty()) {
-            ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(176, 197, 202), Color.RED, true, "Please enter your username");
-            ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(176, 197, 202), Color.RED, true, "Please enter your password");
+            ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
+            ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
             return;
 
         } else if (username.isEmpty()) {
-            ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(176, 197, 202), Color.RED, true, "Please enter your username");
+            ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             inputPasswordErrorPwdLbl.setText("");
             return;
 
         } else if (password.isEmpty()) {
-            ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(176, 197, 202), Color.RED, true, "Please enter your password");
+            ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
             inputUsernameErrorLbl.setText("");
             return;
 
@@ -2179,14 +2221,14 @@ public class KnotSpot extends javax.swing.JFrame {
 
             if (!isValidUsername && !isValidPassword) {
 
-                ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(176, 197, 202), Color.RED, true, "Your username is incorrect");
-                ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(176, 197, 202), Color.RED, true, "Your password is incorrect");
+                ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Your username is incorrect");
+                ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Your password is incorrect");
 
             } else if (!isValidUsername) {
-                ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(176, 197, 202), Color.RED, true, "Your username is incorrect");
+                ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Your username is incorrect");
                 inputPasswordErrorPwdLbl.setText("");
             } else if (!isValidPassword) {
-                ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(176, 197, 202), Color.RED, true, "Your password is incorrect");
+                ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Your password is incorrect");
                 inputUsernameErrorLbl.setText("");
             } else {
                 inputUsernameErrorLbl.setText("");
@@ -2268,7 +2310,7 @@ public class KnotSpot extends javax.swing.JFrame {
         logOutNavPnl.setBackground(Color.WHITE);
         logOutNavPnl.setForeground(Color.decode("#0E1E3F"));
         logOutNavLbl.setForeground(Color.decode("#0E1E3F"));
-        resetInputDetails() ;
+        resetInputDetails();
         loadScreen("LoginScreen");
     }//GEN-LAST:event_logOutNavPnlMouseClicked
 
@@ -2393,7 +2435,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
             }
         }
-        
+
         getRootPane().getGlassPane().setVisible(true);
         popUpDialog.setVisible(true);
 
@@ -2683,12 +2725,26 @@ public class KnotSpot extends javax.swing.JFrame {
         showPerPlatePriceValueLbl.setText(String.valueOf(inputPerPlatePriceSlider1.getValue()));
     }//GEN-LAST:event_inputPerPlatePriceSlider1StateChanged
 
-    private void sortByIdBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByIdBtnActionPerformed
+    private void inputSearchTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchTxtFldActionPerformed
         // TODO add your handling code here:
-        defaultTableModel.setRowCount(0);
-        InsertionSort.mergeSort(venueDetails);
-        updateTableSortData(venueDetails);     
-    }//GEN-LAST:event_sortByIdBtnActionPerformed
+    }//GEN-LAST:event_inputSearchTxtFldActionPerformed
+
+    private void sortByComboBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByComboBxActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_sortByComboBxActionPerformed
+
+    private void ascendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ascendSortOrderRadioBtnActionPerformed
+        // TODO add your handling code here:
+        if (sortByComboBx.getSelectedItem().toString().equals("Id")) {
+            
+            if (ascendSortOrderRadioBtn.isSelected()) {
+                InsertionSort.VenueSortbyId(venueDetails, true);
+                updateTableSortData(venueDetails);
+
+            }
+          
+        }
+    }//GEN-LAST:event_ascendSortOrderRadioBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2727,6 +2783,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup SortButtonGroup;
     private javax.swing.JLabel aboutUsIconLbl;
     private javax.swing.JLabel aboutUsImgCompanyLbl;
     private javax.swing.JLabel aboutUsNavLbl;
@@ -2744,6 +2801,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel adminDashboardTitleLbl;
     private javax.swing.JPanel adminSignPnl;
     private javax.swing.JLabel adminWelcomeMsgLbl;
+    private javax.swing.JRadioButton ascendSortOrderRadioBtn;
     private javax.swing.JSplitPane backgroundModeSptPane;
     private javax.swing.JPanel bottomContainerNavPnl;
     private javax.swing.JButton cancelVenueChangeBtn;
@@ -2756,6 +2814,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel darkModePnl;
     private javax.swing.JLabel darkModeWelcomeLbl;
     private javax.swing.JPanel decorStandPnl;
+    private javax.swing.JRadioButton descendSortOrderRadioBtn;
     private javax.swing.JPanel detailsInputContainerPnl;
     private javax.swing.JScrollPane editAreaScrlPnl;
     private javax.swing.JTextArea editBlogTxtArea;
@@ -2764,6 +2823,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel editInputPnl;
     private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JButton editVenueDetailsBtn2;
+    private javax.swing.JLabel filterBackgroundImgLbl;
+    private javax.swing.JPanel filterContainerPnl;
     private javax.swing.JLabel firstVenuePictureLbl;
     private javax.swing.JLabel forgotPwdLbl;
     private javax.swing.JTable frontDisplayTable;
@@ -2777,6 +2838,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel inputPerPlatePriceLbl;
     private javax.swing.JSlider inputPerPlatePriceSlider;
     private javax.swing.JSlider inputPerPlatePriceSlider1;
+    private javax.swing.JTextField inputSearchTxtFld;
     private javax.swing.JLabel inputUsernameErrorLbl;
     private javax.swing.JTextField inputUsernameTxtFld;
     private javax.swing.JLabel inputVenueAddressErrorMsgLbl;
@@ -2862,6 +2924,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JButton removeVenueDetailsBtn2;
     private javax.swing.JPanel rendererColumnPnl;
+    private javax.swing.JButton searchBtn;
     private javax.swing.JRadioButton selectDarkModeRadioBtn;
     private javax.swing.JRadioButton selectLightModeRadioBtn;
     private javax.swing.JLabel settingIconLbl;
@@ -2871,7 +2934,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel showCapacityValueLbl;
     private javax.swing.JLabel showPerPlatePriceValueLbl;
     private javax.swing.JCheckBox showPwdCheckBx;
-    private javax.swing.JButton sortByIdBtn;
+    private javax.swing.JComboBox<String> sortByComboBx;
     private javax.swing.JLabel titleforDisplayTable;
     private javax.swing.JPanel titleforManageVenuePnl;
     private javax.swing.JPanel topContainerNavPnl;
