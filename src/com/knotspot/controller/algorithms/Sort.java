@@ -23,17 +23,17 @@ public class Sort {
 
         for (int currentIndex = 0; currentIndex < venueSortArrays.size() - 1; currentIndex++) {
             VenueModel minVenue = venueSortArrays.get(currentIndex);
-            String minVenueCapacity = getSortValue(minVenue, sortBy);
+            String minVenueValue = getSortValue(minVenue, sortBy);
             int minIndex = currentIndex;
 
             for (int nextIndex = minIndex + 1; nextIndex < venueSortArrays.size(); nextIndex++) {
 
                 if (isAscend) {
-                    if (checkLesserThanForSelection(nextIndex, minVenueCapacity, sortBy)) {
+                    if (checkLesserThanForSelection(nextIndex, minVenueValue, sortBy)) {
                         minIndex = nextIndex;
                     }
                 } else {
-                    if (checkGreaterThanForSelection(nextIndex, minVenueCapacity, sortBy)) {
+                    if (checkGreaterThanForSelection(nextIndex, minVenueValue, sortBy)) {
                         minIndex = nextIndex;
                     }
                 }
@@ -92,8 +92,12 @@ public class Sort {
         return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareTo(current) > 0;
     }
     
-    public static boolean isLesserThanCapacity(int nextIndex, String minVenueCapacity ) {
-        return venueSortArrays.get(nextIndex).getCapacity() > Integer.parseInt(minVenueCapacity);
+    public static boolean isLesserThanCapacity(int nextIndex, String minVenueValue ) {
+        return venueSortArrays.get(nextIndex).getCapacity() > Integer.parseInt(minVenueValue);
+    }
+    
+    public static boolean isLesserThanType(int nextIndex, String minVenueValue ) {
+        return venueSortArrays.get(nextIndex).getVenueType().compareTo(minVenueValue)>0;
     }
     
     public static boolean isLesserThanPrice(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
@@ -112,8 +116,12 @@ public class Sort {
         return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareTo(current) < 0;
     }
     
-    public static boolean isGreaterThanCapacity(int nextIndex, String minVenueCapacity ) {
-        return venueSortArrays.get(nextIndex).getCapacity() < Integer.parseInt(minVenueCapacity);
+    public static boolean isGreaterThanType(int nextIndex, String minVenueValue ) {
+        return venueSortArrays.get(nextIndex).getVenueType().compareTo(minVenueValue)<0;
+    }
+    
+    public static boolean isGreaterThanCapacity(int nextIndex, String minVenueValue ) {
+        return venueSortArrays.get(nextIndex).getCapacity() < Integer.parseInt(minVenueValue);
     }
     
     public static boolean isGreaterThanPrice(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
@@ -141,18 +149,22 @@ public class Sort {
         }
     }
    
-    public static boolean checkLesserThanForSelection(int nextIndex, String minVenueCapacity, String sortBy) {
+    public static boolean checkLesserThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
         if(sortBy.equals("Capacity")){
-            return isLesserThanCapacity(nextIndex, minVenueCapacity );
+            return isLesserThanCapacity(nextIndex, minVenueValue );
         }  
-        return false;
+        else{
+            return isLesserThanType(nextIndex, minVenueValue );
+        }
     }
     
-    public static boolean checkGreaterThanForSelection(int nextIndex, String minVenueCapacity, String sortBy) {
+    public static boolean checkGreaterThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
         if(sortBy.equals("Capacity")){
-            return isGreaterThanCapacity(nextIndex, minVenueCapacity );
+            return isGreaterThanCapacity(nextIndex, minVenueValue );
         }  
-        return false;
+        else{
+            return isGreaterThanType(nextIndex, minVenueValue );
+        }
     }
     
     public static boolean checkLesserThanForMerge(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {

@@ -10,43 +10,72 @@ import java.util.List;
 
 /**
  *
- * @author Erika Shrestha
- * LMU ID: 23048598
- * COLLEGE ID: 230024
+ * @author Erika Shrestha LMU ID: 23048598 COLLEGE ID: 230024
  */
 public class BinarySearch {
-    
+
     private static List<VenueModel> venueSearchArrays = new ArrayList<>();
-    
-    public static List<VenueModel> binarySearch(List<VenueModel> venueDetails, String searchValue){
+
+    public static List<VenueModel> performBinarySearch(List<VenueModel> venueDetails, String searchValue, String searchBy) {
         venueSearchArrays.clear();
         venueSearchArrays.addAll(venueDetails);
-        List<VenueModel> venueMatched= new ArrayList<>();
-        
-        int lowIndex= 0;
-        int highIndex = venueSearchArrays.size()-1;
-        
-        while(lowIndex<=highIndex){
-            int midIndex = (lowIndex+highIndex)/2;
-            String midValue = venueSearchArrays.get(midIndex).getVenueType();
-            
-            if(midValue.toLowerCase().equals(searchValue.toLowerCase())){
+        List<VenueModel> venueMatched = new ArrayList<>();
+
+        int lowIndex = 0;
+        int highIndex = venueSearchArrays.size() - 1;
+
+        while (lowIndex <= highIndex) {
+            int midIndex = (lowIndex + highIndex) / 2;
+            VenueModel midVenue = venueSearchArrays.get(midIndex);
+            String midValue = getSearchOrder(midVenue, searchBy);
+
+            if (midValue.toLowerCase().equals(searchValue.toLowerCase())) {
                 venueMatched.add(venueSearchArrays.get(midIndex));
+
+                int leftIndex = midIndex - 1;
+                while (leftIndex >= 0 && getSearchOrder(venueSearchArrays.get(leftIndex), searchBy).equals(searchValue)) {
+                    venueMatched.add(venueDetails.get(leftIndex));
+                    leftIndex--;
+                }
+                
+                int rightIndex = midIndex + 1;
+                while (rightIndex < venueDetails.size() && getSearchOrder(venueSearchArrays.get(rightIndex), searchBy).equals(searchValue)) {
+                    venueMatched.add(venueDetails.get(rightIndex));
+                    rightIndex++;
+                }
+                
             }
-            
-            if(midValue.compareToIgnoreCase(searchValue)<0){
-                highIndex = midIndex-1;
-            }
-            else{
-                lowIndex = midIndex +1;
+
+            if (midValue.compareToIgnoreCase(searchValue) < 0) {
+                highIndex = midIndex - 1;
+            } else {
+                lowIndex = midIndex + 1;
             }
         }
-        venueDetails.clear();
-        venueDetails.addAll(venueMatched);
-        
+
         return venueMatched;
-        
+
     }
-    
-    
+
+    public static String getSearchOrder(VenueModel venue, String searchBy) {
+        if (searchBy.equals("Id")) {
+            return String.valueOf(venue.getVenueId());
+        } else if (searchBy.equals("Name")) {
+            return venue.getVenueName();
+        } else {
+            return String.valueOf(venue.getVenueType());
+        }
+    }
+
+    public static List<VenueModel> searchByName(List<VenueModel> venueDetails, String searchValue) {
+        return performBinarySearch(venueDetails, searchValue, "Name");
+    }
+
+    public static List<VenueModel> searchById(List<VenueModel> venueDetails, String searchValue) {
+        return performBinarySearch(venueDetails, searchValue, "Id");
+    }
+
+    public static List<VenueModel> searchByType(List<VenueModel> venueDetails, String searchValue) {
+        return performBinarySearch(venueDetails, searchValue, "Type");
+    }
 }

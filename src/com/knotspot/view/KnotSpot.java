@@ -17,6 +17,7 @@ import javax.swing.SwingConstants;
 
 import com.knotspot.model.VenueModel;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.JComboBox;
@@ -53,7 +54,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         defaultInitializedTableData();
-        displayTableOnHome();
+        displayTableOnHome(venueDetails);
         getRootPane().setGlassPane(new JComponent() {
             @Override
             public void paintComponent(Graphics g) {
@@ -100,7 +101,7 @@ public class KnotSpot extends javax.swing.JFrame {
         inputVenueAddressErrorMsgLbl = new javax.swing.JLabel();
         showCapacityValueLbl = new javax.swing.JLabel();
         showPerPlatePriceValueLbl = new javax.swing.JLabel();
-        SortButtonGroup = new javax.swing.ButtonGroup();
+        sortButtonGroup = new javax.swing.ButtonGroup();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         sloganLbl = new javax.swing.JLabel();
@@ -167,6 +168,7 @@ public class KnotSpot extends javax.swing.JFrame {
         titleforDisplayTable = new javax.swing.JLabel();
         addVenuePagePnl = new javax.swing.JPanel();
         filterContainerPnl = new javax.swing.JPanel();
+        refreshBtn = new javax.swing.JButton();
         ascendSortOrderRadioBtn = new javax.swing.JRadioButton();
         descendSortOrderRadioBtn = new javax.swing.JRadioButton();
         sortByComboBx = new javax.swing.JComboBox<>();
@@ -349,25 +351,28 @@ public class KnotSpot extends javax.swing.JFrame {
 
         venueContactOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63)), "Contact Number"));
 
+        inputVenueCapacitySlider1.setBackground(new java.awt.Color(0, 0, 0));
+        inputVenueCapacitySlider1.setMajorTickSpacing(50);
         inputVenueCapacitySlider1.setMaximum(200);
         inputVenueCapacitySlider1.setMinimum(50);
         inputVenueCapacitySlider.setMajorTickSpacing(50);
         inputVenueCapacitySlider.setMinorTickSpacing(5);
         inputVenueCapacitySlider1.setPaintLabels(true);
         inputVenueCapacitySlider1.setPaintTicks(true);
-        inputVenueCapacitySlider1.setValue(150);
+        inputVenueCapacitySlider1.setValue(100);
         inputVenueCapacitySlider1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 inputVenueCapacitySlider1StateChanged(evt);
             }
         });
 
-        inputPerPlatePriceSlider1.setMajorTickSpacing(100);
+        inputPerPlatePriceSlider1.setBackground(new java.awt.Color(0, 0, 0));
+        inputPerPlatePriceSlider1.setMajorTickSpacing(200);
         inputPerPlatePriceSlider1.setMaximum(1000);
         inputPerPlatePriceSlider1.setMinimum(100);
         inputPerPlatePriceSlider1.setPaintLabels(true);
         inputPerPlatePriceSlider1.setPaintTicks(true);
-        inputPerPlatePriceSlider1.setValue(200);
+        inputPerPlatePriceSlider1.setValue(500);
         inputPerPlatePriceSlider1.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 inputPerPlatePriceSlider1StateChanged(evt);
@@ -1052,7 +1057,15 @@ public class KnotSpot extends javax.swing.JFrame {
 
         filterContainerPnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        SortButtonGroup.add(ascendSortOrderRadioBtn);
+        refreshBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/refreshiconimage.png"))); // NOI18N
+        refreshBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                refreshBtnActionPerformed(evt);
+            }
+        });
+        filterContainerPnl.add(refreshBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 10, 30, 30));
+
+        sortButtonGroup.add(ascendSortOrderRadioBtn);
         ascendSortOrderRadioBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         ascendSortOrderRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         ascendSortOrderRadioBtn.setText("Ascending");
@@ -1063,7 +1076,7 @@ public class KnotSpot extends javax.swing.JFrame {
         });
         filterContainerPnl.add(ascendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
-        SortButtonGroup.add(descendSortOrderRadioBtn);
+        sortButtonGroup.add(descendSortOrderRadioBtn);
         descendSortOrderRadioBtn.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         descendSortOrderRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         descendSortOrderRadioBtn.setText("Descending");
@@ -1089,7 +1102,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 searchBtnActionPerformed(evt);
             }
         });
-        filterContainerPnl.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 10, -1, 30));
+        filterContainerPnl.add(searchBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 10, 30, 30));
 
         inputSearchTxtFld.setBackground(new java.awt.Color(11, 28, 48));
         inputSearchTxtFld.setForeground(new java.awt.Color(255, 255, 255));
@@ -1099,7 +1112,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 inputSearchTxtFldActionPerformed(evt);
             }
         });
-        filterContainerPnl.add(inputSearchTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 12, 210, 30));
+        filterContainerPnl.add(inputSearchTxtFld, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 10, 210, 30));
 
         filterBackgroundImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/download (9).jpg"))); // NOI18N
         filterContainerPnl.add(filterBackgroundImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 60));
@@ -1138,7 +1151,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
         venueModifyTbl.setRowHeight(40);
-        venueModifyTbl.setSelectionBackground(new java.awt.Color(90, 132, 154));
+        venueModifyTbl.setSelectionBackground(new java.awt.Color(14, 30, 63));
         venueModifyTbl.setSelectionForeground(new java.awt.Color(255, 255, 255));
         venueModifyTbl.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         venueModifyTbl.setShowHorizontalLines(true);
@@ -1217,13 +1230,14 @@ public class KnotSpot extends javax.swing.JFrame {
 
         totalCapacityLbl.setText("Total Capacity :");
 
+        inputVenueCapacitySlider.setMajorTickSpacing(50);
         inputVenueCapacitySlider.setMaximum(200);
         inputVenueCapacitySlider.setMinimum(50);
         inputVenueCapacitySlider.setPaintLabels(true);
         inputVenueCapacitySlider.setMajorTickSpacing(50);
         inputVenueCapacitySlider.setMinorTickSpacing(5);
         inputVenueCapacitySlider.setPaintTicks(true);
-        inputVenueCapacitySlider.setValue(150);
+        inputVenueCapacitySlider.setValue(100);
         inputVenueCapacitySlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 inputVenueCapacitySliderStateChanged(evt);
@@ -1232,14 +1246,14 @@ public class KnotSpot extends javax.swing.JFrame {
 
         perPlatePriceLbl.setText("Per Plate Price:");
 
-        inputPerPlatePriceSlider.setMajorTickSpacing(100);
+        inputPerPlatePriceSlider.setMajorTickSpacing(200);
         inputPerPlatePriceSlider.setMaximum(1000);
         inputPerPlatePriceSlider.setMinimum(100);
         inputPerPlatePriceSlider.setPaintLabels(true);
         inputPerPlatePriceSlider.setMajorTickSpacing(50);
         inputPerPlatePriceSlider.setMinorTickSpacing(5);
         inputPerPlatePriceSlider.setPaintTicks(true);
-        inputPerPlatePriceSlider.setValue(200);
+        inputPerPlatePriceSlider.setValue(500);
         inputPerPlatePriceSlider.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 inputPerPlatePriceSliderStateChanged(evt);
@@ -1353,7 +1367,7 @@ public class KnotSpot extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
                         .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(addVenueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
@@ -1387,7 +1401,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(filterContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(insertDataTableScrlPane, javax.swing.GroupLayout.PREFERRED_SIZE, 264, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(212, Short.MAX_VALUE))
+                .addContainerGap(203, Short.MAX_VALUE))
         );
 
         adminDashboardPagesPnl.add(addVenuePagePnl, "ManageVenuePage");
@@ -2022,7 +2036,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(headerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(navigationContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 870, Short.MAX_VALUE)
                     .addGroup(navigationContainerPnlLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(adminSignPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2082,15 +2096,25 @@ public class KnotSpot extends javax.swing.JFrame {
         totalVenueDisplayLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
     }
 
-    private void displayTableOnHome() {
+    private void displayTableOnHome(List<VenueModel> venueDetails) {
+        
+        
+        DefaultTableModel frontTableModel = (DefaultTableModel) frontDisplayTable.getModel();
+        
+        frontTableModel.setRowCount(0);
+        for (VenueModel venues : venueDetails) {
+            frontTableModel.addRow(new Object[]{venues.getVenueId(), venues.getVenueName(), venues.getAddress(), venues.getCity(), venues.getContactNumber(), venues.getVenueType(), venues.getCapacity(), venues.getRentFee()});
 
+        }
+        
         DefaultTableCellRenderer columnDataRenderer = new DefaultTableCellRenderer();
         columnDataRenderer.setHorizontalAlignment(SwingConstants.LEFT);
         frontDisplayTable.getColumnModel().getColumn(0).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(4).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(6).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(7).setCellRenderer(columnDataRenderer);
-        loadTableData(venueDetails);
+        
+        
     }
 
     private void startProgress() {
@@ -2213,17 +2237,17 @@ public class KnotSpot extends javax.swing.JFrame {
 
         String username = inputUsernameTxtFld.getText();
         String password = new String(inputPasswordPwdFld.getPassword());
-        if (username.isEmpty() && password.isEmpty()) {
+        if (username.isEmpty() && password.isEmpty() || username.equals("Enter username") && password.equals("Enter password")) {
             ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
             return;
 
-        } else if (username.isEmpty()) {
+        } else if (username.isEmpty() || username.equals("Enter username")) {
             ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             inputPasswordErrorPwdLbl.setText("");
             return;
 
-        } else if (password.isEmpty()) {
+        } else if (password.isEmpty() || password.equals("Enter password")) {
             ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
             inputUsernameErrorLbl.setText("");
             return;
@@ -2400,6 +2424,7 @@ public class KnotSpot extends javax.swing.JFrame {
             if (!ValidationUtil.isDuplicate(venueDetails, venueId, venueContactNumber)) {
                 VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                 venueDetails.add(venue);
+                displayTableOnHome(venueDetails);
                 //load data to table
                 defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
                 showPopDialog("The venue is added successfully", "New Venue Entry", JOptionPane.INFORMATION_MESSAGE);
@@ -2451,6 +2476,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         getRootPane().getGlassPane().setVisible(true);
         popUpDialog.setVisible(true);
+        
 
 
     }//GEN-LAST:event_editVenueDetailsBtnActionPerformed
@@ -2469,10 +2495,12 @@ public class KnotSpot extends javax.swing.JFrame {
             if (selectedRow >= 0) {
                 int selectedRowVenueId = Integer.parseInt(defaultTableModel.getValueAt(selectedRow, venueIdColumn).toString());
                 defaultTableModel.removeRow(selectedRow);
+                
 
                 for (VenueModel venues : venueDetails) {
                     if (venues.getVenueId() == selectedRowVenueId) {
                         venueDetails.remove(venues);
+                        displayTableOnHome(venueDetails);
                         return;
                     }
                 }
@@ -2712,6 +2740,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     showPopDialog("The venue has been successfully updated.", "Successful update", JOptionPane.INFORMATION_MESSAGE);
                     getRootPane().getGlassPane().setVisible(false);
                     popUpDialog.setVisible(false);
+                    displayTableOnHome(venueDetails);
 
                 }
 
@@ -2748,37 +2777,66 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void ascendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ascendSortOrderRadioBtnActionPerformed
 
-            String sortBy = sortByComboBx.getSelectedItem().toString();
-            if (ascendSortOrderRadioBtn.isSelected()) {
-                Sort.performInsertionSort(venueDetails, true, sortBy);
-                Sort.performSelectionSort(venueDetails, true, sortBy);
-                Sort.performMergeSort(venueDetails, true, sortBy);
-                loadTableData(venueDetails);
+        String sortBy = sortByComboBx.getSelectedItem().toString();
+        if (ascendSortOrderRadioBtn.isSelected()) {
+            Sort.performInsertionSort(venueDetails, true, sortBy);
+            Sort.performSelectionSort(venueDetails, true, sortBy);
+            Sort.performMergeSort(venueDetails, true, sortBy);
+            loadTableData(venueDetails);
 
-            }
-        
+        }
+
+
     }//GEN-LAST:event_ascendSortOrderRadioBtnActionPerformed
 
     private void descendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descendSortOrderRadioBtnActionPerformed
-        
-        String sortBy = sortByComboBx.getSelectedItem().toString();
-            if (descendSortOrderRadioBtn.isSelected()) {
-                Sort.performInsertionSort(venueDetails, false, sortBy);
-                Sort.performSelectionSort(venueDetails, false, sortBy);
-                Sort.performMergeSort(venueDetails, false, sortBy);
-                loadTableData(venueDetails);
 
-            }
+        String sortBy = sortByComboBx.getSelectedItem().toString();
+        if (descendSortOrderRadioBtn.isSelected()) {
+            Sort.performInsertionSort(venueDetails, false, sortBy);
+            Sort.performSelectionSort(venueDetails, false, sortBy);
+            Sort.performMergeSort(venueDetails, false, sortBy);
+            loadTableData(venueDetails);
+
+        }
+
+
     }//GEN-LAST:event_descendSortOrderRadioBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
-        // TODO add your handling code here:
 
-        List<VenueModel> foundItems = BinarySearch.binarySearch(venueDetails, inputSearchTxtFld.getText());
-        loadTableData(foundItems);
+        List<VenueModel> copyOfVenueDetails = new ArrayList<>(venueDetails);
+        List<VenueModel> allMatchedData = new ArrayList<>();
+
+        if (inputSearchTxtFld.getText().isBlank()) {
+            loadTableData(venueDetails);
+        } else {
+            if (ValidationUtil.isNumberForSearchValue(inputSearchTxtFld.getText())) {
+                Sort.performInsertionSort(copyOfVenueDetails, false, "Id");
+                List<VenueModel> foundMatchedId = BinarySearch.searchById(copyOfVenueDetails, inputSearchTxtFld.getText());
+                loadTableData(foundMatchedId);
+            } else {
+                if (ValidationUtil.isAlphabeticForSearchValue(inputSearchTxtFld.getText())) {
+                    Sort.performInsertionSort(copyOfVenueDetails, false, "Name");
+                    List<VenueModel> foundMatchedName = BinarySearch.searchByName(copyOfVenueDetails, inputSearchTxtFld.getText());
+                    allMatchedData.addAll(foundMatchedName);
+
+                    Sort.performSelectionSort(copyOfVenueDetails, false, "Type");
+                    List<VenueModel> foundMatchedType = BinarySearch.searchByType(copyOfVenueDetails, inputSearchTxtFld.getText());
+                    allMatchedData.addAll(foundMatchedType);
+                    loadTableData(allMatchedData);
+                }
+            }
+
+        }
 
 
     }//GEN-LAST:event_searchBtnActionPerformed
+
+    private void refreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBtnActionPerformed
+        loadTableData(venueDetails);
+        inputSearchTxtFld.setText("");
+    }//GEN-LAST:event_refreshBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -2817,7 +2875,6 @@ public class KnotSpot extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.ButtonGroup SortButtonGroup;
     private javax.swing.JLabel aboutUsIconLbl;
     private javax.swing.JLabel aboutUsImgCompanyLbl;
     private javax.swing.JLabel aboutUsNavLbl;
@@ -2952,6 +3009,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JDialog popUpDialog;
     private javax.swing.JLabel profileLbl;
     private javax.swing.JScrollPane recentDataScrollBr;
+    private javax.swing.JButton refreshBtn;
     private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JButton removeVenueDetailsBtn2;
     private javax.swing.JPanel rendererColumnPnl;
@@ -2967,6 +3025,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel showPerPlatePriceValueLbl;
     private javax.swing.JCheckBox showPwdCheckBx;
     private javax.swing.JLabel sloganLbl;
+    private javax.swing.ButtonGroup sortButtonGroup;
     private javax.swing.JComboBox<String> sortByComboBx;
     private javax.swing.JLabel thirdPopUpImage;
     private javax.swing.JLabel titleforDisplayTable;

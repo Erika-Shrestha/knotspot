@@ -26,7 +26,7 @@ public class ValidationUtil {
     private static final Pattern CONTACT_PATTERN = Pattern.compile("^98\\d{8}$");
     private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d+$");
     private static final Pattern ALPHANUMERIC_PATTERN = Pattern.compile("^[a-zA-Z0-9]+$");  
-    private static final Pattern ALPHABETIC_PATTERN = Pattern.compile("^[a-zA-Z]+$");
+    private static final Pattern ALPHABETIC_PATTERN = Pattern.compile("^[A-Za-z\\s]+$");
     
     /**
      * checks if the passing parameter is null and throws a null pointer exception
@@ -83,6 +83,11 @@ public class ValidationUtil {
         throw new NumberFormatException(attribute+ "in digit");}
         
     }
+    
+    public static boolean isNumberForSearchValue(String value) {
+        return NUMBER_PATTERN.matcher(String.valueOf(value)).matches();
+        
+    }
 
     public static void isAlphaNumeric(String value, String attribute) {
         if(!ALPHANUMERIC_PATTERN.matcher(String.valueOf(value)).matches()){
@@ -94,6 +99,10 @@ public class ValidationUtil {
         if(!ALPHABETIC_PATTERN.matcher(value).matches()){
              throw new NumberFormatException("use only alpha characters");
         }
+    }
+    
+    public static boolean isAlphabeticForSearchValue(String value) {
+        return ALPHABETIC_PATTERN.matcher(value).matches();
     }
     
     public static boolean isDuplicate(List<VenueModel> value, int venueId, String venueContact){
