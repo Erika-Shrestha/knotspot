@@ -1074,7 +1074,7 @@ public class KnotSpot extends javax.swing.JFrame {
         });
         filterContainerPnl.add(descendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort By", "Id", "Name", "City", "Type", "Capacity", "Price" }));
+        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort By", "Id", "Name", "City", "Capacity", "Price" }));
         sortByComboBx.setToolTipText("");
         sortByComboBx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2752,6 +2752,7 @@ public class KnotSpot extends javax.swing.JFrame {
             if (ascendSortOrderRadioBtn.isSelected()) {
                 Sort.performInsertionSort(venueDetails, true, sortBy);
                 Sort.performSelectionSort(venueDetails, true, sortBy);
+                Sort.performMergeSort(venueDetails, true, sortBy);
                 loadTableData(venueDetails);
 
             }
@@ -2764,6 +2765,7 @@ public class KnotSpot extends javax.swing.JFrame {
             if (descendSortOrderRadioBtn.isSelected()) {
                 Sort.performInsertionSort(venueDetails, false, sortBy);
                 Sort.performSelectionSort(venueDetails, false, sortBy);
+                Sort.performMergeSort(venueDetails, false, sortBy);
                 loadTableData(venueDetails);
 
             }

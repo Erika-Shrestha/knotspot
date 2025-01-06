@@ -252,14 +252,14 @@ public class Sort {
         } else if (sortBy.equals("City")) {
             return venue.getCity();
         } else if(sortBy.equals("Name")){
-            return venue.getVenueType();
+            return venue.getVenueName();
         }else if(sortBy.equals("Capacity")){
-            return venue.getVenueType();
+            return String.valueOf(venue.getCapacity());
         }
         else{
-            return venue.getVenueType();
+            return String.valueOf(venue.getRentFee());
         }
-        
+         
     }
     
 }
