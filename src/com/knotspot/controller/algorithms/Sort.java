@@ -93,7 +93,7 @@ public class Sort {
     }
     
     public static boolean isLesserThanCapacity(int nextIndex, String minVenueCapacity ) {
-        return venueSortArrays.get(nextIndex).getCapacity() < Integer.parseInt(minVenueCapacity);
+        return venueSortArrays.get(nextIndex).getCapacity() > Integer.parseInt(minVenueCapacity);
     }
     
     public static boolean isLesserThanPrice(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
