@@ -1074,7 +1074,7 @@ public class KnotSpot extends javax.swing.JFrame {
         });
         filterContainerPnl.add(descendSortOrderRadioBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
-        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort By", "Id", "City", "Type", "Capacity", "Price" }));
+        sortByComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sort By", "Id", "Name", "City", "Type", "Capacity", "Price" }));
         sortByComboBx.setToolTipText("");
         sortByComboBx.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -2083,13 +2083,14 @@ public class KnotSpot extends javax.swing.JFrame {
     }
 
     private void displayTableOnHome() {
-        frontDisplayTable.setModel(venueModifyTbl.getModel());
+
         DefaultTableCellRenderer columnDataRenderer = new DefaultTableCellRenderer();
         columnDataRenderer.setHorizontalAlignment(SwingConstants.LEFT);
         frontDisplayTable.getColumnModel().getColumn(0).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(4).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(6).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(7).setCellRenderer(columnDataRenderer);
+        loadTableData(venueDetails);
     }
 
     private void startProgress() {
@@ -2184,7 +2185,7 @@ public class KnotSpot extends javax.swing.JFrame {
         inputPerPlatePriceSlider.setValue(50);
     }
 
-    private void updateTableSortData(List<VenueModel> venueDetails) {
+    private void loadTableData(List<VenueModel> venueDetails) {
 
         defaultTableModel.setRowCount(0);
         for (VenueModel venues : venueDetails) {
@@ -2746,109 +2747,35 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_sortByComboBxActionPerformed
 
     private void ascendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ascendSortOrderRadioBtnActionPerformed
-        // TODO add your handling code here:
-        if (sortByComboBx.getSelectedItem().toString().equals("Id")) {
-            
+
+            String sortBy = sortByComboBx.getSelectedItem().toString();
             if (ascendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyId(venueDetails, true);
-                updateTableSortData(venueDetails);
+                Sort.performInsertionSort(venueDetails, true, sortBy);
+                Sort.performSelectionSort(venueDetails, true, sortBy);
+                loadTableData(venueDetails);
 
             }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("City")) {
-            
-            if (ascendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyCity(venueDetails, true);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("Type")) {
-            
-            if (ascendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyType(venueDetails, true);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("Capacity")) {
-            
-            if (ascendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyCapacity(venueDetails, true);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("Price")) {
-            
-            if (ascendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyRentFee(venueDetails, true);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
         
     }//GEN-LAST:event_ascendSortOrderRadioBtnActionPerformed
 
     private void descendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descendSortOrderRadioBtnActionPerformed
-        // TODO add your handling code here:
-        if (sortByComboBx.getSelectedItem().toString().equals("Id")) {
-            
+        
+        String sortBy = sortByComboBx.getSelectedItem().toString();
             if (descendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyId(venueDetails, false);
-                updateTableSortData(venueDetails);
+                Sort.performInsertionSort(venueDetails, false, sortBy);
+                Sort.performSelectionSort(venueDetails, false, sortBy);
+                loadTableData(venueDetails);
 
             }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("City")) {
-            
-            if (descendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyCity(venueDetails, false);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("Type")) {
-            
-            if (descendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyType(venueDetails, false);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("Capacity")) {
-            
-            if (descendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyCapacity(venueDetails, false);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
-        if (sortByComboBx.getSelectedItem().toString().equals("Price")) {
-            
-            if (descendSortOrderRadioBtn.isSelected()) {
-                Sort.VenueSortbyRentFee(venueDetails, false);
-                updateTableSortData(venueDetails);
-
-            }
-          
-        }
     }//GEN-LAST:event_descendSortOrderRadioBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
         // TODO add your handling code here:
-        BinarySearch.binarySearch(venueDetails, inputSearchTxtFld.getText());
-        updateTableSortData(venueDetails);
-        
+
+        List<VenueModel> foundItems = BinarySearch.binarySearch(venueDetails, inputSearchTxtFld.getText());
+        loadTableData(foundItems);
+
+
     }//GEN-LAST:event_searchBtnActionPerformed
 
     /**

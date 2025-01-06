@@ -18,9 +18,10 @@ public class BinarySearch {
     
     private static List<VenueModel> venueSearchArrays = new ArrayList<>();
     
-    public static VenueModel binarySearch(List<VenueModel> venueDetails, String searchValue){
+    public static List<VenueModel> binarySearch(List<VenueModel> venueDetails, String searchValue){
         venueSearchArrays.clear();
         venueSearchArrays.addAll(venueDetails);
+        List<VenueModel> venueMatched= new ArrayList<>();
         
         int lowIndex= 0;
         int highIndex = venueSearchArrays.size()-1;
@@ -30,7 +31,7 @@ public class BinarySearch {
             String midValue = venueSearchArrays.get(midIndex).getVenueType();
             
             if(midValue.toLowerCase().equals(searchValue.toLowerCase())){
-                return venueSearchArrays.get(midIndex);
+                venueMatched.add(venueSearchArrays.get(midIndex));
             }
             
             if(midValue.compareToIgnoreCase(searchValue)<0){
@@ -41,9 +42,9 @@ public class BinarySearch {
             }
         }
         venueDetails.clear();
-        venueDetails.addAll(venueSearchArrays);
+        venueDetails.addAll(venueMatched);
         
-        return null;
+        return venueMatched;
         
     }
     
