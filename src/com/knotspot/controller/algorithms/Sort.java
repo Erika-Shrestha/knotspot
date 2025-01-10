@@ -59,14 +59,16 @@ public class Sort {
 
             if (isAscend) {
 
-                while (checkLesserThanForInsertion(previous, current, sortBy)) {
+                while (previous >= 0 && checkLesserThanForInsertion(previous, current, sortBy)) {
                     venueSortArrays.set(previous + 1, venueSortArrays.get(previous));
+                    System.out.println("Previous index: " + previous);
                     --previous;
                 }
                 
             } else {
-                while (checkGreaterThanForInsertion(previous, current, sortBy)) {
+                while (previous >= 0 && checkGreaterThanForInsertion(previous, current, sortBy)) {
                     venueSortArrays.set(previous + 1, venueSortArrays.get(previous));
+                    
                     --previous;
                 }
             }
@@ -105,6 +107,8 @@ public class Sort {
     }
     
     public static boolean isGreaterThanId(int previous, String current) {
+        System.out.println(venueSortArrays.get(previous).getVenueId());
+        System.out.println(Integer.parseInt(current));
         return previous >= 0 && venueSortArrays.get(previous).getVenueId() > Integer.parseInt(current);
     }
     
