@@ -85,11 +85,11 @@ public class Sort {
     }
     
     public static boolean isLesserThanCity(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getCity().compareTo(current) > 0;
+        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) > 0;
     }
     
     public static boolean isLesserThanName(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareTo(current) > 0;
+        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) > 0;
     }
     
     public static boolean isLesserThanCapacity(int nextIndex, String minVenueValue ) {
@@ -97,7 +97,7 @@ public class Sort {
     }
     
     public static boolean isLesserThanType(int nextIndex, String minVenueValue ) {
-        return venueSortArrays.get(nextIndex).getVenueType().compareTo(minVenueValue)>0;
+        return venueSortArrays.get(nextIndex).getVenueType().compareToIgnoreCase(minVenueValue)>0;
     }
     
     public static boolean isLesserThanPrice(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
@@ -109,15 +109,15 @@ public class Sort {
     }
     
     public static boolean isGreaterThanCity(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getCity().compareTo(current) < 0;
+        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) < 0;
     }
     
     public static boolean isGreaterThanName(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareTo(current) < 0;
+        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) < 0;
     }
     
     public static boolean isGreaterThanType(int nextIndex, String minVenueValue ) {
-        return venueSortArrays.get(nextIndex).getVenueType().compareTo(minVenueValue)<0;
+        return venueSortArrays.get(nextIndex).getVenueType().compareToIgnoreCase(minVenueValue)<0;
     }
     
     public static boolean isGreaterThanCapacity(int nextIndex, String minVenueValue ) {

@@ -21,8 +21,8 @@ public class ValidationUtil {
 
     //follow naming convention for regex pattern
     private static final Pattern ID_PATTERN = Pattern.compile("^[1-9][0-9]{4}$");
-    private static final Pattern NAME_PATTERN = Pattern.compile("^[A-Za-z][A-Za-z\\s'-]{5,49}$");
-    private static final Pattern ADDRESS_PATTERN = Pattern.compile("^[a-zA-Z ]{5,30}$");
+    private static final Pattern NAME_PATTERN = Pattern.compile("^[A-Za-z][A-Za-z\\s'-]{3,49}$");
+    private static final Pattern ADDRESS_PATTERN = Pattern.compile("^[a-zA-Z ]{4,30}$");
     private static final Pattern CONTACT_PATTERN = Pattern.compile("^98\\d{8}$");
     private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d+$");
     private static final Pattern ALPHANUMERIC_PATTERN = Pattern.compile("^[a-zA-Z0-9]+$");  
@@ -57,6 +57,9 @@ public class ValidationUtil {
     public static void isNameValid(String venueName, String attribute) {
         isNullorEmpty(venueName, attribute);
         isAlphabetic(venueName, attribute);
+        if(venueName.length()<=4 || venueName.length()>=50){
+            throw new IllegalArgumentException(attribute +" must be in between 4 and 50");
+        }
         if (!NAME_PATTERN.matcher(String.valueOf(venueName)).matches()){
             throw new IllegalArgumentException(attribute +" must be in alphabets");
         }
@@ -66,6 +69,9 @@ public class ValidationUtil {
     public static void isAddressValid(String venueAddress, String attribute) {
         isNullorEmpty(venueAddress, attribute);
         isAlphabetic(venueAddress, attribute);
+        if(venueAddress.length()<=5 || venueAddress.length()>=31){
+            throw new IllegalArgumentException(attribute +" must be in between 4 and 50");
+        }
         if (!ADDRESS_PATTERN.matcher(venueAddress).matches()){
             throw new IllegalArgumentException(attribute +" must be a proper address");
         }
