@@ -61,13 +61,13 @@ public class Sort {
 
                 while (checkLesserThanForInsertion(previous, current, sortBy)) {
                     venueSortArrays.set(previous + 1, venueSortArrays.get(previous));
-                    previous--;
+                    --previous;
                 }
                 
             } else {
                 while (checkGreaterThanForInsertion(previous, current, sortBy)) {
                     venueSortArrays.set(previous + 1, venueSortArrays.get(previous));
-                    previous--;
+                    --previous;
                 }
             }
 
@@ -81,15 +81,15 @@ public class Sort {
     // helper methods
     
     public static boolean isLesserThanId(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueId() > Integer.parseInt(current);
+        return previous >= 0 && venueSortArrays.get(previous).getVenueId() < Integer.parseInt(current);
     }
     
     public static boolean isLesserThanCity(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) > 0;
+        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) < 0;
     }
     
     public static boolean isLesserThanName(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) > 0;
+        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) < 0;
     }
     
     public static boolean isLesserThanCapacity(int nextIndex, String minVenueValue ) {
@@ -105,15 +105,15 @@ public class Sort {
     }
     
     public static boolean isGreaterThanId(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueId() < Integer.parseInt(current);
+        return previous >= 0 && venueSortArrays.get(previous).getVenueId() > Integer.parseInt(current);
     }
     
     public static boolean isGreaterThanCity(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) < 0;
+        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) > 0;
     }
     
     public static boolean isGreaterThanName(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) < 0;
+        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) > 0;
     }
     
     public static boolean isGreaterThanType(int nextIndex, String minVenueValue ) {
