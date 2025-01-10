@@ -2493,7 +2493,7 @@ public class KnotSpot extends javax.swing.JFrame {
         } catch (NullPointerException | NumberFormatException e) {
             ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Venue Name");
             isValid = false; //exception
-        }catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Venue Name");
         }
 
@@ -2504,7 +2504,7 @@ public class KnotSpot extends javax.swing.JFrame {
         } catch (NullPointerException | NumberFormatException e) {
             ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Address");
             isValid = false; //exception
-        }catch(IllegalArgumentException e){
+        } catch (IllegalArgumentException e) {
             ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Address");
         }
 
@@ -2644,38 +2644,38 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_venueGalleryNavPnlMouseEntered
 
     private void venueGalleryNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_venueGalleryNavPnlMouseExited
-        // TODO add your handling code here:
+
         venueGalleryNavPnl.setBackground(Color.decode("#0E1E3F"));
         venueGalleryNavLbl.setForeground(Color.WHITE);
     }//GEN-LAST:event_venueGalleryNavPnlMouseExited
 
     private void logOutNavLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavLblMouseClicked
-        // TODO add your handling code here:
+
         inputUsernameTxtFld.setText("");
         inputPasswordPwdFld.setText("");
         loadScreen("LoginScreen");
     }//GEN-LAST:event_logOutNavLblMouseClicked
 
     private void inputVenueCapacitySliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputVenueCapacitySliderStateChanged
-        // TODO add your handling code here:
+
         capacityValueDisplayLbl.setText(String.valueOf(inputVenueCapacitySlider.getValue()));
     }//GEN-LAST:event_inputVenueCapacitySliderStateChanged
 
     private void inputPerPlatePriceSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputPerPlatePriceSliderStateChanged
-        // TODO add your handling code here:
+
         perPlatePriceDisplayLbl.setText(String.valueOf(inputPerPlatePriceSlider.getValue()));
     }//GEN-LAST:event_inputPerPlatePriceSliderStateChanged
 
     private void editVenueDetailsBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editVenueDetailsBtn2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_editVenueDetailsBtn2ActionPerformed
 
     private void removeVenueDetailsBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtn2ActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_removeVenueDetailsBtn2ActionPerformed
 
     private void selectLightModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLightModeRadioBtnActionPerformed
-        // TODO add your handling code here:
+
         if (selectDarkModeRadioBtn.isSelected() == true) {
             settingPagePnl.setBackground(new Color(250, 245, 239));
             homePagePnl.setBackground(new Color(250, 245, 239));
@@ -2688,7 +2688,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_selectLightModeRadioBtnActionPerformed
 
     private void selectDarkModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectDarkModeRadioBtnActionPerformed
-        // TODO add your handling code here:
+
         if (selectDarkModeRadioBtn.isSelected() == true) {
             settingPagePnl.setBackground(Color.decode("#937A62"));
             homePagePnl.setBackground(Color.decode("#937A62"));
@@ -2700,7 +2700,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_selectDarkModeRadioBtnActionPerformed
 
     private void editForBlogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editForBlogBtnActionPerformed
-        // TODO add your handling code here:
+
         if (editBlogTxtArea.getText().isBlank()) {
             showPopDialog("nothing to upload", "blog data", JOptionPane.ERROR_MESSAGE);
         } else {
@@ -2710,17 +2710,17 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_editForBlogBtnActionPerformed
 
     private void totalVenueNumberLblInputMethodTextChanged(java.awt.event.InputMethodEvent evt) {//GEN-FIRST:event_totalVenueNumberLblInputMethodTextChanged
-        // TODO add your handling code here:
+
 
     }//GEN-LAST:event_totalVenueNumberLblInputMethodTextChanged
 
     private void adminDashboardSmallIconLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminDashboardSmallIconLblMouseClicked
-        // TODO add your handling code here:
+
         loadNavRelatedPage("HomePage");
     }//GEN-LAST:event_adminDashboardSmallIconLblMouseClicked
 
     private void inputUsernameTxtFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldFocusGained
-        // TODO add your handling code here:
+
         if (inputUsernameTxtFld.getText().equals("Enter username")) {
             inputUsernameTxtFld.setText("");
             inputUsernameTxtFld.setForeground(Color.decode("#000000"));
@@ -2728,7 +2728,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_inputUsernameTxtFldFocusGained
 
     private void inputUsernameTxtFldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldFocusLost
-        // TODO add your handling code here:
+
         if (inputUsernameTxtFld.getText().equals("")) {
             inputUsernameTxtFld.setText("Enter username");
             inputUsernameTxtFld.setForeground(Color.decode("#CCCCCC"));
@@ -2736,7 +2736,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_inputUsernameTxtFldFocusLost
 
     private void inputPasswordPwdFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldFocusGained
-        // TODO add your handling code here:
+
         if (String.valueOf(inputPasswordPwdFld.getPassword()).equals("Enter password")) {
             inputPasswordPwdFld.setText("");
             inputPasswordPwdFld.setForeground(Color.decode("#000000"));
@@ -2745,7 +2745,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPasswordPwdFldFocusGained
 
     private void inputPasswordPwdFldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldFocusLost
-        // TODO add your handling code here:
+
         if (String.valueOf(inputPasswordPwdFld.getPassword()).equals("")) {
             inputPasswordPwdFld.setText("Enter password");
             inputPasswordPwdFld.setForeground(Color.decode("#CCCCCC"));
@@ -2754,11 +2754,11 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_inputPasswordPwdFldFocusLost
 
     private void venueAddressOnPopUpMsgFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venueAddressOnPopUpMsgFldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_venueAddressOnPopUpMsgFldActionPerformed
 
     private void updateVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateVenueDetailsBtnActionPerformed
-        // TODO add your handling code here:
+
         //presented data 
         int selectedRow = venueModifyTbl.getSelectedRow();
         String presentVenueName = venueModifyTbl.getValueAt(selectedRow, 1).toString();
@@ -2849,7 +2849,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_updateVenueDetailsBtnActionPerformed
 
     private void cancelVenueChangeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelVenueChangeBtnActionPerformed
-        // TODO add your handling code here:
+
         getRootPane().getGlassPane().setVisible(false);
         popUpDialog.setVisible(false);
     }//GEN-LAST:event_cancelVenueChangeBtnActionPerformed
@@ -2873,12 +2873,12 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_sortByComboBxActionPerformed
 
     private void ascendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ascendSortOrderRadioBtnActionPerformed
-        
+
 
     }//GEN-LAST:event_ascendSortOrderRadioBtnActionPerformed
 
     private void descendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descendSortOrderRadioBtnActionPerformed
-        
+
     }//GEN-LAST:event_descendSortOrderRadioBtnActionPerformed
 
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
@@ -2944,7 +2944,7 @@ public class KnotSpot extends javax.swing.JFrame {
             loadTableData(venueDetails);
 
         }
-        
+
         filterPopUpPnl.setVisible(false);
         sortByComboBx.setSelectedIndex(0);
         sortButtonGroup.clearSelection();
@@ -2955,7 +2955,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_sortByComboBxFocusGained
 
     private void searchBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchBtnMouseEntered
-        
+
     }//GEN-LAST:event_searchBtnMouseEntered
 
     /**
