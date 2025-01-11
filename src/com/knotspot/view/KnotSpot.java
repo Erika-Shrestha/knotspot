@@ -2932,16 +2932,28 @@ public class KnotSpot extends javax.swing.JFrame {
     private void doFilterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doFilterBtnActionPerformed
         String sortBy = sortByComboBx.getSelectedItem().toString();
         if (ascendSortOrderRadioBtn.isSelected() && !sortBy.equals("Sort By")) {
-            Sort.performInsertionSort(venueDetails, true, sortBy);
-            Sort.performSelectionSort(venueDetails, true, sortBy);
-            Sort.performMergeSort(venueDetails, true, sortBy);
-            loadTableData(venueDetails);
+            if (sortBy.equals("Id") || sortBy.equals("Name") || sortBy.equals("City")) {
+                Sort.performInsertionSort(venueDetails, true, sortBy);
+                loadTableData(venueDetails);
+            } else if (sortBy.equals("Capacity")) {
+                Sort.performSelectionSort(venueDetails, true, sortBy);
+                loadTableData(venueDetails);
+            } else if (sortBy.equals("Price")) {
+                Sort.performMergeSort(venueDetails, true, sortBy);
+                loadTableData(venueDetails);
+            }
 
         } else if (descendSortOrderRadioBtn.isSelected() && !sortBy.equals("Sort By")) {
-            Sort.performInsertionSort(venueDetails, false, sortBy);
-            Sort.performSelectionSort(venueDetails, false, sortBy);
-            Sort.performMergeSort(venueDetails, false, sortBy);
-            loadTableData(venueDetails);
+            if (sortBy.equals("Id") || sortBy.equals("Name") || sortBy.equals("City")) {
+                Sort.performInsertionSort(venueDetails, false, sortBy);
+                loadTableData(venueDetails);
+            } else if (sortBy.equals("Capacity")) {
+                Sort.performSelectionSort(venueDetails, false, sortBy);
+                loadTableData(venueDetails);
+            } else if (sortBy.equals("Price")) {
+                Sort.performMergeSort(venueDetails, false, sortBy);
+                loadTableData(venueDetails);
+            }
 
         }
 

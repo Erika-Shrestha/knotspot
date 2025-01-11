@@ -61,15 +61,13 @@ public class Sort {
 
                 while (previous >= 0 && checkLesserThanForInsertion(previous, current, sortBy)) {
                     venueSortArrays.set(previous + 1, venueSortArrays.get(previous));
-                    System.out.println("Previous index: " + previous);
-                    --previous;
+                    previous--;
                 }
-                
+
             } else {
                 while (previous >= 0 && checkGreaterThanForInsertion(previous, current, sortBy)) {
                     venueSortArrays.set(previous + 1, venueSortArrays.get(previous));
-                    
-                    --previous;
+                    previous--;
                 }
             }
 
@@ -78,110 +76,107 @@ public class Sort {
 
         venueDetails.clear();
         venueDetails.addAll(venueSortArrays);
+
     }
 
     // helper methods
-    
     public static boolean isLesserThanId(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueId() < Integer.parseInt(current);
+        return previous >= 0 && venueSortArrays.get(previous).getVenueId() > Integer.parseInt(current);
     }
-    
+
     public static boolean isLesserThanCity(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) < 0;
+        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) > 0;
     }
-    
+
     public static boolean isLesserThanName(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) < 0;
+        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) > 0;
     }
-    
-    public static boolean isLesserThanCapacity(int nextIndex, String minVenueValue ) {
-        return venueSortArrays.get(nextIndex).getCapacity() > Integer.parseInt(minVenueValue);
+
+    public static boolean isLesserThanCapacity(int nextIndex, String minVenueValue) {
+        return venueSortArrays.get(nextIndex).getCapacity() < Integer.parseInt(minVenueValue);
     }
-    
-    public static boolean isLesserThanType(int nextIndex, String minVenueValue ) {
-        return venueSortArrays.get(nextIndex).getVenueType().compareToIgnoreCase(minVenueValue)>0;
+
+    public static boolean isLesserThanType(int nextIndex, String minVenueValue) {
+        return venueSortArrays.get(nextIndex).getVenueType().compareToIgnoreCase(minVenueValue) > 0;
     }
-    
-    public static boolean isLesserThanPrice(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
+
+    public static boolean isLesserThanPrice(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
         return firstHalfVenue.get(fCounter).getRentFee() <= secondHalfVenue.get(sCounter).getRentFee();
     }
-    
+
     public static boolean isGreaterThanId(int previous, String current) {
         System.out.println(venueSortArrays.get(previous).getVenueId());
         System.out.println(Integer.parseInt(current));
-        return previous >= 0 && venueSortArrays.get(previous).getVenueId() > Integer.parseInt(current);
+        return previous >= 0 && venueSortArrays.get(previous).getVenueId() < Integer.parseInt(current);
     }
-    
+
     public static boolean isGreaterThanCity(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) > 0;
+        return previous >= 0 && venueSortArrays.get(previous).getCity().compareToIgnoreCase(current) < 0;
     }
-    
+
     public static boolean isGreaterThanName(int previous, String current) {
-        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) > 0;
+        return previous >= 0 && venueSortArrays.get(previous).getVenueName().compareToIgnoreCase(current) < 0;
     }
-    
-    public static boolean isGreaterThanType(int nextIndex, String minVenueValue ) {
-        return venueSortArrays.get(nextIndex).getVenueType().compareToIgnoreCase(minVenueValue)<0;
+
+    public static boolean isGreaterThanType(int nextIndex, String minVenueValue) {
+        return venueSortArrays.get(nextIndex).getVenueType().compareToIgnoreCase(minVenueValue) < 0;
     }
-    
-    public static boolean isGreaterThanCapacity(int nextIndex, String minVenueValue ) {
-        return venueSortArrays.get(nextIndex).getCapacity() < Integer.parseInt(minVenueValue);
+
+    public static boolean isGreaterThanCapacity(int nextIndex, String minVenueValue) {
+        return venueSortArrays.get(nextIndex).getCapacity() > Integer.parseInt(minVenueValue);
     }
-    
-    public static boolean isGreaterThanPrice(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
+
+    public static boolean isGreaterThanPrice(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue) {
         return firstHalfVenue.get(fCounter).getRentFee() >= secondHalfVenue.get(sCounter).getRentFee();
     }
-    
-    
+
     public static boolean checkLesserThanForInsertion(int previous, String current, String sortBy) {
-        if(sortBy.equals("Id")) {
-            return isLesserThanId(previous,current);
+        if (sortBy.equals("Id")) {
+            return isLesserThanId(previous, current);
         } else if (sortBy.equals("City")) {
-            return isLesserThanCity(previous,current);
-        } else{
+            return isLesserThanCity(previous, current);
+        } else {
             return isLesserThanName(previous, current);
         }
     }
-    
+
     public static boolean checkGreaterThanForInsertion(int previous, String current, String sortBy) {
-        if(sortBy.equals("Id")) {
-            return isGreaterThanId(previous,current);
+        if (sortBy.equals("Id")) {
+            return isGreaterThanId(previous, current);
         } else if (sortBy.equals("City")) {
-            return isGreaterThanCity(previous,current);
+            return isGreaterThanCity(previous, current);
         } else {
             return isGreaterThanName(previous, current);
         }
     }
-   
+
     public static boolean checkLesserThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
-        if(sortBy.equals("Capacity")){
-            return isLesserThanCapacity(nextIndex, minVenueValue );
-        }  
-        else{
-            return isLesserThanType(nextIndex, minVenueValue );
+        if (sortBy.equals("Capacity")) {
+            return isLesserThanCapacity(nextIndex, minVenueValue);
+        } else {
+            return isLesserThanType(nextIndex, minVenueValue);
         }
     }
-    
+
     public static boolean checkGreaterThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
-        if(sortBy.equals("Capacity")){
-            return isGreaterThanCapacity(nextIndex, minVenueValue );
-        }  
-        else{
-            return isGreaterThanType(nextIndex, minVenueValue );
+        if (sortBy.equals("Capacity")) {
+            return isGreaterThanCapacity(nextIndex, minVenueValue);
+        } else {
+            return isGreaterThanType(nextIndex, minVenueValue);
         }
     }
-    
-    public static boolean checkLesserThanForMerge(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
-        if(sortBy.equals("Price")){
-            return isLesserThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue) ;
-        }  
+
+    public static boolean checkLesserThanForMerge(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
+        if (sortBy.equals("Price")) {
+            return isLesserThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue);
+        }
         return false;
     }
-    
-    public static boolean checkGreaterThanForMerge(int fCounter,int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
-        if(sortBy.equals("Price")){
-            return isGreaterThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue) ;
-        }  
+
+    public static boolean checkGreaterThanForMerge(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
+        if (sortBy.equals("Price")) {
+            return isGreaterThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue);
+        }
         return false;
     }
 
@@ -262,20 +257,20 @@ public class Sort {
         }
 
     }
-    public static String getSortValue(VenueModel venue, String sortBy){
-        if(sortBy.equals("Id")) {
+
+    public static String getSortValue(VenueModel venue, String sortBy) {
+        if (sortBy.equals("Id")) {
             return String.valueOf(venue.getVenueId());
         } else if (sortBy.equals("City")) {
             return venue.getCity();
-        } else if(sortBy.equals("Name")){
+        } else if (sortBy.equals("Name")) {
             return venue.getVenueName();
-        }else if(sortBy.equals("Capacity")){
+        } else if (sortBy.equals("Capacity")) {
             return String.valueOf(venue.getCapacity());
-        }
-        else{
+        } else {
             return String.valueOf(venue.getRentFee());
         }
-         
+
     }
-    
+
 }
