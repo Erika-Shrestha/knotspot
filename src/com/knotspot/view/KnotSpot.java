@@ -103,6 +103,7 @@ public class KnotSpot extends javax.swing.JFrame {
         showCapacityValueLbl = new javax.swing.JLabel();
         showPerPlatePriceValueLbl = new javax.swing.JLabel();
         sortButtonGroup = new javax.swing.ButtonGroup();
+        settingButtonGroup = new javax.swing.ButtonGroup();
         containerPnl = new javax.swing.JPanel();
         loadingPagePnl = new javax.swing.JPanel();
         sloganLbl = new javax.swing.JLabel();
@@ -202,16 +203,64 @@ public class KnotSpot extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         decorStandForaddVenuePnl = new javax.swing.JPanel();
         settingPagePnl = new javax.swing.JPanel();
+        settingLbl = new javax.swing.JLabel();
+        calendarContainerPnl = new javax.swing.JPanel();
+        calendarTitleLbl = new javax.swing.JLabel();
+        calendarImageLbl = new javax.swing.JLabel();
+        calendarDescriptionFirstLineLbl = new javax.swing.JLabel();
+        calendarDescriptionSecondLineLbl = new javax.swing.JLabel();
+        learnMoreLbl = new javax.swing.JLabel();
+        connectDetailsContainerPnl = new javax.swing.JPanel();
+        googleImageLbl = new javax.swing.JLabel();
+        gmailLbl = new javax.swing.JLabel();
+        threeDotImgLbl = new javax.swing.JLabel();
+        influenceAvailableLbl = new javax.swing.JLabel();
+        blockOnLbl = new javax.swing.JLabel();
+        renderImageContainerPnl = new javax.swing.JPanel();
+        renderImageLbl = new javax.swing.JLabel();
+        renderDescriptionLbl = new javax.swing.JLabel();
+        renderImageToggleImgLbl = new javax.swing.JLabel();
+        renderReschedulePnl = new javax.swing.JPanel();
+        renderRescheduleLbl = new javax.swing.JLabel();
+        renderClockImgLbl = new javax.swing.JLabel();
+        textSuggestionContainerPnl = new javax.swing.JPanel();
+        textSuggesionLbl = new javax.swing.JLabel();
+        textSuggestionToggleImgLbl = new javax.swing.JLabel();
+        textSuggestionReschedulePnl = new javax.swing.JPanel();
+        textSuggestionRescheduleLbl = new javax.swing.JLabel();
+        textSuggestionClockImgLbl = new javax.swing.JLabel();
+        autoCorrectionContainerPnl = new javax.swing.JPanel();
+        autoCorrectionLbl = new javax.swing.JLabel();
+        autoCorrectionToggleImgLbl = new javax.swing.JLabel();
+        autoCorrectionReschedulePnl = new javax.swing.JPanel();
+        autoCorrectionRescheduleLbl = new javax.swing.JLabel();
+        autoCorrectionClockImgLbl = new javax.swing.JLabel();
+        connectionContainerPnl = new javax.swing.JPanel();
+        googleContainerPnl = new javax.swing.JPanel();
+        googleConnectLikeBtnPnl = new javax.swing.JPanel();
+        googleConnectLbl = new javax.swing.JLabel();
+        googleTxtLbl = new javax.swing.JLabel();
+        googleConnectImgLbl = new javax.swing.JLabel();
+        outlookContainerPnl = new javax.swing.JPanel();
+        outlookRequestLikeBtnPnl = new javax.swing.JPanel();
+        outlookRequestLbl = new javax.swing.JLabel();
+        outLookTxtLbl = new javax.swing.JLabel();
+        outlookConnectImgLbl = new javax.swing.JLabel();
+        appleContainerPnl = new javax.swing.JPanel();
+        appleRequestLikeBtnPnl = new javax.swing.JPanel();
+        appleRequestLbl = new javax.swing.JLabel();
+        appleTxtLbl = new javax.swing.JLabel();
+        appleConnectImgLbl = new javax.swing.JLabel();
+        backgroundThemeContainerPnl = new javax.swing.JPanel();
         backgroundModeSptPane = new javax.swing.JSplitPane();
         darkModePnl = new javax.swing.JPanel();
-        darkImageLbl = new javax.swing.JLabel();
         darkModeWelcomeLbl = new javax.swing.JLabel();
         selectDarkModeRadioBtn = new javax.swing.JRadioButton();
         lightModePnl = new javax.swing.JPanel();
-        lightImageLbl = new javax.swing.JLabel();
         lightModeWelcomeLbl = new javax.swing.JLabel();
         selectLightModeRadioBtn = new javax.swing.JRadioButton();
-        optionMessageLbl = new javax.swing.JLabel();
+        backgroundThemeHeadingLbl = new javax.swing.JLabel();
+        backgroundThemeDescriptionLbl = new javax.swing.JLabel();
         decorStandForSettingPnl = new javax.swing.JPanel();
         aboutUsPagePnl = new javax.swing.JPanel();
         aboutUsTitleLbl = new javax.swing.JLabel();
@@ -1525,18 +1574,524 @@ public class KnotSpot extends javax.swing.JFrame {
         adminDashboardPagesPnl.add(addVenuePagePnl, "ManageVenuePage");
 
         settingPagePnl.setBackground(new java.awt.Color(250, 245, 239));
+        settingPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        settingLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        settingLbl.setText("Settings");
+        settingPagePnl.add(settingLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 10, 70, -1));
+
+        calendarContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        calendarContainerPnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+        calendarTitleLbl.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        calendarTitleLbl.setText("Synchronize availability with cross calendar blocking");
+
+        calendarImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/calendericon.png"))); // NOI18N
+
+        calendarDescriptionFirstLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        calendarDescriptionFirstLineLbl.setText("Ever got double booked because you had an appointment in your private calendar that your teammates weren't aware of? With cross-calendar blocking this");
+
+        calendarDescriptionSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        calendarDescriptionSecondLineLbl.setText("won't happen.");
+
+        learnMoreLbl.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        learnMoreLbl.setForeground(new java.awt.Color(0, 102, 204));
+        learnMoreLbl.setText("Learn more   >");
+
+        javax.swing.GroupLayout calendarContainerPnlLayout = new javax.swing.GroupLayout(calendarContainerPnl);
+        calendarContainerPnl.setLayout(calendarContainerPnlLayout);
+        calendarContainerPnlLayout.setHorizontalGroup(
+            calendarContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calendarContainerPnlLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(calendarContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(calendarContainerPnlLayout.createSequentialGroup()
+                        .addComponent(calendarImageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(calendarTitleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(calendarContainerPnlLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addGroup(calendarContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(calendarDescriptionSecondLineLbl)
+                            .addComponent(calendarDescriptionFirstLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 867, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(learnMoreLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(28, Short.MAX_VALUE))
+        );
+        calendarContainerPnlLayout.setVerticalGroup(
+            calendarContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(calendarContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(calendarContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(calendarImageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(calendarTitleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(calendarDescriptionFirstLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(calendarDescriptionSecondLineLbl)
+                .addGap(8, 8, 8)
+                .addComponent(learnMoreLbl)
+                .addContainerGap())
+        );
+
+        settingPagePnl.add(calendarContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 930, -1));
+
+        connectDetailsContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        connectDetailsContainerPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(1, 0, 1, 0, new java.awt.Color(204, 204, 204)));
+
+        googleImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/googleicon.png"))); // NOI18N
+
+        gmailLbl.setText("erika.shrestha33@gmail.com");
+
+        threeDotImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/threedotimage.png"))); // NOI18N
+
+        influenceAvailableLbl.setText("Influence Available");
+
+        blockOnLbl.setText("Block on");
+
+        javax.swing.GroupLayout connectDetailsContainerPnlLayout = new javax.swing.GroupLayout(connectDetailsContainerPnl);
+        connectDetailsContainerPnl.setLayout(connectDetailsContainerPnlLayout);
+        connectDetailsContainerPnlLayout.setHorizontalGroup(
+            connectDetailsContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(connectDetailsContainerPnlLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(googleImageLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(gmailLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(threeDotImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(164, 164, 164)
+                .addComponent(influenceAvailableLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 251, Short.MAX_VALUE)
+                .addComponent(blockOnLbl)
+                .addGap(101, 101, 101))
+        );
+        connectDetailsContainerPnlLayout.setVerticalGroup(
+            connectDetailsContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(connectDetailsContainerPnlLayout.createSequentialGroup()
+                .addGroup(connectDetailsContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(connectDetailsContainerPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(connectDetailsContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(googleImageLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(threeDotImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(connectDetailsContainerPnlLayout.createSequentialGroup()
+                        .addGroup(connectDetailsContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(connectDetailsContainerPnlLayout.createSequentialGroup()
+                                .addGap(15, 15, 15)
+                                .addComponent(gmailLbl))
+                            .addGroup(connectDetailsContainerPnlLayout.createSequentialGroup()
+                                .addGap(16, 16, 16)
+                                .addGroup(connectDetailsContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(influenceAvailableLbl)
+                                    .addComponent(blockOnLbl))))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        settingPagePnl.add(connectDetailsContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 930, 50));
+
+        renderImageContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        renderImageContainerPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
+
+        renderImageLbl.setText("Render image");
+
+        renderDescriptionLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        renderDescriptionLbl.setForeground(new java.awt.Color(153, 153, 153));
+        renderDescriptionLbl.setText("automatically showed image");
+
+        renderImageToggleImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/toggleicon.png"))); // NOI18N
+
+        renderReschedulePnl.setBackground(new java.awt.Color(255, 255, 255));
+        renderReschedulePnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+        renderRescheduleLbl.setText("Reschedule");
+
+        renderClockImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/clockicon.png"))); // NOI18N
+
+        javax.swing.GroupLayout renderReschedulePnlLayout = new javax.swing.GroupLayout(renderReschedulePnl);
+        renderReschedulePnl.setLayout(renderReschedulePnlLayout);
+        renderReschedulePnlLayout.setHorizontalGroup(
+            renderReschedulePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, renderReschedulePnlLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(renderClockImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(renderRescheduleLbl)
+                .addGap(18, 18, 18))
+        );
+        renderReschedulePnlLayout.setVerticalGroup(
+            renderReschedulePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(renderClockImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(renderReschedulePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(renderRescheduleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout renderImageContainerPnlLayout = new javax.swing.GroupLayout(renderImageContainerPnl);
+        renderImageContainerPnl.setLayout(renderImageContainerPnlLayout);
+        renderImageContainerPnlLayout.setHorizontalGroup(
+            renderImageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(renderImageContainerPnlLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addGroup(renderImageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(renderDescriptionLbl)
+                    .addComponent(renderImageLbl))
+                .addGap(279, 279, 279)
+                .addComponent(renderImageToggleImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
+                .addComponent(renderReschedulePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
+        );
+        renderImageContainerPnlLayout.setVerticalGroup(
+            renderImageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(renderImageContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(renderImageContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(renderImageToggleImgLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, renderImageContainerPnlLayout.createSequentialGroup()
+                        .addComponent(renderImageLbl)
+                        .addGap(3, 3, 3)
+                        .addComponent(renderDescriptionLbl)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(renderReschedulePnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        settingPagePnl.add(renderImageContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 930, 50));
+
+        textSuggestionContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        textSuggestionContainerPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
+
+        textSuggesionLbl.setText("Text suggestion");
+
+        textSuggestionToggleImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/toggleicon.png"))); // NOI18N
+
+        textSuggestionReschedulePnl.setBackground(new java.awt.Color(255, 255, 255));
+        textSuggestionReschedulePnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+
+        textSuggestionRescheduleLbl.setText("Reschedule");
+
+        textSuggestionClockImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/clockicon.png"))); // NOI18N
+
+        javax.swing.GroupLayout textSuggestionReschedulePnlLayout = new javax.swing.GroupLayout(textSuggestionReschedulePnl);
+        textSuggestionReschedulePnl.setLayout(textSuggestionReschedulePnlLayout);
+        textSuggestionReschedulePnlLayout.setHorizontalGroup(
+            textSuggestionReschedulePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, textSuggestionReschedulePnlLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(textSuggestionClockImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(textSuggestionRescheduleLbl)
+                .addGap(16, 16, 16))
+        );
+        textSuggestionReschedulePnlLayout.setVerticalGroup(
+            textSuggestionReschedulePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(textSuggestionClockImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(textSuggestionReschedulePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(textSuggestionRescheduleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout textSuggestionContainerPnlLayout = new javax.swing.GroupLayout(textSuggestionContainerPnl);
+        textSuggestionContainerPnl.setLayout(textSuggestionContainerPnlLayout);
+        textSuggestionContainerPnlLayout.setHorizontalGroup(
+            textSuggestionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(textSuggestionContainerPnlLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(textSuggesionLbl)
+                .addGap(297, 297, 297)
+                .addComponent(textSuggestionToggleImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
+                .addComponent(textSuggestionReschedulePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
+        );
+        textSuggestionContainerPnlLayout.setVerticalGroup(
+            textSuggestionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(textSuggestionContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(textSuggestionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(textSuggestionToggleImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(textSuggestionContainerPnlLayout.createSequentialGroup()
+                        .addGroup(textSuggestionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(textSuggestionContainerPnlLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(textSuggesionLbl))
+                            .addComponent(textSuggestionReschedulePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        settingPagePnl.add(textSuggestionContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 930, 50));
+
+        autoCorrectionContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        autoCorrectionContainerPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(204, 204, 204)));
+
+        autoCorrectionLbl.setText("Auto correction");
+
+        autoCorrectionToggleImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/toggleofficon.png"))); // NOI18N
+
+        autoCorrectionReschedulePnl.setBackground(new java.awt.Color(255, 255, 255));
+        autoCorrectionReschedulePnl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(153, 153, 153)));
+        autoCorrectionReschedulePnl.setMaximumSize(new java.awt.Dimension(128, 37));
+        autoCorrectionReschedulePnl.setMinimumSize(new java.awt.Dimension(128, 37));
+        autoCorrectionReschedulePnl.setPreferredSize(new java.awt.Dimension(128, 37));
+
+        autoCorrectionRescheduleLbl.setText("Reschedule");
+
+        autoCorrectionClockImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/clockicon.png"))); // NOI18N
+
+        javax.swing.GroupLayout autoCorrectionReschedulePnlLayout = new javax.swing.GroupLayout(autoCorrectionReschedulePnl);
+        autoCorrectionReschedulePnl.setLayout(autoCorrectionReschedulePnlLayout);
+        autoCorrectionReschedulePnlLayout.setHorizontalGroup(
+            autoCorrectionReschedulePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, autoCorrectionReschedulePnlLayout.createSequentialGroup()
+                .addGap(5, 5, 5)
+                .addComponent(autoCorrectionClockImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(autoCorrectionRescheduleLbl)
+                .addContainerGap(19, Short.MAX_VALUE))
+        );
+        autoCorrectionReschedulePnlLayout.setVerticalGroup(
+            autoCorrectionReschedulePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(autoCorrectionClockImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(autoCorrectionReschedulePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(autoCorrectionRescheduleLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout autoCorrectionContainerPnlLayout = new javax.swing.GroupLayout(autoCorrectionContainerPnl);
+        autoCorrectionContainerPnl.setLayout(autoCorrectionContainerPnlLayout);
+        autoCorrectionContainerPnlLayout.setHorizontalGroup(
+            autoCorrectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(autoCorrectionContainerPnlLayout.createSequentialGroup()
+                .addGap(76, 76, 76)
+                .addComponent(autoCorrectionLbl)
+                .addGap(298, 298, 298)
+                .addComponent(autoCorrectionToggleImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 232, Short.MAX_VALUE)
+                .addComponent(autoCorrectionReschedulePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
+        );
+        autoCorrectionContainerPnlLayout.setVerticalGroup(
+            autoCorrectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(autoCorrectionContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(autoCorrectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(autoCorrectionToggleImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(autoCorrectionContainerPnlLayout.createSequentialGroup()
+                        .addGroup(autoCorrectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(autoCorrectionContainerPnlLayout.createSequentialGroup()
+                                .addGap(10, 10, 10)
+                                .addComponent(autoCorrectionLbl))
+                            .addComponent(autoCorrectionReschedulePnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        settingPagePnl.add(autoCorrectionContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 930, 50));
+
+        connectionContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        connectionContainerPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(153, 153, 153)));
+
+        googleConnectLikeBtnPnl.setBackground(new java.awt.Color(125, 162, 169));
+
+        googleConnectLbl.setText("Connect");
+
+        javax.swing.GroupLayout googleConnectLikeBtnPnlLayout = new javax.swing.GroupLayout(googleConnectLikeBtnPnl);
+        googleConnectLikeBtnPnl.setLayout(googleConnectLikeBtnPnlLayout);
+        googleConnectLikeBtnPnlLayout.setHorizontalGroup(
+            googleConnectLikeBtnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(googleConnectLikeBtnPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(googleConnectLbl)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        googleConnectLikeBtnPnlLayout.setVerticalGroup(
+            googleConnectLikeBtnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(googleConnectLikeBtnPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(googleConnectLbl)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        googleTxtLbl.setText("Google");
+
+        googleConnectImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/googleconnecticon.png"))); // NOI18N
+
+        javax.swing.GroupLayout googleContainerPnlLayout = new javax.swing.GroupLayout(googleContainerPnl);
+        googleContainerPnl.setLayout(googleContainerPnlLayout);
+        googleContainerPnlLayout.setHorizontalGroup(
+            googleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, googleContainerPnlLayout.createSequentialGroup()
+                .addContainerGap(10, Short.MAX_VALUE)
+                .addComponent(googleConnectImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(googleTxtLbl)
+                .addGap(18, 18, 18)
+                .addComponent(googleConnectLikeBtnPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        googleContainerPnlLayout.setVerticalGroup(
+            googleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(googleContainerPnlLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(googleTxtLbl)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(googleContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(googleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(googleContainerPnlLayout.createSequentialGroup()
+                        .addComponent(googleConnectLikeBtnPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(googleConnectImgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)))
+        );
+
+        outlookRequestLikeBtnPnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        outlookRequestLbl.setForeground(new java.awt.Color(153, 153, 153));
+        outlookRequestLbl.setText("Request");
+
+        javax.swing.GroupLayout outlookRequestLikeBtnPnlLayout = new javax.swing.GroupLayout(outlookRequestLikeBtnPnl);
+        outlookRequestLikeBtnPnl.setLayout(outlookRequestLikeBtnPnlLayout);
+        outlookRequestLikeBtnPnlLayout.setHorizontalGroup(
+            outlookRequestLikeBtnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(outlookRequestLikeBtnPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(outlookRequestLbl)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        outlookRequestLikeBtnPnlLayout.setVerticalGroup(
+            outlookRequestLikeBtnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(outlookRequestLikeBtnPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(outlookRequestLbl)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        outLookTxtLbl.setText("Outlook");
+
+        outlookConnectImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/outlookconnecticon.png"))); // NOI18N
+
+        javax.swing.GroupLayout outlookContainerPnlLayout = new javax.swing.GroupLayout(outlookContainerPnl);
+        outlookContainerPnl.setLayout(outlookContainerPnlLayout);
+        outlookContainerPnlLayout.setHorizontalGroup(
+            outlookContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, outlookContainerPnlLayout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(outlookConnectImgLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(outLookTxtLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(outlookRequestLikeBtnPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        outlookContainerPnlLayout.setVerticalGroup(
+            outlookContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(outLookTxtLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, outlookContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(outlookContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(outlookRequestLikeBtnPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, outlookContainerPnlLayout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addComponent(outlookConnectImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
+        );
+
+        appleRequestLikeBtnPnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        appleRequestLbl.setForeground(new java.awt.Color(153, 153, 153));
+        appleRequestLbl.setText("Request");
+
+        javax.swing.GroupLayout appleRequestLikeBtnPnlLayout = new javax.swing.GroupLayout(appleRequestLikeBtnPnl);
+        appleRequestLikeBtnPnl.setLayout(appleRequestLikeBtnPnlLayout);
+        appleRequestLikeBtnPnlLayout.setHorizontalGroup(
+            appleRequestLikeBtnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(appleRequestLikeBtnPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(appleRequestLbl)
+                .addContainerGap(10, Short.MAX_VALUE))
+        );
+        appleRequestLikeBtnPnlLayout.setVerticalGroup(
+            appleRequestLikeBtnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(appleRequestLikeBtnPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(appleRequestLbl)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        appleTxtLbl.setText("Apple");
+
+        appleConnectImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/appleconnecticon.png"))); // NOI18N
+
+        javax.swing.GroupLayout appleContainerPnlLayout = new javax.swing.GroupLayout(appleContainerPnl);
+        appleContainerPnl.setLayout(appleContainerPnlLayout);
+        appleContainerPnlLayout.setHorizontalGroup(
+            appleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, appleContainerPnlLayout.createSequentialGroup()
+                .addContainerGap(15, Short.MAX_VALUE)
+                .addComponent(appleConnectImgLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(appleTxtLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(appleRequestLikeBtnPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        appleContainerPnlLayout.setVerticalGroup(
+            appleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, appleContainerPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(appleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(appleRequestLikeBtnPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(appleContainerPnlLayout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addGroup(appleContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(appleConnectImgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(appleTxtLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout connectionContainerPnlLayout = new javax.swing.GroupLayout(connectionContainerPnl);
+        connectionContainerPnl.setLayout(connectionContainerPnlLayout);
+        connectionContainerPnlLayout.setHorizontalGroup(
+            connectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(connectionContainerPnlLayout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(googleContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(143, 143, 143)
+                .addComponent(outlookContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
+                .addComponent(appleContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(52, 52, 52))
+        );
+        connectionContainerPnlLayout.setVerticalGroup(
+            connectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(connectionContainerPnlLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addGroup(connectionContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(googleContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(appleContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(outlookContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(20, Short.MAX_VALUE))
+        );
+
+        settingPagePnl.add(connectionContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 430, 930, 80));
+
+        backgroundThemeContainerPnl.setBackground(new java.awt.Color(255, 255, 255));
+        backgroundThemeContainerPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(153, 153, 153)));
 
         darkModePnl.setBackground(new java.awt.Color(51, 51, 51));
         darkModePnl.setMaximumSize(new java.awt.Dimension(150, 150));
         darkModePnl.setMinimumSize(new java.awt.Dimension(150, 150));
         darkModePnl.setPreferredSize(new java.awt.Dimension(150, 150));
 
-        darkImageLbl.setForeground(new java.awt.Color(255, 255, 255));
-        darkImageLbl.setText("Hello");
-
         darkModeWelcomeLbl.setForeground(new java.awt.Color(255, 255, 255));
-        darkModeWelcomeLbl.setText("Welcome Admin!");
+        darkModeWelcomeLbl.setText("Welcome erika!");
 
+        settingButtonGroup.add(selectDarkModeRadioBtn);
         selectDarkModeRadioBtn.setForeground(new java.awt.Color(255, 255, 255));
         selectDarkModeRadioBtn.setText("Dark Mode");
         selectDarkModeRadioBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -1550,25 +2105,18 @@ public class KnotSpot extends javax.swing.JFrame {
         darkModePnlLayout.setHorizontalGroup(
             darkModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(darkModePnlLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
                 .addGroup(darkModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(darkModePnlLayout.createSequentialGroup()
-                        .addGap(56, 56, 56)
-                        .addComponent(darkImageLbl))
-                    .addGroup(darkModePnlLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addGroup(darkModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(selectDarkModeRadioBtn)
-                            .addComponent(darkModeWelcomeLbl))))
-                .addContainerGap(32, Short.MAX_VALUE))
+                    .addComponent(darkModeWelcomeLbl)
+                    .addComponent(selectDarkModeRadioBtn))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         darkModePnlLayout.setVerticalGroup(
             darkModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(darkModePnlLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(darkImageLbl)
-                .addGap(27, 27, 27)
+                .addContainerGap(15, Short.MAX_VALUE)
                 .addComponent(darkModeWelcomeLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(selectDarkModeRadioBtn)
                 .addGap(40, 40, 40))
         );
@@ -1580,10 +2128,9 @@ public class KnotSpot extends javax.swing.JFrame {
         lightModePnl.setMinimumSize(new java.awt.Dimension(150, 150));
         lightModePnl.setPreferredSize(new java.awt.Dimension(150, 150));
 
-        lightImageLbl.setText("Hello");
+        lightModeWelcomeLbl.setText("Welcome erika!");
 
-        lightModeWelcomeLbl.setText("Welcome Admin!");
-
+        settingButtonGroup.add(selectLightModeRadioBtn);
         selectLightModeRadioBtn.setText("Light Mode");
         selectLightModeRadioBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1596,33 +2143,57 @@ public class KnotSpot extends javax.swing.JFrame {
         lightModePnlLayout.setHorizontalGroup(
             lightModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lightModePnlLayout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(lightModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(lightModePnlLayout.createSequentialGroup()
-                        .addGap(61, 61, 61)
-                        .addComponent(lightImageLbl))
-                    .addGroup(lightModePnlLayout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(lightModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(selectLightModeRadioBtn)
-                            .addComponent(lightModeWelcomeLbl))))
-                .addContainerGap(29, Short.MAX_VALUE))
+                    .addComponent(selectLightModeRadioBtn)
+                    .addComponent(lightModeWelcomeLbl))
+                .addContainerGap(36, Short.MAX_VALUE))
         );
         lightModePnlLayout.setVerticalGroup(
             lightModePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(lightModePnlLayout.createSequentialGroup()
-                .addGap(45, 45, 45)
-                .addComponent(lightImageLbl)
-                .addGap(28, 28, 28)
+                .addContainerGap(10, Short.MAX_VALUE)
                 .addComponent(lightModeWelcomeLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(selectLightModeRadioBtn)
                 .addGap(39, 39, 39))
         );
 
         backgroundModeSptPane.setLeftComponent(lightModePnl);
 
-        optionMessageLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        optionMessageLbl.setText("Please Select the background mode");
+        backgroundThemeHeadingLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        backgroundThemeHeadingLbl.setText("Choose a preferred background theme.");
+
+        backgroundThemeDescriptionLbl.setForeground(new java.awt.Color(153, 153, 153));
+        backgroundThemeDescriptionLbl.setText("Two option theme to select from for your system");
+
+        javax.swing.GroupLayout backgroundThemeContainerPnlLayout = new javax.swing.GroupLayout(backgroundThemeContainerPnl);
+        backgroundThemeContainerPnl.setLayout(backgroundThemeContainerPnlLayout);
+        backgroundThemeContainerPnlLayout.setHorizontalGroup(
+            backgroundThemeContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundThemeContainerPnlLayout.createSequentialGroup()
+                .addGap(53, 53, 53)
+                .addGroup(backgroundThemeContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backgroundThemeHeadingLbl)
+                    .addComponent(backgroundThemeDescriptionLbl))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 200, Short.MAX_VALUE)
+                .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37))
+        );
+        backgroundThemeContainerPnlLayout.setVerticalGroup(
+            backgroundThemeContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundThemeContainerPnlLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
+                .addGroup(backgroundThemeContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundThemeContainerPnlLayout.createSequentialGroup()
+                        .addComponent(backgroundThemeHeadingLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(backgroundThemeDescriptionLbl))
+                    .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24))
+        );
+
+        settingPagePnl.add(backgroundThemeContainerPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 520, 930, 150));
 
         decorStandForSettingPnl.setBackground(new java.awt.Color(125, 162, 169, 80));
 
@@ -1637,37 +2208,7 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGap(0, 806, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout settingPagePnlLayout = new javax.swing.GroupLayout(settingPagePnl);
-        settingPagePnl.setLayout(settingPagePnlLayout);
-        settingPagePnlLayout.setHorizontalGroup(
-            settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(settingPagePnlLayout.createSequentialGroup()
-                .addGap(369, 369, 369)
-                .addComponent(optionMessageLbl)
-                .addGap(236, 236, 236)
-                .addComponent(decorStandForSettingPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(settingPagePnlLayout.createSequentialGroup()
-                    .addGap(377, 377, 377)
-                    .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(384, Short.MAX_VALUE)))
-        );
-        settingPagePnlLayout.setVerticalGroup(
-            settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(settingPagePnlLayout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(optionMessageLbl)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(settingPagePnlLayout.createSequentialGroup()
-                .addComponent(decorStandForSettingPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(settingPagePnlLayout.createSequentialGroup()
-                    .addGap(229, 229, 229)
-                    .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(328, Short.MAX_VALUE)))
-        );
+        settingPagePnl.add(decorStandForSettingPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 0, -1, -1));
 
         adminDashboardPagesPnl.add(settingPagePnl, "SettingPage");
 
@@ -1695,7 +2236,7 @@ public class KnotSpot extends javax.swing.JFrame {
         });
         aboutUsPagePnl.add(editForBlogBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 550, 90, 30));
 
-        aboutUsImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/Illustration_Vectorielle_De_Concept_Abstrait_De_Fête_D_auto-isolement_Célébration_Appel_Vidéo_En_Ligne_Heureux_Ami_Quarantaine_Amusant_éclosion_De_Coronavirus_Zoom_Vidéoconférence_Chat_Virtuel_Métapho.png"))); // NOI18N
+        aboutUsImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/aboutUsImage.png"))); // NOI18N
         aboutUsPagePnl.add(aboutUsImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 440, 380));
 
         instagramPnl.setBackground(new java.awt.Color(14, 30, 63));
@@ -1860,7 +2401,7 @@ public class KnotSpot extends javax.swing.JFrame {
         contactNumberLbl.setText("+(977) 9818736721");
         contactNumberLbl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
 
-        phoneIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/Telefone_PNG_Images___Vetores_E_Arquivos_PSD___Download_Grátis_Em_Pngtree-removebg-preview.png"))); // NOI18N
+        phoneIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/callUsImage.png"))); // NOI18N
 
         javax.swing.GroupLayout callUsPnlLayout = new javax.swing.GroupLayout(callUsPnl);
         callUsPnl.setLayout(callUsPnlLayout);
@@ -2333,7 +2874,7 @@ public class KnotSpot extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(bottomContainerNavPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 1066, Short.MAX_VALUE))
+                .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE))
             .addComponent(headerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         navigationContainerPnlLayout.setVerticalGroup(
@@ -2342,7 +2883,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(headerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(navigationContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
+                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 800, Short.MAX_VALUE)
                     .addGroup(navigationContainerPnlLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(adminSignPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3234,9 +3775,29 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel adminDashboardTitleLbl;
     private javax.swing.JPanel adminSignPnl;
     private javax.swing.JLabel adminWelcomeMsgLbl;
+    private javax.swing.JLabel appleConnectImgLbl;
+    private javax.swing.JPanel appleContainerPnl;
+    private javax.swing.JLabel appleRequestLbl;
+    private javax.swing.JPanel appleRequestLikeBtnPnl;
+    private javax.swing.JLabel appleTxtLbl;
     private javax.swing.JRadioButton ascendSortOrderRadioBtn;
+    private javax.swing.JLabel autoCorrectionClockImgLbl;
+    private javax.swing.JPanel autoCorrectionContainerPnl;
+    private javax.swing.JLabel autoCorrectionLbl;
+    private javax.swing.JLabel autoCorrectionRescheduleLbl;
+    private javax.swing.JPanel autoCorrectionReschedulePnl;
+    private javax.swing.JLabel autoCorrectionToggleImgLbl;
     private javax.swing.JSplitPane backgroundModeSptPane;
+    private javax.swing.JPanel backgroundThemeContainerPnl;
+    private javax.swing.JLabel backgroundThemeDescriptionLbl;
+    private javax.swing.JLabel backgroundThemeHeadingLbl;
+    private javax.swing.JLabel blockOnLbl;
     private javax.swing.JPanel bottomContainerNavPnl;
+    private javax.swing.JPanel calendarContainerPnl;
+    private javax.swing.JLabel calendarDescriptionFirstLineLbl;
+    private javax.swing.JLabel calendarDescriptionSecondLineLbl;
+    private javax.swing.JLabel calendarImageLbl;
+    private javax.swing.JLabel calendarTitleLbl;
     private javax.swing.JLabel callUsLbl;
     private javax.swing.JPanel callUsPnl;
     private javax.swing.JButton cancelVenueChangeBtn;
@@ -3246,6 +3807,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel chatWithEmployeePnl;
     private javax.swing.JLabel companyNameLbl;
     private javax.swing.JLabel companyTitleLbl;
+    private javax.swing.JPanel connectDetailsContainerPnl;
+    private javax.swing.JPanel connectionContainerPnl;
     private javax.swing.JLabel contactErrorMsgLbl;
     private javax.swing.JLabel contactNumberLbl;
     private javax.swing.JPanel containerPnl;
@@ -3253,7 +3816,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel customerVisitLbl;
     private javax.swing.JLabel customerVisitNumberLbl;
     private javax.swing.JPanel customerVisitsPnl;
-    private javax.swing.JLabel darkImageLbl;
     private javax.swing.JPanel darkModePnl;
     private javax.swing.JLabel darkModeWelcomeLbl;
     private javax.swing.JPanel decorStandAboutUsPnl;
@@ -3292,9 +3854,17 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel forgotPwdLbl;
     private javax.swing.JLabel fourthPopUpImage;
     private javax.swing.JTable frontDisplayTable;
+    private javax.swing.JLabel gmailLbl;
+    private javax.swing.JLabel googleConnectImgLbl;
+    private javax.swing.JLabel googleConnectLbl;
+    private javax.swing.JPanel googleConnectLikeBtnPnl;
+    private javax.swing.JPanel googleContainerPnl;
+    private javax.swing.JLabel googleImageLbl;
+    private javax.swing.JLabel googleTxtLbl;
     private javax.swing.JPanel headerPnl;
     private javax.swing.JPanel homePagePnl;
     private javax.swing.JLabel idErrorMsgLbl;
+    private javax.swing.JLabel influenceAvailableLbl;
     private javax.swing.JLabel inputCapacityLbl;
     private javax.swing.JLabel inputPasswordErrorPwdLbl;
     private javax.swing.JPasswordField inputPasswordPwdFld;
@@ -3325,7 +3895,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JLabel lightImageLbl;
+    private javax.swing.JLabel learnMoreLbl;
     private javax.swing.JPanel lightModePnl;
     private javax.swing.JLabel lightModeWelcomeLbl;
     private javax.swing.JPanel lineOnePnl;
@@ -3354,7 +3924,11 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel nameErrorMsgLbl;
     private javax.swing.JPanel navigationContainerPnl;
     private javax.swing.JLabel notifyAdminMsgLbl;
-    private javax.swing.JLabel optionMessageLbl;
+    private javax.swing.JLabel outLookTxtLbl;
+    private javax.swing.JLabel outlookConnectImgLbl;
+    private javax.swing.JPanel outlookContainerPnl;
+    private javax.swing.JLabel outlookRequestLbl;
+    private javax.swing.JPanel outlookRequestLikeBtnPnl;
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JLabel perPlatePriceDisplayLbl;
     private javax.swing.JLabel perPlatePriceLbl;
@@ -3369,12 +3943,21 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton refreshBtn;
     private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JButton removeVenueDetailsBtn2;
+    private javax.swing.JLabel renderClockImgLbl;
+    private javax.swing.JLabel renderDescriptionLbl;
+    private javax.swing.JPanel renderImageContainerPnl;
+    private javax.swing.JLabel renderImageLbl;
+    private javax.swing.JLabel renderImageToggleImgLbl;
+    private javax.swing.JLabel renderRescheduleLbl;
+    private javax.swing.JPanel renderReschedulePnl;
     private javax.swing.JPanel rendererColumnPnl;
     private javax.swing.JButton searchBtn;
     private javax.swing.JLabel secondPopUpImage;
     private javax.swing.JRadioButton selectDarkModeRadioBtn;
     private javax.swing.JRadioButton selectLightModeRadioBtn;
+    private javax.swing.ButtonGroup settingButtonGroup;
     private javax.swing.JLabel settingIconLbl;
+    private javax.swing.JLabel settingLbl;
     private javax.swing.JLabel settingNavLbl;
     private javax.swing.JPanel settingNavPnl;
     private javax.swing.JPanel settingPagePnl;
@@ -3386,7 +3969,14 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.ButtonGroup sortButtonGroup;
     private javax.swing.JComboBox<String> sortByComboBx;
     private javax.swing.JLabel speakToTeamLbl;
+    private javax.swing.JLabel textSuggesionLbl;
+    private javax.swing.JLabel textSuggestionClockImgLbl;
+    private javax.swing.JPanel textSuggestionContainerPnl;
+    private javax.swing.JLabel textSuggestionRescheduleLbl;
+    private javax.swing.JPanel textSuggestionReschedulePnl;
+    private javax.swing.JLabel textSuggestionToggleImgLbl;
     private javax.swing.JLabel thirdPopUpImage;
+    private javax.swing.JLabel threeDotImgLbl;
     private javax.swing.JLabel timeToContactLbl;
     private javax.swing.JLabel titleforDisplayTable;
     private javax.swing.JPanel topContainerNavPnl;
