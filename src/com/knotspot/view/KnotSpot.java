@@ -292,11 +292,31 @@ public class KnotSpot extends javax.swing.JFrame {
         followUsLbl = new javax.swing.JLabel();
         venueGalleryPagePnl = new javax.swing.JPanel();
         firstVenuePictureLbl = new javax.swing.JLabel();
-        venuePictureCollectionPnl = new javax.swing.JPanel();
-        pictureTwo = new javax.swing.JLabel();
-        pictureThree = new javax.swing.JLabel();
-        pictureOne = new javax.swing.JLabel();
-        pictureTwo1 = new javax.swing.JLabel();
+        firstVenuePictureLbl1 = new javax.swing.JLabel();
+        decorStandForaddVenuePnl1 = new javax.swing.JPanel();
+        galleryFirstImgLbl = new javax.swing.JLabel();
+        firstImgBoldWordLbl = new javax.swing.JLabel();
+        firstImgFirstLineLbl = new javax.swing.JLabel();
+        firstImgSecondLineLbl = new javax.swing.JLabel();
+        firstImgThirdLineLbl = new javax.swing.JLabel();
+        firstImgFourthLineLbl = new javax.swing.JLabel();
+        firstImgClientLbl = new javax.swing.JLabel();
+        gallerySecondImgLbl = new javax.swing.JLabel();
+        secondImgBoldWordLbl = new javax.swing.JLabel();
+        secondImgFirstLineLbl = new javax.swing.JLabel();
+        secondImgSecondLineLbl = new javax.swing.JLabel();
+        secondImgThirdLineLbl = new javax.swing.JLabel();
+        secondImgFourthLineLbl = new javax.swing.JLabel();
+        secondImgClientLbl = new javax.swing.JLabel();
+        galleryThirdImgLbl = new javax.swing.JLabel();
+        thirdImgBoldWordLbl = new javax.swing.JLabel();
+        thirdImgFirstLineLbl = new javax.swing.JLabel();
+        thirdImgSecondLineLbl = new javax.swing.JLabel();
+        thirdImgThirdLineLbl = new javax.swing.JLabel();
+        thirdImgFourthLineLbl = new javax.swing.JLabel();
+        thirdImgFifthLineLbl = new javax.swing.JLabel();
+        thirdImgSixthLineLbl = new javax.swing.JLabel();
+        thirdImgClientLbl = new javax.swing.JLabel();
         topContainerNavPnl = new javax.swing.JPanel();
         manageVenueNavPnl = new javax.swing.JPanel();
         manageVenueNavLbl = new javax.swing.JLabel();
@@ -2462,55 +2482,116 @@ public class KnotSpot extends javax.swing.JFrame {
         venueGalleryPagePnl.setBackground(new java.awt.Color(250, 245, 239));
         venueGalleryPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        firstVenuePictureLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        firstVenuePictureLbl.setText("Our venue pictures");
-        venueGalleryPagePnl.add(firstVenuePictureLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 19, -1, -1));
+        firstVenuePictureLbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        firstVenuePictureLbl.setForeground(new java.awt.Color(14, 30, 63));
+        firstVenuePictureLbl.setText("GALLERY");
+        venueGalleryPagePnl.add(firstVenuePictureLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
-        venuePictureCollectionPnl.setBackground(new java.awt.Color(250, 245, 239));
+        firstVenuePictureLbl1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        firstVenuePictureLbl1.setForeground(new java.awt.Color(153, 153, 153));
+        firstVenuePictureLbl1.setText("OUR ");
+        venueGalleryPagePnl.add(firstVenuePictureLbl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 30, -1, -1));
 
-        pictureTwo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imagforpic2.jpg"))); // NOI18N
-        pictureTwo.setMaximumSize(new java.awt.Dimension(400, 300));
-        pictureTwo.setMinimumSize(new java.awt.Dimension(400, 300));
-        pictureTwo.setPreferredSize(new java.awt.Dimension(400, 300));
+        decorStandForaddVenuePnl1.setBackground(new java.awt.Color(125, 162, 169, 80));
 
-        pictureThree.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/rrnn.jpg"))); // NOI18N
-
-        pictureOne.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/rrr.jpg"))); // NOI18N
-
-        pictureTwo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imageforpic3.jpg"))); // NOI18N
-
-        javax.swing.GroupLayout venuePictureCollectionPnlLayout = new javax.swing.GroupLayout(venuePictureCollectionPnl);
-        venuePictureCollectionPnl.setLayout(venuePictureCollectionPnlLayout);
-        venuePictureCollectionPnlLayout.setHorizontalGroup(
-            venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
-                .addGap(94, 94, 94)
-                .addGroup(venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(pictureOne, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(pictureTwo1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pictureTwo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(pictureThree))
-                .addContainerGap(497, Short.MAX_VALUE))
+        javax.swing.GroupLayout decorStandForaddVenuePnl1Layout = new javax.swing.GroupLayout(decorStandForaddVenuePnl1);
+        decorStandForaddVenuePnl1.setLayout(decorStandForaddVenuePnl1Layout);
+        decorStandForaddVenuePnl1Layout.setHorizontalGroup(
+            decorStandForaddVenuePnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
         );
-        venuePictureCollectionPnlLayout.setVerticalGroup(
-            venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addGroup(venuePictureCollectionPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
-                        .addComponent(pictureThree)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pictureTwo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(venuePictureCollectionPnlLayout.createSequentialGroup()
-                        .addComponent(pictureOne)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(pictureTwo1, javax.swing.GroupLayout.PREFERRED_SIZE, 286, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 188, Short.MAX_VALUE))
+        decorStandForaddVenuePnl1Layout.setVerticalGroup(
+            decorStandForaddVenuePnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 730, Short.MAX_VALUE)
         );
 
-        venueGalleryPagePnl.add(venuePictureCollectionPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 77, -1, -1));
+        venueGalleryPagePnl.add(decorStandForaddVenuePnl1, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 0, 150, 730));
+
+        galleryFirstImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/rrnn.jpg"))); // NOI18N
+        venueGalleryPagePnl.add(galleryFirstImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 100, -1, -1));
+
+        firstImgBoldWordLbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        firstImgBoldWordLbl.setText("W");
+        venueGalleryPagePnl.add(firstImgBoldWordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, -1, -1));
+
+        firstImgFirstLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        firstImgFirstLineLbl.setText(" e  Have managed to sprinkle our kathmandu client with ");
+        venueGalleryPagePnl.add(firstImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 340, 370, -1));
+
+        firstImgSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        firstImgSecondLineLbl.setText("beautiful memories. \"The party with stunning night view and ");
+        venueGalleryPagePnl.add(firstImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 356, 390, 30));
+
+        firstImgThirdLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        firstImgThirdLineLbl.setText("hanging lights made our wedding more stunning. Thank you ");
+        venueGalleryPagePnl.add(firstImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 380, 40));
+
+        firstImgFourthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        firstImgFourthLineLbl.setText("for your hardwork.\"");
+        venueGalleryPagePnl.add(firstImgFourthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 390, 380, 40));
+
+        firstImgClientLbl.setText("- Suman & Rajen (Jan. 2023)");
+        venueGalleryPagePnl.add(firstImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, 30));
+
+        gallerySecondImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/gallerysecondimage.jpg"))); // NOI18N
+        venueGalleryPagePnl.add(gallerySecondImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 340, 220));
+
+        secondImgBoldWordLbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        secondImgBoldWordLbl.setText("T");
+        venueGalleryPagePnl.add(secondImgBoldWordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
+
+        secondImgFirstLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        secondImgFirstLineLbl.setText("he  company also assist in table settings and catering ");
+        venueGalleryPagePnl.add(secondImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 340, -1));
+
+        secondImgSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        secondImgSecondLineLbl.setText("for our venues. Below, is a perfect glimpse of our work.");
+        venueGalleryPagePnl.add(secondImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 340, 20));
+
+        secondImgThirdLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        secondImgThirdLineLbl.setText("\"Commendable creativity and decor skills i've ever seen");
+        venueGalleryPagePnl.add(secondImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 350, 20));
+
+        secondImgFourthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        secondImgFourthLineLbl.setText("I am glad i chose you guys for my big day!\"");
+        venueGalleryPagePnl.add(secondImgFourthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 340, 20));
+
+        secondImgClientLbl.setText("- Aishnavi &  Samay (Dec. 2024)");
+        venueGalleryPagePnl.add(secondImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, 30));
+
+        galleryThirdImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/gallerythirdimage.jpg"))); // NOI18N
+        venueGalleryPagePnl.add(galleryThirdImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 490, 210));
+
+        thirdImgBoldWordLbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        thirdImgBoldWordLbl.setText("H");
+        venueGalleryPagePnl.add(thirdImgBoldWordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, -1, -1));
+
+        thirdImgFirstLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        thirdImgFirstLineLbl.setText("aving a comfort place is what we aim to provide");
+        venueGalleryPagePnl.add(thirdImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 300, -1));
+
+        thirdImgSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        thirdImgSecondLineLbl.setText("our bride and groom. So, client who prefer indoor cosy");
+        venueGalleryPagePnl.add(thirdImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 340, -1));
+
+        thirdImgThirdLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        thirdImgThirdLineLbl.setText("place can easily be accomodated with our available ");
+        venueGalleryPagePnl.add(thirdImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 340, -1));
+
+        thirdImgFourthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        thirdImgFourthLineLbl.setText("venues. \"I was anxious to find a perfect venue with ");
+        venueGalleryPagePnl.add(thirdImgFourthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 340, -1));
+
+        thirdImgFifthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        thirdImgFifthLineLbl.setText("both indoor spacing and fancy. However, knotspot made");
+        venueGalleryPagePnl.add(thirdImgFifthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 350, -1));
+
+        thirdImgSixthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        thirdImgSixthLineLbl.setText("made my dream come true.\"");
+        venueGalleryPagePnl.add(thirdImgSixthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, 350, -1));
+
+        thirdImgClientLbl.setText("- Sandhya & Nagen (July. 2024)");
+        venueGalleryPagePnl.add(thirdImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 590, -1, 30));
 
         adminDashboardPagesPnl.add(venueGalleryPagePnl, "VenueGalleryPage");
 
@@ -2874,7 +2955,7 @@ public class KnotSpot extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(bottomContainerNavPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 1060, Short.MAX_VALUE))
+                .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addComponent(headerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         navigationContainerPnlLayout.setVerticalGroup(
@@ -3433,7 +3514,7 @@ public class KnotSpot extends javax.swing.JFrame {
             addVenuePagePnl.setBackground(new Color(250, 245, 239));
             aboutUsPagePnl.setBackground(new Color(250, 245, 239));
             venueGalleryPagePnl.setBackground(new Color(250, 245, 239));
-            venuePictureCollectionPnl.setBackground(new Color(250, 245, 239));
+            
 
         }
     }//GEN-LAST:event_selectLightModeRadioBtnActionPerformed
@@ -3446,7 +3527,7 @@ public class KnotSpot extends javax.swing.JFrame {
             addVenuePagePnl.setBackground(Color.decode("#937A62"));
             aboutUsPagePnl.setBackground(Color.decode("#937A62"));
             venueGalleryPagePnl.setBackground(Color.decode("#937A62"));
-            venuePictureCollectionPnl.setBackground(Color.decode("#937A62"));
+            
         }
     }//GEN-LAST:event_selectDarkModeRadioBtnActionPerformed
 
@@ -3821,6 +3902,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel decorStandAboutUsPnl;
     private javax.swing.JPanel decorStandForSettingPnl;
     private javax.swing.JPanel decorStandForaddVenuePnl;
+    private javax.swing.JPanel decorStandForaddVenuePnl1;
     private javax.swing.JPanel decorStandPnl;
     private javax.swing.JRadioButton descendSortOrderRadioBtn;
     private javax.swing.JLabel descriptionCustomerVisitLbl;
@@ -3847,13 +3929,23 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel filterContainerPnl;
     private javax.swing.JLabel filterLbl;
     private javax.swing.JPanel filterPopUpPnl;
+    private javax.swing.JLabel firstImgBoldWordLbl;
+    private javax.swing.JLabel firstImgClientLbl;
+    private javax.swing.JLabel firstImgFirstLineLbl;
+    private javax.swing.JLabel firstImgFourthLineLbl;
+    private javax.swing.JLabel firstImgSecondLineLbl;
+    private javax.swing.JLabel firstImgThirdLineLbl;
     private javax.swing.JLabel firstPopUpImage;
     private javax.swing.JLabel firstVenuePictureLbl;
+    private javax.swing.JLabel firstVenuePictureLbl1;
     private javax.swing.JLabel followUsLbl;
     private javax.swing.JPanel followUsPnl;
     private javax.swing.JLabel forgotPwdLbl;
     private javax.swing.JLabel fourthPopUpImage;
     private javax.swing.JTable frontDisplayTable;
+    private javax.swing.JLabel galleryFirstImgLbl;
+    private javax.swing.JLabel gallerySecondImgLbl;
+    private javax.swing.JLabel galleryThirdImgLbl;
     private javax.swing.JLabel gmailLbl;
     private javax.swing.JLabel googleConnectImgLbl;
     private javax.swing.JLabel googleConnectLbl;
@@ -3933,10 +4025,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel perPlatePriceDisplayLbl;
     private javax.swing.JLabel perPlatePriceLbl;
     private javax.swing.JLabel phoneIconLbl;
-    private javax.swing.JLabel pictureOne;
-    private javax.swing.JLabel pictureThree;
-    private javax.swing.JLabel pictureTwo;
-    private javax.swing.JLabel pictureTwo1;
     private javax.swing.JDialog popUpDialog;
     private javax.swing.JLabel profileLbl;
     private javax.swing.JScrollPane recentDataScrollBr;
@@ -3952,6 +4040,12 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel renderReschedulePnl;
     private javax.swing.JPanel rendererColumnPnl;
     private javax.swing.JButton searchBtn;
+    private javax.swing.JLabel secondImgBoldWordLbl;
+    private javax.swing.JLabel secondImgClientLbl;
+    private javax.swing.JLabel secondImgFirstLineLbl;
+    private javax.swing.JLabel secondImgFourthLineLbl;
+    private javax.swing.JLabel secondImgSecondLineLbl;
+    private javax.swing.JLabel secondImgThirdLineLbl;
     private javax.swing.JLabel secondPopUpImage;
     private javax.swing.JRadioButton selectDarkModeRadioBtn;
     private javax.swing.JRadioButton selectLightModeRadioBtn;
@@ -3975,6 +4069,14 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel textSuggestionRescheduleLbl;
     private javax.swing.JPanel textSuggestionReschedulePnl;
     private javax.swing.JLabel textSuggestionToggleImgLbl;
+    private javax.swing.JLabel thirdImgBoldWordLbl;
+    private javax.swing.JLabel thirdImgClientLbl;
+    private javax.swing.JLabel thirdImgFifthLineLbl;
+    private javax.swing.JLabel thirdImgFirstLineLbl;
+    private javax.swing.JLabel thirdImgFourthLineLbl;
+    private javax.swing.JLabel thirdImgSecondLineLbl;
+    private javax.swing.JLabel thirdImgSixthLineLbl;
+    private javax.swing.JLabel thirdImgThirdLineLbl;
     private javax.swing.JLabel thirdPopUpImage;
     private javax.swing.JLabel threeDotImgLbl;
     private javax.swing.JLabel timeToContactLbl;
@@ -3998,7 +4100,6 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JTextField venueIdOnPopUpMsgFld;
     private javax.swing.JTable venueModifyTbl;
     private javax.swing.JTextField venueNameOnPopUpMsgFld;
-    private javax.swing.JPanel venuePictureCollectionPnl;
     private javax.swing.JLabel visitOfficeHqLbl;
     private javax.swing.JLabel visitUsLbl;
     private javax.swing.JPanel visitUsPnl;
