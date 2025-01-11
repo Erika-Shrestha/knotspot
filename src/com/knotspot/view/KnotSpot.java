@@ -212,13 +212,35 @@ public class KnotSpot extends javax.swing.JFrame {
         lightModeWelcomeLbl = new javax.swing.JLabel();
         selectLightModeRadioBtn = new javax.swing.JRadioButton();
         optionMessageLbl = new javax.swing.JLabel();
+        decorStandForSettingPnl = new javax.swing.JPanel();
         aboutUsPagePnl = new javax.swing.JPanel();
         aboutUsTitleLbl = new javax.swing.JLabel();
-        aboutUsImgCompanyLbl = new javax.swing.JLabel();
-        aboutUsSecondLineLbl = new javax.swing.JLabel();
         editAreaScrlPnl = new javax.swing.JScrollPane();
         editBlogTxtArea = new javax.swing.JTextArea();
         editForBlogBtn = new javax.swing.JButton();
+        aboutUsImageLbl = new javax.swing.JLabel();
+        instagramPnl = new javax.swing.JPanel();
+        instagramIdDetailsLbl = new javax.swing.JLabel();
+        facebookPnl = new javax.swing.JPanel();
+        facebookIdDetailsLbl = new javax.swing.JLabel();
+        decorStandAboutUsPnl = new javax.swing.JPanel();
+        chatWithEmployeePnl = new javax.swing.JPanel();
+        chatToEmployeeLbl = new javax.swing.JLabel();
+        speakToTeamLbl = new javax.swing.JLabel();
+        emailLbl = new javax.swing.JLabel();
+        chatIconLbl = new javax.swing.JLabel();
+        visitUsPnl = new javax.swing.JPanel();
+        visitUsLbl = new javax.swing.JLabel();
+        visitOfficeHqLbl = new javax.swing.JLabel();
+        locationOnGoogleMapLbl = new javax.swing.JLabel();
+        mapIconLbl = new javax.swing.JLabel();
+        callUsPnl = new javax.swing.JPanel();
+        callUsLbl = new javax.swing.JLabel();
+        timeToContactLbl = new javax.swing.JLabel();
+        contactNumberLbl = new javax.swing.JLabel();
+        phoneIconLbl = new javax.swing.JLabel();
+        followUsPnl = new javax.swing.JPanel();
+        followUsLbl = new javax.swing.JLabel();
         venueGalleryPagePnl = new javax.swing.JPanel();
         firstVenuePictureLbl = new javax.swing.JLabel();
         venuePictureCollectionPnl = new javax.swing.JPanel();
@@ -626,7 +648,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         inputUsernameTxtFld.setForeground(new java.awt.Color(204, 204, 204));
         inputUsernameTxtFld.setText("Enter username");
-        inputUsernameTxtFld.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(51, 51, 255), 2, true));
+        inputUsernameTxtFld.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(14, 30, 63), 2, true));
         inputUsernameTxtFld.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 inputUsernameTxtFldFocusGained(evt);
@@ -691,7 +713,7 @@ public class KnotSpot extends javax.swing.JFrame {
         inputPasswordErrorPwdLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
         loginFormPnl.add(inputPasswordErrorPwdLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 260, 250, 20));
 
-        forgotPwdLbl.setForeground(new java.awt.Color(51, 51, 255));
+        forgotPwdLbl.setForeground(new java.awt.Color(14, 30, 63));
         forgotPwdLbl.setText("Forgot Password?");
         loginFormPnl.add(forgotPwdLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(790, 300, -1, -1));
 
@@ -1602,6 +1624,19 @@ public class KnotSpot extends javax.swing.JFrame {
         optionMessageLbl.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         optionMessageLbl.setText("Please Select the background mode");
 
+        decorStandForSettingPnl.setBackground(new java.awt.Color(125, 162, 169, 80));
+
+        javax.swing.GroupLayout decorStandForSettingPnlLayout = new javax.swing.GroupLayout(decorStandForSettingPnl);
+        decorStandForSettingPnl.setLayout(decorStandForSettingPnlLayout);
+        decorStandForSettingPnlLayout.setHorizontalGroup(
+            decorStandForSettingPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+        decorStandForSettingPnlLayout.setVerticalGroup(
+            decorStandForSettingPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 806, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout settingPagePnlLayout = new javax.swing.GroupLayout(settingPagePnl);
         settingPagePnl.setLayout(settingPagePnlLayout);
         settingPagePnlLayout.setHorizontalGroup(
@@ -1609,41 +1644,46 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(settingPagePnlLayout.createSequentialGroup()
                 .addGap(369, 369, 369)
                 .addComponent(optionMessageLbl)
-                .addContainerGap(775, Short.MAX_VALUE))
+                .addGap(236, 236, 236)
+                .addComponent(decorStandForSettingPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(settingPagePnlLayout.createSequentialGroup()
                     .addGap(377, 377, 377)
                     .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(767, Short.MAX_VALUE)))
+                    .addContainerGap(384, Short.MAX_VALUE)))
         );
         settingPagePnlLayout.setVerticalGroup(
             settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(settingPagePnlLayout.createSequentialGroup()
-                .addGap(164, 164, 164)
+                .addGap(139, 139, 139)
                 .addComponent(optionMessageLbl)
-                .addContainerGap(681, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(settingPagePnlLayout.createSequentialGroup()
+                .addComponent(decorStandForSettingPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(settingPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(settingPagePnlLayout.createSequentialGroup()
                     .addGap(229, 229, 229)
                     .addComponent(backgroundModeSptPane, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(392, Short.MAX_VALUE)))
+                    .addContainerGap(328, Short.MAX_VALUE)))
         );
 
         adminDashboardPagesPnl.add(settingPagePnl, "SettingPage");
 
         aboutUsPagePnl.setBackground(new java.awt.Color(250, 245, 239));
+        aboutUsPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         aboutUsTitleLbl.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        aboutUsTitleLbl.setText("About Us");
-
-        aboutUsImgCompanyLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/imageforaboutus.jpg"))); // NOI18N
-
-        aboutUsSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        aboutUsSecondLineLbl.setText("Contact us: +977 9818765123/ 9827382920");
+        aboutUsTitleLbl.setForeground(new java.awt.Color(14, 30, 63));
+        aboutUsTitleLbl.setText("Contact our friendly team");
+        aboutUsPagePnl.add(aboutUsTitleLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, -1, 67));
 
         editBlogTxtArea.setColumns(20);
         editBlogTxtArea.setRows(5);
         editAreaScrlPnl.setViewportView(editBlogTxtArea);
+
+        aboutUsPagePnl.add(editAreaScrlPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 580, 270));
 
         editForBlogBtn.setBackground(new java.awt.Color(14, 30, 63));
         editForBlogBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -1653,45 +1693,237 @@ public class KnotSpot extends javax.swing.JFrame {
                 editForBlogBtnActionPerformed(evt);
             }
         });
+        aboutUsPagePnl.add(editForBlogBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 550, 90, 30));
 
-        javax.swing.GroupLayout aboutUsPagePnlLayout = new javax.swing.GroupLayout(aboutUsPagePnl);
-        aboutUsPagePnl.setLayout(aboutUsPagePnlLayout);
-        aboutUsPagePnlLayout.setHorizontalGroup(
-            aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aboutUsPagePnlLayout.createSequentialGroup()
-                .addGap(41, 41, 41)
-                .addGroup(aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(aboutUsTitleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(aboutUsImgCompanyLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, aboutUsPagePnlLayout.createSequentialGroup()
-                        .addComponent(aboutUsSecondLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(editForBlogBtn)
-                        .addGap(9, 9, 9))
-                    .addComponent(editAreaScrlPnl))
-                .addContainerGap(908, Short.MAX_VALUE))
+        aboutUsImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/Illustration_Vectorielle_De_Concept_Abstrait_De_Fête_D_auto-isolement_Célébration_Appel_Vidéo_En_Ligne_Heureux_Ami_Quarantaine_Amusant_éclosion_De_Coronavirus_Zoom_Vidéoconférence_Chat_Virtuel_Métapho.png"))); // NOI18N
+        aboutUsPagePnl.add(aboutUsImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 440, 380));
+
+        instagramPnl.setBackground(new java.awt.Color(14, 30, 63));
+        instagramPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(14, 30, 63)));
+
+        instagramIdDetailsLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        instagramIdDetailsLbl.setForeground(new java.awt.Color(255, 255, 255));
+        instagramIdDetailsLbl.setText("Instagram : knotspot33");
+
+        javax.swing.GroupLayout instagramPnlLayout = new javax.swing.GroupLayout(instagramPnl);
+        instagramPnl.setLayout(instagramPnlLayout);
+        instagramPnlLayout.setHorizontalGroup(
+            instagramPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(instagramPnlLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(instagramIdDetailsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 162, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(74, Short.MAX_VALUE))
         );
-        aboutUsPagePnlLayout.setVerticalGroup(
-            aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(aboutUsPagePnlLayout.createSequentialGroup()
-                .addComponent(aboutUsTitleLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(aboutUsImgCompanyLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(15, 15, 15)
-                .addComponent(editAreaScrlPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(aboutUsPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(aboutUsSecondLineLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(editForBlogBtn))
-                .addGap(0, 222, Short.MAX_VALUE))
+        instagramPnlLayout.setVerticalGroup(
+            instagramPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(instagramIdDetailsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
+
+        aboutUsPagePnl.add(instagramPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, -1, 40));
+
+        facebookPnl.setBackground(new java.awt.Color(14, 30, 63));
+
+        facebookIdDetailsLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        facebookIdDetailsLbl.setForeground(new java.awt.Color(255, 255, 255));
+        facebookIdDetailsLbl.setText("Facebook : knotspot Company");
+
+        javax.swing.GroupLayout facebookPnlLayout = new javax.swing.GroupLayout(facebookPnl);
+        facebookPnl.setLayout(facebookPnlLayout);
+        facebookPnlLayout.setHorizontalGroup(
+            facebookPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(facebookPnlLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(facebookIdDetailsLbl)
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        facebookPnlLayout.setVerticalGroup(
+            facebookPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(facebookIdDetailsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
+        );
+
+        aboutUsPagePnl.add(facebookPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 640, -1, 40));
+
+        decorStandAboutUsPnl.setBackground(new java.awt.Color(125, 162, 169, 80));
+
+        javax.swing.GroupLayout decorStandAboutUsPnlLayout = new javax.swing.GroupLayout(decorStandAboutUsPnl);
+        decorStandAboutUsPnl.setLayout(decorStandAboutUsPnlLayout);
+        decorStandAboutUsPnlLayout.setHorizontalGroup(
+            decorStandAboutUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 150, Short.MAX_VALUE)
+        );
+        decorStandAboutUsPnlLayout.setVerticalGroup(
+            decorStandAboutUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 800, Short.MAX_VALUE)
+        );
+
+        aboutUsPagePnl.add(decorStandAboutUsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 0, 150, 800));
+
+        chatWithEmployeePnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        chatToEmployeeLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        chatToEmployeeLbl.setText("Chat to employees");
+
+        speakToTeamLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        speakToTeamLbl.setText("speak to our team");
+
+        emailLbl.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        emailLbl.setText("team@knotspot.com");
+        emailLbl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        chatIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/chaticon_1.png"))); // NOI18N
+
+        javax.swing.GroupLayout chatWithEmployeePnlLayout = new javax.swing.GroupLayout(chatWithEmployeePnl);
+        chatWithEmployeePnl.setLayout(chatWithEmployeePnlLayout);
+        chatWithEmployeePnlLayout.setHorizontalGroup(
+            chatWithEmployeePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(chatWithEmployeePnlLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(chatWithEmployeePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(chatIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(speakToTeamLbl)
+                    .addComponent(chatToEmployeeLbl)
+                    .addComponent(emailLbl))
+                .addContainerGap(51, Short.MAX_VALUE))
+        );
+        chatWithEmployeePnlLayout.setVerticalGroup(
+            chatWithEmployeePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, chatWithEmployeePnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(chatIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(chatToEmployeeLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(speakToTeamLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(emailLbl)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        aboutUsPagePnl.add(chatWithEmployeePnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 170, 130));
+
+        visitUsPnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        visitUsLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        visitUsLbl.setText("Visit us");
+
+        visitOfficeHqLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        visitOfficeHqLbl.setText("visit our office HQ");
+
+        locationOnGoogleMapLbl.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        locationOnGoogleMapLbl.setText("view on google maps ");
+        locationOnGoogleMapLbl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        mapIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/mapiconforreal.png"))); // NOI18N
+
+        javax.swing.GroupLayout visitUsPnlLayout = new javax.swing.GroupLayout(visitUsPnl);
+        visitUsPnl.setLayout(visitUsPnlLayout);
+        visitUsPnlLayout.setHorizontalGroup(
+            visitUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(visitUsPnlLayout.createSequentialGroup()
+                .addGroup(visitUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(visitUsPnlLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addGroup(visitUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(visitOfficeHqLbl)
+                            .addComponent(locationOnGoogleMapLbl)
+                            .addComponent(visitUsLbl)))
+                    .addGroup(visitUsPnlLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(mapIconLbl)))
+                .addContainerGap(63, Short.MAX_VALUE))
+        );
+        visitUsPnlLayout.setVerticalGroup(
+            visitUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, visitUsPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(mapIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(5, 5, 5)
+                .addComponent(visitUsLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(visitOfficeHqLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(locationOnGoogleMapLbl)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        aboutUsPagePnl.add(visitUsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 100, -1, -1));
+
+        callUsPnl.setBackground(new java.awt.Color(255, 255, 255));
+
+        callUsLbl.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        callUsLbl.setText("Call us");
+
+        timeToContactLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+        timeToContactLbl.setText("Mon-Fri  From 10am to 5pm");
+
+        contactNumberLbl.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        contactNumberLbl.setText("+(977) 9818736721");
+        contactNumberLbl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        phoneIconLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/Telefone_PNG_Images___Vetores_E_Arquivos_PSD___Download_Grátis_Em_Pngtree-removebg-preview.png"))); // NOI18N
+
+        javax.swing.GroupLayout callUsPnlLayout = new javax.swing.GroupLayout(callUsPnl);
+        callUsPnl.setLayout(callUsPnlLayout);
+        callUsPnlLayout.setHorizontalGroup(
+            callUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(callUsPnlLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addGroup(callUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(phoneIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(timeToContactLbl)
+                    .addComponent(contactNumberLbl)
+                    .addComponent(callUsLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(56, Short.MAX_VALUE))
+        );
+        callUsPnlLayout.setVerticalGroup(
+            callUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, callUsPnlLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(phoneIconLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(callUsLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(timeToContactLbl)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(contactNumberLbl)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
+        aboutUsPagePnl.add(callUsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 100, 170, 130));
+
+        followUsPnl.setBackground(new java.awt.Color(250, 245, 239));
+        followUsPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(0, 0, 0)));
+
+        followUsLbl.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        followUsLbl.setText("Follow Us");
+
+        javax.swing.GroupLayout followUsPnlLayout = new javax.swing.GroupLayout(followUsPnl);
+        followUsPnl.setLayout(followUsPnlLayout);
+        followUsPnlLayout.setHorizontalGroup(
+            followUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(followUsPnlLayout.createSequentialGroup()
+                .addGap(74, 74, 74)
+                .addComponent(followUsLbl)
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        followUsPnlLayout.setVerticalGroup(
+            followUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(followUsPnlLayout.createSequentialGroup()
+                .addGap(14, 14, 14)
+                .addComponent(followUsLbl)
+                .addContainerGap(13, Short.MAX_VALUE))
+        );
+
+        aboutUsPagePnl.add(followUsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 220, 60));
 
         adminDashboardPagesPnl.add(aboutUsPagePnl, "AboutUsPage");
 
         venueGalleryPagePnl.setBackground(new java.awt.Color(250, 245, 239));
+        venueGalleryPagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         firstVenuePictureLbl.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         firstVenuePictureLbl.setText("Our venue pictures");
+        venueGalleryPagePnl.add(firstVenuePictureLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(453, 19, -1, -1));
 
         venuePictureCollectionPnl.setBackground(new java.awt.Color(250, 245, 239));
 
@@ -1737,29 +1969,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGap(0, 188, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout venueGalleryPagePnlLayout = new javax.swing.GroupLayout(venueGalleryPagePnl);
-        venueGalleryPagePnl.setLayout(venueGalleryPagePnlLayout);
-        venueGalleryPagePnlLayout.setHorizontalGroup(
-            venueGalleryPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
-                .addGroup(venueGalleryPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
-                        .addGap(453, 453, 453)
-                        .addComponent(firstVenuePictureLbl))
-                    .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(venuePictureCollectionPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        venueGalleryPagePnlLayout.setVerticalGroup(
-            venueGalleryPagePnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(venueGalleryPagePnlLayout.createSequentialGroup()
-                .addGap(19, 19, 19)
-                .addComponent(firstVenuePictureLbl)
-                .addGap(33, 33, 33)
-                .addComponent(venuePictureCollectionPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        venueGalleryPagePnl.add(venuePictureCollectionPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 77, -1, -1));
 
         adminDashboardPagesPnl.add(venueGalleryPagePnl, "VenueGalleryPage");
 
@@ -2070,9 +2280,9 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(logoLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(companyNameLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(1018, 1018, 1018)
+                .addGap(994, 994, 994)
                 .addComponent(activeAdminMsgLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addComponent(profileLbl)
                 .addContainerGap())
         );
@@ -2083,7 +2293,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGroup(headerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(headerPnlLayout.createSequentialGroup()
                         .addGroup(headerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(profileLbl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(profileLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(activeAdminMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap(13, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, headerPnlLayout.createSequentialGroup()
@@ -2123,7 +2333,7 @@ public class KnotSpot extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addComponent(bottomContainerNavPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.DEFAULT_SIZE, 1066, Short.MAX_VALUE))
             .addComponent(headerPnl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         navigationContainerPnlLayout.setVerticalGroup(
@@ -2132,7 +2342,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addComponent(headerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addGroup(navigationContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(adminDashboardPagesPnl, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 806, Short.MAX_VALUE)
                     .addGroup(navigationContainerPnlLayout.createSequentialGroup()
                         .addGap(16, 16, 16)
                         .addComponent(adminSignPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -3008,11 +3218,10 @@ public class KnotSpot extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel aboutUsIconLbl;
-    private javax.swing.JLabel aboutUsImgCompanyLbl;
+    private javax.swing.JLabel aboutUsImageLbl;
     private javax.swing.JLabel aboutUsNavLbl;
     private javax.swing.JPanel aboutUsNavPnl;
     private javax.swing.JPanel aboutUsPagePnl;
-    private javax.swing.JLabel aboutUsSecondLineLbl;
     private javax.swing.JLabel aboutUsTitleLbl;
     private javax.swing.JLabel activeAdminMsgLbl;
     private javax.swing.JButton addVenueBtn;
@@ -3028,11 +3237,17 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JRadioButton ascendSortOrderRadioBtn;
     private javax.swing.JSplitPane backgroundModeSptPane;
     private javax.swing.JPanel bottomContainerNavPnl;
+    private javax.swing.JLabel callUsLbl;
+    private javax.swing.JPanel callUsPnl;
     private javax.swing.JButton cancelVenueChangeBtn;
     private javax.swing.JLabel capacityValueDisplayLbl;
+    private javax.swing.JLabel chatIconLbl;
+    private javax.swing.JLabel chatToEmployeeLbl;
+    private javax.swing.JPanel chatWithEmployeePnl;
     private javax.swing.JLabel companyNameLbl;
     private javax.swing.JLabel companyTitleLbl;
     private javax.swing.JLabel contactErrorMsgLbl;
+    private javax.swing.JLabel contactNumberLbl;
     private javax.swing.JPanel containerPnl;
     private javax.swing.JLabel continueLbl;
     private javax.swing.JLabel customerVisitLbl;
@@ -3041,6 +3256,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel darkImageLbl;
     private javax.swing.JPanel darkModePnl;
     private javax.swing.JLabel darkModeWelcomeLbl;
+    private javax.swing.JPanel decorStandAboutUsPnl;
+    private javax.swing.JPanel decorStandForSettingPnl;
     private javax.swing.JPanel decorStandForaddVenuePnl;
     private javax.swing.JPanel decorStandPnl;
     private javax.swing.JRadioButton descendSortOrderRadioBtn;
@@ -3059,14 +3276,19 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel editInputPnl;
     private javax.swing.JButton editVenueDetailsBtn;
     private javax.swing.JButton editVenueDetailsBtn2;
+    private javax.swing.JLabel emailLbl;
     private javax.swing.JLabel employeeLbl;
     private javax.swing.JLabel employeeNumberLbl;
+    private javax.swing.JLabel facebookIdDetailsLbl;
+    private javax.swing.JPanel facebookPnl;
     private javax.swing.JLabel fifthPopUpImage;
     private javax.swing.JPanel filterContainerPnl;
     private javax.swing.JLabel filterLbl;
     private javax.swing.JPanel filterPopUpPnl;
     private javax.swing.JLabel firstPopUpImage;
     private javax.swing.JLabel firstVenuePictureLbl;
+    private javax.swing.JLabel followUsLbl;
+    private javax.swing.JPanel followUsPnl;
     private javax.swing.JLabel forgotPwdLbl;
     private javax.swing.JLabel fourthPopUpImage;
     private javax.swing.JTable frontDisplayTable;
@@ -3097,6 +3319,8 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> inputVenueTypeComboBx;
     private javax.swing.JComboBox<String> inputVenueTypeComboBx1;
     private javax.swing.JScrollPane insertDataTableScrlPane;
+    private javax.swing.JLabel instagramIdDetailsLbl;
+    private javax.swing.JPanel instagramPnl;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel8;
@@ -3111,6 +3335,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JProgressBar loadingPagePrgBar;
     private javax.swing.JLabel loadingSymbolLbl;
     private javax.swing.JLabel loadingValueLbl;
+    private javax.swing.JLabel locationOnGoogleMapLbl;
     private javax.swing.JLabel logInContinueAllIconLbl;
     private javax.swing.JLabel logOutNavLbl;
     private javax.swing.JPanel logOutNavPnl;
@@ -3124,6 +3349,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel manageVenueIconLbl;
     private javax.swing.JLabel manageVenueNavLbl;
     private javax.swing.JPanel manageVenueNavPnl;
+    private javax.swing.JLabel mapIconLbl;
     private javax.swing.JPanel middleContainerNavPnl;
     private javax.swing.JLabel nameErrorMsgLbl;
     private javax.swing.JPanel navigationContainerPnl;
@@ -3132,6 +3358,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel passwordLbl;
     private javax.swing.JLabel perPlatePriceDisplayLbl;
     private javax.swing.JLabel perPlatePriceLbl;
+    private javax.swing.JLabel phoneIconLbl;
     private javax.swing.JLabel pictureOne;
     private javax.swing.JLabel pictureThree;
     private javax.swing.JLabel pictureTwo;
@@ -3158,7 +3385,9 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel sloganLbl;
     private javax.swing.ButtonGroup sortButtonGroup;
     private javax.swing.JComboBox<String> sortByComboBx;
+    private javax.swing.JLabel speakToTeamLbl;
     private javax.swing.JLabel thirdPopUpImage;
+    private javax.swing.JLabel timeToContactLbl;
     private javax.swing.JLabel titleforDisplayTable;
     private javax.swing.JPanel topContainerNavPnl;
     private javax.swing.JLabel totalCapacityLbl;
@@ -3180,6 +3409,9 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JTable venueModifyTbl;
     private javax.swing.JTextField venueNameOnPopUpMsgFld;
     private javax.swing.JPanel venuePictureCollectionPnl;
+    private javax.swing.JLabel visitOfficeHqLbl;
+    private javax.swing.JLabel visitUsLbl;
+    private javax.swing.JPanel visitUsPnl;
     private javax.swing.JPanel welcomeDisplayPnl;
     // End of variables declaration//GEN-END:variables
 }
