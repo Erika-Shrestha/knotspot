@@ -30,23 +30,9 @@ public class BinarySearch {
             String midValue = getSearchOrder(midVenue, searchBy);
 
             if (midValue.toLowerCase().equals(searchValue.toLowerCase())) {
-                venueMatched.add(venueSearchArrays.get(midIndex));
-
-                int leftIndex = midIndex - 1;
-                while (leftIndex >= 0 && getSearchOrder(venueSearchArrays.get(leftIndex), searchBy).equals(searchValue)) {
-                    venueMatched.add(venueDetails.get(leftIndex));
-                    leftIndex--;
-                }
-                
-                int rightIndex = midIndex + 1;
-                while (rightIndex < venueDetails.size() && getSearchOrder(venueSearchArrays.get(rightIndex), searchBy).equals(searchValue)) {
-                    venueMatched.add(venueDetails.get(rightIndex));
-                    rightIndex++;
-                }
-                
+                venueMatched.add(venueSearchArrays.get(midIndex));   
             }
-
-            if (midValue.compareToIgnoreCase(searchValue) < 0) {
+            if (midValue.compareToIgnoreCase(searchValue) > 0) {
                 highIndex = midIndex - 1;
             } else {
                 lowIndex = midIndex + 1;

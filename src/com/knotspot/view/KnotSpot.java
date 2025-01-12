@@ -16,6 +16,7 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.SwingConstants;
 
 import com.knotspot.model.VenueModel;
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -54,6 +55,7 @@ public class KnotSpot extends javax.swing.JFrame {
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         defaultInitializedTableData();
+        revenueCount(venueDetails);
         displayTableOnHome(venueDetails);
         filterPopUpPnl.setVisible(false);
         getRootPane().setGlassPane(new JComponent() {
@@ -102,6 +104,9 @@ public class KnotSpot extends javax.swing.JFrame {
         inputVenueAddressErrorMsgLbl = new javax.swing.JLabel();
         showCapacityValueLbl = new javax.swing.JLabel();
         showPerPlatePriceValueLbl = new javax.swing.JLabel();
+        makeHeadingLbl = new javax.swing.JLabel();
+        changesHeadingLbl = new javax.swing.JLabel();
+        exclamationMarkLbl = new javax.swing.JLabel();
         sortButtonGroup = new javax.swing.ButtonGroup();
         settingButtonGroup = new javax.swing.ButtonGroup();
         containerPnl = new javax.swing.JPanel();
@@ -442,9 +447,9 @@ public class KnotSpot extends javax.swing.JFrame {
         editInputPnl.setBackground(new java.awt.Color(255, 255, 255));
 
         venueIdOnPopUpMsgFld.setEditable(false);
-        venueIdOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63)), "Venue ID"));
+        venueIdOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63), 2), "Venue ID"));
 
-        venueContactOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63)), "Contact Number"));
+        venueContactOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63), 2), "Contact Number"));
 
         inputVenueCapacitySlider1.setBackground(new java.awt.Color(0, 0, 0));
         inputVenueCapacitySlider1.setMajorTickSpacing(50);
@@ -474,6 +479,8 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
+        updateVenueDetailsBtn.setBackground(new java.awt.Color(14, 30, 63));
+        updateVenueDetailsBtn.setForeground(new java.awt.Color(255, 255, 255));
         updateVenueDetailsBtn.setText("UPDATE");
         updateVenueDetailsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -481,6 +488,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
+        cancelVenueChangeBtn.setBackground(new java.awt.Color(153, 153, 153));
         cancelVenueChangeBtn.setText("CANCEL");
         cancelVenueChangeBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -488,7 +496,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        venueAddressOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63)), "Venue Address"));
+        venueAddressOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63), 2), "Venue Address"));
         venueAddressOnPopUpMsgFld.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 venueAddressOnPopUpMsgFldActionPerformed(evt);
@@ -505,13 +513,25 @@ public class KnotSpot extends javax.swing.JFrame {
 
         inputPerPlatePriceLbl.setText("Per plate price");
 
-        venueNameOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63)), "Venue Name"));
+        venueNameOnPopUpMsgFld.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(14, 30, 63), 2), "Venue Name"));
 
         inputVenueNameErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
 
         inputVenueContactErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
 
         inputVenueAddressErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
+
+        makeHeadingLbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        makeHeadingLbl.setForeground(new java.awt.Color(14, 30, 63));
+        makeHeadingLbl.setText("MAKE");
+
+        changesHeadingLbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        changesHeadingLbl.setForeground(new java.awt.Color(153, 153, 153));
+        changesHeadingLbl.setText("CHANGES");
+
+        exclamationMarkLbl.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        exclamationMarkLbl.setForeground(new java.awt.Color(14, 30, 63));
+        exclamationMarkLbl.setText("!");
 
         javax.swing.GroupLayout editInputPnlLayout = new javax.swing.GroupLayout(editInputPnl);
         editInputPnl.setLayout(editInputPnlLayout);
@@ -520,62 +540,77 @@ public class KnotSpot extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editInputPnlLayout.createSequentialGroup()
                 .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(editInputPnlLayout.createSequentialGroup()
-                        .addGap(0, 34, Short.MAX_VALUE)
-                        .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(editInputPnlLayout.createSequentialGroup()
-                                .addComponent(inputCapacityLbl)
-                                .addGap(18, 18, 18)
-                                .addComponent(inputVenueCapacitySlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(33, 33, 33)
-                                .addComponent(inputPerPlatePriceLbl))
-                            .addComponent(inputVenueNameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editInputPnlLayout.createSequentialGroup()
-                                .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(editInputPnlLayout.createSequentialGroup()
-                                        .addGap(149, 149, 149)
-                                        .addComponent(showCapacityValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(editInputPnlLayout.createSequentialGroup()
-                                        .addGap(17, 17, 17)
-                                        .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(inputVenueAddressErrorMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(venueAddressOnPopUpMsgFld, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(inputVenueCityComboBx1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(editInputPnlLayout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(inputPerPlatePriceSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(editInputPnlLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(inputVenueTypeComboBx1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(editInputPnlLayout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(inputVenueContactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editInputPnlLayout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(showPerPlatePriceValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(80, 80, 80))))
-                    .addGroup(editInputPnlLayout.createSequentialGroup()
                         .addGap(227, 227, 227)
                         .addComponent(venueNameOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(30, 30, 30)
-                        .addComponent(venueContactOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(venueContactOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editInputPnlLayout.createSequentialGroup()
+                        .addGap(0, 34, Short.MAX_VALUE)
+                        .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(editInputPnlLayout.createSequentialGroup()
+                                .addGap(8, 8, 8)
+                                .addComponent(cancelVenueChangeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(366, 366, 366)
+                                .addComponent(updateVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(editInputPnlLayout.createSequentialGroup()
+                                .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(editInputPnlLayout.createSequentialGroup()
+                                        .addComponent(inputCapacityLbl)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(inputVenueCapacitySlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(33, 33, 33)
+                                        .addComponent(inputPerPlatePriceLbl))
+                                    .addComponent(inputVenueNameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, editInputPnlLayout.createSequentialGroup()
+                                        .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(editInputPnlLayout.createSequentialGroup()
+                                                .addGap(149, 149, 149)
+                                                .addComponent(showCapacityValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGroup(editInputPnlLayout.createSequentialGroup()
+                                                .addGap(17, 17, 17)
+                                                .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(inputVenueAddressErrorMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(venueAddressOnPopUpMsgFld, javax.swing.GroupLayout.DEFAULT_SIZE, 199, Short.MAX_VALUE))))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(inputVenueCityComboBx1, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(editInputPnlLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addComponent(inputPerPlatePriceSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(editInputPnlLayout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(inputVenueTypeComboBx1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(editInputPnlLayout.createSequentialGroup()
+                                        .addGap(40, 40, 40)
+                                        .addComponent(inputVenueContactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editInputPnlLayout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(showPerPlatePriceValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(80, 80, 80)))))))
                 .addGap(23, 23, 23))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, editInputPnlLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(cancelVenueChangeBtn)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(updateVenueDetailsBtn)
-                .addGap(44, 44, 44))
             .addGroup(editInputPnlLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(venueIdOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(editInputPnlLayout.createSequentialGroup()
+                        .addGap(51, 51, 51)
+                        .addComponent(venueIdOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(editInputPnlLayout.createSequentialGroup()
+                        .addGap(211, 211, 211)
+                        .addComponent(makeHeadingLbl)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(changesHeadingLbl)
+                        .addGap(12, 12, 12)
+                        .addComponent(exclamationMarkLbl)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         editInputPnlLayout.setVerticalGroup(
             editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(editInputPnlLayout.createSequentialGroup()
-                .addGap(78, 78, 78)
+                .addContainerGap()
+                .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(makeHeadingLbl)
+                    .addComponent(changesHeadingLbl)
+                    .addComponent(exclamationMarkLbl))
+                .addGap(47, 47, 47)
                 .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(venueNameOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(venueContactOnPopUpMsgFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -591,8 +626,9 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(inputVenueTypeComboBx1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(2, 2, 2)
                 .addComponent(inputVenueAddressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(showPerPlatePriceValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(editInputPnlLayout.createSequentialGroup()
                         .addComponent(showCapacityValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -601,12 +637,11 @@ public class KnotSpot extends javax.swing.JFrame {
                             .addComponent(inputPerPlatePriceLbl)
                             .addComponent(inputVenueCapacitySlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(inputCapacityLbl))
-                        .addGap(41, 41, 41)
+                        .addGap(34, 34, 34)
                         .addGroup(editInputPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(updateVenueDetailsBtn)
-                            .addComponent(cancelVenueChangeBtn)))
-                    .addComponent(showPerPlatePriceValueLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(21, 21, 21))
+                            .addComponent(updateVenueDetailsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cancelVenueChangeBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(13, 13, 13))
         );
 
         javax.swing.GroupLayout popUpDialogLayout = new javax.swing.GroupLayout(popUpDialog.getContentPane());
@@ -852,6 +887,7 @@ public class KnotSpot extends javax.swing.JFrame {
         headerRender.setForeground(Color.decode("#FFFFFF"));
         JTableHeader tableHeader = frontDisplayTable.getTableHeader();
         tableHeader.setFont(new Font("Sans Serif", Font.BOLD, 12));
+        tableHeader.setPreferredSize(new Dimension(tableHeader.getPreferredSize().width, 35));
         tableHeader.setOpaque(false);
         tableHeader.setDefaultRenderer(headerRender);
         frontDisplayTable.setFont(new java.awt.Font("Sans Serif", Font.BOLD, 10));
@@ -879,7 +915,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
         frontDisplayTable.setFocusable(false);
-        frontDisplayTable.setRowHeight(30);
+        frontDisplayTable.setRowHeight(35);
         frontDisplayTable.setSelectionBackground(new java.awt.Color(90, 132, 154));
         frontDisplayTable.setShowHorizontalLines(true);
         frontDisplayTable.getTableHeader().setReorderingAllowed(false);
@@ -1015,7 +1051,6 @@ public class KnotSpot extends javax.swing.JFrame {
 
         totalRevenueNumberLbl.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         totalRevenueNumberLbl.setForeground(new java.awt.Color(0, 102, 204));
-        totalRevenueNumberLbl.setText("Rs. 4,23,000");
 
         descriptionTotalRevenueLbl.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
         descriptionTotalRevenueLbl.setForeground(new java.awt.Color(255, 204, 0));
@@ -1039,8 +1074,8 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(totalRevenueLbl)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(totalRevenueNumberLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(totalRevenueNumberLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(descriptionTotalRevenueLbl)
                 .addContainerGap())
         );
@@ -1132,7 +1167,8 @@ public class KnotSpot extends javax.swing.JFrame {
 
         homePagePnl.add(welcomeDisplayPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 590, 190));
 
-        titleforDisplayTable.setFont(new java.awt.Font("SansSerif", 0, 12)); // NOI18N
+        titleforDisplayTable.setFont(new java.awt.Font("SansSerif", 1, 12)); // NOI18N
+        titleforDisplayTable.setForeground(new java.awt.Color(14, 30, 63));
         titleforDisplayTable.setText("RECENTLY ADDED VENUES");
         homePagePnl.add(titleforDisplayTable, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, -1, -1));
 
@@ -1237,91 +1273,86 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
                         .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                                .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsInputContainerPnlLayout.createSequentialGroup()
+                                .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(116, 116, 116))
+                                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(perPlatePriceLbl)
+                                    .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(19, 19, 19))
                             .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
                                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
+                                        .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(70, 70, 70))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsInputContainerPnlLayout.createSequentialGroup()
                                         .addComponent(idErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(40, 40, 40)
-                                        .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                                        .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(71, 71, 71)
-                                        .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addGap(60, 60, 60)))
+                                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                         .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                        .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(addressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsInputContainerPnlLayout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(addVenueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(55, 55, 55)))
-                        .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14))
+                            .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
+                        .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(addressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
+                        .addComponent(totalCapacityLbl)
+                        .addGap(122, 122, 122)
+                        .addComponent(capacityValueDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(perPlatePriceDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(113, 113, 113)))
                 .addGap(30, 30, 30))
-            .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(totalCapacityLbl)
-                .addGap(155, 155, 155)
-                .addComponent(capacityValueDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(130, 130, 130)
-                .addComponent(perPlatePriceLbl)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(perPlatePriceDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(143, 143, 143))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, detailsInputContainerPnlLayout.createSequentialGroup()
+                .addGap(418, 418, 418)
+                .addComponent(addVenueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(418, 418, 418))
         );
         detailsInputContainerPnlLayout.setVerticalGroup(
             detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
+                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
+                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
+                        .addComponent(idErrorMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(1, 1, 1)
                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                        .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(inputVenueIdTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputVenueContactTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(inputVenueNameTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(1, 1, 1)
-                        .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(contactErrorMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 20, Short.MAX_VALUE)
-                                .addComponent(idErrorMsgLbl, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                            .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(addressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(1, 1, 1)
                         .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                                .addComponent(addressErrorMsgLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(capacityValueDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(perPlatePriceDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(perPlatePriceLbl)))
-                    .addComponent(totalCapacityLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(capacityValueDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(perPlatePriceDisplayLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(totalCapacityLbl, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(perPlatePriceLbl))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                        .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
-                        .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(addVenueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(inputPerPlatePriceSlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueCapacitySlider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(addVenueBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -1347,6 +1378,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
+        searchBtn.setBackground(new java.awt.Color(176, 197, 202));
         searchBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/search_icon.png"))); // NOI18N
         searchBtn.setBorder(null);
         searchBtn.setBorderPainted(false);
@@ -1398,6 +1430,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
+        doFilterBtn.setBackground(new java.awt.Color(176, 197, 202));
         doFilterBtn.setText("ok");
         doFilterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1442,9 +1475,10 @@ public class KnotSpot extends javax.swing.JFrame {
         DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();
         headerRenderForVenueTable.setBackground(Color.decode("#0E1E3F"));
         headerRenderForVenueTable.setForeground(Color.decode("#FFFFFF"));
-        JTableHeader venuetableHeader = venueModifyTbl.getTableHeader();
-        venuetableHeader.setFont(new Font("Sans Serif", Font.BOLD, 12));
-        venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);
+        JTableHeader venueTableHeader = venueModifyTbl.getTableHeader();
+        venueTableHeader.setFont(new Font("Sans Serif", Font.BOLD, 12));
+        venueTableHeader.setPreferredSize(new Dimension(venueTableHeader.getPreferredSize().width, 35));
+        venueTableHeader.setDefaultRenderer(headerRenderForVenueTable);
         venueModifyTbl.setFont(new java.awt.Font("SansSerif", 1, 10)); // NOI18N
         venueModifyTbl.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1485,6 +1519,7 @@ public class KnotSpot extends javax.swing.JFrame {
             venueModifyTbl.getColumnModel().getColumn(5).setPreferredWidth(130);
         }
 
+        refreshBtn.setBackground(new java.awt.Color(176, 197, 202));
         refreshBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/refreshiconimage.png"))); // NOI18N
         refreshBtn.setBorder(null);
         refreshBtn.setBorderPainted(false);
@@ -2247,6 +2282,7 @@ public class KnotSpot extends javax.swing.JFrame {
         aboutUsPagePnl.add(editAreaScrlPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 580, 270));
 
         editForBlogBtn.setBackground(new java.awt.Color(14, 30, 63));
+        editForBlogBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         editForBlogBtn.setForeground(new java.awt.Color(255, 255, 255));
         editForBlogBtn.setText("edit");
         editForBlogBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -2254,7 +2290,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 editForBlogBtnActionPerformed(evt);
             }
         });
-        aboutUsPagePnl.add(editForBlogBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(512, 550, 90, 30));
+        aboutUsPagePnl.add(editForBlogBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(492, 550, 110, 40));
 
         aboutUsImageLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/aboutUsImage.png"))); // NOI18N
         aboutUsPagePnl.add(aboutUsImageLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 60, 440, 380));
@@ -2280,7 +2316,7 @@ public class KnotSpot extends javax.swing.JFrame {
             .addComponent(instagramIdDetailsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
         );
 
-        aboutUsPagePnl.add(instagramPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 580, -1, 40));
+        aboutUsPagePnl.add(instagramPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 550, -1, 40));
 
         facebookPnl.setBackground(new java.awt.Color(14, 30, 63));
 
@@ -2302,7 +2338,7 @@ public class KnotSpot extends javax.swing.JFrame {
             .addComponent(facebookIdDetailsLbl, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
         );
 
-        aboutUsPagePnl.add(facebookPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 640, -1, 40));
+        aboutUsPagePnl.add(facebookPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 610, -1, 40));
 
         decorStandAboutUsPnl.setBackground(new java.awt.Color(125, 162, 169, 80));
 
@@ -2463,19 +2499,19 @@ public class KnotSpot extends javax.swing.JFrame {
         followUsPnlLayout.setHorizontalGroup(
             followUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(followUsPnlLayout.createSequentialGroup()
-                .addGap(74, 74, 74)
+                .addGap(56, 56, 56)
                 .addComponent(followUsLbl)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         followUsPnlLayout.setVerticalGroup(
             followUsPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(followUsPnlLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, followUsPnlLayout.createSequentialGroup()
+                .addContainerGap(21, Short.MAX_VALUE)
                 .addComponent(followUsLbl)
-                .addContainerGap(13, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
-        aboutUsPagePnl.add(followUsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 510, 220, 60));
+        aboutUsPagePnl.add(followUsPnl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 470, 220, 60));
 
         adminDashboardPagesPnl.add(aboutUsPagePnl, "AboutUsPage");
 
@@ -3124,6 +3160,14 @@ public class KnotSpot extends javax.swing.JFrame {
         }
     }
 
+    private void revenueCount(List<VenueModel> venueDetails) {
+        int totalRevenue = 0;
+        for (VenueModel venues : venueDetails) {
+            totalRevenue += venues.getRentFee();
+            totalRevenueNumberLbl.setText("Rs. " + String.valueOf(totalRevenue));
+        }
+    }
+
     private void resetInputDetails() {
         inputVenueIdTxtFld.setText("");
         inputVenueNameTxtFld.setText("");
@@ -3270,11 +3314,26 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void logOutNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseClicked
         // TODO add your handling code here:
+        loadScreen("LoginScreen");
         logOutNavPnl.setBackground(Color.WHITE);
         logOutNavPnl.setForeground(Color.decode("#0E1E3F"));
         logOutNavLbl.setForeground(Color.decode("#0E1E3F"));
+        ValidationUtil.venueValidateColor(inputVenueIdTxtFld, idErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Venue Id");
+        ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Venue Name");
+        ValidationUtil.venueValidateColor(inputVenueContactTxtFld, contactErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Contact Number");
+        ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Address");
+        if (inputUsernameTxtFld.getText().equals("")) {
+            inputUsernameTxtFld.setText("Enter username");
+            inputUsernameTxtFld.setForeground(Color.decode("#CCCCCC"));
+        }
+        if (String.valueOf(inputPasswordPwdFld.getPassword()).equals("")) {
+            inputPasswordPwdFld.setText("Enter password");
+            inputPasswordPwdFld.setForeground(Color.decode("#CCCCCC"));
+            inputPasswordPwdFld.setEchoChar('\u0000');
+        }
         resetInputDetails();
-        loadScreen("LoginScreen");
+        loadNavRelatedPage("HomePage");
+
     }//GEN-LAST:event_logOutNavPnlMouseClicked
 
     private void logOutNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseEntered
@@ -3327,6 +3386,7 @@ public class KnotSpot extends javax.swing.JFrame {
             isValid = false; //exception
         } catch (IllegalArgumentException e) {
             ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Venue Name");
+            isValid = false;
         }
 
         try {
@@ -3338,6 +3398,7 @@ public class KnotSpot extends javax.swing.JFrame {
             isValid = false; //exception
         } catch (IllegalArgumentException e) {
             ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Address");
+            isValid = false;
         }
 
         try {
@@ -3360,7 +3421,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 showPopDialog("The venue is added successfully", "New Venue Entry", JOptionPane.INFORMATION_MESSAGE);
                 resetInputDetails();
                 totalVenueNumberLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
-
+                revenueCount(venueDetails);
             } else {
                 showPopDialog("The same venue cannot be duplicated", "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
                 resetInputDetails();
@@ -3380,7 +3441,7 @@ public class KnotSpot extends javax.swing.JFrame {
         if (showPwdCheckBx.isSelected()) {
             inputPasswordPwdFld.setEchoChar((char) 0);
         } else {
-            inputPasswordPwdFld.setEchoChar('*');
+            inputPasswordPwdFld.setEchoChar('\u2022');
         }
     }//GEN-LAST:event_showPwdCheckBxActionPerformed
 
@@ -3403,7 +3464,6 @@ public class KnotSpot extends javax.swing.JFrame {
 
             }
         }
-
         getRootPane().getGlassPane().setVisible(true);
         popUpDialog.setVisible(true);
 
@@ -3429,6 +3489,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     if (venues.getVenueId() == selectedRowVenueId) {
                         venueDetails.remove(venues);
                         totalVenueNumberLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
+                        revenueCount(venueDetails);
                         displayTableOnHome(venueDetails);
                         return;
                     }
@@ -3482,10 +3543,22 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_venueGalleryNavPnlMouseExited
 
     private void logOutNavLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavLblMouseClicked
-
-        inputUsernameTxtFld.setText("");
-        inputPasswordPwdFld.setText("");
         loadScreen("LoginScreen");
+        resetInputDetails();
+        ValidationUtil.venueValidateColor(inputVenueIdTxtFld, idErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Venue Id");
+        ValidationUtil.venueValidateColor(inputVenueNameTxtFld, nameErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Venue Name");
+        ValidationUtil.venueValidateColor(inputVenueContactTxtFld, contactErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Contact Number");
+        ValidationUtil.venueValidateColor(inputVenueAddressTxtFld, addressErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Address");
+        if (inputUsernameTxtFld.getText().equals("")) {
+            inputUsernameTxtFld.setText("Enter username");
+            inputUsernameTxtFld.setForeground(Color.decode("#CCCCCC"));
+        }
+        if (String.valueOf(inputPasswordPwdFld.getPassword()).equals("")) {
+            inputPasswordPwdFld.setText("Enter password");
+            inputPasswordPwdFld.setForeground(Color.decode("#CCCCCC"));
+            inputPasswordPwdFld.setEchoChar('\u0000');
+        }
+        loadNavRelatedPage("HomePage");
     }//GEN-LAST:event_logOutNavLblMouseClicked
 
     private void inputVenueCapacitySliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputVenueCapacitySliderStateChanged
@@ -3514,7 +3587,6 @@ public class KnotSpot extends javax.swing.JFrame {
             addVenuePagePnl.setBackground(new Color(250, 245, 239));
             aboutUsPagePnl.setBackground(new Color(250, 245, 239));
             venueGalleryPagePnl.setBackground(new Color(250, 245, 239));
-            
 
         }
     }//GEN-LAST:event_selectLightModeRadioBtnActionPerformed
@@ -3527,7 +3599,7 @@ public class KnotSpot extends javax.swing.JFrame {
             addVenuePagePnl.setBackground(Color.decode("#937A62"));
             aboutUsPagePnl.setBackground(Color.decode("#937A62"));
             venueGalleryPagePnl.setBackground(Color.decode("#937A62"));
-            
+
         }
     }//GEN-LAST:event_selectDarkModeRadioBtnActionPerformed
 
@@ -3622,25 +3694,31 @@ public class KnotSpot extends javax.swing.JFrame {
             try {
                 ValidationUtil.isNameValid(venueNameOnPopUpMsgFld.getText(), "Name");
                 editedVenueName = venueNameOnPopUpMsgFld.getText();
-                ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Venue Name");
+                ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Venue Name");
             } catch (NullPointerException | NumberFormatException e) {
                 ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Venue Name");
                 isValid = false; //exception
+            } catch (IllegalArgumentException e) {
+                ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Venue Name");
+                isValid = false;
             }
 
             try {
                 ValidationUtil.isAddressValid(venueAddressOnPopUpMsgFld.getText(), "Address");
                 editedVenueAddress = venueAddressOnPopUpMsgFld.getText();
-                ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Address");
+                ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Address");
             } catch (NullPointerException | NumberFormatException e) {
                 ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Address");
                 isValid = false; //exception
+            } catch (IllegalArgumentException e) {
+                ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Venue Name");
+                isValid = false;
             }
 
             try {
                 ValidationUtil.isContactValid(venueContactOnPopUpMsgFld.getText(), "Contact number");
                 editedVenueContactNumber = venueContactOnPopUpMsgFld.getText();
-                ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Contact Number");
+                ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Contact Number");
             } catch (NullPointerException | NumberFormatException e) {
                 ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Contact Number");
                 isValid = false; //exception
@@ -3669,6 +3747,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     showPopDialog("The venue has been successfully updated.", "Successful update", JOptionPane.INFORMATION_MESSAGE);
                     getRootPane().getGlassPane().setVisible(false);
                     popUpDialog.setVisible(false);
+                    revenueCount(venueDetails);
                     displayTableOnHome(venueDetails);
 
                 }
@@ -3684,6 +3763,9 @@ public class KnotSpot extends javax.swing.JFrame {
 
         getRootPane().getGlassPane().setVisible(false);
         popUpDialog.setVisible(false);
+        ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Venue Name");
+        ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Address");
+        ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Contact Number");
     }//GEN-LAST:event_cancelVenueChangeBtnActionPerformed
 
     private void inputVenueCapacitySlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputVenueCapacitySlider1StateChanged
@@ -3883,6 +3965,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JPanel callUsPnl;
     private javax.swing.JButton cancelVenueChangeBtn;
     private javax.swing.JLabel capacityValueDisplayLbl;
+    private javax.swing.JLabel changesHeadingLbl;
     private javax.swing.JLabel chatIconLbl;
     private javax.swing.JLabel chatToEmployeeLbl;
     private javax.swing.JPanel chatWithEmployeePnl;
@@ -3923,6 +4006,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel emailLbl;
     private javax.swing.JLabel employeeLbl;
     private javax.swing.JLabel employeeNumberLbl;
+    private javax.swing.JLabel exclamationMarkLbl;
     private javax.swing.JLabel facebookIdDetailsLbl;
     private javax.swing.JPanel facebookPnl;
     private javax.swing.JLabel fifthPopUpImage;
@@ -4008,6 +4092,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel loginSideImgLbl;
     private javax.swing.JLabel loginTitleLbl;
     private javax.swing.JLabel logoLbl;
+    private javax.swing.JLabel makeHeadingLbl;
     private javax.swing.JLabel manageVenueIconLbl;
     private javax.swing.JLabel manageVenueNavLbl;
     private javax.swing.JPanel manageVenueNavPnl;

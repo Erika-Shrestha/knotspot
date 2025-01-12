@@ -204,73 +204,88 @@
                   <Group type="102" alignment="1" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="inputCapacityLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="inputVenueCapacitySlider1" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
-                                      <Component id="inputPerPlatePriceLbl" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="inputVenueNameErrorMsgLbl" alignment="1" min="-2" pref="159" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
-                                              <Component id="showCapacityValueLbl" min="-2" pref="33" max="-2" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                  <Component id="inputVenueAddressErrorMsgLbl" max="32767" attributes="0"/>
-                                                  <Component id="venueAddressOnPopUpMsgFld" pref="199" max="32767" attributes="0"/>
-                                              </Group>
-                                          </Group>
-                                      </Group>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="inputVenueCityComboBx1" min="-2" pref="122" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="inputPerPlatePriceSlider1" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Component id="inputVenueTypeComboBx1" min="-2" pref="165" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                      <Component id="inputVenueContactErrorMsgLbl" min="-2" pref="165" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="showPerPlatePriceValueLbl" min="-2" pref="34" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="227" max="-2" attributes="0"/>
                               <Component id="venueNameOnPopUpMsgFld" min="-2" pref="188" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="30" max="-2" attributes="0"/>
                               <Component id="venueContactOnPopUpMsgFld" min="-2" pref="165" max="-2" attributes="0"/>
                           </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="34" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="-2" pref="8" max="-2" attributes="0"/>
+                                      <Component id="cancelVenueChangeBtn" min="-2" pref="100" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="366" max="-2" attributes="0"/>
+                                      <Component id="updateVenueDetailsBtn" min="-2" pref="94" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <Component id="inputCapacityLbl" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="inputVenueCapacitySlider1" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                                              <Component id="inputPerPlatePriceLbl" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Component id="inputVenueNameErrorMsgLbl" alignment="1" min="-2" pref="159" max="-2" attributes="0"/>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Group type="103" groupAlignment="0" attributes="0">
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="149" max="-2" attributes="0"/>
+                                                      <Component id="showCapacityValueLbl" min="-2" pref="33" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                                          <Component id="inputVenueAddressErrorMsgLbl" max="32767" attributes="0"/>
+                                                          <Component id="venueAddressOnPopUpMsgFld" pref="199" max="32767" attributes="0"/>
+                                                      </Group>
+                                                  </Group>
+                                              </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="inputVenueCityComboBx1" min="-2" pref="122" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                                              <Component id="inputPerPlatePriceSlider1" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                              <Component id="inputVenueTypeComboBx1" min="-2" pref="165" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" attributes="0">
+                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                              <Component id="inputVenueContactErrorMsgLbl" min="-2" pref="165" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="1" attributes="0">
+                                              <EmptySpace max="-2" attributes="0"/>
+                                              <Component id="showPerPlatePriceValueLbl" min="-2" pref="34" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                  </Group>
+                              </Group>
+                          </Group>
                       </Group>
                       <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="cancelVenueChangeBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="updateVenueDetailsBtn" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                      <Component id="venueIdOnPopUpMsgFld" min="-2" pref="142" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                              <Component id="venueIdOnPopUpMsgFld" min="-2" pref="142" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="211" max="-2" attributes="0"/>
+                              <Component id="makeHeadingLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="changesHeadingLbl" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
+                              <Component id="exclamationMarkLbl" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -278,7 +293,13 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="makeHeadingLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="changesHeadingLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="exclamationMarkLbl" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="venueNameOnPopUpMsgFld" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="venueContactOnPopUpMsgFld" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -297,9 +318,10 @@
                       </Group>
                       <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       <Component id="inputVenueAddressErrorMsgLbl" min="-2" pref="17" max="-2" attributes="0"/>
-                      <EmptySpace pref="44" max="32767" attributes="0"/>
+                      <EmptySpace pref="35" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
+                          <Component id="showPerPlatePriceValueLbl" alignment="0" min="-2" pref="29" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
                               <Component id="showCapacityValueLbl" min="-2" pref="23" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
@@ -308,15 +330,14 @@
                                   <Component id="inputVenueCapacitySlider1" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="inputCapacityLbl" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <EmptySpace min="41" pref="41" max="-2" attributes="0"/>
+                              <EmptySpace min="34" pref="34" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="updateVenueDetailsBtn" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="cancelVenueChangeBtn" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="updateVenueDetailsBtn" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
+                                  <Component id="cancelVenueChangeBtn" alignment="3" min="-2" pref="38" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="showPerPlatePriceValueLbl" min="-2" pref="29" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -328,7 +349,7 @@
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Venue ID">
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
+                        <LineBorder thickness="2">
                           <Color PropertyName="color" blue="3f" green="1e" red="e" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -346,7 +367,7 @@
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Contact Number">
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
+                        <LineBorder thickness="2">
                           <Color PropertyName="color" blue="3f" green="1e" red="e" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -389,6 +410,12 @@
             </Component>
             <Component class="javax.swing.JButton" name="updateVenueDetailsBtn">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="3f" green="1e" red="e" type="rgb"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="UPDATE"/>
               </Properties>
               <Events>
@@ -397,6 +424,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="cancelVenueChangeBtn">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="CANCEL"/>
               </Properties>
               <Events>
@@ -409,7 +439,7 @@
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Venue Address">
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
+                        <LineBorder thickness="2">
                           <Color PropertyName="color" blue="3f" green="1e" red="e" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -483,7 +513,7 @@
                   <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
                     <TitledBorder title="Venue Name">
                       <Border PropertyName="innerBorder" info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                        <LineBorder>
+                        <LineBorder thickness="2">
                           <Color PropertyName="color" blue="3f" green="1e" red="e" type="rgb"/>
                         </LineBorder>
                       </Border>
@@ -516,6 +546,39 @@
             <Component class="javax.swing.JLabel" name="showCapacityValueLbl">
             </Component>
             <Component class="javax.swing.JLabel" name="showPerPlatePriceValueLbl">
+            </Component>
+            <Component class="javax.swing.JLabel" name="makeHeadingLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="3f" green="1e" red="e" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="MAKE"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="changesHeadingLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="99" green="99" red="99" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="CHANGES"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="exclamationMarkLbl">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Segoe UI" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="3f" green="1e" red="e" type="rgb"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="!"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>
@@ -1288,7 +1351,7 @@
                                   </TableColumnModel>
                                 </Property>
                                 <Property name="focusable" type="boolean" value="false"/>
-                                <Property name="rowHeight" type="int" value="30"/>
+                                <Property name="rowHeight" type="int" value="35"/>
                                 <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                   <Color blue="9a" green="84" red="5a" type="rgb"/>
                                 </Property>
@@ -1299,7 +1362,7 @@
                                 <Property name="verifyInputWhenFocusTarget" type="boolean" value="false"/>
                               </Properties>
                               <AuxValues>
-                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();&#xa;headerRender.setBackground(Color.decode(&quot;#0E1E3F&quot;));&#xa;headerRender.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;JTableHeader tableHeader = frontDisplayTable.getTableHeader();&#xa;tableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;tableHeader.setOpaque(false);&#xa;tableHeader.setDefaultRenderer(headerRender);"/>
+                                <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();&#xa;headerRender.setBackground(Color.decode(&quot;#0E1E3F&quot;));&#xa;headerRender.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;JTableHeader tableHeader = frontDisplayTable.getTableHeader();&#xa;tableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;tableHeader.setPreferredSize(new Dimension(tableHeader.getPreferredSize().width, 35));&#xa;tableHeader.setOpaque(false);&#xa;tableHeader.setDefaultRenderer(headerRender);"/>
                               </AuxValues>
                             </Component>
                           </SubComponents>
@@ -1589,8 +1652,8 @@
                                           <EmptySpace max="-2" attributes="0"/>
                                           <Component id="totalRevenueLbl" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="totalRevenueNumberLbl" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace max="32767" attributes="0"/>
+                                          <Component id="totalRevenueNumberLbl" max="32767" attributes="0"/>
+                                          <EmptySpace max="-2" attributes="0"/>
                                           <Component id="descriptionTotalRevenueLbl" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
                                       </Group>
@@ -1614,7 +1677,6 @@
                                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                       <Color blue="cc" green="66" red="0" type="rgb"/>
                                     </Property>
-                                    <Property name="text" type="java.lang.String" value="Rs. 4,23,000"/>
                                   </Properties>
                                 </Component>
                                 <Component class="javax.swing.JLabel" name="descriptionTotalRevenueLbl">
@@ -1762,7 +1824,10 @@
                         <Component class="javax.swing.JLabel" name="titleforDisplayTable">
                           <Properties>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                              <Font name="SansSerif" size="12" style="0"/>
+                              <Font name="SansSerif" size="12" style="1"/>
+                            </Property>
+                            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="3f" green="1e" red="e" type="rgb"/>
                             </Property>
                             <Property name="text" type="java.lang.String" value="RECENTLY ADDED VENUES"/>
                           </Properties>
@@ -1817,64 +1882,67 @@
                                       <Group type="103" groupAlignment="0" attributes="0">
                                           <Group type="102" alignment="0" attributes="0">
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="inputVenueIdTxtFld" min="-2" pref="230" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="inputVenueAddressTxtFld" min="-2" pref="350" max="-2" attributes="0"/>
                                                       <EmptySpace max="32767" attributes="0"/>
-                                                      <Component id="inputVenueNameTxtFld" min="-2" pref="210" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="116" max="-2" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" attributes="0">
                                                       <Group type="103" groupAlignment="0" attributes="0">
-                                                          <Group type="102" attributes="0">
-                                                              <Component id="idErrorMsgLbl" min="-2" pref="240" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                                                              <Component id="nameErrorMsgLbl" min="-2" pref="230" max="-2" attributes="0"/>
-                                                          </Group>
+                                                          <Component id="perPlatePriceLbl" min="-2" max="-2" attributes="0"/>
+                                                          <Component id="inputVenueCityComboBx" min="-2" pref="140" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="102" alignment="0" attributes="0">
+                                                      <Group type="103" groupAlignment="0" attributes="0">
                                                           <Group type="102" alignment="0" attributes="0">
-                                                              <Component id="inputVenueAddressTxtFld" min="-2" pref="350" max="-2" attributes="0"/>
-                                                              <EmptySpace min="-2" pref="71" max="-2" attributes="0"/>
-                                                              <Component id="inputVenueCityComboBx" min="-2" pref="140" max="-2" attributes="0"/>
+                                                              <Component id="inputVenueIdTxtFld" min="-2" pref="230" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                                                          </Group>
+                                                          <Group type="102" alignment="1" attributes="0">
+                                                              <Component id="idErrorMsgLbl" min="-2" pref="240" max="-2" attributes="0"/>
+                                                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                                                           </Group>
                                                       </Group>
-                                                      <EmptySpace max="32767" attributes="0"/>
+                                                      <Group type="103" groupAlignment="0" attributes="0">
+                                                          <Component id="nameErrorMsgLbl" min="-2" pref="230" max="-2" attributes="0"/>
+                                                          <Component id="inputVenueNameTxtFld" min="-2" pref="210" max="-2" attributes="0"/>
+                                                      </Group>
+                                                      <EmptySpace min="62" max="32767" attributes="0"/>
                                                   </Group>
                                               </Group>
                                               <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="inputVenueTypeComboBx" min="-2" pref="180" max="-2" attributes="0"/>
-                                                  <Component id="inputVenueContactTxtFld" min="-2" pref="240" max="-2" attributes="0"/>
-                                                  <Component id="contactErrorMsgLbl" min="-2" pref="240" max="-2" attributes="0"/>
+                                                  <Group type="102" alignment="1" attributes="0">
+                                                      <Component id="inputVenueContactTxtFld" min="-2" pref="240" max="-2" attributes="0"/>
+                                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                                  </Group>
+                                                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                                                      <Component id="inputVenueTypeComboBx" min="-2" pref="180" max="-2" attributes="0"/>
+                                                      <Component id="contactErrorMsgLbl" min="-2" pref="240" max="-2" attributes="0"/>
+                                                  </Group>
                                               </Group>
                                           </Group>
                                           <Group type="102" alignment="0" attributes="0">
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="inputVenueCapacitySlider" min="-2" pref="300" max="-2" attributes="0"/>
-                                                          <Component id="addressErrorMsgLbl" min="-2" pref="350" max="-2" attributes="0"/>
-                                                      </Group>
-                                                      <EmptySpace max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Group type="102" alignment="1" attributes="0">
-                                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                                      <Component id="addVenueBtn" min="-2" pref="72" max="-2" attributes="0"/>
-                                                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
-                                                  </Group>
+                                              <Group type="103" groupAlignment="1" attributes="0">
+                                                  <Component id="inputVenueCapacitySlider" min="-2" pref="300" max="-2" attributes="0"/>
+                                                  <Component id="addressErrorMsgLbl" min="-2" pref="350" max="-2" attributes="0"/>
                                               </Group>
+                                              <EmptySpace max="32767" attributes="0"/>
                                               <Component id="inputPerPlatePriceSlider" min="-2" pref="350" max="-2" attributes="0"/>
+                                          </Group>
+                                          <Group type="102" alignment="0" attributes="0">
+                                              <Component id="totalCapacityLbl" min="-2" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="122" max="-2" attributes="0"/>
+                                              <Component id="capacityValueDisplayLbl" min="-2" pref="70" max="-2" attributes="0"/>
+                                              <EmptySpace max="32767" attributes="0"/>
+                                              <Component id="perPlatePriceDisplayLbl" min="-2" pref="70" max="-2" attributes="0"/>
+                                              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <EmptySpace min="30" pref="30" max="-2" attributes="0"/>
                                   </Group>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                      <Component id="totalCapacityLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="155" max="-2" attributes="0"/>
-                                      <Component id="capacityValueDisplayLbl" min="-2" pref="70" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="130" max="-2" attributes="0"/>
-                                      <Component id="perPlatePriceLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="perPlatePriceDisplayLbl" min="-2" pref="70" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="143" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace min="-2" pref="418" max="-2" attributes="0"/>
+                                      <Component id="addVenueBtn" min="-2" pref="87" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="418" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
@@ -1882,56 +1950,45 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="inputVenueIdTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="inputVenueContactTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="inputVenueNameTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="1" attributes="0">
+                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                              <Component id="contactErrorMsgLbl" pref="20" max="32767" attributes="0"/>
+                                              <Component id="idErrorMsgLbl" max="32767" attributes="0"/>
+                                          </Group>
+                                          <Component id="nameErrorMsgLbl" alignment="0" min="-2" pref="20" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="inputVenueAddressTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="inputVenueCityComboBx" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                          <Component id="inputVenueTypeComboBx" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="1" attributes="0">
                                           <Group type="102" attributes="0">
-                                              <Group type="103" groupAlignment="3" attributes="0">
-                                                  <Component id="inputVenueIdTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="inputVenueContactTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                  <Component id="inputVenueNameTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                                      <Component id="contactErrorMsgLbl" pref="20" max="32767" attributes="0"/>
-                                                      <Component id="idErrorMsgLbl" max="32767" attributes="0"/>
-                                                  </Group>
-                                                  <Component id="nameErrorMsgLbl" min="-2" pref="20" max="-2" attributes="0"/>
-                                              </Group>
+                                              <Component id="addressErrorMsgLbl" min="-2" pref="20" max="-2" attributes="0"/>
                                               <EmptySpace max="-2" attributes="0"/>
-                                              <Group type="103" groupAlignment="0" attributes="0">
-                                                  <Component id="inputVenueTypeComboBx" min="-2" pref="39" max="-2" attributes="0"/>
-                                                  <Group type="103" groupAlignment="3" attributes="0">
-                                                      <Component id="inputVenueAddressTxtFld" alignment="3" min="-2" max="-2" attributes="0"/>
-                                                      <Component id="inputVenueCityComboBx" alignment="3" min="-2" pref="39" max="-2" attributes="0"/>
-                                                  </Group>
-                                              </Group>
-                                              <EmptySpace min="-2" pref="1" max="-2" attributes="0"/>
                                               <Group type="103" groupAlignment="1" attributes="0">
-                                                  <Group type="102" attributes="0">
-                                                      <Component id="addressErrorMsgLbl" min="-2" pref="20" max="-2" attributes="0"/>
-                                                      <EmptySpace max="-2" attributes="0"/>
-                                                      <Group type="103" groupAlignment="1" attributes="0">
-                                                          <Component id="capacityValueDisplayLbl" min="-2" pref="20" max="-2" attributes="0"/>
-                                                          <Component id="perPlatePriceDisplayLbl" min="-2" pref="20" max="-2" attributes="0"/>
-                                                      </Group>
-                                                  </Group>
-                                                  <Component id="perPlatePriceLbl" min="-2" max="-2" attributes="0"/>
+                                                  <Component id="capacityValueDisplayLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  <Component id="perPlatePriceDisplayLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                                                  <Component id="totalCapacityLbl" min="-2" pref="20" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
-                                          <Component id="totalCapacityLbl" min="-2" pref="20" max="-2" attributes="0"/>
+                                          <Component id="perPlatePriceLbl" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                       <EmptySpace max="-2" attributes="0"/>
                                       <Group type="103" groupAlignment="0" attributes="0">
-                                          <Group type="102" attributes="0">
-                                              <Component id="inputPerPlatePriceSlider" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                                          </Group>
-                                          <Group type="102" alignment="0" attributes="0">
-                                              <Component id="inputVenueCapacitySlider" min="-2" max="-2" attributes="0"/>
-                                              <EmptySpace max="32767" attributes="0"/>
-                                              <Component id="addVenueBtn" min="-2" pref="28" max="-2" attributes="0"/>
-                                          </Group>
+                                          <Component id="inputPerPlatePriceSlider" min="-2" max="-2" attributes="0"/>
+                                          <Component id="inputVenueCapacitySlider" alignment="0" min="-2" max="-2" attributes="0"/>
                                       </Group>
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="addVenueBtn" min="-2" pref="34" max="-2" attributes="0"/>
                                       <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
@@ -2247,6 +2304,9 @@
                             </Component>
                             <Component class="javax.swing.JButton" name="searchBtn">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ca" green="c5" red="b0" type="rgb"/>
+                                </Property>
                                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                                   <Image iconType="3" name="/com/knotspot/resource/search_icon.png"/>
                                 </Property>
@@ -2378,6 +2438,9 @@
                                 </Component>
                                 <Component class="javax.swing.JButton" name="doFilterBtn">
                                   <Properties>
+                                    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                      <Color blue="ca" green="c5" red="b0" type="rgb"/>
+                                    </Property>
                                     <Property name="text" type="java.lang.String" value="ok"/>
                                   </Properties>
                                   <Events>
@@ -2482,13 +2545,16 @@
                                     <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="venueModifyTblMouseClicked"/>
                                   </Events>
                                   <AuxValues>
-                                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();&#xa;headerRenderForVenueTable.setBackground(Color.decode(&quot;#0E1E3F&quot;));&#xa;headerRenderForVenueTable.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;JTableHeader venuetableHeader = venueModifyTbl.getTableHeader();&#xa;venuetableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;venuetableHeader.setDefaultRenderer(headerRenderForVenueTable);"/>
+                                    <AuxValue name="JavaCodeGenerator_InitCodePre" type="java.lang.String" value="DefaultTableCellRenderer headerRenderForVenueTable = new DefaultTableCellRenderer();&#xa;headerRenderForVenueTable.setBackground(Color.decode(&quot;#0E1E3F&quot;));&#xa;headerRenderForVenueTable.setForeground(Color.decode(&quot;#FFFFFF&quot;));&#xa;JTableHeader venueTableHeader = venueModifyTbl.getTableHeader();&#xa;venueTableHeader.setFont(new Font(&quot;Sans Serif&quot;, Font.BOLD, 12));&#xa;venueTableHeader.setPreferredSize(new Dimension(venueTableHeader.getPreferredSize().width, 35));&#xa;venueTableHeader.setDefaultRenderer(headerRenderForVenueTable);"/>
                                   </AuxValues>
                                 </Component>
                               </SubComponents>
                             </Container>
                             <Component class="javax.swing.JButton" name="refreshBtn">
                               <Properties>
+                                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                                  <Color blue="ca" green="c5" red="b0" type="rgb"/>
+                                </Property>
                                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
                                   <Image iconType="3" name="/com/knotspot/resource/refreshiconimage.png"/>
                                 </Property>
@@ -3819,6 +3885,9 @@
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="3f" green="1e" red="e" type="rgb"/>
                             </Property>
+                            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                              <Font name="Segoe UI" size="14" style="0"/>
+                            </Property>
                             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                               <Color blue="ff" green="ff" red="ff" type="rgb"/>
                             </Property>
@@ -3829,7 +3898,7 @@
                           </Events>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="512" y="550" width="90" height="30"/>
+                              <AbsoluteConstraints x="492" y="550" width="110" height="40"/>
                             </Constraint>
                           </Constraints>
                         </Component>
@@ -3860,7 +3929,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="690" y="580" width="-1" height="40"/>
+                              <AbsoluteConstraints x="690" y="550" width="-1" height="40"/>
                             </Constraint>
                           </Constraints>
 
@@ -3902,7 +3971,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="690" y="640" width="-1" height="40"/>
+                              <AbsoluteConstraints x="690" y="610" width="-1" height="40"/>
                             </Constraint>
                           </Constraints>
 
@@ -4227,7 +4296,7 @@
                           </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-                              <AbsoluteConstraints x="690" y="510" width="220" height="60"/>
+                              <AbsoluteConstraints x="690" y="470" width="220" height="60"/>
                             </Constraint>
                           </Constraints>
 
@@ -4235,18 +4304,18 @@
                             <DimensionLayout dim="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="56" max="-2" attributes="0"/>
                                       <Component id="followUsLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="43" max="32767" attributes="0"/>
+                                      <EmptySpace pref="61" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
                             <DimensionLayout dim="1">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <EmptySpace pref="21" max="32767" attributes="0"/>
                                       <Component id="followUsLbl" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace pref="13" max="32767" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                             </DimensionLayout>
