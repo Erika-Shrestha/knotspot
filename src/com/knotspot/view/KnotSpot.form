@@ -2233,6 +2233,11 @@
                           </Constraints>
                         </Component>
                         <Container class="javax.swing.JLayeredPane" name="addVenueLayeredPnl">
+                          <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="e9" green="f4" red="f7" type="rgb"/>
+                            </Property>
+                          </Properties>
                           <Constraints>
                             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
                               <AbsoluteConstraints x="50" y="350" width="940" height="320"/>
@@ -2273,8 +2278,8 @@
                                           <Component id="refreshBtn" min="-2" pref="30" max="-2" attributes="0"/>
                                           <Component id="filterContainerPnl" alignment="0" pref="0" max="32767" attributes="0"/>
                                       </Group>
-                                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                                      <Component id="insertDataTableScrlPane" pref="266" max="32767" attributes="0"/>
+                                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                                      <Component id="insertDataTableScrlPane" pref="278" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                                       <Group type="102" alignment="1" attributes="0">

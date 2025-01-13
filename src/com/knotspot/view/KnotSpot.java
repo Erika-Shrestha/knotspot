@@ -1370,6 +1370,8 @@ public class KnotSpot extends javax.swing.JFrame {
         detailTitleLbl.setText("DETAILS");
         addVenuePagePnl.add(detailTitleLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
 
+        addVenueLayeredPnl.setBackground(new java.awt.Color(247, 244, 233));
+
         inputSearchTxtFld.setBackground(new java.awt.Color(250, 245, 239));
         inputSearchTxtFld.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(0, 0, 0)));
         inputSearchTxtFld.addActionListener(new java.awt.event.ActionListener() {
@@ -1600,8 +1602,8 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(inputSearchTxtFld)
                     .addComponent(refreshBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(filterContainerPnl, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(insertDataTableScrlPane, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(insertDataTableScrlPane, javax.swing.GroupLayout.DEFAULT_SIZE, 278, Short.MAX_VALUE))
             .addGroup(addVenueLayeredPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, addVenueLayeredPnlLayout.createSequentialGroup()
                     .addContainerGap(38, Short.MAX_VALUE)
