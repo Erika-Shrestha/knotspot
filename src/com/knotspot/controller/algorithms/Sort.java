@@ -151,11 +151,7 @@ public class Sort {
     }
 
     public static boolean checkLesserThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
-        if (sortBy.equals("Capacity")) {
-            return isLesserThanCapacity(nextIndex, minVenueValue);
-        } else {
-            return isLesserThanType(nextIndex, minVenueValue);
-        }
+        return (sortBy.equals("Capaccity")) ? isLesserThanCapacity(nextIndex, minVenueValue) : isLesserThanType(nextIndex, minVenueValue);
     }
 
     public static boolean checkGreaterThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
@@ -167,10 +163,7 @@ public class Sort {
     }
 
     public static boolean checkLesserThanForMerge(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
-        if (sortBy.equals("Price")) {
-            return isLesserThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue);
-        }
-        return false;
+        return (sortBy.equals("Price"))? isLesserThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue): false;
     }
 
     public static boolean checkGreaterThanForMerge(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {

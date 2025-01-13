@@ -19,8 +19,9 @@ public class BinarySearch {
     public static List<VenueModel> performBinarySearch(List<VenueModel> venueDetails, String searchValue, String searchBy) {
         venueSearchArrays.clear();
         venueSearchArrays.addAll(venueDetails);
-        List<VenueModel> venueMatched = new ArrayList<>();
-
+        
+        List<VenueModel> venueMatched = new ArrayList<>();        
+        
         int lowIndex = 0;
         int highIndex = venueSearchArrays.size() - 1;
 
