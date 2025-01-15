@@ -81,7 +81,7 @@ public class ValidationUtil {
         isNullorEmpty(venueContact, attribute);
         isNumber(venueContact, attribute);
         if(!CONTACT_PATTERN.matcher(String.valueOf(venueContact)).matches()){
-            throw new NumberFormatException(attribute +" must be of 10 digits");
+            throw new NumberFormatException(attribute +" must be of 10 digits and start with 98");
         }
     }
 

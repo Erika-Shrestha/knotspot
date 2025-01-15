@@ -50,7 +50,7 @@ public class KnotSpot extends javax.swing.JFrame {
         initComponents();
         this.setLocation(0, 0);
         startProgress();
-        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(rendererColumnPnl));
+        venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(renderColumnPnl));
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(editColumnPnl));
         venueDetails = new LinkedList<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
@@ -82,7 +82,7 @@ public class KnotSpot extends javax.swing.JFrame {
         editColumnPnl = new javax.swing.JPanel();
         editVenueDetailsBtn = new javax.swing.JButton();
         removeVenueDetailsBtn = new javax.swing.JButton();
-        rendererColumnPnl = new javax.swing.JPanel();
+        renderColumnPnl = new javax.swing.JPanel();
         editVenueDetailsBtn2 = new javax.swing.JButton();
         removeVenueDetailsBtn2 = new javax.swing.JButton();
         popUpDialog = new javax.swing.JDialog();
@@ -394,9 +394,9 @@ public class KnotSpot extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        rendererColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
-        rendererColumnPnl.setMaximumSize(new java.awt.Dimension(61, 27));
-        rendererColumnPnl.setMinimumSize(new java.awt.Dimension(61, 27));
+        renderColumnPnl.setBackground(new java.awt.Color(255, 255, 255));
+        renderColumnPnl.setMaximumSize(new java.awt.Dimension(61, 27));
+        renderColumnPnl.setMinimumSize(new java.awt.Dimension(61, 27));
 
         editVenueDetailsBtn2.setContentAreaFilled(false);
         editVenueDetailsBtn2.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
@@ -418,22 +418,22 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout rendererColumnPnlLayout = new javax.swing.GroupLayout(rendererColumnPnl);
-        rendererColumnPnl.setLayout(rendererColumnPnlLayout);
-        rendererColumnPnlLayout.setHorizontalGroup(
-            rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rendererColumnPnlLayout.createSequentialGroup()
+        javax.swing.GroupLayout renderColumnPnlLayout = new javax.swing.GroupLayout(renderColumnPnl);
+        renderColumnPnl.setLayout(renderColumnPnlLayout);
+        renderColumnPnlLayout.setHorizontalGroup(
+            renderColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(renderColumnPnlLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(editVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(removeVenueDetailsBtn2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        rendererColumnPnlLayout.setVerticalGroup(
-            rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rendererColumnPnlLayout.createSequentialGroup()
+        renderColumnPnlLayout.setVerticalGroup(
+            renderColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(renderColumnPnlLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(rendererColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(renderColumnPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(editVenueDetailsBtn2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(removeVenueDetailsBtn2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3677,6 +3677,9 @@ public class KnotSpot extends javax.swing.JFrame {
 
         //to check no input changes
         if (presentVenueName.equals(venueNameOnPopUpMsgFld.getText()) && presentVenueAddress.equals(venueAddressOnPopUpMsgFld.getText()) && presentVenueContact==Long.parseLong(venueContactOnPopUpMsgFld.getText()) && presentVenueCity.equals(inputVenueCityComboBx1.getSelectedItem().toString()) && presentVenueType.equals(String.valueOf(inputVenueTypeComboBx1.getSelectedItem().toString())) && presentVenueCapacity == inputVenueCapacitySlider1.getValue() && presentVenuePerPlatePrice == inputPerPlatePriceSlider1.getValue()) {
+            ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Venue Name");
+            ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Address");
+            ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Contact Number");
             showPopDialog("NO changes was made", "No input change", JOptionPane.WARNING_MESSAGE);
 
         } else {
@@ -4119,13 +4122,13 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JButton removeVenueDetailsBtn2;
     private javax.swing.JLabel renderClockImgLbl;
+    private javax.swing.JPanel renderColumnPnl;
     private javax.swing.JLabel renderDescriptionLbl;
     private javax.swing.JPanel renderImageContainerPnl;
     private javax.swing.JLabel renderImageLbl;
     private javax.swing.JLabel renderImageToggleImgLbl;
     private javax.swing.JLabel renderRescheduleLbl;
     private javax.swing.JPanel renderReschedulePnl;
-    private javax.swing.JPanel rendererColumnPnl;
     private javax.swing.JButton searchBtn;
     private javax.swing.JLabel secondImgBoldWordLbl;
     private javax.swing.JLabel secondImgClientLbl;

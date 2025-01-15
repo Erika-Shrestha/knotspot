@@ -105,8 +105,6 @@ public class Sort {
     }
 
     public static boolean isGreaterThanId(int previous, String current) {
-        System.out.println(venueSortArrays.get(previous).getVenueId());
-        System.out.println(Integer.parseInt(current));
         return previous >= 0 && venueSortArrays.get(previous).getVenueId() < Integer.parseInt(current);
     }
 
@@ -131,46 +129,35 @@ public class Sort {
     }
 
     public static boolean checkLesserThanForInsertion(int previous, String current, String sortBy) {
-        if (sortBy.equals("Id")) {
-            return isLesserThanId(previous, current);
-        } else if (sortBy.equals("City")) {
-            return isLesserThanCity(previous, current);
-        } else {
-            return isLesserThanName(previous, current);
-        }
+        return (sortBy.equals("Id")) ? isLesserThanId(previous, current)
+                : (sortBy.equals("City")) ? isLesserThanCity(previous, current)
+                : isLesserThanName(previous, current);
+
     }
 
     public static boolean checkGreaterThanForInsertion(int previous, String current, String sortBy) {
-        if (sortBy.equals("Id")) {
-            return isGreaterThanId(previous, current);
-        } else if (sortBy.equals("City")) {
-            return isGreaterThanCity(previous, current);
-        } else {
-            return isGreaterThanName(previous, current);
-        }
+        return (sortBy.equals("Id")) ? isGreaterThanId(previous, current)
+                : (sortBy.equals("City")) ? isGreaterThanCity(previous, current)
+                : isGreaterThanName(previous, current);
+
     }
 
     public static boolean checkLesserThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
-        return (sortBy.equals("Capaccity")) ? isLesserThanCapacity(nextIndex, minVenueValue) : isLesserThanType(nextIndex, minVenueValue);
+        return (sortBy.equals("Capacity")) ? isLesserThanCapacity(nextIndex, minVenueValue) : isLesserThanType(nextIndex, minVenueValue);
     }
 
     public static boolean checkGreaterThanForSelection(int nextIndex, String minVenueValue, String sortBy) {
-        if (sortBy.equals("Capacity")) {
-            return isGreaterThanCapacity(nextIndex, minVenueValue);
-        } else {
-            return isGreaterThanType(nextIndex, minVenueValue);
-        }
+        return (sortBy.equals("Capacity")) ? isGreaterThanCapacity(nextIndex, minVenueValue) : isGreaterThanType(nextIndex, minVenueValue);
+
     }
 
     public static boolean checkLesserThanForMerge(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
-        return (sortBy.equals("Price"))? isLesserThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue): false;
+        return (sortBy.equals("Price")) ? isLesserThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue) : false;
     }
 
     public static boolean checkGreaterThanForMerge(int fCounter, int sCounter, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, String sortBy) {
-        if (sortBy.equals("Price")) {
-            return isGreaterThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue);
-        }
-        return false;
+        return (sortBy.equals("Price")) ? isGreaterThanPrice(fCounter, sCounter, firstHalfVenue, secondHalfVenue) : false;
+
     }
 
     //merge sort
@@ -201,13 +188,13 @@ public class Sort {
         performMergeSort(secondHalfVenue, isAscend, sortBy);
 
         //merge them now
-        merge(venueSortArrays, firstHalfVenue, secondHalfVenue, isAscend, sortBy);
+        mergeSortedSublist(venueSortArrays, firstHalfVenue, secondHalfVenue, isAscend, sortBy);
 
         venueDetails.clear();
         venueDetails.addAll(venueSortArrays);
     }
 
-    private static void merge(List<VenueModel> venueArrays, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, boolean isAscend, String sortBy) {
+    private static void mergeSortedSublist(List<VenueModel> venueArrays, List<VenueModel> firstHalfVenue, List<VenueModel> secondHalfVenue, boolean isAscend, String sortBy) {
         venueArrays.clear();
 
         int firstHalfLength = firstHalfVenue.size();
@@ -252,17 +239,11 @@ public class Sort {
     }
 
     public static String getSortValue(VenueModel venue, String sortBy) {
-        if (sortBy.equals("Id")) {
-            return String.valueOf(venue.getVenueId());
-        } else if (sortBy.equals("City")) {
-            return venue.getCity();
-        } else if (sortBy.equals("Name")) {
-            return venue.getVenueName();
-        } else if (sortBy.equals("Capacity")) {
-            return String.valueOf(venue.getCapacity());
-        } else {
-            return String.valueOf(venue.getRentFee());
-        }
+        return (sortBy.equals("Id")) ? String.valueOf(venue.getVenueId())
+                : (sortBy.equals("City")) ? venue.getCity()
+                : (sortBy.equals("Name")) ? venue.getVenueName()
+                : (sortBy.equals("Capacity")) ? String.valueOf(venue.getCapacity())
+                : String.valueOf(venue.getRentFee());
 
     }
 

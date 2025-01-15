@@ -19,9 +19,9 @@ public class BinarySearch {
     public static List<VenueModel> performBinarySearch(List<VenueModel> venueDetails, String searchValue, String searchBy) {
         venueSearchArrays.clear();
         venueSearchArrays.addAll(venueDetails);
-        
-        List<VenueModel> venueMatched = new ArrayList<>();        
-        
+
+        List<VenueModel> venueMatched = new ArrayList<>();
+
         int lowIndex = 0;
         int highIndex = venueSearchArrays.size() - 1;
 
@@ -31,7 +31,7 @@ public class BinarySearch {
             String midValue = getSearchOrder(midVenue, searchBy);
 
             if (midValue.toLowerCase().equals(searchValue.toLowerCase())) {
-                venueMatched.add(venueSearchArrays.get(midIndex));   
+                venueMatched.add(venueSearchArrays.get(midIndex));
             }
             if (midValue.compareToIgnoreCase(searchValue) > 0) {
                 highIndex = midIndex - 1;
@@ -45,13 +45,10 @@ public class BinarySearch {
     }
 
     public static String getSearchOrder(VenueModel venue, String searchBy) {
-        if (searchBy.equals("Id")) {
-            return String.valueOf(venue.getVenueId());
-        } else if (searchBy.equals("Name")) {
-            return venue.getVenueName();
-        } else {
-            return String.valueOf(venue.getVenueType());
-        }
+        return (searchBy.equals("Id")) ? String.valueOf(venue.getVenueId())
+                : (searchBy.equals("Name")) ? venue.getVenueName()
+                : String.valueOf(venue.getVenueType());
+
     }
 
     public static List<VenueModel> searchByName(List<VenueModel> venueDetails, String searchValue) {
