@@ -1300,7 +1300,7 @@
                                     <Column editable="false" title="name" type="java.lang.String"/>
                                     <Column editable="false" title="address" type="java.lang.String"/>
                                     <Column editable="false" title="city" type="java.lang.String"/>
-                                    <Column editable="false" title="contact" type="java.lang.Integer"/>
+                                    <Column editable="false" title="contact" type="java.lang.Long"/>
                                     <Column editable="false" title="type" type="java.lang.String"/>
                                     <Column editable="false" title="capacity" type="java.lang.Integer"/>
                                     <Column editable="false" title="rent fee" type="java.lang.Integer"/>
@@ -2475,7 +2475,7 @@
                                         <Column editable="false" title="Name" type="java.lang.String"/>
                                         <Column editable="false" title="Address" type="java.lang.String"/>
                                         <Column editable="false" title="City" type="java.lang.String"/>
-                                        <Column editable="false" title="Contact" type="java.lang.Integer"/>
+                                        <Column editable="false" title="Contact" type="java.lang.Long"/>
                                         <Column editable="false" title="Type" type="java.lang.String"/>
                                         <Column editable="false" title="Capacity" type="java.lang.Integer"/>
                                         <Column editable="false" title="Rent Fee" type="java.lang.Integer"/>

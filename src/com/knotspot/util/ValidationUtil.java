@@ -79,6 +79,7 @@ public class ValidationUtil {
 
     public static void isContactValid(String venueContact, String attribute) {
         isNullorEmpty(venueContact, attribute);
+        isNumber(venueContact, attribute);
         if(!CONTACT_PATTERN.matcher(String.valueOf(venueContact)).matches()){
             throw new NumberFormatException(attribute +" must be of 10 digits");
         }
@@ -111,9 +112,9 @@ public class ValidationUtil {
         return ALPHABETIC_PATTERN.matcher(value).matches();
     }
     
-    public static boolean isDuplicate(List<VenueModel> value, int venueId, String venueContact){
+    public static boolean isDuplicate(List<VenueModel> value, int venueId, long venueContact){
         for (VenueModel venues : value){
-            if(venues.getVenueId()==venueId || venues.getContactNumber().equals(venueContact)){
+            if(venues.getVenueId()==venueId || venues.getContactNumber()==venueContact){
                 return true;
             }
         

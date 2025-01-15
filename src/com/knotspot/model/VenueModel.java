@@ -17,7 +17,7 @@ public class VenueModel {
     private String venueName;
     private String address;
     private String city;
-    private String contactNumber;
+    private long contactNumber;
     private String venueType;
     private int capacity;
     private int rentFee;
@@ -38,7 +38,7 @@ public class VenueModel {
      * @param capacity
      * @param rentFee 
      */
-    public VenueModel(int venueId, String venueName, String address, String city, String contactNumber, String venueType, int capacity, int rentFee) {
+    public VenueModel(int venueId, String venueName, String address, String city, long contactNumber, String venueType, int capacity, int rentFee) {
         this.venueId = venueId;
         this.venueName = venueName;
         this.address = address;
@@ -117,7 +117,7 @@ public class VenueModel {
      * gets venue contact number 
      * @return contact number set by the setter method 
      */
-    public String getContactNumber() {
+    public long getContactNumber() {
         return contactNumber;
     }
     
@@ -125,7 +125,7 @@ public class VenueModel {
      * sets venue contact by passing parameter initialized to global variable venue contact
      * @param contactNumber 
      */
-    public void setContactNumber(String contactNumber) {
+    public void setContactNumber(long contactNumber) {
         this.contactNumber = contactNumber;
     }
     

@@ -900,7 +900,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false
@@ -1491,7 +1491,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, true
@@ -3045,9 +3045,9 @@ public class KnotSpot extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void defaultInitializedTableData() {
-        addDemoVenue(new VenueModel(20423, "SmartPalace", "Basantapur", "kathmandu", "9823733980", "Meeting Conference", 200, 23000));
-        addDemoVenue(new VenueModel(20890, "VivahPalace", "Bouddha", "Dharan", "9823722970", "Hall", 100, 30000));
-        addDemoVenue(new VenueModel(20490, "TajPalace", "Lalitpur", "kathmandu", "9823733970", "Hall", 120, 15000));
+        addDemoVenue(new VenueModel(20423, "SmartPalace", "Basantapur", "kathmandu", 9823733980L, "Meeting Conference", 200, 23000));
+        addDemoVenue(new VenueModel(20890, "VivahPalace", "Bouddha", "Dharan", 9823722970L, "Hall", 100, 30000));
+        addDemoVenue(new VenueModel(20490, "TajPalace", "Lalitpur", "kathmandu", 9823733970L, "Hall", 120, 15000));
     }
 
     private void addDemoVenue(VenueModel venue) {
@@ -3362,7 +3362,7 @@ public class KnotSpot extends javax.swing.JFrame {
         String venueName = null;
         String venueAddress = null;
         String venueCity = String.valueOf(inputVenueCityComboBx.getSelectedItem());
-        String venueContactNumber = null;
+        long venueContactNumber = 0L;
         String venueType = String.valueOf(inputVenueTypeComboBx.getSelectedItem());
         int venueCapacity = inputVenueCapacitySlider.getValue();
         int perPlatePrice = inputPerPlatePriceSlider.getValue();
@@ -3405,7 +3405,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         try {
             ValidationUtil.isContactValid(inputVenueContactTxtFld.getText(), "Contact number");
-            venueContactNumber = inputVenueContactTxtFld.getText();
+            venueContactNumber = Long.parseLong(inputVenueContactTxtFld.getText());
             ValidationUtil.venueValidateColor(inputVenueContactTxtFld, contactErrorMsgLbl, Color.WHITE, Color.BLACK, "", "Contact Number");
         } catch (NullPointerException | NumberFormatException e) {
             ValidationUtil.venueValidateColor(inputVenueContactTxtFld, contactErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Contact Number");
@@ -3670,13 +3670,13 @@ public class KnotSpot extends javax.swing.JFrame {
         String presentVenueName = venueModifyTbl.getValueAt(selectedRow, 1).toString();
         String presentVenueAddress = venueModifyTbl.getValueAt(selectedRow, 2).toString();
         String presentVenueCity = venueModifyTbl.getValueAt(selectedRow, 3).toString();
-        String presentVenueContact = venueModifyTbl.getValueAt(selectedRow, 4).toString();
+        long presentVenueContact = Long.parseLong(venueModifyTbl.getValueAt(selectedRow, 4).toString());
         String presentVenueType = venueModifyTbl.getValueAt(selectedRow, 5).toString();
         int presentVenueCapacity = Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString());
         int presentVenuePerPlatePrice = (Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / presentVenueCapacity;
 
         //to check no input changes
-        if (presentVenueName.equals(venueNameOnPopUpMsgFld.getText()) && presentVenueAddress.equals(venueAddressOnPopUpMsgFld.getText()) && presentVenueContact.equals(venueContactOnPopUpMsgFld.getText()) && presentVenueCity.equals(inputVenueCityComboBx1.getSelectedItem().toString()) && presentVenueType.equals(String.valueOf(inputVenueTypeComboBx1.getSelectedItem().toString())) && presentVenueCapacity == inputVenueCapacitySlider1.getValue() && presentVenuePerPlatePrice == inputPerPlatePriceSlider1.getValue()) {
+        if (presentVenueName.equals(venueNameOnPopUpMsgFld.getText()) && presentVenueAddress.equals(venueAddressOnPopUpMsgFld.getText()) && presentVenueContact==Long.parseLong(venueContactOnPopUpMsgFld.getText()) && presentVenueCity.equals(inputVenueCityComboBx1.getSelectedItem().toString()) && presentVenueType.equals(String.valueOf(inputVenueTypeComboBx1.getSelectedItem().toString())) && presentVenueCapacity == inputVenueCapacitySlider1.getValue() && presentVenuePerPlatePrice == inputPerPlatePriceSlider1.getValue()) {
             showPopDialog("NO changes was made", "No input change", JOptionPane.WARNING_MESSAGE);
 
         } else {
@@ -3684,7 +3684,7 @@ public class KnotSpot extends javax.swing.JFrame {
             String editedVenueName = null;
             String editedVenueAddress = null;
             String editedVenueCity = String.valueOf(inputVenueCityComboBx1.getSelectedItem());
-            String editedVenueContactNumber = null;
+            long editedVenueContactNumber = 0L;
             String editedVenueType = String.valueOf(inputVenueTypeComboBx1.getSelectedItem());
             int editedVenueCapacity = inputVenueCapacitySlider1.getValue();
             int editedVenuePerPlatePrice = inputPerPlatePriceSlider1.getValue();
@@ -3719,7 +3719,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
             try {
                 ValidationUtil.isContactValid(venueContactOnPopUpMsgFld.getText(), "Contact number");
-                editedVenueContactNumber = venueContactOnPopUpMsgFld.getText();
+                editedVenueContactNumber = Long.parseLong(venueContactOnPopUpMsgFld.getText());
                 ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Contact Number");
             } catch (NullPointerException | NumberFormatException e) {
                 ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.RED, Color.RED, e.getMessage(), "Contact Number");
