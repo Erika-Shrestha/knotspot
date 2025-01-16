@@ -881,6 +881,7 @@ public class KnotSpot extends javax.swing.JFrame {
         homePagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         recentDataScrollBr.setBackground(new java.awt.Color(255, 255, 255));
+        recentDataScrollBr.setForeground(new java.awt.Color(255, 255, 255));
 
         DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();
         headerRender.setBackground(Color.decode("#0E1E3F"));
@@ -3163,7 +3164,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }
 
     private void revenueCount(List<VenueModel> venueDetails) {
-        int totalRevenue = 0;
+        double totalRevenue = 0;
         for (VenueModel venues : venueDetails) {
             totalRevenue += venues.getRentFee();
             totalRevenueNumberLbl.setText("Rs. " + String.valueOf(totalRevenue));
@@ -3366,7 +3367,7 @@ public class KnotSpot extends javax.swing.JFrame {
         String venueType = String.valueOf(inputVenueTypeComboBx.getSelectedItem());
         int venueCapacity = inputVenueCapacitySlider.getValue();
         int perPlatePrice = inputPerPlatePriceSlider.getValue();
-        int venueRentFee = venueCapacity * perPlatePrice;
+        double venueRentFee = venueCapacity * perPlatePrice;
 
         boolean isValid = true;
 
@@ -3691,7 +3692,7 @@ public class KnotSpot extends javax.swing.JFrame {
             String editedVenueType = String.valueOf(inputVenueTypeComboBx1.getSelectedItem());
             int editedVenueCapacity = inputVenueCapacitySlider1.getValue();
             int editedVenuePerPlatePrice = inputPerPlatePriceSlider1.getValue();
-            int editedVenueRentFee = editedVenueCapacity * editedVenuePerPlatePrice;
+            double editedVenueRentFee = editedVenueCapacity * editedVenuePerPlatePrice;
 
             //check to see no changes made
             boolean isValid = true;

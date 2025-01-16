@@ -20,7 +20,7 @@ public class VenueModel {
     private long contactNumber;
     private String venueType;
     private int capacity;
-    private int rentFee;
+    private double rentFee;
     
     /**
      * a default constructor with no parameters 
@@ -38,7 +38,7 @@ public class VenueModel {
      * @param capacity
      * @param rentFee 
      */
-    public VenueModel(int venueId, String venueName, String address, String city, long contactNumber, String venueType, int capacity, int rentFee) {
+    public VenueModel(int venueId, String venueName, String address, String city, long contactNumber, String venueType, int capacity, double rentFee) {
         this.venueId = venueId;
         this.venueName = venueName;
         this.address = address;
@@ -165,7 +165,7 @@ public class VenueModel {
      * gets venue rent fee 
      * @return rent set by the setter method
      */
-    public int getRentFee() {
+    public double getRentFee() {
         return rentFee;
     }
     
@@ -173,7 +173,7 @@ public class VenueModel {
      * sets venue rent fee by passing parameter initialized to global variable venue rent fee
      * @param rentFee 
      */
-    public void setRentFee(int rentFee) {
+    public void setRentFee(double rentFee) {
         this.rentFee = rentFee;
     }
 

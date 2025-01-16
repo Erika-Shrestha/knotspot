@@ -24,8 +24,7 @@ public class ValidationUtil {
     private static final Pattern NAME_PATTERN = Pattern.compile("^[A-Za-z][A-Za-z\\s'-]{3,49}$");
     private static final Pattern ADDRESS_PATTERN = Pattern.compile("^[a-zA-Z ]{4,30}$");
     private static final Pattern CONTACT_PATTERN = Pattern.compile("^98\\d{8}$");
-    private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d+$");
-    private static final Pattern ALPHANUMERIC_PATTERN = Pattern.compile("^[a-zA-Z0-9]+$");  
+    private static final Pattern NUMBER_PATTERN = Pattern.compile("^\\d+$");  
     private static final Pattern ALPHABETIC_PATTERN = Pattern.compile("^[A-Za-z\\s]+$");
     
     /**
@@ -96,12 +95,6 @@ public class ValidationUtil {
         
     }
 
-    public static void isAlphaNumeric(String value, String attribute) {
-        if(!ALPHANUMERIC_PATTERN.matcher(String.valueOf(value)).matches()){
-            throw new NumberFormatException("input value in number");
-        }
-    }
-    
     public static void isAlphabetic(String value, String attribute) {
         if(!ALPHABETIC_PATTERN.matcher(value).matches()){
              throw new NumberFormatException("use only alpha characters");
