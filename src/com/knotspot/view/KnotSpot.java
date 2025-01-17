@@ -13,6 +13,7 @@ import javax.swing.table.JTableHeader;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.table.DefaultTableCellRenderer;
+import java.util.Stack;
 import javax.swing.SwingConstants;
 
 import com.knotspot.model.VenueModel;
@@ -39,6 +40,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private List<VenueModel> venueDetails;
     private DefaultTableModel defaultTableModel;
+    private Stack<VenueModel> recentlyAddedVenue;
 
     /**
      * Creates new form knotSpotInterface sets the jFrame location to corner
@@ -53,10 +55,11 @@ public class KnotSpot extends javax.swing.JFrame {
         venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(renderColumnPnl));
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(editColumnPnl));
         venueDetails = new LinkedList<>();
+        recentlyAddedVenue= new Stack<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         defaultInitializedTableData();
+        displayTableOnHome(recentlyAddedVenue);
         revenueCount(venueDetails);
-        displayTableOnHome(venueDetails);
         filterPopUpPnl.setVisible(false);
         getRootPane().setGlassPane(new JComponent() {
             @Override
@@ -144,7 +147,7 @@ public class KnotSpot extends javax.swing.JFrame {
         navigationContainerPnl = new javax.swing.JPanel();
         adminDashboardPagesPnl = new javax.swing.JPanel();
         homePagePnl = new javax.swing.JPanel();
-        recentDataScrollBr = new javax.swing.JScrollPane();
+        recentDataScrollPane = new javax.swing.JScrollPane();
         frontDisplayTable = new javax.swing.JTable();
         displayRealTimeDataPnl = new javax.swing.JPanel();
         totalVenuePnl = new javax.swing.JPanel();
@@ -880,8 +883,9 @@ public class KnotSpot extends javax.swing.JFrame {
         homePagePnl.setBackground(new java.awt.Color(250, 245, 239));
         homePagePnl.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        recentDataScrollBr.setBackground(new java.awt.Color(255, 255, 255));
-        recentDataScrollBr.setForeground(new java.awt.Color(255, 255, 255));
+        recentDataScrollPane.setBackground(new java.awt.Color(255, 255, 255));
+        recentDataScrollPane.setForeground(new java.awt.Color(255, 255, 255));
+        recentDataScrollPane.getViewport().setBackground(new java.awt.Color(255, 255, 255));
 
         DefaultTableCellRenderer headerRender = new DefaultTableCellRenderer();
         headerRender.setBackground(Color.decode("#0E1E3F"));
@@ -901,7 +905,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false
@@ -921,9 +925,9 @@ public class KnotSpot extends javax.swing.JFrame {
         frontDisplayTable.setShowHorizontalLines(true);
         frontDisplayTable.getTableHeader().setReorderingAllowed(false);
         frontDisplayTable.setVerifyInputWhenFocusTarget(false);
-        recentDataScrollBr.setViewportView(frontDisplayTable);
+        recentDataScrollPane.setViewportView(frontDisplayTable);
 
-        homePagePnl.add(recentDataScrollBr, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 333, 1040, 340));
+        homePagePnl.add(recentDataScrollPane, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 333, 1040, 340));
 
         displayRealTimeDataPnl.setBackground(new java.awt.Color(14, 30, 63));
 
@@ -1492,7 +1496,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Integer.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.Object.class
             };
             boolean[] canEdit = new boolean [] {
                 false, false, false, false, false, false, false, false, true
@@ -1521,6 +1525,8 @@ public class KnotSpot extends javax.swing.JFrame {
             venueModifyTbl.getColumnModel().getColumn(0).setPreferredWidth(40);
             venueModifyTbl.getColumnModel().getColumn(5).setPreferredWidth(130);
         }
+
+        insertDataTableScrlPane.getViewport().setBackground(new java.awt.Color(255, 255, 255));
 
         refreshBtn.setBackground(new java.awt.Color(176, 197, 202));
         refreshBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/refreshiconimage.png"))); // NOI18N
@@ -2572,65 +2578,65 @@ public class KnotSpot extends javax.swing.JFrame {
         firstImgClientLbl.setText("- Suman & Rajen (Jan. 2023)");
         venueGalleryPagePnl.add(firstImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, -1, 30));
 
-        gallerySecondImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/gallerysecondimage.jpg"))); // NOI18N
-        venueGalleryPagePnl.add(gallerySecondImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 340, 220));
+        gallerySecondImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/gallerysecondimage (2).jpg"))); // NOI18N
+        venueGalleryPagePnl.add(gallerySecondImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 220, 400, 220));
 
         secondImgBoldWordLbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         secondImgBoldWordLbl.setText("T");
         venueGalleryPagePnl.add(secondImgBoldWordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 90, -1, -1));
 
         secondImgFirstLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        secondImgFirstLineLbl.setText("he  company also assist in table settings and catering ");
-        venueGalleryPagePnl.add(secondImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 340, -1));
+        secondImgFirstLineLbl.setText("he  company also assist in table settings and catering for our ");
+        venueGalleryPagePnl.add(secondImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 380, -1));
 
         secondImgSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        secondImgSecondLineLbl.setText("for our venues. Below, is a perfect glimpse of our work.");
-        venueGalleryPagePnl.add(secondImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 340, 20));
+        secondImgSecondLineLbl.setText("venues. Below, is a perfect glimpse of our work. \"Commendable");
+        venueGalleryPagePnl.add(secondImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 130, 400, 20));
 
         secondImgThirdLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        secondImgThirdLineLbl.setText("\"Commendable creativity and decor skills i've ever seen");
-        venueGalleryPagePnl.add(secondImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 350, 20));
+        secondImgThirdLineLbl.setText("creativity and decor skills i've ever seen I am glad i chose  you");
+        venueGalleryPagePnl.add(secondImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 150, 390, 20));
 
         secondImgFourthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        secondImgFourthLineLbl.setText("I am glad i chose you guys for my big day!\"");
+        secondImgFourthLineLbl.setText("guys for my big day!\"");
         venueGalleryPagePnl.add(secondImgFourthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 170, 340, 20));
 
         secondImgClientLbl.setText("- Aishnavi &  Samay (Dec. 2024)");
-        venueGalleryPagePnl.add(secondImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 190, -1, 30));
+        venueGalleryPagePnl.add(secondImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 190, -1, 30));
 
         galleryThirdImgLbl.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/knotspot/resource/gallerythirdimage.jpg"))); // NOI18N
         venueGalleryPagePnl.add(galleryThirdImgLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 460, 490, 210));
 
         thirdImgBoldWordLbl.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         thirdImgBoldWordLbl.setText("H");
-        venueGalleryPagePnl.add(thirdImgBoldWordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 450, -1, -1));
+        venueGalleryPagePnl.add(thirdImgBoldWordLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 450, -1, -1));
 
         thirdImgFirstLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         thirdImgFirstLineLbl.setText("aving a comfort place is what we aim to provide");
-        venueGalleryPagePnl.add(thirdImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 470, 300, -1));
+        venueGalleryPagePnl.add(thirdImgFirstLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 470, 300, -1));
 
         thirdImgSecondLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        thirdImgSecondLineLbl.setText("our bride and groom. So, client who prefer indoor cosy");
-        venueGalleryPagePnl.add(thirdImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 490, 340, -1));
+        thirdImgSecondLineLbl.setText("our bride and groom. So, client who prefer indoor ");
+        venueGalleryPagePnl.add(thirdImgSecondLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 490, 340, -1));
 
         thirdImgThirdLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        thirdImgThirdLineLbl.setText("place can easily be accomodated with our available ");
-        venueGalleryPagePnl.add(thirdImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 510, 340, -1));
+        thirdImgThirdLineLbl.setText(" you guys place can easily be accomodated with our ");
+        venueGalleryPagePnl.add(thirdImgThirdLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 510, 340, -1));
 
         thirdImgFourthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        thirdImgFourthLineLbl.setText("venues. \"I was anxious to find a perfect venue with ");
-        venueGalleryPagePnl.add(thirdImgFourthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 530, 340, -1));
+        thirdImgFourthLineLbl.setText("available venues. \"I was anxious to find a perfect ");
+        venueGalleryPagePnl.add(thirdImgFourthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 530, 350, -1));
 
         thirdImgFifthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        thirdImgFifthLineLbl.setText("both indoor spacing and fancy. However, knotspot made");
-        venueGalleryPagePnl.add(thirdImgFifthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 550, 350, -1));
+        thirdImgFifthLineLbl.setText("venue with both indoor spacing and fancy. However, ");
+        venueGalleryPagePnl.add(thirdImgFifthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 550, 350, -1));
 
         thirdImgSixthLineLbl.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        thirdImgSixthLineLbl.setText("made my dream come true.\"");
-        venueGalleryPagePnl.add(thirdImgSixthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 570, 350, -1));
+        thirdImgSixthLineLbl.setText("knotspot made my dream come true.\"");
+        venueGalleryPagePnl.add(thirdImgSixthLineLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 570, 350, -1));
 
         thirdImgClientLbl.setText("- Sandhya & Nagen (July. 2024)");
-        venueGalleryPagePnl.add(thirdImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 590, -1, 30));
+        venueGalleryPagePnl.add(thirdImgClientLbl, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 610, -1, 30));
 
         adminDashboardPagesPnl.add(venueGalleryPagePnl, "VenueGalleryPage");
 
@@ -3053,6 +3059,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void addDemoVenue(VenueModel venue) {
         venueDetails.add(venue);
+        recentlyAddedVenue.push(venue);
         defaultTableModel.addRow(new Object[]{venue.getVenueId(), venue.getVenueName(), venue.getAddress(), venue.getCity(), venue.getContactNumber(), venue.getVenueType(), venue.getCapacity(), venue.getRentFee()});
         DefaultTableCellRenderer columnDataRenderer = new DefaultTableCellRenderer();
         columnDataRenderer.setHorizontalAlignment(SwingConstants.LEFT);
@@ -3063,13 +3070,14 @@ public class KnotSpot extends javax.swing.JFrame {
         totalVenueNumberLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
     }
 
-    private void displayTableOnHome(List<VenueModel> venueDetails) {
+    private void displayTableOnHome(Stack<VenueModel> recentlyAddedVenue) {
 
         DefaultTableModel frontTableModel = (DefaultTableModel) frontDisplayTable.getModel();
 
         frontTableModel.setRowCount(0);
-        for (VenueModel venues : venueDetails) {
-            frontTableModel.addRow(new Object[]{venues.getVenueId(), venues.getVenueName(), venues.getAddress(), venues.getCity(), venues.getContactNumber(), venues.getVenueType(), venues.getCapacity(), venues.getRentFee()});
+        for (int i = recentlyAddedVenue.size() - 1; i>=0; i--) {
+            VenueModel venue = recentlyAddedVenue.get(i);
+            frontTableModel.addRow(new Object[]{venue.getVenueId(), venue.getVenueName(), venue.getAddress(), venue.getCity(), venue.getContactNumber(), venue.getVenueType(), venue.getCapacity(), venue.getRentFee()});
 
         }
 
@@ -3358,7 +3366,7 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_inputVenueIdTxtFldActionPerformed
 
     private void addVenueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVenueBtnActionPerformed
-        // TODO add your handling code here:
+       
         int venueId = 0;
         String venueName = null;
         String venueAddress = null;
@@ -3418,7 +3426,8 @@ public class KnotSpot extends javax.swing.JFrame {
             if (!ValidationUtil.isDuplicate(venueDetails, venueId, venueContactNumber)) {
                 VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                 venueDetails.add(venue);
-                displayTableOnHome(venueDetails);
+                recentlyAddedVenue.push(venue);
+                displayTableOnHome(recentlyAddedVenue);
                 //load data to table
                 defaultTableModel.addRow(new Object[]{venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee});
                 showPopDialog("The venue is added successfully", "New Venue Entry", JOptionPane.INFORMATION_MESSAGE);
@@ -3463,7 +3472,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 venueContactOnPopUpMsgFld.setText(venueModifyTbl.getValueAt(selectedRow, 4).toString());
                 editComboBoxItem(inputVenueTypeComboBx1, selectedRow, 5);
                 inputVenueCapacitySlider1.setValue(Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString()));
-                inputPerPlatePriceSlider1.setValue((Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / (Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString())));
+                inputPerPlatePriceSlider1.setValue((int)((Double.parseDouble(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / (Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString()))));
 
             }
         }
@@ -3491,9 +3500,10 @@ public class KnotSpot extends javax.swing.JFrame {
                 for (VenueModel venues : venueDetails) {
                     if (venues.getVenueId() == selectedRowVenueId) {
                         venueDetails.remove(venues);
+                        recentlyAddedVenue.remove(venues);
                         totalVenueNumberLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
                         revenueCount(venueDetails);
-                        displayTableOnHome(venueDetails);
+                        displayTableOnHome(recentlyAddedVenue);
                         return;
                     }
                 }
@@ -3674,7 +3684,7 @@ public class KnotSpot extends javax.swing.JFrame {
         long presentVenueContact = Long.parseLong(venueModifyTbl.getValueAt(selectedRow, 4).toString());
         String presentVenueType = venueModifyTbl.getValueAt(selectedRow, 5).toString();
         int presentVenueCapacity = Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString());
-        int presentVenuePerPlatePrice = (Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / presentVenueCapacity;
+        int presentVenuePerPlatePrice = (int)((Double.parseDouble(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / presentVenueCapacity);
 
         //to check no input changes
         if (presentVenueName.equals(venueNameOnPopUpMsgFld.getText()) && presentVenueAddress.equals(venueAddressOnPopUpMsgFld.getText()) && presentVenueContact==Long.parseLong(venueContactOnPopUpMsgFld.getText()) && presentVenueCity.equals(inputVenueCityComboBx1.getSelectedItem().toString()) && presentVenueType.equals(String.valueOf(inputVenueTypeComboBx1.getSelectedItem().toString())) && presentVenueCapacity == inputVenueCapacitySlider1.getValue() && presentVenuePerPlatePrice == inputPerPlatePriceSlider1.getValue()) {
@@ -3749,12 +3759,11 @@ public class KnotSpot extends javax.swing.JFrame {
                     venueModifyTbl.setValueAt(editedVenueType, selectedRow, 5);
                     venueModifyTbl.setValueAt(editedVenueCapacity, selectedRow, 6);
                     venueModifyTbl.setValueAt(editedVenueRentFee, selectedRow, 7);
-
                     showPopDialog("The venue has been successfully updated.", "Successful update", JOptionPane.INFORMATION_MESSAGE);
                     getRootPane().getGlassPane().setVisible(false);
                     popUpDialog.setVisible(false);
                     revenueCount(venueDetails);
-                    displayTableOnHome(venueDetails);
+                    displayTableOnHome(recentlyAddedVenue);
 
                 }
 
@@ -4118,7 +4127,7 @@ public class KnotSpot extends javax.swing.JFrame {
     private javax.swing.JLabel phoneIconLbl;
     private javax.swing.JDialog popUpDialog;
     private javax.swing.JLabel profileLbl;
-    private javax.swing.JScrollPane recentDataScrollBr;
+    private javax.swing.JScrollPane recentDataScrollPane;
     private javax.swing.JButton refreshBtn;
     private javax.swing.JButton removeVenueDetailsBtn;
     private javax.swing.JButton removeVenueDetailsBtn2;
