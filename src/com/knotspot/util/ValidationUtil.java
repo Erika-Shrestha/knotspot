@@ -99,7 +99,7 @@ public class ValidationUtil {
         isNullorEmpty(venueAddress, attribute);
         isAlphabetic(venueAddress, attribute);
         if(venueAddress.length()<=5 || venueAddress.length()>=31){
-            throw new IllegalArgumentException(attribute +" must be in between 4 and 31");
+            throw new IllegalArgumentException(attribute +" must be in between 4 and 30");
         }
         if (!ADDRESS_PATTERN.matcher(venueAddress).matches()){
             throw new IllegalArgumentException(attribute +" must be a proper address");

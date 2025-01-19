@@ -30,19 +30,30 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author LMU ID: 23048598 COLLEGE ID: 230024 ErikaShrestha
+ * @author LMU ID: 23048598 COLLEGE ID: 230024 ErikaShrestha The KnotSpot class
+ * represents the main user interface for the KnotSpot management system
+ * extending JFrame. This class manages the various components and actions
+ * within the user interface, including handling venue data, displaying tables,
+ * and controlling the layout transitions using a CardLayout. It provides
+ * methods for loading a loading screen, setting up table actions, and
+ * initializing venue data.
  */
 public class KnotSpot extends javax.swing.JFrame {
 
+    /*CardLayout for managing different pages in the system*/
     private CardLayout cardLayout;
     private CardLayout cardLayoutForadminDashboard;
+
+    //Absolute path for the image resources
     private final String absolutePathForImage = "C:/Users/eerii\\OneDrive - islingtoncollege.edu.np\\CWs\\KnotSpot\\src\\com\\knotspot\\resource\\";
 
+    /*List of venue details and a stack for recently added venues*/
     private List<VenueModel> venueDetails;
     private DefaultTableModel defaultTableModel;
     private Stack<VenueModel> recentlyAddedVenue;
 
     /**
+     * Constructor for the KnotSpot class that initializes the tables, etc
      * Creates new form knotSpotInterface sets the jFrame location to corner
      * calls the startProgress method to load the loading screen sets the value
      * of cell renderer and cell editor to column 8 (action) of the table type
@@ -55,12 +66,13 @@ public class KnotSpot extends javax.swing.JFrame {
         venueModifyTbl.getColumnModel().getColumn(8).setCellRenderer(new TableActionCellRenderer(renderColumnPnl));
         venueModifyTbl.getColumnModel().getColumn(8).setCellEditor(new TableActionCellEditor(editColumnPnl));
         venueDetails = new LinkedList<>();
-        recentlyAddedVenue= new Stack<>();
+        recentlyAddedVenue = new Stack<>();
         defaultTableModel = (DefaultTableModel) venueModifyTbl.getModel();
         defaultInitializedTableData();
         displayTableOnHome(recentlyAddedVenue);
         revenueCount(venueDetails);
         filterPopUpPnl.setVisible(false);
+        // Set up a glass pane for the JFrame, adding a semi-transparent overlay.
         getRootPane().setGlassPane(new JComponent() {
             @Override
             public void paintComponent(Graphics g) {
@@ -3051,12 +3063,23 @@ public class KnotSpot extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Initializes demo venue data and adds it to the venueDetails and
+     * recentlyAddedVenue lists It also updates the venue table with the newly
+     * added venues
+     */
     private void defaultInitializedTableData() {
         addDemoVenue(new VenueModel(20423, "SmartPalace", "Basantapur", "kathmandu", 9823733980L, "Meeting Conference", 200, 23000));
         addDemoVenue(new VenueModel(20890, "VivahPalace", "Bouddha", "Dharan", 9823722970L, "Hall", 100, 30000));
         addDemoVenue(new VenueModel(20490, "TajPalace", "Lalitpur", "kathmandu", 9823733970L, "Hall", 120, 15000));
     }
 
+    /**
+     * Adds a venue to the venueDetails list, the recentlyAddedVenue stack, and
+     * updates the table with the venue's details
+     *
+     * @param venue the venue to be added
+     */
     private void addDemoVenue(VenueModel venue) {
         venueDetails.add(venue);
         recentlyAddedVenue.push(venue);
@@ -3070,12 +3093,21 @@ public class KnotSpot extends javax.swing.JFrame {
         totalVenueNumberLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
     }
 
+    /**
+     * Displays the recently added venues in the home screen table
+     * (frontDisplayTable) It updates the rows of the frontDisplayTable with
+     * data from the recentlyAddedVenue stack
+     *
+     * @param recentlyAddedVenue the stack containing recently added venues to
+     * be displayed
+     */
     private void displayTableOnHome(Stack<VenueModel> recentlyAddedVenue) {
 
         DefaultTableModel frontTableModel = (DefaultTableModel) frontDisplayTable.getModel();
 
         frontTableModel.setRowCount(0);
-        for (int i = recentlyAddedVenue.size() - 1; i>=0; i--) {
+        // Clear previous rows and add newly added venues in reverse order
+        for (int i = recentlyAddedVenue.size() - 1; i >= 0; i--) {
             VenueModel venue = recentlyAddedVenue.get(i);
             frontTableModel.addRow(new Object[]{venue.getVenueId(), venue.getVenueName(), venue.getAddress(), venue.getCity(), venue.getContactNumber(), venue.getVenueType(), venue.getCapacity(), venue.getRentFee()});
 
@@ -3083,6 +3115,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         DefaultTableCellRenderer columnDataRenderer = new DefaultTableCellRenderer();
         columnDataRenderer.setHorizontalAlignment(SwingConstants.LEFT);
+        /*Set items to left for specific columns in the table*/
         frontDisplayTable.getColumnModel().getColumn(0).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(4).setCellRenderer(columnDataRenderer);
         frontDisplayTable.getColumnModel().getColumn(6).setCellRenderer(columnDataRenderer);
@@ -3090,6 +3123,11 @@ public class KnotSpot extends javax.swing.JFrame {
 
     }
 
+    /**
+     * The progress bar displays text, image at certain threshold The worker
+     * simulates loading by incrementing progress and updating labels and images
+     * at set percentages
+     */
     private void startProgress() {
         javax.swing.SwingWorker<Void, Integer> worker = new javax.swing.SwingWorker<>() {
             @Override
@@ -3101,6 +3139,10 @@ public class KnotSpot extends javax.swing.JFrame {
                 return null;
             }
 
+            /**
+             * override method displaying different images and messages at
+             * various progress threshold
+             */
             @Override
             protected void process(java.util.List<Integer> chunks) {
                 int progress = chunks.get(chunks.size() - 1);
@@ -3138,6 +3180,10 @@ public class KnotSpot extends javax.swing.JFrame {
                 }
             }
 
+            /**
+             * Override method Once the progress reaches 100%, it switches to
+             * the "LoginScreen" using the loadScreen method
+             */
             @Override
             protected void done() {
                 loadScreen("LoginScreen");
@@ -3146,20 +3192,47 @@ public class KnotSpot extends javax.swing.JFrame {
         worker.execute();
     }
 
+    /**
+     * Switches the main container panel to display a different screen based on
+     * the given screen name
+     *
+     * @param screenName name of the screen to display in the container panel
+     */
     private void loadScreen(String screenName) {
         cardLayout = (CardLayout) containerPnl.getLayout();
         cardLayout.show(containerPnl, screenName);
     }
 
+    /**
+     * Switches the admin dashboard to a different page when AdminPage.
+     *
+     * @param screenName name of the screen to display in the admin dashboard.
+     */
     private void loadNavRelatedPage(String screenName) {
         cardLayoutForadminDashboard = (CardLayout) adminDashboardPagesPnl.getLayout();
         cardLayoutForadminDashboard.show(adminDashboardPagesPnl, screenName);
     }
 
+    /**
+     * Displays a pop-up dialog with the specified message, title, and message
+     * type.
+     *
+     * @param message message to display in the dialog.
+     * @param title title of the dialog.
+     * @param messageType type of message like INFORMATION_MESSAGE
+     */
     private void showPopDialog(String message, String title, int messageType) {
         JOptionPane.showMessageDialog(this, message, title, messageType);
     }
 
+    /**
+     * Updates the selected item in a combo box based on the value in type and
+     * city.
+     *
+     * @param comboBox combo box to update.
+     * @param selectedRow row of the table where the value is located.
+     * @param column column of the table where the value is located.
+     */
     private void editComboBoxItem(JComboBox comboBox, int selectedRow, int column) {
 
         int index = comboBox.getItemCount();
@@ -3171,6 +3244,12 @@ public class KnotSpot extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Calculates the total revenue from all venues and updates the revenue
+     * label regularly.
+     *
+     * @param venueDetails list of all venues to calculate the total revenue.
+     */
     private void revenueCount(List<VenueModel> venueDetails) {
         double totalRevenue = 0;
         for (VenueModel venues : venueDetails) {
@@ -3179,6 +3258,9 @@ public class KnotSpot extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Resets all input fields to their default values.
+     */
     private void resetInputDetails() {
         inputVenueIdTxtFld.setText("");
         inputVenueNameTxtFld.setText("");
@@ -3190,6 +3272,12 @@ public class KnotSpot extends javax.swing.JFrame {
         inputPerPlatePriceSlider.setValue(50);
     }
 
+    /**
+     * Loads the table data based on the provided list of venues, updating the
+     * table with the new data.
+     *
+     * @param venueDetails list of venues to be loaded into the table.
+     */
     private void loadTableData(List<VenueModel> venueDetails) {
 
         defaultTableModel.setRowCount(0);
@@ -3202,36 +3290,32 @@ public class KnotSpot extends javax.swing.JFrame {
 
 
     private void inputUsernameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_inputUsernameTxtFldActionPerformed
     /**
-     * The username and password field are stored in a variable the if-else
+     * The username and password field are stored in a variable. the if-else
      * condition checks the possibility of combine empty, single empty and if
      * not the username and password are compared to check if the predefined
      * password is typed at last sets all the text fields and check box to
      * unchecked and empty
      *
-     * @param evt
+     * @param evt the action event triggered by the login button click
      */
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginBtnActionPerformed
-        // TODO add your handling code here:
 
         String username = inputUsernameTxtFld.getText();
         String password = new String(inputPasswordPwdFld.getPassword());
         if (username.isEmpty() && password.isEmpty() || username.equals("Enter username") && password.equals("Enter password")) {
             ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
-            
 
         } else if (username.isEmpty() || username.equals("Enter username")) {
             ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             inputPasswordErrorPwdLbl.setText("");
-            
 
         } else if (password.isEmpty() || password.equals("Enter password")) {
             ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
             inputUsernameErrorLbl.setText("");
-            
 
         } else {
             boolean isValidUsername = username.equals("admin");
@@ -3262,35 +3346,55 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_loginBtnActionPerformed
 
     private void inputPasswordPwdFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_inputPasswordPwdFldActionPerformed
 
     private void inputVenueNameTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueNameTxtFldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_inputVenueNameTxtFldActionPerformed
 
     private void inputVenueAddressTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueAddressTxtFldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputVenueAddressTxtFldActionPerformed
 
+    }//GEN-LAST:event_inputVenueAddressTxtFldActionPerformed
+    /**
+     * Handles the mouse click event on the Manage Venue navigation panel.
+     * Changes the background color of the navigation panel to white, updates
+     * the label color to a dark shade, and loads the ManageVenuePage
+     *
+     * @param evt the mouse event triggered by the user click
+     */
     private void manageVenueNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVenueNavPnlMouseClicked
-        // TODO add your handling code here:
+
         manageVenueNavPnl.setBackground(Color.WHITE);
         manageVenueNavLbl.setForeground(Color.decode("#0E1E3F"));
         loadNavRelatedPage("ManageVenuePage");
     }//GEN-LAST:event_manageVenueNavPnlMouseClicked
-
+    /**
+     * Handles the mouse entered event on the Manage Venue navigation panel.
+     * Changes the background color of the panel and label to highlight them
+     * when hovered The label text color is updated to a dark shade for better
+     * visibility
+     *
+     * @param evt the mouse event triggered when the mouse enters the panel
+     */
     private void manageVenueNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVenueNavPnlMouseEntered
-        // TODO add your handling code here:
+
         manageVenueNavPnl.setBackground(Color.decode("#FFFFFF"));
         manageVenueNavLbl.setBackground(Color.decode("#FFFFFF"));
         manageVenueNavLbl.setForeground(Color.decode("#0E1E3F"));
 
 
     }//GEN-LAST:event_manageVenueNavPnlMouseEntered
-
+    /**
+     * Handles the mouse exited event on the Manage Venue navigation panel.
+     * Resets the background color of the panel and label to their default
+     * states and applies a white border at the bottom of the panel when the
+     * mouse exits
+     *
+     * @param evt the mouse event triggered when the mouse leaves the panel
+     */
     private void manageVenueNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageVenueNavPnlMouseExited
-        // TODO add your handling code here:
+
         manageVenueNavPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         manageVenueNavPnl.setBackground(Color.decode("#0E1E3F"));
         manageVenueNavLbl.setBackground(Color.decode("#0E1E3F"));
@@ -3298,33 +3402,58 @@ public class KnotSpot extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_manageVenueNavPnlMouseExited
-
+    /**
+     * Handles the mouse click event on the Settings navigation panel. Changes
+     * the background color of the panel to white and updates the label color to
+     * dark shade Then loads the SettingPage
+     *
+     * @param evt the mouse event triggered by the user click
+     */
     private void settingNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnlMouseClicked
-        // TODO add your handling code here:
+
         settingNavPnl.setBackground(Color.WHITE);
         settingNavPnl.setForeground(Color.decode("#0E1E3F"));
 
         loadNavRelatedPage("SettingPage");
     }//GEN-LAST:event_settingNavPnlMouseClicked
-
+    /**
+     * Handles the mouse entered event on the Settings navigation panel. Updates
+     * the background color of the panel and changes the label color to dark
+     * shade when the mouse hovers
+     *
+     * @param evt the mouse event triggered when the mouse enters the panel
+     */
     private void settingNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnlMouseEntered
-        // TODO add your handling code here:
+
         settingNavPnl.setBackground(Color.decode("#FFFFFF"));
         settingNavPnl.setBackground(Color.decode("#FFFFFF"));
         settingNavLbl.setForeground(Color.decode("#0E1E3F"));
     }//GEN-LAST:event_settingNavPnlMouseEntered
-
+    /**
+     * Handles the mouse exited event on the Settings navigation panel. Resets
+     * the background color and label color when the mouse exits the panel Also
+     * adds a white border at the bottom of the panel
+     *
+     * @param evt the mouse event triggered when the mouse leaves the panel
+     */
     private void settingNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_settingNavPnlMouseExited
-        // TODO add your handling code here:
+
         settingNavPnl.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 1, 0, new java.awt.Color(255, 255, 255)));
         settingNavPnl.setBackground(Color.decode("#0E1E3F"));
         settingNavLbl.setBackground(Color.decode("#0E1E3F"));
         settingNavLbl.setForeground(Color.decode("#FFFFFF"));
         settingNavPnl.setForeground(Color.decode("#FFFFFF"));
     }//GEN-LAST:event_settingNavPnlMouseExited
-
+    /**
+     * Handles the mouse click event on the Log Out navigation panel. Logs out
+     * the user by loading the LoginScreen, resets the background and text color
+     * of the panel and label Validates the form fields, clears the input
+     * fields, and resets the details before loading the HomePage
+     *
+     * @param evt the mouse event triggered by the user click
+     */
     private void logOutNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseClicked
-        // TODO add your handling code here:
+
         loadScreen("LoginScreen");
         logOutNavPnl.setBackground(Color.WHITE);
         logOutNavPnl.setForeground(Color.decode("#0E1E3F"));
@@ -3346,27 +3475,48 @@ public class KnotSpot extends javax.swing.JFrame {
         loadNavRelatedPage("HomePage");
 
     }//GEN-LAST:event_logOutNavPnlMouseClicked
-
+    /**
+     * Handles the mouse entered event on the "Log Out" navigation panel Changes
+     * the background and text color of the panel and label when the mouse
+     * hovers over it
+     *
+     * @param evt the mouse event triggered when the mouse enters the panel
+     */
     private void logOutNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseEntered
-        // TODO add your handling code here:
+
         logOutNavPnl.setBackground(Color.WHITE);
         logOutNavPnl.setForeground(Color.decode("#0E1E3F"));
         logOutNavLbl.setForeground(Color.decode("#0E1E3F"));
     }//GEN-LAST:event_logOutNavPnlMouseEntered
-
+    /**
+     * Handles the mouse exited event on the "Log Out" navigation panel. Resets
+     * the background and text color of the panel and label to their default
+     * state when the mouse leaves the panel
+     *
+     * @param evt the mouse event triggered when the mouse leaves the panel
+     */
     private void logOutNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseExited
-        // TODO add your handling code here:
+
         logOutNavPnl.setBackground(Color.decode("#0E1E3F"));
         logOutNavPnl.setForeground(Color.WHITE);
         logOutNavLbl.setForeground(Color.WHITE);
     }//GEN-LAST:event_logOutNavPnlMouseExited
 
     private void inputVenueIdTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueIdTxtFldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputVenueIdTxtFldActionPerformed
 
+    }//GEN-LAST:event_inputVenueIdTxtFldActionPerformed
+    /**
+     * Handles the action when the "Add Venue" button is clicked. Validates the
+     * input fields for the venue details including ID, name, address, contact
+     * number, etc. If validation passes, creates a new venue, adds it to the
+     * venue details, and updates the table and other UI components. If the
+     * venue is a duplicate, an error message is shown and the fields are reset.
+     *
+     * @param evt the action event triggered by the button click
+     */
     private void addVenueBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addVenueBtnActionPerformed
-       
+
+        /*initialize the attributes*/
         int venueId = 0;
         String venueName = null;
         String venueAddress = null;
@@ -3379,6 +3529,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         boolean isValid = true;
 
+        /*validation for input fields*/
         try {
             ValidationUtil.isIdValid(inputVenueIdTxtFld.getText(), "ID");
             venueId = Integer.parseInt(inputVenueIdTxtFld.getText());
@@ -3426,6 +3577,7 @@ public class KnotSpot extends javax.swing.JFrame {
             if (!ValidationUtil.isDuplicate(venueDetails, venueId, venueContactNumber)) {
                 VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                 venueDetails.add(venue);
+                //to add venue at top of the stack
                 recentlyAddedVenue.push(venue);
                 displayTableOnHome(recentlyAddedVenue);
                 //load data to table
@@ -3445,20 +3597,33 @@ public class KnotSpot extends javax.swing.JFrame {
     }//GEN-LAST:event_addVenueBtnActionPerformed
 
     private void inputVenueContactTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputVenueContactTxtFldActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_inputVenueContactTxtFldActionPerformed
 
+    }//GEN-LAST:event_inputVenueContactTxtFldActionPerformed
+    /**
+     * Handles the action when the Show Password checkbox is selected or
+     * deselected. If selected, the password field will display the password as
+     * plain text If deselected, the password will be hidden
+     *
+     * @param evt the action event triggered by the checkbox selection change
+     */
     private void showPwdCheckBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showPwdCheckBxActionPerformed
-        // TODO add your handling code here:
+
         if (showPwdCheckBx.isSelected()) {
             inputPasswordPwdFld.setEchoChar((char) 0);
         } else {
-            inputPasswordPwdFld.setEchoChar('\u2022');
+            inputPasswordPwdFld.setEchoChar('\u2022'); //to dot symbol
         }
     }//GEN-LAST:event_showPwdCheckBxActionPerformed
-
+    /**
+     * Handles the action when the Edit Venue Details button is clicked.
+     * Retrieves the selected venue from the table and populates the input
+     * fields in the popup dialog Opens a dialog where the user can edit the
+     * venue details
+     *
+     * @param evt the action event triggered by the button click
+     */
     private void editVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editVenueDetailsBtnActionPerformed
-        // TODO add your handling code here:
+
         //to get selected row into the text field
         int rows = venueModifyTbl.getRowCount();
         int selectedRow = venueModifyTbl.getSelectedRow();
@@ -3472,7 +3637,7 @@ public class KnotSpot extends javax.swing.JFrame {
                 venueContactOnPopUpMsgFld.setText(venueModifyTbl.getValueAt(selectedRow, 4).toString());
                 editComboBoxItem(inputVenueTypeComboBx1, selectedRow, 5);
                 inputVenueCapacitySlider1.setValue(Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString()));
-                inputPerPlatePriceSlider1.setValue((int)((Double.parseDouble(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / (Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString()))));
+                inputPerPlatePriceSlider1.setValue((int) ((Double.parseDouble(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / (Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString()))));
 
             }
         }
@@ -3481,9 +3646,16 @@ public class KnotSpot extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_editVenueDetailsBtnActionPerformed
-
+    /**
+     * Handles the action when the Remove Venue Details button is clicked.
+     * Prompts the user for confirmation before removing the selected venue from
+     * the table and the venue list Updates the venue count and refreshes the UI
+     * after successful removal
+     *
+     * @param evt the action event triggered by the button click
+     */
     private void removeVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtnActionPerformed
-        // TODO add your handling code here:
+        //to stop interaction with other components
         if (venueModifyTbl.isEditing()) {
             venueModifyTbl.getCellEditor().stopCellEditing();
 
@@ -3516,45 +3688,86 @@ public class KnotSpot extends javax.swing.JFrame {
     private void venueModifyTblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_venueModifyTblMouseClicked
 
     }//GEN-LAST:event_venueModifyTblMouseClicked
-
+    /**
+     * Handles the mouse click event on the About Us navigation panel. Changes
+     * the panel and label color and loads the About Us page
+     *
+     * @param evt the mouse event triggered by the user click
+     */
     private void aboutUsNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsNavPnlMouseClicked
-        // TODO add your handling code here:
+
         aboutUsNavPnl.setBackground(Color.WHITE);
         aboutUsNavLbl.setForeground(Color.decode("#0E1E3F"));
         loadNavRelatedPage("AboutUsPage");
     }//GEN-LAST:event_aboutUsNavPnlMouseClicked
-
+    /**
+     * Handles the mouse entered event on the About Us navigation panel. Changes
+     * the background color and label text color when the mouse hovers over the
+     * panel
+     *
+     * @param evt the mouse event triggered when the mouse enters the panel
+     */
     private void aboutUsNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsNavPnlMouseEntered
-        // TODO add your handling code here:
+
         aboutUsNavPnl.setBackground(Color.WHITE);
         aboutUsNavLbl.setForeground(Color.decode("#0E1E3F"));
     }//GEN-LAST:event_aboutUsNavPnlMouseEntered
-
+    /**
+     * Handles the mouse exited event on the About Us navigation panel. Resets
+     * the background color and label text color to default when the mouse exits
+     * the panel
+     *
+     * @param evt the mouse event triggered when the mouse leaves the panel
+     */
     private void aboutUsNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_aboutUsNavPnlMouseExited
-        // TODO add your handling code here:
+
         aboutUsNavPnl.setBackground(Color.decode("#0E1E3F"));
         aboutUsNavLbl.setForeground(Color.WHITE);
     }//GEN-LAST:event_aboutUsNavPnlMouseExited
-
+    /**
+     * Handles the mouse click event on the Venue Gallery navigation panel.
+     * Changes the panel and label color and loads the Venue Gallery page.
+     *
+     * @param evt the mouse event triggered by the user click
+     */
     private void venueGalleryNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_venueGalleryNavPnlMouseClicked
-        // TODO add your handling code here:
+
         venueGalleryNavPnl.setBackground(Color.WHITE);
         venueGalleryNavLbl.setForeground(Color.decode("#0E1E3F"));
         loadNavRelatedPage("VenueGalleryPage");
     }//GEN-LAST:event_venueGalleryNavPnlMouseClicked
-
+    /**
+     * Handles the mouse entered event on the Venue Gallery navigation panel.
+     * Changes the background color and label text color when the mouse hovers
+     * over the panel
+     *
+     * @param evt the mouse event triggered when the mouse enters the panel
+     */
     private void venueGalleryNavPnlMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_venueGalleryNavPnlMouseEntered
-        // TODO add your handling code here:
+
         venueGalleryNavPnl.setBackground(Color.WHITE);
         venueGalleryNavLbl.setForeground(Color.decode("#0E1E3F"));
     }//GEN-LAST:event_venueGalleryNavPnlMouseEntered
-
+    /**
+     * Handles the mouse exited event on the Venue Gallery navigation panel.
+     * Resets the background color and label text color to default when the
+     * mouse exits the panel
+     *
+     * @param evt the mouse event triggered when the mouse leaves the panel
+     */
     private void venueGalleryNavPnlMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_venueGalleryNavPnlMouseExited
 
         venueGalleryNavPnl.setBackground(Color.decode("#0E1E3F"));
         venueGalleryNavLbl.setForeground(Color.WHITE);
     }//GEN-LAST:event_venueGalleryNavPnlMouseExited
-
+    /**
+     * Handles the mouse click event on the logout label. Loads the login screen
+     * Resets input details and validation colors for venue-related fields
+     * Resets the username and password fields to their placeholder values if
+     * empty Loads the "HomePage" after logging out
+     *
+     * @param evt The mouse event triggered by clicking the logout label
+     */
     private void logOutNavLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavLblMouseClicked
         loadScreen("LoginScreen");
         resetInputDetails();
@@ -3573,12 +3786,24 @@ public class KnotSpot extends javax.swing.JFrame {
         }
         loadNavRelatedPage("HomePage");
     }//GEN-LAST:event_logOutNavLblMouseClicked
-
+    /**
+     * Updates the displayed venue capacity value when the venue capacity slider
+     * is adjusted.
+     *
+     * @param evt The change event triggered by adjusting the venue capacity
+     * slider.
+     */
     private void inputVenueCapacitySliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputVenueCapacitySliderStateChanged
 
         capacityValueDisplayLbl.setText(String.valueOf(inputVenueCapacitySlider.getValue()));
     }//GEN-LAST:event_inputVenueCapacitySliderStateChanged
-
+    /**
+     * Updates the displayed per plate price value when the per plate price
+     * slider is adjusted.
+     *
+     * @param evt The change event triggered by adjusting the per plate price
+     * slider.
+     */
     private void inputPerPlatePriceSliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputPerPlatePriceSliderStateChanged
 
         perPlatePriceDisplayLbl.setText(String.valueOf(inputPerPlatePriceSlider.getValue()));
@@ -3591,6 +3816,14 @@ public class KnotSpot extends javax.swing.JFrame {
     private void removeVenueDetailsBtn2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeVenueDetailsBtn2ActionPerformed
 
     }//GEN-LAST:event_removeVenueDetailsBtn2ActionPerformed
+    /**
+     * Handles the action event for selecting the Light Mode radio button.
+     * Changes the background color of multiple panels to a light color scheme
+     * when Light Mode is selected
+     *
+     * @param evt The action event triggered by selecting the Light Mode radio
+     * button
+     */
 
     private void selectLightModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLightModeRadioBtnActionPerformed
 
@@ -3603,7 +3836,14 @@ public class KnotSpot extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_selectLightModeRadioBtnActionPerformed
-
+    /**
+     * Handles the action event for selecting the Dark Mode radio button.
+     * Changes the background color of multiple panels to a dark color scheme
+     * when Dark Mode is selected
+     *
+     * @param evt The action event triggered by selecting the Dark Mode radio
+     * button
+     */
     private void selectDarkModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectDarkModeRadioBtnActionPerformed
 
         if (selectDarkModeRadioBtn.isSelected() == true) {
@@ -3615,7 +3855,13 @@ public class KnotSpot extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_selectDarkModeRadioBtnActionPerformed
-
+    /**
+     * Handles the action event for the Edit Blog button. Checks if the blog
+     * text area is empty or not Displays an appropriate message depending on
+     * whether the blog content is provided or not
+     *
+     * @param evt The action event triggered by clicking the "Edit Blog" button
+     */
     private void editForBlogBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editForBlogBtnActionPerformed
 
         if (editBlogTxtArea.getText().isBlank()) {
@@ -3630,12 +3876,25 @@ public class KnotSpot extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_totalVenueNumberLblInputMethodTextChanged
-
+    /**
+     * Handles the mouse click event for the small admin dashboard icon label.
+     * Loads the HomePage related page when the icon is clicked
+     *
+     * @param evt The mouse event triggered by clicking the admin dashboard
+     * small icon label
+     */
     private void adminDashboardSmallIconLblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminDashboardSmallIconLblMouseClicked
 
         loadNavRelatedPage("HomePage");
     }//GEN-LAST:event_adminDashboardSmallIconLblMouseClicked
-
+    /**
+     * Handles the focus gained event for the username text field. Clears the
+     * placeholder text ("Enter username") and sets the text field color to
+     * black when the field gains focus
+     *
+     * @param evt The focus event triggered when the username text field gains
+     * focus
+     */
     private void inputUsernameTxtFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldFocusGained
 
         if (inputUsernameTxtFld.getText().equals("Enter username")) {
@@ -3643,7 +3902,14 @@ public class KnotSpot extends javax.swing.JFrame {
             inputUsernameTxtFld.setForeground(Color.decode("#000000"));
         }
     }//GEN-LAST:event_inputUsernameTxtFldFocusGained
-
+    /**
+     * Handles the focus lost event for the username text field. Resets the
+     * placeholder text ("Enter username") and sets the text field color to gray
+     * when the field loses focus
+     *
+     * @param evt The focus event triggered when the username text field loses
+     * focus
+     */
     private void inputUsernameTxtFldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputUsernameTxtFldFocusLost
 
         if (inputUsernameTxtFld.getText().equals("")) {
@@ -3651,7 +3917,14 @@ public class KnotSpot extends javax.swing.JFrame {
             inputUsernameTxtFld.setForeground(Color.decode("#CCCCCC"));
         }
     }//GEN-LAST:event_inputUsernameTxtFldFocusLost
-
+    /**
+     * Handles the focus gained event for the password password field. Clears
+     * the placeholder text ("Enter password") and sets the password field color
+     * to black when the field gains focus Sets the echo character to the bullet
+     * (•) for the password field
+     *
+     * @param evt The focus event triggered when the password field gains focus
+     */
     private void inputPasswordPwdFldFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldFocusGained
 
         if (String.valueOf(inputPasswordPwdFld.getPassword()).equals("Enter password")) {
@@ -3660,7 +3933,14 @@ public class KnotSpot extends javax.swing.JFrame {
             inputPasswordPwdFld.setEchoChar('\u2022');
         }
     }//GEN-LAST:event_inputPasswordPwdFldFocusGained
-
+    /**
+     * Handles the focus lost event for the password password field. Resets the
+     * placeholder text ("Enter password") and sets the password field color to
+     * gray when the field loses focus Resets the echo character to the default
+     * (no character) for the password field
+     *
+     * @param evt The focus event triggered when the password field loses focus
+     */
     private void inputPasswordPwdFldFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_inputPasswordPwdFldFocusLost
 
         if (String.valueOf(inputPasswordPwdFld.getPassword()).equals("")) {
@@ -3673,7 +3953,18 @@ public class KnotSpot extends javax.swing.JFrame {
     private void venueAddressOnPopUpMsgFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_venueAddressOnPopUpMsgFldActionPerformed
 
     }//GEN-LAST:event_venueAddressOnPopUpMsgFldActionPerformed
-
+    /**
+     * Handles the action event for the update venue details button. Retrieves
+     * the existing venue details from the selected row in the venueModifyTbl
+     * Compares the existing values with the updated input fields to check if
+     * any changes were made If changes are detected, validates the input
+     * fields, and if all inputs are valid, prompts the user for confirmation to
+     * update the venue details If confirmed, updates the venue details in the
+     * venue list and the table Displays appropriate success or warning messages
+     *
+     * @param evt The action event triggered when the update venue details
+     * button is clicked
+     */
     private void updateVenueDetailsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateVenueDetailsBtnActionPerformed
 
         //presented data 
@@ -3684,10 +3975,10 @@ public class KnotSpot extends javax.swing.JFrame {
         long presentVenueContact = Long.parseLong(venueModifyTbl.getValueAt(selectedRow, 4).toString());
         String presentVenueType = venueModifyTbl.getValueAt(selectedRow, 5).toString();
         int presentVenueCapacity = Integer.parseInt(venueModifyTbl.getValueAt(selectedRow, 6).toString());
-        int presentVenuePerPlatePrice = (int)((Double.parseDouble(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / presentVenueCapacity);
+        int presentVenuePerPlatePrice = (int) ((Double.parseDouble(venueModifyTbl.getValueAt(selectedRow, 7).toString())) / presentVenueCapacity);
 
         //to check no input changes
-        if (presentVenueName.equals(venueNameOnPopUpMsgFld.getText()) && presentVenueAddress.equals(venueAddressOnPopUpMsgFld.getText()) && presentVenueContact==Long.parseLong(venueContactOnPopUpMsgFld.getText()) && presentVenueCity.equals(inputVenueCityComboBx1.getSelectedItem().toString()) && presentVenueType.equals(String.valueOf(inputVenueTypeComboBx1.getSelectedItem().toString())) && presentVenueCapacity == inputVenueCapacitySlider1.getValue() && presentVenuePerPlatePrice == inputPerPlatePriceSlider1.getValue()) {
+        if (presentVenueName.equals(venueNameOnPopUpMsgFld.getText()) && presentVenueAddress.equals(venueAddressOnPopUpMsgFld.getText()) && presentVenueContact == Long.parseLong(venueContactOnPopUpMsgFld.getText()) && presentVenueCity.equals(inputVenueCityComboBx1.getSelectedItem().toString()) && presentVenueType.equals(String.valueOf(inputVenueTypeComboBx1.getSelectedItem().toString())) && presentVenueCapacity == inputVenueCapacitySlider1.getValue() && presentVenuePerPlatePrice == inputPerPlatePriceSlider1.getValue()) {
             ValidationUtil.venueValidateColor(venueNameOnPopUpMsgFld, inputVenueNameErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Venue Name");
             ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Address");
             ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Contact Number");
@@ -3760,6 +4051,7 @@ public class KnotSpot extends javax.swing.JFrame {
                     venueModifyTbl.setValueAt(editedVenueCapacity, selectedRow, 6);
                     venueModifyTbl.setValueAt(editedVenueRentFee, selectedRow, 7);
                     showPopDialog("The venue has been successfully updated.", "Successful update", JOptionPane.INFORMATION_MESSAGE);
+                    //disable the semi-transparent panel
                     getRootPane().getGlassPane().setVisible(false);
                     popUpDialog.setVisible(false);
                     revenueCount(venueDetails);
@@ -3773,7 +4065,13 @@ public class KnotSpot extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_updateVenueDetailsBtnActionPerformed
-
+    /**
+     * Handles the action event for the cancel venue change button. Closes the
+     * pop-up dialog and resets the validation colors for input fields
+     *
+     * @param evt The action event triggered when the cancel venue change button
+     * is clicked
+     */
     private void cancelVenueChangeBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelVenueChangeBtnActionPerformed
 
         getRootPane().getGlassPane().setVisible(false);
@@ -3782,23 +4080,35 @@ public class KnotSpot extends javax.swing.JFrame {
         ValidationUtil.venueValidateColor(venueAddressOnPopUpMsgFld, inputVenueAddressErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Address");
         ValidationUtil.venueValidateColor(venueContactOnPopUpMsgFld, inputVenueContactErrorMsgLbl, Color.BLACK, Color.BLACK, "", "Contact Number");
     }//GEN-LAST:event_cancelVenueChangeBtnActionPerformed
-
+    /**
+     * Handles the state change event for the venue capacity slider. Updates the
+     * label to display the current value of the capacity slider
+     *
+     * @param evt The state change event triggered when the venue capacity
+     * slider value changes
+     */
     private void inputVenueCapacitySlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputVenueCapacitySlider1StateChanged
-        // TODO add your handling code here:
+
         showCapacityValueLbl.setText(String.valueOf(inputVenueCapacitySlider1.getValue()));
     }//GEN-LAST:event_inputVenueCapacitySlider1StateChanged
-
+    /**
+     * Handles the state change event for the per plate price slider. Updates
+     * the label to display the current value of the per plate price slider
+     *
+     * @param evt The state change event triggered when the per plate price
+     * slider value changes
+     */
     private void inputPerPlatePriceSlider1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_inputPerPlatePriceSlider1StateChanged
-        // TODO add your handling code here:
+
         showPerPlatePriceValueLbl.setText(String.valueOf(inputPerPlatePriceSlider1.getValue()));
     }//GEN-LAST:event_inputPerPlatePriceSlider1StateChanged
 
     private void inputSearchTxtFldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_inputSearchTxtFldActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_inputSearchTxtFldActionPerformed
 
     private void sortByComboBxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sortByComboBxActionPerformed
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_sortByComboBxActionPerformed
 
     private void ascendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ascendSortOrderRadioBtnActionPerformed
@@ -3809,9 +4119,21 @@ public class KnotSpot extends javax.swing.JFrame {
     private void descendSortOrderRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_descendSortOrderRadioBtnActionPerformed
 
     }//GEN-LAST:event_descendSortOrderRadioBtnActionPerformed
-
+    /**
+     * Handles the action event for the search button. Checks the search input
+     * field for a valid search value If the input is blank, it reloads the
+     * table with all venue data If the input is a valid number, it searches the
+     * venue list by ID using binary search after sorting the list by ID If the
+     * input is alphabetic, it searches the venue list by name using binary
+     * search after sorting the list by name Displays an error message if no
+     * matching venues are found and reloads the table with the original venue
+     * data
+     *
+     * @param evt The action event triggered when the search button is clicked.
+     */
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
 
+        //list as a backup to store linkedlist into arraylist
         List<VenueModel> copyOfVenueDetails = new ArrayList<>(venueDetails);
 
         if (inputSearchTxtFld.getText().isBlank()) {
@@ -3841,17 +4163,38 @@ public class KnotSpot extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_searchBtnActionPerformed
-
+    /**
+     * Handles the action event for the refresh button. Reloads the table with
+     * all venue details and clears the search input field
+     *
+     * @param evt The action event triggered when the refresh button is clicked
+     */
     private void refreshBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_refreshBtnActionPerformed
         loadTableData(venueDetails);
         inputSearchTxtFld.setText("");
     }//GEN-LAST:event_refreshBtnActionPerformed
-
+    /**
+     * Handles the mouse click event for the filter container panel. Displays
+     * the filter pop-up panel when the filter container is clicked
+     *
+     * @param evt The mouse event triggered when the filter container panel is
+     * clicked
+     */
     private void filterContainerPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_filterContainerPnlMouseClicked
 
         filterPopUpPnl.setVisible(true);
     }//GEN-LAST:event_filterContainerPnlMouseClicked
-
+    /**
+     * Handles the action event for the do filter button. Applies sorting on the
+     * venue data based on the selected sort field (Id, Name, City, Capacity, or
+     * Price) and order (ascending or descending). Sorts the venue list using
+     * different sorting algorithms (Insertion Sort, Selection Sort, Merge Sort)
+     * based on the selected field. Reloads the table with the sorted venue
+     * data. Hides the filter pop-up panel after applying the filter.
+     *
+     * @param evt The action event triggered when the do filter button is
+     * clicked
+     */
     private void doFilterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doFilterBtnActionPerformed
         String sortBy = sortByComboBx.getSelectedItem().toString();
         if (ascendSortOrderRadioBtn.isSelected() && !sortBy.equals("Sort By")) {
