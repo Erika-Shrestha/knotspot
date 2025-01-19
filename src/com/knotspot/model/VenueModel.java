@@ -5,38 +5,43 @@
 package com.knotspot.model;
 
 /**
- *              (exception ma @ throws)
+ *              
  * @author 
  * LMU ID:23048598
  * COLLEGE ID: 230024
  * ErikaShrestha
+ * The VenueModel class represents a venue with its properties such as venue ID, name, address, city, contact number,
+ * venue type, capacity, and rent fee. It provides constructors to initialize a venue and getter and setter methods 
+ * to access and modify the venue's attributes.
  */
 public class VenueModel {
     
-    private int venueId;
-    private String venueName;
-    private String address;
-    private String city;
-    private long contactNumber;
-    private String venueType;
-    private int capacity;
-    private double rentFee;
+    private int venueId;            //unique id of venue
+    private String venueName;       //name of venue
+    private String address;         // location of venue
+    private String city;            // city where venue is located
+    private long contactNumber;     // contact number for the venue
+    private String venueType;       // Type of venue
+    private int capacity;           // Capacity of the venue (number of people it can accommodate)
+    private double rentFee;         // fee for renting venue
     
     /**
-     * a default constructor with no parameters 
+     * Default constructor that initializes a new VenueModel object with default values 
      */
     public VenueModel(){}
     
     /**
-     * an initialized constructor with parameters indicates the global variables with this keyword
-     * @param venueId
-     * @param venueName
-     * @param address
-     * @param city
-     * @param contactNumber
-     * @param venueType
-     * @param capacity
-     * @param rentFee 
+     * Parameterized constructor that initializes a new VenueModel 
+     * object with the provided values that indicate global variables with this keyword.
+     * 
+     * @param venueId        unique ID of the venue
+     * @param venueName      name of the venue
+     * @param address        location of venue
+     * @param city           city where the venue is located
+     * @param contactNumber  contact number for the venue
+     * @param venueType      type of the venue
+     * @param capacity       capacity of the venue (maximum number of people)
+     * @param rentFee        fee for renting venue
      */
     public VenueModel(int venueId, String venueName, String address, String city, long contactNumber, String venueType, int capacity, double rentFee) {
         this.venueId = venueId;
@@ -59,7 +64,7 @@ public class VenueModel {
     
     /**
      * sets venue id with a parameter initialized to global variable venue id
-     * @param venueId 
+     * @param venueId the venue ID to set
      */
     public void setVenueId(int venueId) {
         this.venueId = venueId;
@@ -75,7 +80,7 @@ public class VenueModel {
     
     /**
      * sets venue name with a parameter initialized to global variable venue name
-     * @param venueName 
+     * @param venueName the venue name to set
      */
     public void setVenueName(String venueName) {
         this.venueName = venueName;
@@ -91,7 +96,7 @@ public class VenueModel {
     
     /**
      * sets venue address with a parameter initialized to global variable venue address
-     * @param address 
+     * @param address the venue address to set
      */
     public void setAddress(String address) {
         this.address = address;
@@ -107,7 +112,7 @@ public class VenueModel {
     
     /**
      * sets venue city with a parameter initialized to global variable venue city
-     * @param city 
+     * @param city the venue city to set
      */
     public void setCity(String city) {
         this.city = city;
@@ -123,7 +128,7 @@ public class VenueModel {
     
     /**
      * sets venue contact by passing parameter initialized to global variable venue contact
-     * @param contactNumber 
+     * @param contactNumber the contact number for venue to set
      */
     public void setContactNumber(long contactNumber) {
         this.contactNumber = contactNumber;
@@ -139,7 +144,7 @@ public class VenueModel {
     
     /**
      * sets venue type by passing parameter initialized to global variable venue type
-     * @param venueType
+     * @param venueType the venue type to set
      */
     public void setVenueType(String venueType) {
         this.venueType = venueType;
@@ -155,7 +160,7 @@ public class VenueModel {
     
     /**
      * sets venue capacity by passing parameter initialized to global variable venue capacity
-     * @param capacity 
+     * @param capacity the capacity of venue to set
      */
     public void setCapacity(int capacity) {
         this.capacity = capacity;
@@ -171,7 +176,7 @@ public class VenueModel {
     
     /**
      * sets venue rent fee by passing parameter initialized to global variable venue rent fee
-     * @param rentFee 
+     * @param rentFee the venue rent fee to set
      */
     public void setRentFee(double rentFee) {
         this.rentFee = rentFee;

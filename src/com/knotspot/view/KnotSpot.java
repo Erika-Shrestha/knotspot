@@ -2293,7 +2293,7 @@ public class KnotSpot extends javax.swing.JFrame {
         editForBlogBtn.setBackground(new java.awt.Color(14, 30, 63));
         editForBlogBtn.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         editForBlogBtn.setForeground(new java.awt.Color(255, 255, 255));
-        editForBlogBtn.setText("edit");
+        editForBlogBtn.setText("upload");
         editForBlogBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 editForBlogBtnActionPerformed(evt);
@@ -3221,17 +3221,17 @@ public class KnotSpot extends javax.swing.JFrame {
         if (username.isEmpty() && password.isEmpty() || username.equals("Enter username") && password.equals("Enter password")) {
             ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
-            return;
+            
 
         } else if (username.isEmpty() || username.equals("Enter username")) {
             ValidationUtil.authenticationColor(inputUsernameErrorLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your username");
             inputPasswordErrorPwdLbl.setText("");
-            return;
+            
 
         } else if (password.isEmpty() || password.equals("Enter password")) {
             ValidationUtil.authenticationColor(inputPasswordErrorPwdLbl, new Color(255, 255, 255), Color.RED, true, "Please enter your password");
             inputUsernameErrorLbl.setText("");
-            return;
+            
 
         } else {
             boolean isValidUsername = username.equals("admin");
@@ -3813,31 +3813,25 @@ public class KnotSpot extends javax.swing.JFrame {
     private void searchBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchBtnActionPerformed
 
         List<VenueModel> copyOfVenueDetails = new ArrayList<>(venueDetails);
-        List<VenueModel> allMatchedData = new ArrayList<>();
 
         if (inputSearchTxtFld.getText().isBlank()) {
             loadTableData(venueDetails);
         } else {
             if (ValidationUtil.isNumberForSearchValue(inputSearchTxtFld.getText())) {
-                Sort.performInsertionSort(copyOfVenueDetails, false, "Id");
+                Sort.performInsertionSort(copyOfVenueDetails, true, "Id");
                 List<VenueModel> foundMatchedId = BinarySearch.searchById(copyOfVenueDetails, inputSearchTxtFld.getText());
                 loadTableData(foundMatchedId);
                 if (foundMatchedId.isEmpty()) {
-                    showPopDialog("The venue not found.", "Unmatched Value", JOptionPane.ERROR_MESSAGE);
+                    showPopDialog("The venue with searched id not found.", "Unmatched Value", JOptionPane.ERROR_MESSAGE);
                     loadTableData(venueDetails);
                 }
             } else {
                 if (ValidationUtil.isAlphabeticForSearchValue(inputSearchTxtFld.getText())) {
-                    Sort.performInsertionSort(copyOfVenueDetails, false, "Name");
+                    Sort.performInsertionSort(copyOfVenueDetails, true, "Name");
                     List<VenueModel> foundMatchedName = BinarySearch.searchByName(copyOfVenueDetails, inputSearchTxtFld.getText());
-                    allMatchedData.addAll(foundMatchedName);
-
-                    Sort.performSelectionSort(copyOfVenueDetails, false, "Type");
-                    List<VenueModel> foundMatchedType = BinarySearch.searchByType(copyOfVenueDetails, inputSearchTxtFld.getText());
-                    allMatchedData.addAll(foundMatchedType);
-                    loadTableData(allMatchedData);
-                    if (allMatchedData.isEmpty()) {
-                        showPopDialog("The venue not found.", "Unmatched Value", JOptionPane.ERROR_MESSAGE);
+                    loadTableData(foundMatchedName);
+                    if (foundMatchedName.isEmpty()) {
+                        showPopDialog("The venue with searched name not found.", "Unmatched Value", JOptionPane.ERROR_MESSAGE);
                         loadTableData(venueDetails);
                     }
                 }
