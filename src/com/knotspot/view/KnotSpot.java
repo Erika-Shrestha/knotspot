@@ -1449,7 +1449,8 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        doFilterBtn.setBackground(new java.awt.Color(176, 197, 202));
+        doFilterBtn.setBackground(new java.awt.Color(14, 30, 63));
+        doFilterBtn.setForeground(new java.awt.Color(255, 255, 255));
         doFilterBtn.setText("ok");
         doFilterBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -3453,7 +3454,7 @@ public class KnotSpot extends javax.swing.JFrame {
      * @param evt the mouse event triggered by the user click
      */
     private void logOutNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseClicked
-        int response = JOptionPane.showConfirmDialog(this, "Do you want to really remove the venue?", "Remove venue confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to really want to log out?", "Log out confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         if (response == JOptionPane.YES_OPTION){
         loadScreen("LoginScreen");
         logOutNavPnl.setBackground(Color.WHITE);
