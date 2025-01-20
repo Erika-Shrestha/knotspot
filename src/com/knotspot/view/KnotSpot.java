@@ -518,10 +518,10 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        inputVenueTypeComboBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Meeting Conference", "Hall" }));
+        inputVenueTypeComboBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ballrooms", "Banquet Hall", "Conference Hall", "Outdoor garden", " " }));
         inputVenueTypeComboBx1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Type"));
 
-        inputVenueCityComboBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kathmandu", "bhaktapur", "Dharan", "Koteshwor" }));
+        inputVenueCityComboBx1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bhaktapur", "Biratnagar", "Birgunj", "Butwal", "Dharan", "Hetauda", "Kathmandu", "Lalitpur", "Nepalgunj", "Pokhara" }));
         inputVenueCityComboBx1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "City"));
 
         inputCapacityLbl.setText("Capacity");
@@ -1231,7 +1231,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
         addressErrorMsgLbl.setFont(new java.awt.Font("Segoe UI", 0, 8)); // NOI18N
 
-        inputVenueCityComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "kathmandu", "bhaktapur", "Dharan", "Koteshwor" }));
+        inputVenueCityComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Bhaktapur", "Biratnagar", "Birgunj", "Butwal", "Dharan", "Hetauda", "Kathmandu", "Lalitpur", "Nepalgunj", "Pokhara" }));
         inputVenueCityComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "City"));
 
         totalCapacityLbl.setText("Total Capacity :");
@@ -1266,7 +1266,7 @@ public class KnotSpot extends javax.swing.JFrame {
             }
         });
 
-        inputVenueTypeComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Meeting Conference", "Hall" }));
+        inputVenueTypeComboBx.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Ballrooms", "Banquet Hall", "Conference Hall", "Outdoor garden" }));
         inputVenueTypeComboBx.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1), "Type"));
 
         addVenueBtn.setBackground(new java.awt.Color(14, 30, 63));
@@ -1351,9 +1351,9 @@ public class KnotSpot extends javax.swing.JFrame {
                     .addComponent(nameErrorMsgLbl, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(inputVenueAddressTxtFld, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueCityComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(inputVenueTypeComboBx, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(1, 1, 1)
                 .addGroup(detailsInputContainerPnlLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(detailsInputContainerPnlLayout.createSequentialGroup()
@@ -3069,9 +3069,9 @@ public class KnotSpot extends javax.swing.JFrame {
      * added venues
      */
     private void defaultInitializedTableData() {
-        addDemoVenue(new VenueModel(20423, "SmartPalace", "Basantapur", "kathmandu", 9823733980L, "Meeting Conference", 200, 23000));
-        addDemoVenue(new VenueModel(20890, "VivahPalace", "Bouddha", "Dharan", 9823722970L, "Hall", 100, 30000));
-        addDemoVenue(new VenueModel(20490, "TajPalace", "Lalitpur", "kathmandu", 9823733970L, "Hall", 120, 15000));
+        addDemoVenue(new VenueModel(20423, "Smarty", "Basantapur", "kathmandu", 9823733980L, "Banquet hall", 200, 23000));
+        addDemoVenue(new VenueModel(20890, "Vivah", "Bouddha", "Dharan", 9823722970L, "Ballrooms", 100, 30000));
+        addDemoVenue(new VenueModel(20490, "Taj", "Lalitpur", "kathmandu", 9823733970L, "Ballrooms", 120, 15000));
     }
 
     /**
@@ -3095,7 +3095,7 @@ public class KnotSpot extends javax.swing.JFrame {
 
     /**
      * Displays the recently added venues in the home screen table
-     * (frontDisplayTable) It updates the rows of the frontDisplayTable with
+     * (frontDisplayTable). It updates the rows of the frontDisplayTable with
      * data from the recentlyAddedVenue stack
      *
      * @param recentlyAddedVenue the stack containing recently added venues to
@@ -3150,31 +3150,31 @@ public class KnotSpot extends javax.swing.JFrame {
                 loadingValueLbl.setText(progress + "%");
                 if (progress == 10) {
                     loadingSymbolLbl.setText("welcome to our system...");
-                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture6.png");
+                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture1forloading.png");
                     firstPopUpImage.setIcon(icon);
                 }
                 if (progress == 30) {
                     loadingSymbolLbl.setText("10 venues are ready to be booked...");
-                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture3.png");
+                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture2forloading.png");
                     secondPopUpImage.setIcon(icon);
                     companyTitleLbl.setForeground(Color.decode("#2B3D5B"));
 
                 }
                 if (progress == 50) {
                     loadingSymbolLbl.setText("let us join in your new innings...");
-                    ImageIcon icon = new ImageIcon(absolutePathForImage + "imageforback2.png");
+                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture3forloading.png");
                     thirdPopUpImage.setIcon(icon);
                     companyTitleLbl.setForeground(Color.decode("#000000"));
                 }
                 if (progress == 70) {
                     loadingSymbolLbl.setText("happy weddings...");
-                    ImageIcon icon = new ImageIcon(absolutePathForImage + "imageforback3.png");
+                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture4forloading.png");
                     fourthPopUpImage.setIcon(icon);
                     companyTitleLbl.setForeground(Color.decode("#2B3D5B"));
                 }
                 if (progress == 90) {
                     loadingSymbolLbl.setText("Manage stuffs...");
-                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture4.png");
+                    ImageIcon icon = new ImageIcon(absolutePathForImage + "picture5forloading.png");
                     fifthPopUpImage.setIcon(icon);
                     companyTitleLbl.setForeground(Color.decode("#000000"));
                 }
@@ -3453,7 +3453,8 @@ public class KnotSpot extends javax.swing.JFrame {
      * @param evt the mouse event triggered by the user click
      */
     private void logOutNavPnlMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutNavPnlMouseClicked
-
+        int response = JOptionPane.showConfirmDialog(this, "Do you want to really remove the venue?", "Remove venue confirmation", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+        if (response == JOptionPane.YES_OPTION){
         loadScreen("LoginScreen");
         logOutNavPnl.setBackground(Color.WHITE);
         logOutNavPnl.setForeground(Color.decode("#0E1E3F"));
@@ -3473,6 +3474,8 @@ public class KnotSpot extends javax.swing.JFrame {
         }
         resetInputDetails();
         loadNavRelatedPage("HomePage");
+        }
+        
 
     }//GEN-LAST:event_logOutNavPnlMouseClicked
     /**
@@ -3574,7 +3577,8 @@ public class KnotSpot extends javax.swing.JFrame {
 
         if (isValid) {
             //to check if the details are repeated to add 
-            if (!ValidationUtil.isDuplicate(venueDetails, venueId, venueContactNumber)) {
+            String duplicateField = ValidationUtil.isDuplicate(venueDetails, venueId, venueContactNumber);
+            if (duplicateField==null) {
                 VenueModel venue = new VenueModel(venueId, venueName, venueAddress, venueCity, venueContactNumber, venueType, venueCapacity, venueRentFee);
                 venueDetails.add(venue);
                 //to add venue at top of the stack
@@ -3587,8 +3591,14 @@ public class KnotSpot extends javax.swing.JFrame {
                 totalVenueNumberLbl.setText(String.valueOf(venueModifyTbl.getRowCount()));
                 revenueCount(venueDetails);
             } else {
-                showPopDialog("The same venue cannot be duplicated", "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
+                if(duplicateField.equals("venueId")){
+                showPopDialog("The venue id is already in use", "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
                 resetInputDetails();
+                }
+                else if(duplicateField.equals("venueContact")){
+                showPopDialog("The contact number is already in use", "Duplicate Entry", JOptionPane.ERROR_MESSAGE);
+                resetInputDetails();
+                }
             }
 
         }
@@ -3827,12 +3837,13 @@ public class KnotSpot extends javax.swing.JFrame {
 
     private void selectLightModeRadioBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_selectLightModeRadioBtnActionPerformed
 
-        if (selectDarkModeRadioBtn.isSelected() == true) {
+        if (selectLightModeRadioBtn.isSelected() == true) {
             settingPagePnl.setBackground(new Color(250, 245, 239));
             homePagePnl.setBackground(new Color(250, 245, 239));
             addVenuePagePnl.setBackground(new Color(250, 245, 239));
             aboutUsPagePnl.setBackground(new Color(250, 245, 239));
             venueGalleryPagePnl.setBackground(new Color(250, 245, 239));
+            navigationContainerPnl.setBackground(new Color(250, 245, 239));
 
         }
     }//GEN-LAST:event_selectLightModeRadioBtnActionPerformed
@@ -3852,7 +3863,14 @@ public class KnotSpot extends javax.swing.JFrame {
             addVenuePagePnl.setBackground(Color.decode("#937A62"));
             aboutUsPagePnl.setBackground(Color.decode("#937A62"));
             venueGalleryPagePnl.setBackground(Color.decode("#937A62"));
-
+            navigationContainerPnl.setBackground(Color.decode("#937A62"));
+            followUsPnl.setBackground(Color.decode("#937A62"));
+            detailsInputContainerPnl.setBackground(Color.decode("#937A62"));
+            inputSearchTxtFld.setBackground(Color.decode("#937A62"));
+            inputVenueIdTxtFld.setBackground(Color.decode("#937A62"));
+            inputVenueNameTxtFld.setBackground(Color.decode("#937A62"));
+            inputVenueAddressTxtFld.setBackground(Color.decode("#937A62"));
+            inputVenueContactTxtFld.setBackground(Color.decode("#937A62"));
         }
     }//GEN-LAST:event_selectDarkModeRadioBtnActionPerformed
     /**

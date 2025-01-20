@@ -79,7 +79,7 @@ public class ValidationUtil {
         isNullorEmpty(venueName, attribute);
         isAlphabetic(venueName, attribute);
         if(venueName.length()<=4 || venueName.length()>=50){
-            throw new IllegalArgumentException(attribute +" must be in between 4 and 50");
+            throw new IllegalArgumentException(attribute +" must be in between 5 and 50");
         }
         if (!NAME_PATTERN.matcher(String.valueOf(venueName)).matches()){
             throw new IllegalArgumentException(attribute +" must be in alphabets");
@@ -99,7 +99,7 @@ public class ValidationUtil {
         isNullorEmpty(venueAddress, attribute);
         isAlphabetic(venueAddress, attribute);
         if(venueAddress.length()<=5 || venueAddress.length()>=31){
-            throw new IllegalArgumentException(attribute +" must be in between 4 and 30");
+            throw new IllegalArgumentException(attribute +" must be in between 5 and 30");
         }
         if (!ADDRESS_PATTERN.matcher(venueAddress).matches()){
             throw new IllegalArgumentException(attribute +" must be a proper address");
@@ -172,15 +172,19 @@ public class ValidationUtil {
      * @param venueContact the venue contact number to check for duplicates
      * @return true if a duplicate is found, otherwise false
      */
-    public static boolean isDuplicate(List<VenueModel> value, int venueId, long venueContact){
+    public static String isDuplicate(List<VenueModel> value, int venueId, long venueContact){
         for (VenueModel venues : value){
-            if(venues.getVenueId()==venueId || venues.getContactNumber()==venueContact){
-                return true;
+            if(venues.getVenueId()==venueId){
+                
+                return "venueId";
             }
+            else if (venues.getContactNumber()==venueContact){
+                
+            return "venueContact";
+        }
         
         }
-        return false;
-    
+        return null;
     }
     
     /**
